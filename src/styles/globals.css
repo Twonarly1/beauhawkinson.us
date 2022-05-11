@@ -1,0 +1,325 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /*
+  =====================================================================
+  *   Resume components style
+  =====================================================================
+   TOC:
+   a. Floating Pop 
+   b. Floating Tabs 
+   c. Header
+   d. Social
+   e. About
+   f. Details
+   g. Resume
+   h. Portfolio
+   i. Testimonials
+   j. Contact
+   k. Footer
+  ===================================================================== */
+
+  /* ------------------------------------------------------------------ */
+  /* reused classes
+  /* ------------------------------------------------------------------ */
+
+  .heading {
+    @apply mb-3 items-center text-2xl font-semibold tracking-wide md:px-0;
+  }
+  .heading2 {
+    @apply mb-3 text-center text-lg uppercase tracking-wider md:hidden;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* a. Floating Pops
+  /* ------------------------------------------------------------------ */
+
+  .floatingPop {
+    @apply sticky top-4;
+  }
+  .popoverButton {
+    @apply ml-4 rounded-full bg-white p-3 shadow-md md:hidden;
+  }
+  .menuIcon {
+    @apply h-7 cursor-pointer md:hidden;
+  }
+  .popoverPanel {
+    @apply absolute z-10 ml-8 mt-6 grid w-32 grid-rows-6 rounded-lg p-6;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* b. Floating Tabs
+  /* ------------------------------------------------------------------ */
+
+  .floatingTabs {
+    @apply sticky top-0 items-center bg-transparent;
+  }
+  .tabList {
+    @apply relative top-0 space-x-6 text-center text-[12px] text-black md:h-10 md:bg-white;
+  }
+  .tab {
+    @apply mt-3 hidden uppercase md:flex;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* c. Header
+  /* ------------------------------------------------------------------ */
+
+  .header {
+    @apply min-h-screen w-full;
+  }
+  .name {
+    @apply mt-72 text-center text-4xl font-semibold text-black md:mx-auto md:max-w-xl md:text-6xl lg:max-w-4xl lg:text-7xl;
+  }
+  .description {
+    @apply mt-4 text-center font-light italic;
+  }
+  .city {
+    @apply mt-4 text-center text-lg font-light tracking-wider;
+  }
+  .occupation {
+    @apply font-light text-black;
+  }
+  .pagedownButton {
+    @apply mx-auto mt-72 flex rounded-full bg-white p-2 shadow-md hover:shadow-lg focus:shadow-lg active:shadow-lg;
+  }
+  .chevronDownIcon {
+    @apply w-7;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* d. Socials
+  /* ------------------------------------------------------------------ */
+
+  .socialGroup {
+    @apply mt-8 flex justify-center space-x-6;
+  }
+  .socialIcon {
+    @apply h-7 w-7 transition duration-150 ease-in-out hover:scale-125;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* e. About
+  /* ------------------------------------------------------------------ */
+
+  .pfp {
+    @apply hidden h-40 w-40 rounded-full md:mx-auto md:my-4 md:flex;
+  }
+  .about {
+    @apply w-full py-4 text-[17px] font-light tracking-wide;
+  }
+  .aboutContainer {
+    @apply mx-auto flex max-w-4xl p-12 md:py-6 lg:flex;
+  }
+  .aboutFlex {
+    @apply ml-3 sm:max-w-2xl md:max-w-4xl md:p-6 lg:flex lg:space-x-12;
+  }
+  .contactDetailsGrid {
+    @apply my-12 border md:mb-0 md:grid md:grid-cols-2;
+  }
+  .resumeDownload {
+    @apply mt-12 flex justify-center rounded bg-white p-3 hover:scale-105;
+  }
+  .downloadIcon {
+    @apply w-7;
+  }
+  .download {
+    @apply ml-4 text-xl font-semibold md:mt-1 md:text-sm;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* f. Details
+  /* ------------------------------------------------------------------ */
+
+  .flexbox {
+    @apply flex items-center;
+  }
+  .homeIcon {
+    @apply mt-6 mr-2 h-3 w-3 items-center;
+  }
+  .phoneIcon {
+    @apply mr-2 w-3 items-center;
+  }
+  .atSymbolIcon {
+    @apply mr-2 w-3 items-center;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* g. Resume
+  /* ------------------------------------------------------------------ */
+
+  .resume {
+    @apply mb-12 max-w-4xl;
+  }
+  .resumeSpacing {
+    @apply space-y-3 px-6 text-center md:text-left;
+  }
+  .resumeText {
+    @apply text-lg font-light italic text-gray-500;
+  }
+  .resumeEducation {
+    @apply px-1;
+  }
+  .workYears {
+    @apply px-1;
+  }
+  .resumeDescription {
+    @apply font-light text-gray-400;
+  }
+  .mediumScreen {
+    @apply mt-6 md:flex;
+  }
+  .block {
+    @apply mt-12 text-center text-lg uppercase tracking-widest md:w-40 md:text-left lg:w-80;
+  }
+  .title {
+    @apply w-20 text-xl underline;
+  }
+  .margin {
+    @apply mt-12;
+  }
+  .blockBorder {
+    @apply mt-16 border-t md:flex;
+  }
+  .skills {
+    @apply mt-12 grid h-[600px] grid-cols-2 overflow-auto md:grid md:grid-cols-4 md:gap-2 md:space-y-0 lg:h-[400px] lg:grid-cols-6;
+  }
+  .skillImage {
+    @apply mx-auto h-32 w-32 rounded-lg bg-slate object-fill p-2 shadow-lg hover:scale-105;
+  }
+  .skillName {
+    @apply mb-4 mt-1 text-center;
+  }
+  .skillMessage {
+    @apply mt-12 px-6 text-center;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* h. Portfolio
+  /* ------------------------------------------------------------------ */
+
+  .portfolio {
+    @apply mx-auto w-full rounded pt-12;
+  }
+  .portfolioTitle {
+    @apply mb-3 text-center text-lg uppercase tracking-widest;
+  }
+  .mb {
+    @apply mb-8;
+  }
+  .project {
+    @apply mx-auto w-80 flex-col overflow-hidden rounded-xl bg-white shadow-lg;
+  }
+  .projectImage {
+    @apply mx-auto mt-4 h-32 w-32;
+  }
+  .card {
+    @apply px-6 py-4;
+  }
+  .cardTitle {
+    @apply my-2 items-center text-xl font-bold md:h-12 md:text-center;
+  }
+  .cardDescription {
+    @apply my-4 text-base text-gray-700;
+  }
+  .cardLink {
+    @apply inline-flex w-full items-center rounded bg-gray-300 py-2 px-4 font-bold text-gray-800 hover:bg-gray-400;
+  }
+  .linkIcon {
+    @apply w-7 pr-2;
+  }
+  .projects {
+    @apply mx-auto mt-12 mb-12 max-w-4xl md:grid md:grid-cols-2 md:px-8 xl:max-w-6xl xl:grid-cols-3;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* i. Testimonials
+  /* ------------------------------------------------------------------ */
+  .testimonials {
+    @apply my-6;
+  }
+  .text {
+    @apply ml-4 text-lg;
+  }
+  .user {
+    @apply mt-6 ml-4;
+  }
+  .testimonial {
+    @apply mx-auto mt-20 max-w-4xl md:flex;
+  }
+  .annotationIcon {
+    @apply hidden w-48 md:mr-12 md:flex;
+  }
+  .testimonialList {
+    @apply text-center md:mr-40 md:text-left;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* j. Contact
+  /* ------------------------------------------------------------------ */
+
+  .contact {
+    @apply mt-12 w-full pb-12;
+  }
+  .contactsFlexBox {
+    @apply mx-auto mt-16 max-w-4xl md:mt-0;
+  }
+  .contactHeader {
+    @apply hidden px-12 text-center md:mx-auto md:mt-12 md:flex;
+  }
+  .mailIcon {
+    @apply w-48 text-white md:flex;
+  }
+  .contactMessage {
+    @apply mt-20 ml-12;
+  }
+  .form {
+    @apply mx-auto mt-12 max-w-4xl px-12 text-left md:ml-4 md:flex md:px-6 lg:max-w-5xl;
+  }
+  .formMedium {
+    @apply md:inline-flex;
+  }
+  .input {
+    @apply my-3 flex h-14 w-full bg-gray-100 pl-6 md:w-80;
+  }
+  .textarea {
+    @apply my-4 flex w-full bg-gray-100 pl-6 pt-4 md:w-80;
+  }
+  .label {
+    @apply font-bold md:mt-7 md:w-32;
+  }
+  .submitButton {
+    @apply my-6 h-12 w-28 rounded bg-gray-600 p-2 font-semibold uppercase tracking-widest text-white md:ml-32;
+  }
+  .contactDetails {
+    @apply mb-12 mt-6 text-left text-[17px] font-light tracking-wide md:-mt-6 md:mr-8 md:text-left;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* k. Footer
+  /* ------------------------------------------------------------------ */
+
+  .split {
+    @apply flex-grow;
+  }
+  .backToTopButton {
+    @apply mb-2 inline-block rounded-full bg-white p-3 text-xs font-medium uppercase leading-tight text-black shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg;
+  }
+  .chevronUp {
+    @apply mx-auto w-7 md:flex;
+  }
+  .footer {
+    @apply w-full bg-white text-center;
+  }
+  .footerOverlay {
+    @apply relative -mt-[30px] flex items-center;
+  }
+  .my {
+    @apply my-12;
+  }
+  .madeBy {
+    @apply text-sm text-gray-600;
+  }
+}
