@@ -24,7 +24,9 @@ const Portfolio = ({ data }) => {
               <p>{projects.category}</p>
               <button className="cardLink">
                 <LinkIcon className="linkIcon" />
-                <span> view github / website</span>
+                 <a href={projects.url} title={projects.title}>
+                    view github / website
+                 </a> 
               </button>
             </div>
           </div>
