@@ -1,0 +1,159 @@
+{
+  "main": {
+    "name": "Beau Hawkinson",
+    "occupation": "Web3 Developer",
+    "description": "Learning and developing in the Web3 space.",
+    "image": "profilepic.jpg",
+    "bio": "28 years old. Unemployed and searching for work. Self-taught programmer. Heavily interested in Web3 and building on Ethereum. Outside of development you can find me on a yoga mat, playing ultimate frisbee, frisbee golf, golf, or studying other areas of interests including health and longevity, physics, and the sciences. Please find my full resume below!",
+    "contactmessage": "Get in touch for contributions or opportunities!",
+    "email": "hawkinson.beau@yahoo.com",
+    "phone": "6513674529",
+    "address": {
+      "street": "",
+      "city": "St.Paul",
+      "state": "MN",
+      "zip": ""
+    },
+    "website": "bhawkinson.vercel.app",
+    "resumedownload": "/Beau-Resume-2022.pdf",
+    "social": [
+      {
+        "network": "twitter",
+        "link": "https://twitter.com/twonarly1",
+        "pic": "twitter.svg"
+      },
+      {
+        "network": "linkedin",
+        "link": "https://www.linkedin.com/in/beau-hawkinson-6921bb84/",
+        "pic": "linkedin.svg"
+      },
+      {
+        "network": "github",
+        "link": "https://github.com/Twonarly1",
+        "pic": "github.svg"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Experience with:",
+    "education": [
+      {
+        "school": "Minnesota State University, Mankato",
+        "degree": "Bachelor's Degree, Marketing",
+        "graduated": "Dec 2017",
+        "description": "Several computer science related classes. Ultimate Frisbee athlete"
+      }
+    ],
+    "work": [
+      {
+        "company": "Unemployed 2/22",
+        "title": "Building in the Web3 space",
+        "years": "October 2020 - Present",
+        "description": "Previous CNC (CAD/CAM) plasma specialist ."
+      }
+    ],
+    "skills": [
+      {
+        "name": "React",
+        "src": "react.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Next",
+        "src": "next.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Apollo",
+        "src": "apollo.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Graphql",
+        "src": "graphql.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Tailwind",
+        "src": "tailwind.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Typescript",
+        "src": "ts.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Nodejs",
+        "src": "node.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Ethereum",
+        "src": "ethereum.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Solidity",
+        "src": "solidity.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Firebase",
+        "src": "firebase.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Oauth",
+        "src": "oauth.svg",
+        "url": "https://twitter.com/twonarly1"
+      },
+      {
+        "name": "Javascript",
+        "src": "js.svg",
+        "url": "https://twitter.com/twonarly1"
+      }
+    ]
+  },
+
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Proof",
+        "description": "Proof of Humanity tooling and ceramic network social application.",
+        "category": "",
+        "image": "poh.png",
+        "url": "https://proof-neon.vercel.app/"
+      },
+      {
+        "title": "Winsome-Tenley NFT drop",
+        "description": "2nd place winner. Papa React NFT Drop Challenge.",
+        "category": "",
+        "image": "winsome-tenley.png",
+        "url": "https://winsome-tenley.vercel.app/"
+      },
+      {
+        "title": "Specto Hackathon Contributor",
+        "description": "Lens Protocol Hackathon. 1 of 5 contributors. April 2022",
+        "category": "",
+        "image": "specto-black.png",
+        "url": "https://github.com/Ecto-Finance/specto"
+      },
+      {
+        "title": "Muse DAO Contributions",
+        "description": "Several small contributions to musedao.io, noteably the Farm page.",
+        "category": "",
+        "image": "musedao.png",
+        "url": "https://musedao.io/farm"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "The competition was fierce and we got so many submissions but you pulled through. Your point total was higher than the other 600 contestants by a significant margin",
+        "user": "Sonny Sangha - PAPA Core Team"
+      }
+    ]
+  }
+}
