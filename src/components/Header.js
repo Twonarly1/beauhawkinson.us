@@ -1,7 +1,6 @@
 import React from 'react'
 import TypeWriter from 'react-typewriter'
 import { ChevronDownIcon } from '@heroicons/react/outline'
-import Socials from './Socials'
 
 const Header = ({ data }) => {
   if (data) {
