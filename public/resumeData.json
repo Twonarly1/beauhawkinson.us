@@ -52,66 +52,66 @@
         "description": "Previous CNC (CAD/CAM) plasma specialist ."
       }
     ],
-    "skills": [
+      "skills": [
       {
         "name": "React",
         "src": "react.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://reactjs.org/docs/getting-started.html"
       },
       {
         "name": "Next",
         "src": "next.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://nextjs.org/docs"
       },
       {
         "name": "Apollo",
         "src": "apollo.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://www.apollographql.com/docs/apollo-server/"
       },
       {
         "name": "Graphql",
         "src": "graphql.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://graphql.org/graphql-js/"
       },
       {
         "name": "Tailwind",
         "src": "tailwind.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://tailwindcss.com/docs/installation"
       },
       {
         "name": "Typescript",
         "src": "ts.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://www.typescriptlang.org/docs/"
       },
       {
         "name": "Nodejs",
         "src": "node.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://nodejs.org/en/docs/guides/getting-started-guide/"
       },
       {
         "name": "Ethereum",
         "src": "ethereum.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://ethereum.org/en/"
       },
       {
         "name": "Solidity",
         "src": "solidity.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://docs.soliditylang.org/en/v0.8.13/"
       },
       {
         "name": "Firebase",
         "src": "firebase.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://firebase.google.com/"
       },
       {
         "name": "Oauth",
         "src": "oauth.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://oauth.net/getting-started/"
       },
       {
         "name": "Javascript",
         "src": "js.svg",
-        "url": "https://twitter.com/twonarly1"
+        "url": "https://www.javascript.com/"
       }
     ]
   },
