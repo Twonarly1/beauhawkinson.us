@@ -1,6 +1,5 @@
 import React from 'react'
 import { ChevronUpIcon } from '@heroicons/react/outline'
-import Socials from './Socials'
 
 export default function Footer({ data }) {
   if (data) {
