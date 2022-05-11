@@ -12,12 +12,24 @@ const FloatingPop = () => {
 
         <Popover.Panel>
           <div className="popoverPanel bg-orange tracking-wider text-slate">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#resume">Resume</a>
-            <a href="#portfolio">Works</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
+            <a className="hover" href="#home">
+              Home
+            </a>
+            <a className="hover" href="#about">
+              About
+            </a>
+            <a className="hover" href="#resume">
+              Resume
+            </a>
+            <a className="hover" href="#portfolio">
+              Works
+            </a>
+            <a className="hover" href="#testimonials">
+              Testimonials
+            </a>
+            <a className="hover" href="#contact">
+              Contact
+            </a>
           </div>
         </Popover.Panel>
       </Popover>
