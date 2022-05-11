@@ -46,7 +46,10 @@
     @apply h-7 cursor-pointer md:hidden;
   }
   .popoverPanel {
-    @apply absolute z-10 ml-8 mt-6 grid w-32 grid-rows-6 rounded-lg p-6;
+    @apply absolute z-10 ml-4 mt-6 grid w-36 grid-rows-6 rounded-lg p-6;
+  }
+  .hover {
+    @apply hover:text-black;
   }
 
   /* ------------------------------------------------------------------ */
