@@ -131,6 +131,13 @@
   "portfolio": {
     "projects": [
       {
+        "title": "Engel Gallery",
+        "description": "Wedding gallery page with Firebase database.",
+        "category": "",
+        "image": "engel-gallery.png",
+        "url": "https://engel-gallery.vercel.app/"
+      },
+      {
         "title": "Proof",
         "description": "Proof of Humanity tooling and ceramic network social application.",
         "category": "",
