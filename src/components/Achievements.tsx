@@ -10,8 +10,6 @@ import {
   AchievementType,
   Achievement,
 } from '../../typings'
-import { NotionRenderer } from 'react-notion'
-import { Timestamp } from './base/timestamp'
 
 const AchievementIcon: React.FC<{
   type: AchievementType
