@@ -69,7 +69,7 @@
         "url": "https://www.apollographql.com/docs/apollo-server/"
       },
       {
-        "name": "Graphql",
+        "name": "GraphQL",
         "src": "graphql.svg",
         "url": "https://graphql.org/graphql-js/"
       },
@@ -79,8 +79,8 @@
         "url": "https://tailwindcss.com/docs/installation"
       },
       {
-        "name": "Typescript",
-        "src": "ts.svg",
+        "name": "TypeScript",
+        "src": "TypeScript.svg",
         "url": "https://www.typescriptlang.org/docs/"
       },
       {
@@ -110,8 +110,18 @@
       },
       {
         "name": "Javascript",
-        "src": "js.svg",
+        "src": "js.png",
         "url": "https://www.javascript.com/"
+      },
+      {
+        "name": "StepZen",
+        "src": "stepzen.svg",
+        "url": "https://www.javascript.com/"
+      },
+      {
+        "name": "Vercel",
+        "src": "vercel.svg",
+        "url": "https://vercel.com/home"
       }
     ],
     "certificates": [
@@ -138,11 +148,11 @@
         "url": "https://engel-gallery.vercel.app/"
       },
       {
-        "title": "Proof",
-        "description": "Proof of Humanity tooling and ceramic network social application.",
+        "title": "poh-tools",
+        "description": "Proof of Humanity tooling and reddit clone build.",
         "category": "",
         "image": "poh.png",
-        "url": "https://proof-neon.vercel.app/"
+        "url": "https://poh-tools.vercel.app/"
       },
       {
         "title": "Winsome-Tenley NFT drop",

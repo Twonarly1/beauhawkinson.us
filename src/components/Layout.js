@@ -5,8 +5,8 @@ import FloatingTabs from './FloatingTabs'
 const Layout = ({ children }) => {
   return (
     <>
-      <FloatingPop />
-      <FloatingTabs />
+      {/* <FloatingPop />
+      <FloatingTabs /> */}
       {children}
     </>
   )
