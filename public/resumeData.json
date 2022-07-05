@@ -124,6 +124,7 @@
         "url": "https://vercel.com/home"
       }
     ],
+
     "certificates": [
       {
         "name": "",
@@ -132,8 +133,8 @@
       },
       {
         "name": "",
-        "src": "",
-        "url": ""
+        "src": "odyssey-cert.png",
+        "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
       }
     ]
   },

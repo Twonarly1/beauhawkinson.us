@@ -8,7 +8,7 @@ import { Achievement, Main, Project } from '../../typings'
 import { GetStaticProps } from 'next'
 import { config } from '../../config'
 import { fetchRepos, Repo } from '../core/github'
-import { Achievements } from '../components/Achievements'
+import Achievements from '../components/Achievements'
 
 interface AppProps {
   main: Main[]
@@ -26,11 +26,11 @@ const imagesArray = [
   },
   {
     id: 1,
-    image: '/images/portfolio/poh.png',
+    image: '/images/portfolio/7s.gif',
   },
   {
     id: 2,
-    image: '/images/portfolio/poh.png',
+    image: '/images/portfolio/instagram.jpeg',
   },
   {
     id: 3,
@@ -85,28 +85,29 @@ export default ({ projects, repos }: AppProps) => {
   // console.log('here', projects)
 
   return (
-    <div className="mx-auto flex w-full flex-col items-center justify-center">
+    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100 ">
       <Head>
         <title>bhawkinson</title>
         <link rel="icon" href="/two.png" />
       </Head>
-      <Header
+      <Header />
+
+      <Portfolio
         //@ts-ignore
-        data={resumeData.main}
+        projects={projects}
       />
       <Resume
         //@ts-ignore
         data={resumeData.resume}
       />
-      <Portfolio
-        //@ts-ignore
-        projects={projects}
-      />
       {/* <Testimonials
         //@ts-ignore
         data={resumeData.testimonials}
       /> */}
-      <Achievements />
+      <Achievements
+        //@ts-ignore
+        data={resumeData.resume}
+      />
       {/* <Contact
         //@ts-ignore
         data={resumeData.main}

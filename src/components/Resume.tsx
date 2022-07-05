@@ -6,7 +6,7 @@ const Resume = ({ data }) => {
     var skills = data.skills.map(function (skill) {
       var src = '/images/skills/' + skill.src
       return (
-        <div key={skill.name} className="h-fit rounded-lg border p-4">
+        <div key={skill.name} className="h-fit rounded-lg border bg-white p-4">
           <a
             href={skill.url}
             //@ts-ignore
@@ -16,59 +16,28 @@ const Resume = ({ data }) => {
               <Image
                 src={src}
                 alt={skill.name}
-                className="rounded-lg"
+                className=""
                 objectFit="contain"
                 // height={32}
                 // width={32}
                 layout="fill"
               />
             </div>
-            <p className="pt-4 text-center"> {skill.name}</p>
+            <p className="bg-white pt-4 text-center"> {skill.name}</p>
           </a>
-        </div>
-      )
-    })
-    var certificates = data.certificates.map(function (certificate) {
-      var src = '/images/certificates/' + certificate.src
-      return (
-        <div key={certificate.name} className=" md:h-40">
-          <div className="">
-            <a
-              href={certificate.url}
-              //@ts-ignore
-              name={certificate.name}
-            >
-              <img
-                alt={certificate.name}
-                src={src}
-                className="mx-auto w-80 object-cover shadow-md
-              "
-              />
-            </a>
-            <h5 className="skillName"> {certificate.name}</h5>
-          </div>
         </div>
       )
     })
   }
 
   return (
-    <div id="resume" className="w-full max-w-5xl p-3">
+    <div id="resume" className="w-full max-w-5xl cursor-default p-3 pt-32">
       <h1 className="text-4xl font-bold">Skills</h1>
       <div className="text-2xl text-gray-600">
         Things I Have Used in the Past
       </div>
-      <div className="mt-12 grid  max-w-5xl grid-cols-2 gap-2 overflow-auto scrollbar-hide md:grid md:grid-cols-4 md:space-y-0 lg:grid-cols-6">
+      <div className="mt-6 grid  max-w-5xl grid-cols-2 gap-2 overflow-auto scrollbar-hide md:grid md:grid-cols-4 md:space-y-0 lg:grid-cols-6">
         {skills}
-      </div>
-      <div className="pt-32">
-        <h1 className="text-4xl font-bold">Work</h1>
-        <div className="text-2xl text-gray-600">
-          Things I Have Made in the Past
-        </div>
-      </div>
-      <div className="mx-auto mt-12 mb-12 max-w-4xl md:grid md:grid-cols-2 md:space-x-8 md:px-8 xl:max-w-6xl">
-        {certificates}
       </div>
     </div>
   )
