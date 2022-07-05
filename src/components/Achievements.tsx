@@ -1,57 +1,53 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 
-import Briefcase from '../../public/images/achievements/briefcase.svg'
-import Lock from '../../public/images/achievements/lock.svg'
-import Certificate from '../../public/images/achievements/certificate.svg'
-import Trophy from '../../public/images/achievements/trophy.svg'
-
-import {
-  Achievement as AchievementProps,
-  AchievementType,
-  Achievement,
-} from '../../typings'
-
-const AchievementIcon: React.FC<{
-  type: AchievementType
-  className?: string
-}> = ({ type, ...props }) => {
-  switch (type) {
-    case 'award':
-      return <Trophy {...props} />
-    case 'education':
-      return <Certificate {...props} />
-    case 'work':
-      return <Briefcase {...props} />
-    case 'security':
-      return <Lock {...props} />
+const Achievements = ({ data }) => {
+  if (data) {
+    var certificates = data.certificates?.map(function (certificate) {
+      var src = '/images/certificates/' + certificate.src
+      return (
+        <div key={certificate.name} className=" md:h-40">
+          <div className="">
+            <a
+              href={certificate.url}
+              //@ts-ignore
+              name={certificate.name}
+            >
+              <img
+                alt={certificate.name}
+                src={src}
+                className="mx-auto h-fit w-fit object-cover shadow-md
+              "
+              />
+            </a>
+            <h5 className=""> {certificate.name}</h5>
+          </div>
+        </div>
+      )
+    })
   }
-}
-
-export const Achievements: React.FC = () => {
   const [showMore, setShowMore] = useState(false)
-
+  console.log(data)
   return (
-    <div className="container my-16">
-      <div className="m-auto max-w-5xl p-3">
+    <div id="resume" className="w-full max-w-5xl p-3">
+      <div className="pt-32">
         <h1 className="text-4xl font-bold">Achievements</h1>
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
-        {/* <div className="my-4">
-          {achievements
-            .filter((a) => showMore || a.highlight)
-            .map((a, i) => (
-              <AchievementRow key={i} {...a} />
-            ))}
-        </div> */}
-        <div className="flex justify-center">
-          <button
-            className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800"
-            data-splitbee-event="Toggle Achievements"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? 'Show less ↑' : 'Show more ↓'}
-          </button>
-        </div>
+      </div>
+      <div className="mx-auto gap-6 space-y-6 py-12 md:grid md:grid-cols-2 md:space-y-0">
+        {certificates}
+      </div>
+      <div className="flex justify-center pt-24">
+        <button
+          className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800"
+          data-splitbee-event="Toggle Achievements"
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? 'Show less ↑' : 'Show more ↓'}
+        </button>
       </div>
     </div>
   )
 }
+
+export default Achievements
