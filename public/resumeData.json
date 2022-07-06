@@ -139,42 +139,31 @@
     ]
   },
 
-  "portfolio": {
-    "projects": [
+  "projectImages": {
+    "images": [
       {
-        "title": "Engel Gallery",
-        "description": "Wedding gallery page with Firebase database.",
-        "category": "",
-        "image": "engel-gallery.png",
-        "url": "https://engel-gallery.vercel.app/"
+        "id": 0,
+        "image": "/images/portfolio/poh.png"
       },
       {
-        "title": "poh-tools",
-        "description": "Proof of Humanity tooling and reddit clone build.",
-        "category": "",
-        "image": "poh.png",
-        "url": "https://poh-tools.vercel.app/"
+        "id": 1,
+        "image": "/images/portfolio/7s.gif"
       },
       {
-        "title": "Winsome-Tenley NFT drop",
-        "description": "2nd place winner. Papa React NFT Drop Challenge.",
-        "category": "",
-        "image": "winsome-tenley.png",
-        "url": "https://winsome-tenley.vercel.app/"
+        "id": 2,
+        "image": "/images/portfolio/instagram.jpeg"
       },
       {
-        "title": "Specto Hackathon Contributor",
-        "description": "Lens Protocol Hackathon. 1 of 5 contributors. April 2022",
-        "category": "",
-        "image": "specto-black.png",
-        "url": "https://github.com/Ecto-Finance/specto"
+        "id": 3,
+        "image": "/images/portfolio/winsome-tenley.png"
       },
       {
-        "title": "Muse DAO Contributions",
-        "description": "Several small contributions to musedao.io, noteably the Farm page.",
-        "category": "",
-        "image": "musedao.png",
-        "url": "https://musedao.io/farm"
+        "id": 4,
+        "image": "/images/portfolio/specto-black.png"
+      },
+      {
+        "id": 5,
+        "image": "/images/portfolio/specto-black.png"
       }
     ]
   },

@@ -1,5 +1,4 @@
 import React from 'react'
-import TypeWriter from 'react-typewriter'
 import { DownloadIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,6 +13,11 @@ const Header = () => {
           <li>
             <Link href="/work">
               <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/resume">
+              <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Resume</a>
             </Link>
           </li>
         </ul>
@@ -53,19 +57,17 @@ const Header = () => {
           </a>
           <a
             className="mx-1 rounded bg-pink-200 py-1 px-2 text-pink-800 hover:bg-pink-300 md:mx-2"
-            data-splitbee-event="Open Dribbble"
+            data-splitbee-event="Open LinkedIn"
             href="https://www.linkedin.com/in/beau-hawkinson-6921bb84/"
           >
             LinkedIn
           </a>
-        </div>
-        <div>
           <a
             href={'/Resume.pdf'}
-            className="mx-auto mt-16 flex w-60 justify-center space-x-2 rounded-lg bg-purple-200 py-2 text-purple-800 hover:bg-purple-300"
+            className="mx-1 rounded bg-purple-200 py-1 px-2 text-purple-800 hover:bg-purple-300 md:mx-2"
+            data-splitbee-event="Open LinkedIn"
           >
-            <DownloadIcon className="w-6 items-center" />
-            <div className="items-center">Download Resume</div>
+            Resume
           </a>
         </div>
       </div>
