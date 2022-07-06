@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Resume from '../components/Resume'
-import Portfolio from '../components/Portfolio'
+import Projects from '../components/Work'
 import { Achievement, Main, Project } from '../../typings'
 import { GetStaticProps } from 'next'
 import { config } from '../../config'
@@ -15,8 +15,10 @@ interface AppProps {
   achievements: Achievement[]
   projects: Project[]
   repos: {
+    starredRepos: Repo[]
     contributedRepos: Repo[]
   }
+  images: any
 }
 
 const imagesArray = [
@@ -56,17 +58,15 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const newProjects = projects.contributedRepos.map((project, index) => {
     return {
-      description: project.description,
-      id: project.id,
-      name: project.name,
-      url: project.url,
+      ...project,
       image: imagesArray[index],
     }
   })
+  console.log('projects', newProjects)
 
   return {
     props: {
-      projects: newProjects.map((project) => project),
+      projects: newProjects.filter((project) => project),
     },
     revalidate: 10,
   }
@@ -82,7 +82,8 @@ export default ({ projects, repos }: AppProps) => {
         setResumeData(data)
       })
   }, [])
-  // console.log('here', projects)
+
+  console.log('projects', projects)
 
   return (
     <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100 ">
@@ -92,10 +93,7 @@ export default ({ projects, repos }: AppProps) => {
       </Head>
       <Header />
 
-      <Portfolio
-        //@ts-ignore
-        projects={projects}
-      />
+      <Projects projects={projects} />
       <Resume
         //@ts-ignore
         data={resumeData.resume}

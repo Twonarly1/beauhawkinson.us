@@ -55,9 +55,9 @@ export interface RepoResponseData {
     repositoriesContributedTo: {
       nodes: Repo[]
     }
-    // starredRepositories: {
-    //   nodes: Repo[]
-    // }
+    starredRepositories: {
+      nodes: Repo[]
+    }
   }
 }
 

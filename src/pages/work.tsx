@@ -3,7 +3,7 @@ import { config } from '../../config'
 import { fetchRepos } from '../core/github'
 import Resume from '../components/Resume'
 import { Project, Repo } from '../../typings'
-import Portfolio from '../components/Portfolio'
+import Portfolio from '../components/Work'
 import Header from '../components/Header'
 import Link from 'next/link'
 
@@ -30,7 +30,7 @@ const imagesArray = [
   },
   {
     id: 5,
-    image: '/images/portfolio/dappuniversity.png',
+    image: '/images/portfolio/specto-black.png',
   },
 ]
 
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function Work({ projects }) {
-  console.log('this1', projects)
+  // console.log('this1', projects)
   return (
     <div className="mx-auto w-full max-w-5xl">
       <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
