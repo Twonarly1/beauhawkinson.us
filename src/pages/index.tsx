@@ -90,6 +90,7 @@ export default ({ projects, repos }: AppProps) => {
       <Head>
         <title>bhawkinson</title>
         <link rel="icon" href="/two.png" />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
       <Header />
 
