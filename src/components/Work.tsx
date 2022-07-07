@@ -5,14 +5,14 @@ import { Repo } from '../../typings'
 const Portfolio = ({ projects }) => {
   // console.log('this1', projects)
   return (
-    <div className="max-w-5xl p-3 pt-32">
+    <div className="max-w-5xl p-3 pt-6">
       <div className="p-3">
         <h1 className="text-4xl font-bold">Projects</h1>
         <div className="text-2xl text-gray-600">My Contributions</div>
         <div className="mt-6 grid grid-cols-1 gap-4  sm:grid-cols-3">
           {projects &&
             projects.slice(0, 3).map((project: Repo, index) => (
-              <div key={index} className="rounded-lg border">
+              <div key={index} className="rounded-lg border shadow-lg">
                 <a className="" href={project.url}>
                   <div className="relative overflow-hidden rounded-t-lg bg-white">
                     <img
@@ -39,7 +39,7 @@ const Portfolio = ({ projects }) => {
           projects.slice(3, 6).map((project: Repo, index) => (
             <div
               key={index}
-              className="hidden rounded-lg border bg-white sm:flex"
+              className="hidden rounded-lg border bg-white shadow-lg sm:flex"
             >
               <a className="" href={project.url}>
                 {/* <div className="relative overflow-hidden rounded-lg bg-white">
