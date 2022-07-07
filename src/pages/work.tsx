@@ -1,10 +1,7 @@
 import { GetStaticProps } from 'next'
 import { config } from '../../config'
 import { fetchRepos } from '../core/github'
-import Resume from '../components/Resume'
-import { Project, Repo } from '../../typings'
-import Portfolio from '../components/Work'
-import Header from '../components/Header'
+import { Repo } from '../../typings'
 import Link from 'next/link'
 
 const imagesArray = [

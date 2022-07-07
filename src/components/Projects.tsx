@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Repo } from '../../typings'
 
-const Portfolio = ({ projects }) => {
+const Projects = ({ projects }) => {
   // console.log('this1', projects)
   return (
     <div className="max-w-5xl p-3 pt-6">
@@ -78,4 +78,4 @@ const Portfolio = ({ projects }) => {
   )
 }
 
-export default Portfolio
+export default Projects
