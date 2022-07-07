@@ -3,6 +3,8 @@ import { config } from '../../config'
 import { fetchRepos } from '../core/github'
 import { Repo } from '../../typings'
 import Link from 'next/link'
+import Footer from '../components/Footer'
+import { useEffect, useState } from 'react'
 
 const imagesArray = [
   {
@@ -27,14 +29,11 @@ const imagesArray = [
   },
   {
     id: 5,
-    image: '/images/portfolio/specto-black.png',
+    image: '/images/portfolio/dappuniversity.png',
   },
 ]
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const res = await fetch('')
-  // const data = await red.json()
-
   const [projects] = await Promise.all([
     fetchRepos(config.githubUsername, config.githubToken),
   ])
@@ -60,47 +59,53 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Work({ projects }) {
   // console.log('this1', projects)
   return (
-    <div className="mx-auto w-full max-w-5xl">
-      <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
-        <Link href="/">
-          <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
-        </Link>
-        <ul className="flex">
-          <li>
-            <Link href="/work">
-              <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>{' '}
-      <div className="p-3">
-        <h1 className="text-4xl font-bold">Work</h1>
-        <div className="text-2xl text-gray-600">Past Projects Made By Me</div>
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {projects &&
-            projects.map((project: Repo, index) => (
-              <div key={index} className="rounded-lg border">
-                <a className="" href={project.url}>
-                  <div className="relative overflow-hidden rounded-t-lg bg-white">
-                    <img
-                      src={project?.image?.image}
-                      alt=""
-                      className="relative h-full w-full object-cover md:h-80"
-                    />
-                  </div>
-                  <div className="border-b-lg h-32 space-y-2 rounded-b-lg border-t bg-white p-4">
-                    <div className="font-semibold text-gray-800 group-hover:text-gray-700">
-                      {project.name}
+    <>
+      <div className="mx-auto w-full max-w-5xl">
+        <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
+          <Link href="/">
+            <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
+          </Link>
+          <ul className="flex">
+            <li>
+              <Link href="/work">
+                <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
+              </Link>
+            </li>
+          </ul>
+        </nav>{' '}
+        <div className="p-3">
+          <h1 className="text-4xl font-bold">Work</h1>
+          <div className="text-2xl text-gray-600">Past Projects Made By Me</div>
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {projects &&
+              projects.map((project: Repo, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg border bg-white shadow-lg"
+                >
+                  <a className="" href={project.url}>
+                    <div className="justify-items-center overflow-hidden rounded-t-lg ">
+                      <img
+                        src={project?.image?.image}
+                        alt=""
+                        className="relative h-80 w-full object-cover"
+                      />
                     </div>
-                    <div className="font-sans text-sm font-light text-gray-500">
-                      {project.description}
+                    <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
+                      <div className="font-semibold text-gray-800 group-hover:text-gray-700">
+                        {project.name}
+                      </div>
+                      <div className="font-sans text-sm font-light text-gray-500">
+                        {project.description}
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            ))}
+                  </a>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }

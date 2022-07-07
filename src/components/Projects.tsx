@@ -2,26 +2,25 @@ import Link from 'next/link'
 import React from 'react'
 import { Repo } from '../../typings'
 
-const Projects = ({ projects }) => {
-  // console.log('this1', projects)
+export const Projects = ({ projects }) => {
   return (
     <div className="max-w-5xl p-3 pt-6">
       <div className="p-3">
         <h1 className="text-4xl font-bold">Projects</h1>
         <div className="text-2xl text-gray-600">My Contributions</div>
-        <div className="mt-6 grid grid-cols-1 gap-4  sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {projects &&
             projects.slice(0, 3).map((project: Repo, index) => (
-              <div key={index} className="rounded-lg border shadow-lg">
+              <div key={index} className="rounded-lg border bg-white shadow-lg">
                 <a className="" href={project.url}>
-                  <div className="relative overflow-hidden rounded-t-lg bg-white">
+                  <div className=" justify-items-center overflow-hidden rounded-t-lg ">
                     <img
                       src={project?.image?.image}
                       alt=""
                       className="relative h-full w-full object-cover"
                     />
                   </div>
-                  <div className="border-b-lg h-32 space-y-2 rounded-b-lg border-t bg-white p-4">
+                  <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
                     <div className="font-semibold text-gray-800 group-hover:text-gray-700">
                       {project.name}
                     </div>
@@ -34,21 +33,14 @@ const Projects = ({ projects }) => {
             ))}
         </div>
       </div>
-      <div className="-mt-1 grid-cols-2 gap-4 p-3 sm:grid-cols-4 md:grid">
+      <div className="grid-cols-2 gap-4 p-3 sm:grid-cols-4 md:grid">
         {projects &&
           projects.slice(3, 6).map((project: Repo, index) => (
             <div
               key={index}
-              className="hidden rounded-lg border bg-white shadow-lg sm:flex"
+              className=" hidden rounded-lg border bg-white shadow-lg md:mt-0 md:flex"
             >
               <a className="" href={project.url}>
-                {/* <div className="relative overflow-hidden rounded-lg bg-white">
-                    <img
-                      src={project?.image?.image}
-                      alt=""
-                      className="relative h-full w-full object-cover"
-                    />
-                  </div> */}
                 <div className="space-y-2 p-4">
                   {' '}
                   <div className="font-semibold text-gray-800 group-hover:text-gray-700">

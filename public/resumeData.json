@@ -5,7 +5,6 @@
     "description": "Learning and developing in the Web3 space.",
     "image": "profilepic.jpg",
     "bio": "28 years old. Unemployed and searching for work. Self-taught programmer. Heavily interested in Web3 and building on Ethereum. Outside of development you can find me on a yoga mat, playing ultimate frisbee, frisbee golf, golf, or studying other areas of interests including health and longevity, physics, and the sciences. Please find my full resume below!",
-    "contactmessage": "Get in touch for contributions or opportunities!",
     "email": "hawkinson.beau@yahoo.com",
     "phone": "6513674529",
     "address": {
@@ -31,25 +30,6 @@
         "network": "github",
         "link": "https://github.com/Twonarly1",
         "pic": "github.svg"
-      }
-    ]
-  },
-  "resume": {
-    "skillmessage": "Experience with:",
-    "education": [
-      {
-        "school": "Minnesota State University, Mankato",
-        "degree": "Bachelor's Degree, Marketing",
-        "graduated": "Dec 2017",
-        "description": "Several computer science related classes. Ultimate Frisbee athlete"
-      }
-    ],
-    "work": [
-      {
-        "company": "Unemployed 2/22",
-        "title": "Building in the Web3 space",
-        "years": "October 2020 - Present",
-        "description": "Previous CNC (CAD/CAM) plasma specialist ."
       }
     ],
     "skills": [
@@ -109,7 +89,7 @@
         "url": "https://oauth.net/getting-started/"
       },
       {
-        "name": "Javascript",
+        "name": "JavaScript",
         "src": "js.png",
         "url": "https://www.javascript.com/"
       },
@@ -132,9 +112,18 @@
         "name": "Lens",
         "src": "lens.jpeg",
         "url": "https://lens.xyz/"
+      },
+      {
+        "name": "Sanity",
+        "src": "sanity.png",
+        "url": "https://sanity.io/"
+      },
+      {
+        "name": "Supabase",
+        "src": "supabase.svg",
+        "url": "https://supabase.com/"
       }
     ],
-
     "certificates": [
       {
         "name": "",
@@ -146,10 +135,7 @@
         "src": "odyssey-cert.png",
         "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
       }
-    ]
-  },
-
-  "projectImages": {
+    ],
     "images": [
       {
         "id": 0,
@@ -173,11 +159,9 @@
       },
       {
         "id": 5,
-        "image": "/images/portfolio/specto-black.png"
+        "image": "/images/portfolio/dappuniversity.png"
       }
-    ]
-  },
-  "testimonials": {
+    ],
     "testimonials": [
       {
         "text": "The competition was fierce and we got so many submissions but you pulled through. Your point total was higher than the other 600 contestants by a significant margin",

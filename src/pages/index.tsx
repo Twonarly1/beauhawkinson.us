@@ -1,14 +1,13 @@
-import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
+import { Achievement, Main, Project } from '../../typings'
+import { config } from '../../config'
+import { fetchRepos, Repo } from '../core/github'
+import Achievements from '../components/Achievements'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-import { Achievement, Main, Project } from '../../typings'
-import { GetStaticProps } from 'next'
-import { config } from '../../config'
-import { fetchRepos, Repo } from '../core/github'
-import Achievements from '../components/Achievements'
 
 interface AppProps {
   main: Main[]
@@ -49,9 +48,6 @@ const imagesArray = [
 ]
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const res = await fetch('')
-  // const data = await red.json()
-
   const [projects] = await Promise.all([
     fetchRepos(config.githubUsername, config.githubToken),
   ])
@@ -86,35 +82,20 @@ export default ({ projects, repos }: AppProps) => {
   console.log('projects', projects)
 
   return (
-    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100">
-      <Head>
-        <title>bhawkinson</title>
-        <link rel="icon" href="/two.png" />
-        <script async src="https://cdn.splitbee.io/sb.js"></script>
-      </Head>
+    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100 scrollbar-hide">
       <Header />
-
       <Projects projects={projects} />
       <Skills
         //@ts-ignore
-        data={resumeData.resume}
+        data={resumeData.main}
       />
-      {/* <Testimonials
-        //@ts-ignore
-        data={resumeData.testimonials}
-      /> */}
       <Achievements
         //@ts-ignore
-        data={resumeData.resume}
-      />
-      {/* <Contact
-        //@ts-ignore
-        data={resumeData.main}
-      /> */}
-      <Footer
-        //@ts-ignore
         data={resumeData.main}
       />
+      <div className="pt-32">
+        <Footer />
+      </div>
     </div>
   )
 }
