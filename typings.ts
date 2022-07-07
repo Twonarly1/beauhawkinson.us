@@ -5,6 +5,12 @@ export type Address = {
   zip: string
 }
 
+export type Certificate = {
+  name: string
+  src: string
+  url: string
+}
+
 export interface Main {
   address: Address[]
   bio: any
@@ -16,6 +22,7 @@ export interface Main {
   occupation: string
   phone: string
   resumedownload: string
+  certificates: Certificate[]
 }
 
 export type ProjectType = 'design' | 'code' | 'video'

@@ -26,7 +26,7 @@ const Skills = ({ data }) => {
                 layout="fill"
               />
             </div>
-            <p className="bg-white pt-4 text-center"> {skill.name}</p>
+            <p className="mx-auto bg-white pt-4 text-center"> {skill.name}</p>
           </a>
         </div>
       )

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 
 const Achievements = ({ data }) => {
+  const [showMore, setShowMore] = useState(false)
   if (data) {
     var certificates = data.certificates?.map(function (certificate) {
       var src = '/images/certificates/' + certificate.src
@@ -26,15 +27,13 @@ const Achievements = ({ data }) => {
       )
     })
   }
-  const [showMore, setShowMore] = useState(false)
-  console.log(data)
   return (
     <div id="resume" className="w-full max-w-5xl p-3">
-      <div className="pt-32">
+      <div className="p-3 pt-32">
         <div className="text-4xl font-bold">Achievements</div>
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
       </div>
-      <div className="mx-auto gap-6 space-y-6 pt-6 md:grid md:grid-cols-2 md:space-y-0">
+      <div className="mx-auto gap-6 space-y-6 p-3 pt-6 md:grid md:grid-cols-2 md:space-y-0">
         {certificates}
       </div>
       {/* <div className="flex justify-center pt-24">
