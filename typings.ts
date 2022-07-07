@@ -22,7 +22,7 @@ export interface Main {
   occupation: string
   phone: string
   resumedownload: string
-  certificates: Certificate[]
+  certificates: [Certificate]
 }
 
 export type ProjectType = 'design' | 'code' | 'video'
