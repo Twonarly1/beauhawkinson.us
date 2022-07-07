@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Resume from '../components/Resume'
+import Skills from '../components/Skills'
 import Projects from '../components/Work'
 import { Achievement, Main, Project } from '../../typings'
 import { GetStaticProps } from 'next'
@@ -86,7 +86,7 @@ export default ({ projects, repos }: AppProps) => {
   console.log('projects', projects)
 
   return (
-    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100 ">
+    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100">
       <Head>
         <title>bhawkinson</title>
         <link rel="icon" href="/two.png" />
@@ -94,7 +94,7 @@ export default ({ projects, repos }: AppProps) => {
       <Header />
 
       <Projects projects={projects} />
-      <Resume
+      <Skills
         //@ts-ignore
         data={resumeData.resume}
       />

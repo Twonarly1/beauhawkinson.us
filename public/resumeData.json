@@ -122,6 +122,16 @@
         "name": "Vercel",
         "src": "vercel.svg",
         "url": "https://vercel.com/home"
+      },
+      {
+        "name": "Ceramic",
+        "src": "ceramic.png",
+        "url": "https://ceramic.network/"
+      },
+      {
+        "name": "Lens",
+        "src": "lens.jpeg",
+        "url": "https://lens.xyz/"
       }
     ],
 

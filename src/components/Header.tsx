@@ -7,7 +7,7 @@ const Header = () => {
     <section className="w-full  bg-gray-100">
       <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
         <Link href="/">
-          <a className="ml-2 px-2 py-1">bhawkinson.eth </a>
+          <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
         </Link>
         <ul className="flex">
           <li>
@@ -23,7 +23,7 @@ const Header = () => {
         </ul>
       </nav>{' '}
       <div className="">
-        <div className="my-16 flex flex-col items-center">
+        <div className="flex flex-col items-center pt-16 pb-8">
           <Image
             className="rounded-full"
             src={'/images/profilepic.jpg'}
@@ -33,14 +33,14 @@ const Header = () => {
             width={128}
           />
         </div>{' '}
-        <h1 className="mt-4 text-center text-4xl font-bold">Hey, I'm Beau!</h1>
-        <p className="mt-4 text-center text-2xl text-gray-500">
-          I design and build apps, and everything that comes with it.
+        <h1 className="text-center text-4xl font-bold">Hey, I'm Beau!</h1>
+        <p className="mt-4 p-3 text-center text-2xl text-gray-500">
+          I design and build applications, with a focus on blockchain dapps.
         </p>
-        <h3 className="mt-4 text-center text-xl text-gray-500">
+        {/* <h3 className="mt-8 text-center text-xl text-gray-500">
           Based in St.Paul, Minnesota.
-        </h3>
-        <div className="my-6 text-center md:mx-auto">
+        </h3> */}
+        <div className="pt-6 pb-32 text-center md:mx-auto">
           <a
             className="mx-1 rounded bg-blue-200 py-1 px-2 text-blue-800 hover:bg-blue-300 md:mx-2"
             data-splitbee-event="Open Twitter"

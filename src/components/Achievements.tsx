@@ -16,7 +16,7 @@ const Achievements = ({ data }) => {
               <img
                 alt={certificate.name}
                 src={src}
-                className="mx-auto h-fit w-fit object-cover shadow-md
+                className="mx-auto h-fit w-fit rounded-lg object-cover shadow-md
               "
               />
             </a>
@@ -31,13 +31,13 @@ const Achievements = ({ data }) => {
   return (
     <div id="resume" className="w-full max-w-5xl p-3">
       <div className="pt-32">
-        <h1 className="text-4xl font-bold">Achievements</h1>
+        <div className="text-4xl font-bold">Achievements</div>
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
       </div>
-      <div className="mx-auto gap-6 space-y-6 py-12 md:grid md:grid-cols-2 md:space-y-0">
+      <div className="mx-auto gap-6 space-y-6 pt-6 md:grid md:grid-cols-2 md:space-y-0">
         {certificates}
       </div>
-      <div className="flex justify-center pt-24">
+      {/* <div className="flex justify-center pt-24">
         <button
           className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800"
           data-splitbee-event="Toggle Achievements"
@@ -45,7 +45,7 @@ const Achievements = ({ data }) => {
         >
           {showMore ? 'Show less ↑' : 'Show more ↓'}
         </button>
-      </div>
+      </div> */}
     </div>
   )
 }
