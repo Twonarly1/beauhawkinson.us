@@ -1,110 +1,83 @@
-import { GetStaticProps } from 'next'
-import { config } from '../../config'
-import { fetchRepos } from '../core/github'
-import { Repo } from '../../typings'
-import Link from 'next/link'
 import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
+import { Main, Achievement, Project, Repo } from '../../typings'
+import Link from 'next/link'
 
-const imagesArray = [
-  {
-    id: 0,
-    image: '/images/portfolio/poh.png',
-  },
-  {
-    id: 1,
-    image: '/images/portfolio/7s.gif',
-  },
-  {
-    id: 2,
-    image: '/images/portfolio/instagram.jpeg',
-  },
-  {
-    id: 3,
-    image: '/images/portfolio/winsome-tenley.png',
-  },
-  {
-    id: 4,
-    image: '/images/portfolio/specto-black.png',
-  },
-  {
-    id: 5,
-    image: '/images/portfolio/dappuniversity.png',
-  },
-]
+interface AppProps {
+  main: Main[]
+  achievements: Achievement[]
+  projects: Project[]
+  otherProjects: Project
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const [projects] = await Promise.all([
-//     fetchRepos(config.githubUsername, config.githubToken),
-//   ])
+  repos: {
+    starredRepos: Repo[]
+    contributedRepos: Repo[]
+  }
 
-//   const newProjects = projects.contributedRepos.map((project, index) => {
-//     return {
-//       description: project.description,
-//       id: project.id,
-//       name: project.name,
-//       url: project.url,
-//       image: imagesArray[index],
-//     }
-//   })
+  images: any
+}
 
-//   return {
-//     props: {
-//       projects: newProjects.map((project) => project),
-//     },
-//     revalidate: 10,
-//   }
-// }
+export default function Work() {
+  const [works, setWorks] = useState([])
 
-export default function Work({ projects }) {
-  // console.log('this1', projects)
+  useEffect(() => {
+    fetch('/resumeData.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setWorks(data.portfolio.projects)
+      })
+  }, [])
+
+  const allProjects = works.map(function (projects) {
+    var projectImage = 'images/portfolio/' + projects.image
+    return (
+      <div
+        key={projects.title}
+        className="rounded-lg border bg-white shadow-lg"
+      >
+        <a className="" href={projects.url}>
+          <div className="justify-items-center overflow-hidden rounded-t-lg">
+            <img
+              src={projectImage}
+              alt={projects.title}
+              className="relative h-full w-full object-cover"
+            />
+          </div>
+          <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
+            <div className="font-semibold text-gray-800 group-hover:text-gray-700">
+              {projects.title}
+            </div>
+            <div className="font-sans text-sm font-light text-gray-500">
+              {projects.description}
+            </div>
+          </div>
+        </a>
+      </div>
+    )
+  })
   return (
     <>
-      {/* <div className="mx-auto w-full max-w-5xl">
-        <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
-          <Link href="/">
-            <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
-          </Link>
-          <ul className="flex">
-            <li>
-              <Link href="/work">
-                <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>{' '}
+      <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
+        <Link href="/">
+          <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
+        </Link>
+        <ul className="flex">
+          <li>
+            <Link href="/work">
+              <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>{' '}
+      <div className="max-w-5xl p-3 pt-6">
         <div className="p-3">
-          <h1 className="text-4xl font-bold">Work</h1>
-          <div className="text-2xl text-gray-600">Past Projects Made By Me</div>
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {projects &&
-              projects.map((project: Repo, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg border bg-white shadow-lg"
-                >
-                  <a className="" href={project.url}>
-                    <div className="justify-items-center overflow-hidden rounded-t-lg ">
-                      <img
-                        src={project?.image?.image}
-                        alt=""
-                        className="relative h-80 w-full object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
-                      <div className="font-semibold text-gray-800 group-hover:text-gray-700">
-                        {project.name}
-                      </div>
-                      <div className="font-sans text-sm font-light text-gray-500">
-                        {project.description}
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              ))}
+          <h1 className="text-4xl font-bold">Projects</h1>
+          <div className="text-2xl text-gray-600">My Contributions</div>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {allProjects}
           </div>
         </div>
-      </div> */}
+      </div>
       <Footer />
     </>
   )

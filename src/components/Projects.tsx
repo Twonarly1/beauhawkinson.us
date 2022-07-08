@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import React from 'react'
-import { Repo } from '../../typings'
-import { LinkIcon } from '@heroicons/react/outline'
 
 const Portfolio = ({ data }) => {
   console.log(data)
@@ -64,7 +62,6 @@ const Portfolio = ({ data }) => {
         </div>
         <div className="mt-4 grid-cols-2 gap-4 sm:grid-cols-4 md:grid">
           {projectsNoImage}
-
           <div className="flex cursor-default flex-col items-center justify-center py-4 text-center">
             <div className="text-lg font-bold text-gray-800">
               Want to see more?
@@ -83,27 +80,3 @@ const Portfolio = ({ data }) => {
 }
 
 export default Portfolio
-
-//   <div className="grid-cols-2 gap-4 p-3 sm:grid-cols-4 md:grid">
-//     {projects &&
-//       projects.slice(3, 6).map((project: Repo, index) => (
-//         <div
-//           key={index}
-//           className=" hidden rounded-lg border bg-white shadow-lg md:mt-0 md:flex"
-//         >
-//           <a className="" href={project.url}>
-//             <div className="space-y-2 p-4">
-//               {' '}
-//               <div className="font-semibold text-gray-800 group-hover:text-gray-700">
-//                 {project.name}
-//               </div>
-//               <div className="font-sans text-sm font-light text-gray-500">
-//                 {' '}
-//                 {project.description}
-//               </div>
-//             </div>
-//           </a>
-//         </div>
-//       ))}
-//   </div>
-// </div>

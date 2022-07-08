@@ -25,6 +25,12 @@ const GithubActivity = ({ repos }) => {
                 </a>
               </li>
             ))}
+            <a
+              href={'https://github.com/Twonarly1?tab=repositories'}
+              className="text-sm text-blue-600"
+            >
+              View more on <span className="font-semibold">GitHub</span> →
+            </a>
           </ul>
 
           <ul>
@@ -46,6 +52,12 @@ const GithubActivity = ({ repos }) => {
                 </a>
               </li>
             ))}
+            <a
+              href={'https://github.com/Twonarly1?tab=stars'}
+              className="text-sm text-blue-600"
+            >
+              View more on <span className="font-semibold">GitHub</span> →
+            </a>
           </ul>
         </div>
       </div>
