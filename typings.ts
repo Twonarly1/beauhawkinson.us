@@ -25,6 +25,10 @@ export interface Main {
   certificates: [Certificate]
 }
 
+export interface Portfolio {
+  projects: [Project]
+}
+
 export type ProjectType = 'design' | 'code' | 'video'
 
 export interface Project {
@@ -77,5 +81,12 @@ export interface Achievement {
   date: number
   endDate: number
   title: string
-  //   blockMap: BlockMapType
+}
+
+export interface Works {
+  title: string
+  description: string
+  category: string
+  image: string
+  url: string
 }

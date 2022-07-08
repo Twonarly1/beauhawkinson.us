@@ -1,5 +1,11 @@
-import Image from 'next/image'
 import React, { useState } from 'react'
+import SidebarRow from './List'
+import { BadgeCheckIcon } from '@heroicons/react/outline'
+
+import Briefcase from '../assets/achievements/briefcase.svg'
+import Lock from '../assets/achievements/lock.svg'
+import Certificate from '../assets/achievements/certificate.svg'
+import Trophy from '../assets/achievements/trophy.svg'
 
 const Achievements = ({ data }) => {
   const [showMore, setShowMore] = useState(false)
@@ -31,11 +37,43 @@ const Achievements = ({ data }) => {
     <div id="resume" className="mb-24 w-full max-w-5xl p-3">
       <div className="p-3 pt-32">
         <div className="text-4xl font-bold">Achievements</div>
-        <div className="text-2xl text-gray-600">Certificates and more...</div>
+        <div className="text-2xl text-gray-600">Certifications and more...</div>
       </div>
       <div className="mx-auto gap-6 space-y-6 p-3 pt-6 md:grid md:grid-cols-2 md:space-y-0">
         {certificates}
       </div>
+      {/* <div className=" mt-6 flex items-center">
+        <SidebarRow
+          Icon={BadgeCheckIcon}
+          title="Registered"
+          src={Certificate}
+          content=""
+        />
+      </div>
+      <div className=" mt-6 flex items-center">
+        <SidebarRow
+          Icon={BadgeCheckIcon}
+          title="Registered"
+          src={Trophy}
+          content=""
+        />
+      </div>
+      <div className=" mt-6 flex items-center">
+        <SidebarRow
+          Icon={BadgeCheckIcon}
+          title="Registered"
+          src={Lock}
+          content=""
+        />
+      </div>
+      <div className=" mt-6 flex items-center">
+        <SidebarRow
+          Icon={BadgeCheckIcon}
+          title="Registered"
+          src={Briefcase}
+          content=""
+        />
+      </div> */}
       {/* <div className="flex justify-center pt-24">
         <button
           className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800"

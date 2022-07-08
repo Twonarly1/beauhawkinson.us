@@ -2,6 +2,7 @@ import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
 import { Main, Achievement, Project, Repo } from '../../typings'
 import Link from 'next/link'
+import Nav from '../components/Nav'
 
 interface AppProps {
   main: Main[]
@@ -57,18 +58,7 @@ export default function Work() {
   })
   return (
     <div className="mx-auto min-h-screen w-full max-w-5xl">
-      <nav className="mx-auto mb-4 flex w-full max-w-5xl items-center justify-between pt-4">
-        <Link href="/">
-          <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
-        </Link>
-        <ul className="flex">
-          <li>
-            <Link href="/work">
-              <a className="mr-2 rounded-md px-2 py-1 text-gray-700">Work</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>{' '}
+      <Nav />
       <div className="max-w-5xl p-3 pt-6">
         <div className="p-3">
           <h1 className="text-4xl font-bold">Projects</h1>
