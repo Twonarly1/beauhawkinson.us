@@ -15,7 +15,7 @@ const Skills = ({ data }) => {
             //@ts-ignore
             name={skill.name}
           >
-            <div className="relative  mx-auto h-16 w-16">
+            <div className="relative  mx-auto h-12 w-12">
               <Image
                 src={src}
                 alt={skill.name}
@@ -26,7 +26,10 @@ const Skills = ({ data }) => {
                 layout="fill"
               />
             </div>
-            <p className="mx-auto bg-white pt-4 text-center"> {skill.name}</p>
+            <p className="mx-auto bg-white pt-4 text-center text-xs">
+              {' '}
+              {skill.name}
+            </p>
           </a>
         </div>
       )
@@ -37,7 +40,7 @@ const Skills = ({ data }) => {
     <div id="resume" className="w-full max-w-5xl cursor-default p-6 pt-32">
       <h1 className="text-4xl  font-bold">Skills</h1>
       <div className="text-2xl text-gray-600">Tools I Have Experience With</div>
-      <div className="mt-6 grid max-w-5xl grid-cols-4 gap-2 overflow-auto scrollbar-hide md:grid md:grid-cols-5 md:space-y-0 lg:grid-cols-8">
+      <div className="mt-6 grid max-w-5xl grid-cols-3 gap-2 overflow-auto scrollbar-hide sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
         {skills}
       </div>
     </div>

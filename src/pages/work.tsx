@@ -33,34 +33,34 @@ const imagesArray = [
   },
 ]
 
-export const getStaticProps: GetStaticProps = async () => {
-  const [projects] = await Promise.all([
-    fetchRepos(config.githubUsername, config.githubToken),
-  ])
+// export const getStaticProps: GetStaticProps = async () => {
+//   const [projects] = await Promise.all([
+//     fetchRepos(config.githubUsername, config.githubToken),
+//   ])
 
-  const newProjects = projects.contributedRepos.map((project, index) => {
-    return {
-      description: project.description,
-      id: project.id,
-      name: project.name,
-      url: project.url,
-      image: imagesArray[index],
-    }
-  })
+//   const newProjects = projects.contributedRepos.map((project, index) => {
+//     return {
+//       description: project.description,
+//       id: project.id,
+//       name: project.name,
+//       url: project.url,
+//       image: imagesArray[index],
+//     }
+//   })
 
-  return {
-    props: {
-      projects: newProjects.map((project) => project),
-    },
-    revalidate: 10,
-  }
-}
+//   return {
+//     props: {
+//       projects: newProjects.map((project) => project),
+//     },
+//     revalidate: 10,
+//   }
+// }
 
 export default function Work({ projects }) {
   // console.log('this1', projects)
   return (
     <>
-      <div className="mx-auto w-full max-w-5xl">
+      {/* <div className="mx-auto w-full max-w-5xl">
         <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
           <Link href="/">
             <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
@@ -104,7 +104,7 @@ export default function Work({ projects }) {
               ))}
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   )

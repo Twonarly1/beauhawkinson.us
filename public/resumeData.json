@@ -132,7 +132,7 @@
       },
       {
         "name": "",
-        "src": "odyssey-cert.png",
+        "src": "odyssey-cert-pro.png",
         "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
       }
     ],
@@ -166,6 +166,59 @@
       {
         "text": "The competition was fierce and we got so many submissions but you pulled through. Your point total was higher than the other 600 contestants by a significant margin",
         "user": "Sonny Sangha - PAPA Core Team"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "poh-tools",
+        "description": "Proof of Humanity tooling. Search and interact with the registry.",
+        "category": "",
+        "image": "poh.png",
+        "url": "https://github.com/Twonarly1/poh-tools"
+      },
+      {
+        "title": "instagram-clone",
+        "description": "Papa React tutorial project.",
+        "category": "",
+        "image": "instagram.jpeg",
+        "url": "https://github.com/Twonarly1/instagram-clone"
+      },
+      {
+        "title": "public-resume-template",
+        "description": "nextjs-tailwindcss-resume-template",
+        "category": "",
+        "image": "7s.gif",
+        "url": "https://github.com/Twonarly1/public-resume-template"
+      },
+      {
+        "title": "Muse DAO",
+        "description": "Multiple (18) contributions for musedao.",
+        "category": "",
+        "image": "musedao.png",
+        "url": "https://musedao.io/farm"
+      },
+      {
+        "title": "Winsome-Tenley",
+        "description": "2nd place winner. NFT minting website. Papa React challenge.",
+        "category": "",
+        "image": "winsome-tenley.png",
+        "url": "https://winsome-tenley.vercel.app/"
+      },
+      {
+        "title": "specto",
+        "description": "NFT collection project for LFGrow hackathon",
+        "category": "",
+        "image": "specto-black.png",
+        "url": "https://github.com/Ecto-Finance/specto"
+      },
+      {
+        "title": "decent-exchange",
+        "description": "Decentralized exchange. Capstone project - Dapp University.",
+        "category": "",
+        "image": "instagram.jpeg",
+        "url": "https://github.com/Twonarly1/decent-exchange"
       }
     ]
   }
