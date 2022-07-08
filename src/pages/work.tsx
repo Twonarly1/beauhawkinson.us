@@ -56,8 +56,8 @@ export default function Work() {
     )
   })
   return (
-    <>
-      <nav className="my-4 mx-auto flex w-full max-w-5xl items-center justify-between">
+    <div className="mx-auto min-h-screen w-full max-w-5xl">
+      <nav className="mx-auto mb-4 flex w-full max-w-5xl items-center justify-between pt-4">
         <Link href="/">
           <a className="ml-2 rounded-md px-2 py-1">bhawkinson.eth </a>
         </Link>
@@ -79,6 +79,6 @@ export default function Work() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
