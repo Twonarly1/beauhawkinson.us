@@ -1,74 +1,46 @@
 import { GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
-import { Achievement, Main, Project } from '../../typings'
-import { config } from '../../config'
-import { fetchRepos, Repo } from '../core/github'
-import Achievements from '../components/Achievements'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
+import { Achievement, Main, Project, Repo } from '../../typings'
+import { config } from '../../config'
+import { fetchRepos } from '../core/github'
+import Achievements from '../components/Achievements'
+import GithubActivity from '../components/GithubActivity'
 
 interface AppProps {
   main: Main[]
   achievements: Achievement[]
   projects: Project[]
+  otherProjects: Project
+
   repos: {
     starredRepos: Repo[]
     contributedRepos: Repo[]
   }
+
   images: any
 }
 
-const imagesArray = [
-  {
-    id: 0,
-    image: '/images/portfolio/poh.png',
-  },
-  {
-    id: 1,
-    image: '/images/portfolio/7s.gif',
-  },
-  {
-    id: 2,
-    image: '/images/portfolio/instagram.jpeg',
-  },
-  {
-    id: 3,
-    image: '/images/portfolio/winsome-tenley.png',
-  },
-  {
-    id: 4,
-    image: '/images/portfolio/specto-black.png',
-  },
-  {
-    id: 5,
-    image: '/images/portfolio/specto-black.png',
-  },
-]
-
-export const getStaticProps: GetStaticProps = async () => {
-  const [projects] = await Promise.all([
-    fetchRepos(config.githubUsername, config.githubToken),
-  ])
-
-  const newProjects = projects.contributedRepos.map((project, index) => {
-    return {
-      ...project,
-      image: imagesArray[index],
-    }
-  })
-  console.log('projects', newProjects)
-
+export const getStaticProps = async () => {
+  const { starredRepos, contributedRepos } = await fetchRepos(
+    config.githubUsername,
+    config.githubToken
+  )
   return {
     props: {
-      projects: newProjects.filter((project) => project),
+      repos: {
+        starredRepos,
+        contributedRepos,
+      },
     },
     revalidate: 10,
   }
 }
 
-export default ({ projects, repos }: AppProps) => {
+export default ({ repos }: AppProps) => {
   const [resumeData, setResumeData] = useState({})
 
   useEffect(() => {
@@ -79,12 +51,15 @@ export default ({ projects, repos }: AppProps) => {
       })
   }, [])
 
-  console.log('projects', projects)
+  console.log('data', repos)
 
   return (
-    <div className="mx-auto flex w-full flex-col items-center justify-center bg-gray-100 scrollbar-hide">
+    <div className="mx-auto flex w-full flex-col items-center bg-gray-100">
       <Header />
-      <Projects projects={projects} />
+      <Projects
+        //@ts-ignore
+        data={resumeData.portfolio}
+      />
       <Skills
         //@ts-ignore
         data={resumeData.main}
@@ -93,6 +68,9 @@ export default ({ projects, repos }: AppProps) => {
         //@ts-ignore
         data={resumeData.main}
       />
+
+      <GithubActivity repos={repos} />
+
       <div className="pt-32">
         <Footer />
       </div>

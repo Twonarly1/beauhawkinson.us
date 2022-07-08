@@ -28,7 +28,7 @@ const Achievements = ({ data }) => {
     })
   }
   return (
-    <div id="resume" className="w-full max-w-5xl p-3">
+    <div id="resume" className="mb-24 w-full max-w-5xl p-3">
       <div className="p-3 pt-32">
         <div className="text-4xl font-bold">Achievements</div>
         <div className="text-2xl text-gray-600">Things I Have Achieved</div>
