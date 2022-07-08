@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const Portfolio = ({ data }) => {
-  console.log(data)
   if (data) {
     var projects = data.projects.slice(0, 3).map(function (projects) {
       var projectImage = 'images/portfolio/' + projects.image

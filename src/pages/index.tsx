@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
-import Header from '../components/Header'
+import { Header } from '../components/Header'
 import Footer from '../components/Footer'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
