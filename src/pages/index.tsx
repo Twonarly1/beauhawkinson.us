@@ -51,8 +51,6 @@ export default ({ repos }: AppProps) => {
       })
   }, [])
 
-  console.log('data', repos)
-
   return (
     <div className="mx-auto flex w-full flex-col items-center bg-gray-100">
       <Header />

@@ -193,32 +193,32 @@
         "url": "https://github.com/Twonarly1/public-resume-template"
       },
       {
+        "title": "decent-exchange",
+        "description": "Decentralized exchange. Capstone project - Dapp University.",
+        "category": "",
+        "image": "dappuniversity.png",
+        "url": "https://github.com/Twonarly1/decent-exchange"
+      },
+      {
         "title": "Muse DAO",
         "description": "Multiple (18) contributions for musedao.",
         "category": "",
-        "image": "musedao.png",
+        "image": "muse.png",
         "url": "https://musedao.io/farm"
       },
       {
         "title": "Winsome-Tenley",
         "description": "2nd place winner. NFT minting website. Papa React challenge.",
         "category": "",
-        "image": "winsome-tenley.png",
+        "image": "papa.jpeg",
         "url": "https://winsome-tenley.vercel.app/"
       },
       {
         "title": "specto",
         "description": "NFT collection project for LFGrow hackathon",
         "category": "",
-        "image": "specto-black.png",
+        "image": "lens.jpeg",
         "url": "https://github.com/Ecto-Finance/specto"
-      },
-      {
-        "title": "decent-exchange",
-        "description": "Decentralized exchange. Capstone project - Dapp University.",
-        "category": "",
-        "image": "instagram.jpeg",
-        "url": "https://github.com/Twonarly1/decent-exchange"
       }
     ]
   }
