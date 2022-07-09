@@ -10,7 +10,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/two.png" />
         <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
-      <div className=" w-full bg-gray-100 ">
+      <div className=" w-full bg-white ">
         <Component {...pageProps} />
       </div>
     </>

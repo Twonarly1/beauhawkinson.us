@@ -1,37 +1,6 @@
 {
   "main": {
-    "name": "Beau Hawkinson",
-    "occupation": "Web3 Developer",
-    "description": "Learning and developing in the Web3 space.",
     "image": "profilepic.jpg",
-    "bio": "28 years old. Unemployed and searching for work. Self-taught programmer. Heavily interested in Web3 and building on Ethereum. Outside of development you can find me on a yoga mat, playing ultimate frisbee, frisbee golf, golf, or studying other areas of interests including health and longevity, physics, and the sciences. Please find my full resume below!",
-    "email": "hawkinson.beau@yahoo.com",
-    "phone": "6513674529",
-    "address": {
-      "street": "",
-      "city": "St.Paul",
-      "state": "MN",
-      "zip": ""
-    },
-    "website": "bhawkinson.vercel.app",
-    "resumedownload": "/Resume.pdf",
-    "social": [
-      {
-        "network": "twitter",
-        "link": "https://twitter.com/twonarly1",
-        "pic": "twitter.svg"
-      },
-      {
-        "network": "linkedin",
-        "link": "https://www.linkedin.com/in/beau-hawkinson-6921bb84/",
-        "pic": "linkedin.svg"
-      },
-      {
-        "network": "github",
-        "link": "https://github.com/Twonarly1",
-        "pic": "github.svg"
-      }
-    ],
     "skills": [
       {
         "name": "React",
@@ -134,32 +103,6 @@
         "name": "",
         "src": "odyssey-cert-pro.png",
         "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
-      }
-    ],
-    "images": [
-      {
-        "id": 0,
-        "image": "/images/portfolio/poh.png"
-      },
-      {
-        "id": 1,
-        "image": "/images/portfolio/7s.gif"
-      },
-      {
-        "id": 2,
-        "image": "/images/portfolio/instagram.jpeg"
-      },
-      {
-        "id": 3,
-        "image": "/images/portfolio/winsome-tenley.png"
-      },
-      {
-        "id": 4,
-        "image": "/images/portfolio/specto-black.png"
-      },
-      {
-        "id": 5,
-        "image": "/images/portfolio/dappuniversity.png"
       }
     ],
     "testimonials": [

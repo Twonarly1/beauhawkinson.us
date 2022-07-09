@@ -1,8 +1,12 @@
-export type Address = {
-  street: string
-  city: string
-  state: string
-  zip: string
+export interface ResumeData {
+  main: Main[]
+  portfolio: Portfolio[]
+}
+
+export interface Main {
+  image: string
+  certificates: [Certificate]
+  skills: [Skill]
 }
 
 export type Certificate = {
@@ -11,18 +15,10 @@ export type Certificate = {
   url: string
 }
 
-export interface Main {
-  address: Address[]
-  bio: any
-  contactmessage: string
-  description: string
-  email: string
-  image: string
+export type Skill = {
   name: string
-  occupation: string
-  phone: string
-  resumedownload: string
-  certificates: [Certificate]
+  src: string
+  url: string
 }
 
 export interface Portfolio {
@@ -36,10 +32,7 @@ export interface Project {
   preview: string
   title: string
   types: ProjectType[]
-  images: {
-    name: string
-    url: string
-  }[]
+  image: string
   tags: string[]
   slug: string
   date: number
@@ -83,7 +76,7 @@ export interface Achievement {
   title: string
 }
 
-export interface Works {
+export interface Portfolio {
   title: string
   description: string
   category: string
