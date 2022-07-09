@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import SidebarRow from './List'
-import { BadgeCheckIcon } from '@heroicons/react/outline'
-
-import Briefcase from '../assets/achievements/briefcase.svg'
-import Lock from '../assets/achievements/lock.svg'
-import Certificate from '../assets/achievements/certificate.svg'
-import Trophy from '../assets/achievements/trophy.svg'
+import Heading from './Heading'
 
 const Achievements = ({ data }) => {
   const [showMore, setShowMore] = useState(false)
@@ -13,66 +7,39 @@ const Achievements = ({ data }) => {
     var certificates = data.certificates?.map(function (certificate) {
       var src = '/images/certificates/' + certificate.src
       return (
-        <div key={certificate.name} className=" md:h-40">
-          <div className="">
-            <a
-              href={certificate.url}
-              //@ts-ignore
-              name={certificate.name}
-            >
-              <img
-                alt={certificate.name}
-                src={src}
-                className="mx-auto h-fit w-fit rounded-lg object-cover shadow-md
-              "
-              />
-            </a>
-            <h5 className=""> {certificate.name}</h5>
-          </div>
+        <div key={certificate.name}>
+          <a
+            href={certificate.url}
+            //@ts-ignore
+            name={certificate.name}
+          >
+            <img
+              alt={certificate.name}
+              src={src}
+              className="mx-auto h-fit w-fit rounded-lg object-cover shadow-md"
+            />
+          </a>
+          <h5> {certificate.name}</h5>
         </div>
       )
     })
   }
   return (
-    <div id="resume" className="mb-24 w-full max-w-5xl p-3">
-      <div className="p-3 pt-32">
-        <div className="text-4xl font-bold">Achievements</div>
-        <div className="text-2xl text-gray-600">Certifications and more...</div>
-      </div>
-      <div className="mx-auto gap-6 space-y-6 p-3 pt-6 md:grid md:grid-cols-2 md:space-y-0">
+    <div className="w-full max-w-5xl">
+      <Heading title={'Achievements'} subtitle={'Certifications and More.'} />
+      <div className="mx-auto gap-4 space-y-6 pt-6 md:grid md:grid-cols-2 md:space-y-0">
         {certificates}
       </div>
+
       {/* <div className=" mt-6 flex items-center">
         <SidebarRow
           Icon={BadgeCheckIcon}
-          title="Registered"
-          src={Certificate}
+          title="Certification"
+          src={Certificate} //Lock, Trophy, Briefcase
           content=""
         />
       </div>
-      <div className=" mt-6 flex items-center">
-        <SidebarRow
-          Icon={BadgeCheckIcon}
-          title="Registered"
-          src={Trophy}
-          content=""
-        />
-      </div>
-      <div className=" mt-6 flex items-center">
-        <SidebarRow
-          Icon={BadgeCheckIcon}
-          title="Registered"
-          src={Lock}
-          content=""
-        />
-      </div>
-      <div className=" mt-6 flex items-center">
-        <SidebarRow
-          Icon={BadgeCheckIcon}
-          title="Registered"
-          src={Briefcase}
-          content=""
-        />
+
       </div> */}
       {/* <div className="flex justify-center pt-24">
         <button

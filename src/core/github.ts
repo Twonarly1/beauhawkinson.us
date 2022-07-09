@@ -1,7 +1,19 @@
-import { RepoResponseData } from '../../typings'
+import { Repo } from '../../typings'
 
 const QUANTITY = 6
 const GRAPHQL_ENDPOINT = 'https://api.github.com/graphql'
+
+// We could use GraphQL Codegen here, but not worth the effort right now
+export interface RepoResponseData {
+  user: {
+    repositoriesContributedTo: {
+      nodes: Repo[]
+    }
+    starredRepositories: {
+      nodes: Repo[]
+    }
+  }
+}
 
 export const fetchRepos = async (username: string, githubToken: string) => {
   const query = `
@@ -16,6 +28,8 @@ query {
         owner {
           login
         }
+        createdAt
+        updatedAt
       }
     }
     starredRepositories(last: ${QUANTITY}) {
@@ -27,6 +41,8 @@ query {
         owner {
           login
         }
+        createdAt
+        updatedAt
       }
     }
   }

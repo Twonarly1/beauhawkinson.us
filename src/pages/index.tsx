@@ -1,27 +1,19 @@
-import { GetStaticProps } from 'next'
 import React, { useEffect, useState } from 'react'
 import { Header } from '../components/Header'
 import Footer from '../components/Footer'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-import { Achievement, Main, Project, Repo } from '../../typings'
+import { Main, Project, Repo } from '../../typings'
 import { config } from '../../config'
 import { fetchRepos } from '../core/github'
 import Achievements from '../components/Achievements'
 import GithubActivity from '../components/GithubActivity'
 
 interface AppProps {
-  main: Main[]
-  achievements: Achievement[]
-  projects: Project[]
-  otherProjects: Project
-
   repos: {
     starredRepos: Repo[]
     contributedRepos: Repo[]
   }
-
-  images: any
 }
 
 export const getStaticProps = async () => {
@@ -50,26 +42,26 @@ export default ({ repos }: AppProps) => {
         setResumeData(data)
       })
   }, [])
+  console.log('index', resumeData)
 
   return (
-    <div className="mx-auto flex w-full flex-col items-center bg-gray-100">
+    <div className="mx-auto flex w-full flex-col items-center bg-white">
       <Header />
-      <Projects
-        //@ts-ignore
-        data={resumeData.portfolio}
-      />
-      <Skills
-        //@ts-ignore
-        data={resumeData.main}
-      />
-      <Achievements
-        //@ts-ignore
-        data={resumeData.main}
-      />
+      <div className="space-y-32 p-6">
+        <Projects
+          //@ts-ignore
+          data={resumeData.portfolio}
+        />
+        <Skills
+          //@ts-ignore
+          data={resumeData.main}
+        />
+        <Achievements
+          //@ts-ignore
+          data={resumeData.main}
+        />
+        <GithubActivity repos={repos} />
 
-      <GithubActivity repos={repos} />
-
-      <div className="pt-32">
         <Footer />
       </div>
     </div>

@@ -1,12 +1,10 @@
 import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
-import { Main, Achievement, Project, Repo } from '../../typings'
-import Link from 'next/link'
+import { Main, Project, Repo } from '../../typings'
 import Nav from '../components/Nav'
 
 interface AppProps {
   main: Main[]
-  achievements: Achievement[]
   projects: Project[]
   otherProjects: Project
 
