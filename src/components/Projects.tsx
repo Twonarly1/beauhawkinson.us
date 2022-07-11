@@ -6,6 +6,21 @@ const Portfolio = ({ data }) => {
   if (data) {
     var projects = data.projects.slice(0, 3).map(function (projects) {
       var projectImage = 'images/portfolio/' + projects.image
+
+      const skills = projects.skills?.map(function (skills, index) {
+        var skillImage = 'images/skills/' + skills.image
+        return (
+          <div
+            key={index}
+            className="flex space-x-2 rounded-full border p-1 shadow-lg"
+          >
+            <img src={skillImage} className="h-5 w-5" alt="" />
+            {/* <p className="text-sm md:hidden"> {skills.name}</p> */}
+          </div>
+        )
+      })
+      console.log(skills)
+
       return (
         <div
           key={projects.title}
@@ -22,6 +37,7 @@ const Portfolio = ({ data }) => {
             <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
               <div className="projectsTitle">{projects.title}</div>
               <div className="projectsDescription">{projects.description}</div>
+              <div className="mt-2 flex space-x-2 pt-2">{skills}</div>
             </div>
           </a>
         </div>
