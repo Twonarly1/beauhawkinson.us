@@ -19,7 +19,7 @@ export const Header = () => (
         <a
           className="mx-1 rounded bg-blue-200 py-1 px-2 text-blue-800 hover:bg-blue-300 md:mx-2"
           data-splitbee-event="Open Twitter"
-          href="https://twitter.com/timolins"
+          href="https://twitter.com/twonarly"
         >
           Twitter
         </a>
