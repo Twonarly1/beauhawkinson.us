@@ -3,9 +3,9 @@ import React, { SVGProps } from 'react'
 
 interface Props {
   Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element
-  src: string | undefined
-  title: string
-  content: any
+  src?: string | undefined
+  title?: string
+  content?: any
   onClick?: () => {}
 }
 

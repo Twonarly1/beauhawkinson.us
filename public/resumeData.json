@@ -91,6 +91,16 @@
         "name": "Supabase",
         "src": "supabase.svg",
         "url": "https://supabase.com/"
+      },
+      {
+        "name": "Vue",
+        "src": "vue.png",
+        "url": "https://vuejs.org/"
+      },
+      {
+        "name": "ThirdWeb",
+        "src": "thirdWeb.png",
+        "url": "https://thirdweb.com/"
       }
     ],
     "certificates": [
@@ -116,10 +126,41 @@
     "projects": [
       {
         "title": "poh-tools",
-        "description": "Proof of Humanity tooling. Search and interact with the registry.",
+        "description": "Proof of Humanity tooling. Search the registry. Reddit clone.",
         "category": "",
         "image": "poh.png",
-        "url": "https://github.com/Twonarly1/poh-tools"
+        "url": "https://github.com/Twonarly1/poh-tools",
+        "skills": [
+          { "image": "graphql.svg", "name": "graphql" },
+          { "image": "stepzen.svg", "name": "stepzen" },
+          { "image": "firebase.svg", "name": "firebase" },
+          { "image": "supabase.svg", "name": "supabase" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" },
+          { "image": "TypeScript.svg", "name": "typescript" }
+        ]
+      },
+      {
+        "title": "Muse DAO",
+        "description": "Multiple (18) contributions for musedao. Private repository.",
+        "category": "",
+        "image": "muse.png",
+        "url": "https://musedao.io/farm",
+        "skills": [
+          { "image": "vue.png", "name": "vue.js" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" }
+        ]
+      },
+      {
+        "title": "Winsome-Tenley",
+        "description": "2nd place winner. NFT minting website. Papa React challenge.",
+        "category": "",
+        "image": "papa.jpeg",
+        "url": "https://winsome-tenley.vercel.app/",
+        "skills": [
+          { "image": "sanity.png", "name": "sanity" },
+          { "image": "thirdWeb.png", "name": "thirdweb" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" }
+        ]
       },
       {
         "title": "instagram-clone",
@@ -142,13 +183,7 @@
         "image": "dappuniversity.png",
         "url": "https://github.com/Twonarly1/decent-exchange"
       },
-      {
-        "title": "Muse DAO",
-        "description": "Multiple (18) contributions for musedao.",
-        "category": "",
-        "image": "muse.png",
-        "url": "https://musedao.io/farm"
-      },
+
       {
         "title": "Winsome-Tenley",
         "description": "2nd place winner. NFT minting website. Papa React challenge.",
