@@ -101,6 +101,16 @@
         "name": "ThirdWeb",
         "src": "thirdWeb.png",
         "url": "https://thirdweb.com/"
+      },
+      {
+        "name": "Truffle Suite",
+        "src": "truffle.png",
+        "url": "https://trufflesuite.com/"
+      },
+      {
+        "name": "Hardhat",
+        "src": "hardhat.svg",
+        "url": "https://hardhat.org/"
       }
     ],
     "certificates": [
@@ -159,7 +169,8 @@
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
           { "image": "thirdWeb.png", "name": "thirdweb" },
-          { "image": "tailwind.svg", "name": "tailwindCSS" }
+          { "image": "tailwind.svg", "name": "tailwindCSS" },
+          { "image": "next.svg", "name": "next.js" }
         ]
       },
       {
@@ -167,36 +178,51 @@
         "description": "Papa React tutorial project.",
         "category": "",
         "image": "instagram.jpeg",
-        "url": "https://github.com/Twonarly1/instagram-clone"
+        "url": "https://github.com/Twonarly1/instagram-clone",
+        "skills": [
+          { "image": "firebase.svg", "name": "firebase" },
+          { "image": "oauth.svg", "name": "oauth" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" },
+          { "image": "next.svg", "name": "next.js" }
+        ]
       },
       {
         "title": "public-resume-template",
         "description": "nextjs-tailwindcss-resume-template",
         "category": "",
         "image": "7s.gif",
-        "url": "https://github.com/Twonarly1/public-resume-template"
+        "url": "https://github.com/Twonarly1/public-resume-template",
+        "skills": [
+          { "image": "next.svg", "name": "next.js" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" }
+        ]
       },
       {
         "title": "decent-exchange",
         "description": "Decentralized exchange. Capstone project - Dapp University.",
         "category": "",
         "image": "dappuniversity.png",
-        "url": "https://github.com/Twonarly1/decent-exchange"
-      },
-
-      {
-        "title": "Winsome-Tenley",
-        "description": "2nd place winner. NFT minting website. Papa React challenge.",
-        "category": "",
-        "image": "papa.jpeg",
-        "url": "https://winsome-tenley.vercel.app/"
+        "url": "https://github.com/Twonarly1/decent-exchange",
+        "skills": [
+          { "image": "truffle.png", "name": "ganache" },
+          { "image": "js.png", "name": "javascript" },
+          { "image": "react.svg", "name": "react" }
+        ]
       },
       {
         "title": "specto",
         "description": "NFT collection project for LFGrow hackathon",
         "category": "",
         "image": "lens.jpeg",
-        "url": "https://github.com/Ecto-Finance/specto"
+        "url": "https://github.com/Ecto-Finance/specto",
+        "skills": [
+          { "image": "apollo.svg", "name": "apollo" },
+          { "image": "graphql.svg", "name": "graphql" },
+          { "image": "lens.jpeg", "name": "lens" },
+          { "image": "tailwind.svg", "name": "tailwindCSS" },
+          { "image": "next.svg", "name": "next.js" },
+          { "image": "TypeScript.svg", "name": "typescript" }
+        ]
       }
     ]
   }
