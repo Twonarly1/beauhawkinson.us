@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
 import Heading from './Heading'
@@ -19,12 +20,11 @@ const Portfolio = ({ data }) => {
           </div>
         )
       })
-      console.log(skills)
 
       return (
         <div
           key={projects.title}
-          className="rounded-lg border bg-white shadow-lg"
+          className="relative rounded-lg border bg-white shadow-lg"
         >
           <a href={projects.url}>
             <div className="justify-items-center overflow-hidden rounded-t-lg ">
@@ -37,7 +37,10 @@ const Portfolio = ({ data }) => {
             <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
               <div className="projectsTitle">{projects.title}</div>
               <div className="projectsDescription">{projects.description}</div>
-              <div className="mt-2 flex space-x-2 pt-2">{skills}</div>
+            </div>
+            <div className="h-10"></div>
+            <div className="absolute bottom-2 flex space-x-[4px] px-4 sm:hidden md:flex">
+              {skills}
             </div>
           </a>
         </div>

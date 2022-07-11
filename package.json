@@ -20,9 +20,11 @@
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
-    "@types/node": "^18.0.1",
-    "@types/react": "^18.0.14",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
     "autoprefixer": "^10.4.0",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.2",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.1",
