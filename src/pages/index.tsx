@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
   }
 }
 
-export default ({ repos }: AppProps) => {
+export default function Home({ repos }: AppProps) {
   const [resumeData, setResumeData] = useState({})
 
   useEffect(() => {

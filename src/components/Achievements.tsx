@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
 import Heading from './Heading'
 
 const Achievements = ({ data }) => {
   const [showMore, setShowMore] = useState(false)
   if (data) {
-    var certificates = data.certificates?.map(function (certificate) {
+    var certificates = data.certificates?.map(function (certificate, key) {
       var src = '/images/certificates/' + certificate.src
       return (
         <div key={certificate.name}>

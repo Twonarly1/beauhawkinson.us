@@ -1,20 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
-import { Main, Project, Repo } from '../../typings'
+import Link from 'next/link'
 import Nav from '../components/Nav'
-
-interface AppProps {
-  main: Main[]
-  projects: Project[]
-  otherProjects: Project
-
-  repos: {
-    starredRepos: Repo[]
-    contributedRepos: Repo[]
-  }
-
-  images: any
-}
 
 export default function Work() {
   const [works, setWorks] = useState([])
@@ -27,12 +15,26 @@ export default function Work() {
       })
   }, [])
 
-  const allProjects = works.map(function (projects) {
+  const allProjects = works.map(function (projects, index) {
     var projectImage = 'images/portfolio/' + projects.image
+
+    const skills = projects.skills?.map(function (skills, index) {
+      var skillImage = 'images/skills/' + skills.image
+      return (
+        <div
+          key={index}
+          className="flex space-x-2 rounded-full border p-1 shadow-lg"
+        >
+          <img src={skillImage} className="h-4 w-4" alt="" />
+          {/* <p className="text-sm md:hidden"> {skills.name}</p> */}
+        </div>
+      )
+    })
+
     return (
       <div
-        key={projects.title}
-        className="rounded-lg border bg-white shadow-lg"
+        key={index}
+        className="relative rounded-lg border bg-white shadow-lg"
       >
         <a className="" href={projects.url}>
           <div className="justify-items-center overflow-hidden rounded-t-lg">
@@ -50,6 +52,10 @@ export default function Work() {
               {projects.description}
             </div>
           </div>
+          <div className="h-10"></div>
+          <div className="absolute bottom-2 flex space-x-[4px] px-4 sm:hidden md:flex">
+            {skills}
+          </div>
         </a>
       </div>
     )
@@ -57,13 +63,11 @@ export default function Work() {
   return (
     <div className="mx-auto min-h-screen w-full max-w-5xl">
       <Nav />
-      <div className="max-w-5xl p-3 pt-6">
-        <div className="p-3">
-          <h1 className="text-4xl font-bold">Projects</h1>
-          <div className="text-2xl text-gray-600">My Contributions</div>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {allProjects}
-          </div>
+      <div className="max-w-5xl p-6 pt-6">
+        <h1 className="text-4xl font-bold">Projects</h1>
+        <div className="text-2xl text-gray-600">My Contributions</div>
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {allProjects}
         </div>
       </div>
       <Footer />

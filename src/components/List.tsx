@@ -17,7 +17,7 @@ const SidebarRow = ({ Icon, src, title, onClick, content }: Props) => {
     >
       <Icon className="h-6 w-6" />
       <div className="flex items-center">
-        <Image src={src} height={100} width={100} />
+        <Image src={src} height={100} width={100} alt="" />
         <p className="ml-2 text-base font-light text-gray-400 md:inline-flex lg:text-xl">
           {title}:
         </p>

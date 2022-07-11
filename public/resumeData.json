@@ -126,7 +126,7 @@
     "projects": [
       {
         "title": "poh-tools",
-        "description": "Proof of Humanity tooling. Search the registry. Reddit clone.",
+        "description": "Social Proof of Humanity reddit clone for registrants.",
         "category": "",
         "image": "poh.png",
         "url": "https://github.com/Twonarly1/poh-tools",
