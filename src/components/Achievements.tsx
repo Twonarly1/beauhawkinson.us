@@ -17,7 +17,7 @@ const Achievements = ({ data }) => {
             <img
               alt={certificate.name}
               src={src}
-              className="mx-auto h-fit w-fit rounded-lg object-cover shadow-md"
+              className="mx-auto h-fit w-full rounded-lg shadow-md"
             />
           </a>
           <h5> {certificate.name}</h5>

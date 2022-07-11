@@ -25,6 +25,14 @@ export interface Portfolio {
   projects: [Project]
 }
 
+export interface Portfolio {
+  title: string
+  description: string
+  category: string
+  image: string
+  url: string
+}
+
 export type ProjectType = 'design' | 'code' | 'video'
 
 export interface Project {
@@ -63,23 +71,4 @@ export interface RepoResponseData {
       nodes: Repo[]
     }
   }
-}
-
-export type AchievementType = 'award' | 'work' | 'education' | 'security'
-
-export interface Achievement {
-  id: string
-  highlight: boolean
-  type: AchievementType
-  date: number
-  endDate: number
-  title: string
-}
-
-export interface Portfolio {
-  title: string
-  description: string
-  category: string
-  image: string
-  url: string
 }
