@@ -23,7 +23,9 @@ const Skills = ({ data }) => {
               layout="fill"
             />
           </div>
-          <p className="mx-auto pt-4 text-center text-xs">{skill.name}</p>
+          <p className=" mx-auto truncate pt-4 text-center text-[10px]">
+            {skill.name}
+          </p>
         </a>
       )
     })
