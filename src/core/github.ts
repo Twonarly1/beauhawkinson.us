@@ -59,7 +59,7 @@ query {
   const { data }: { data: RepoResponseData } = await res.json()
   console.log('projects', data)
   return {
-    starredRepos: data.user.starredRepositories.nodes.reverse(),
-    contributedRepos: data.user.repositoriesContributedTo.nodes.reverse(),
+    starredRepos: data?.user.starredRepositories.nodes.reverse(),
+    contributedRepos: data?.user.repositoriesContributedTo.nodes.reverse(),
   }
 }

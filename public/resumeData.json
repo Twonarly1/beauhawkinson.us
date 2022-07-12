@@ -137,7 +137,6 @@
       {
         "title": "poh-tools",
         "description": "Social Proof of Humanity reddit clone for registrants.",
-        "category": "",
         "image": "poh.png",
         "url": "https://github.com/Twonarly1/poh-tools",
         "skills": [
@@ -146,7 +145,7 @@
           { "image": "firebase.svg", "name": "firebase" },
           { "image": "supabase.svg", "name": "supabase" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
-          { "image": "TypeScript.svg", "name": "typescript" }
+          { "image": "typescript.svg", "name": "typescript" }
         ]
       },
       {
@@ -221,7 +220,7 @@
           { "image": "lens.jpeg", "name": "lens" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" },
-          { "image": "TypeScript.svg", "name": "typescript" }
+          { "image": "typescript.svg", "name": "typescript" }
         ]
       }
     ]

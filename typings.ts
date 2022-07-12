@@ -1,12 +1,17 @@
 export interface ResumeData {
-  main: Main[]
-  portfolio: Portfolio[]
-}
-
-export interface Main {
-  image: string
-  certificates: [Certificate]
-  skills: [Skill]
+  main: {
+    image: string
+    skills: Skill[]
+    certificates: Certificate[]
+    testimonials: object[]
+  }
+  portfolio: {
+    title: string
+    description: string
+    image: string
+    url: string
+    skills: ProjectSkill[]
+  }
 }
 
 export type Certificate = {
@@ -20,17 +25,9 @@ export type Skill = {
   src: string
   url: string
 }
-
-export interface Portfolio {
-  projects: [Project]
-}
-
-export interface Portfolio {
-  title: string
-  description: string
-  category: string
+export type ProjectSkill = {
   image: string
-  url: string
+  name: string
 }
 
 export type ProjectType = 'design' | 'code' | 'video'
