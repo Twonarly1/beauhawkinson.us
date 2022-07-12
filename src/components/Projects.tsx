@@ -15,7 +15,7 @@ const Portfolio = ({ data }) => {
             key={index}
             className="flex space-x-2 rounded-full border p-1 shadow-lg"
           >
-            <img src={skillImage} className="h-5 w-5" alt="" />
+            <img src={skillImage} className="h-4 w-4" alt="" />
             {/* <p className="text-sm md:hidden"> {skills.name}</p> */}
           </div>
         )
