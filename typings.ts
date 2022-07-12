@@ -30,6 +30,18 @@ export type ProjectSkill = {
   name: string
 }
 
+export interface Portfolio {
+  projects: [Project]
+}
+
+export interface Portfolio {
+  title: string
+  description: string
+  category: string
+  image: string
+  url: string
+}
+
 export type ProjectType = 'design' | 'code' | 'video'
 
 export interface Project {
@@ -48,10 +60,6 @@ export interface Repo {
   id: string
   name: string
   url: string
-  image: {
-    id: number
-    image: any
-  }
   description: string
   owner: {
     login: string
