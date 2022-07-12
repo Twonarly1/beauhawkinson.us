@@ -44,17 +44,17 @@ export default function Home({ repos }: AppProps) {
       })
   }, [])
 
-  console.log(resumeData)
-
+  {
+    console.log(repos)
+  }
   return (
     <div className="mx-auto flex w-full flex-col items-center bg-white">
       <Header />
       <div className="space-y-32 p-6">
-        <Projects data={resumeData.portfolio} />
-        <Skills data={resumeData.main} />
-        <Achievements data={resumeData.main} />
+        <Projects data={resumeData?.portfolio} />
+        <Skills data={resumeData?.main} />
+        <Achievements data={resumeData?.main} />
         <GithubActivity repos={repos} />
-
         <Footer />
       </div>
     </div>
