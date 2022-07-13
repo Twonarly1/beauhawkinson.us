@@ -15,10 +15,10 @@ export const ThemeSwitcher = () => {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="h-5 w-5 items-center"
+      className="mt-[1px] h-5 w-5 items-center "
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      {theme === 'dark' ? <SunIcon /> : <MoonIcon className="text-gray-700" />}
     </button>
   )
 }

@@ -8,7 +8,7 @@ const Achievements = ({ data }) => {
     var certificates = data.certificates?.map(function (certificate, index) {
       var src = '/images/certificates/' + certificate.src
       return (
-        <div key={index}>
+        <div key={index} className="rounded-lg border border-black">
           <a
             href={certificate.url}
             //@ts-ignore

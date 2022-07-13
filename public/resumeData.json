@@ -99,7 +99,7 @@
       },
       {
         "name": "ThirdWeb",
-        "src": "thirdWeb.png",
+        "src": "third.png",
         "url": "https://thirdweb.com/"
       },
       {
@@ -116,12 +116,12 @@
     "certificates": [
       {
         "name": "",
-        "src": "odyssey-cert.png",
+        "src": "odyssey-cert.svg",
         "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
       },
       {
         "name": "",
-        "src": "odyssey-cert-pro.png",
+        "src": "odyssey-cert-pro.svg",
         "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
       }
     ],
@@ -163,7 +163,7 @@
         "url": "https://winsome-tenley.vercel.app/",
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
-          { "image": "thirdWeb.png", "name": "thirdweb" },
+          { "image": "thirdweb.png", "name": "thirdweb" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" }
         ]

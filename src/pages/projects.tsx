@@ -25,7 +25,7 @@ export default function Projects() {
           key={index}
           className="flex space-x-2 rounded-full border p-1 shadow-lg"
         >
-          <img src={skillImage} className="h-4 w-4" alt="" />
+          <img src={skillImage} className="h-6 w-6" alt="" />
           {/* <p className="text-sm md:hidden"> {skills.name}</p> */}
         </div>
       )
@@ -34,7 +34,7 @@ export default function Projects() {
     return (
       <div
         key={index}
-        className="relative rounded-lg border bg-white shadow-lg"
+        className="relative rounded-lg border border-gray-800  bg-white shadow-lg hover:bg-gray-100"
       >
         <a className="" href={projects.url}>
           <div className="justify-items-center overflow-hidden rounded-t-lg">
@@ -44,11 +44,11 @@ export default function Projects() {
               className="relative h-full w-full object-cover"
             />
           </div>
-          <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t p-4">
-            <div className="font-semibold text-gray-800 group-hover:text-gray-700">
+          <div className="flex flex-1 flex-col justify-between rounded-b-lg border-t border-gray-800 p-4">
+            <div className="text-lg font-semibold text-gray-800">
               {projects.title}
             </div>
-            <div className="font-sans text-sm font-light text-gray-500">
+            <div className="text-md pt-2 font-sans text-gray-800 md:text-sm">
               {projects.description}
             </div>
           </div>

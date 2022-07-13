@@ -11,7 +11,10 @@ const Portfolio = ({ data }) => {
       const skills = projects.skills?.map(function (skills, index) {
         var skillImage = 'images/skills/' + skills.image
         return (
-          <div key={index} className="flex rounded-full  p-1 shadow-lg">
+          <div
+            key={index}
+            className="border-z-50 flex w-full justify-between rounded-full border border-black p-1 shadow-lg hover:bg-white"
+          >
             <img src={skillImage} className="h-6 w-6" alt="" />
           </div>
         )
@@ -20,14 +23,14 @@ const Portfolio = ({ data }) => {
       return (
         <div
           key={projects.title}
-          className="relative rounded-lg border border-gray-700  bg-white shadow-lg"
+          className="relative rounded-lg border border-gray-700 bg-white  shadow-lg hover:bg-gray-100"
         >
           <a href={projects.url}>
-            <div className="justify-items-center overflow-hidden rounded-t-lg ">
+            <div className="justify-items-center  overflow-hidden rounded-t-lg ">
               <img
                 src={projectImage}
                 alt={projects.title}
-                className="relative h-full w-full object-cover"
+                className="relative h-full w-full object-cover "
               />
             </div>
             <div className="flex flex-1 flex-col rounded-b-lg border-t border-gray-700 p-4">
@@ -50,7 +53,7 @@ const Portfolio = ({ data }) => {
       return (
         <div
           key={projects.title}
-          className="hidden rounded-lg border border-black bg-white shadow-lg md:mt-0 md:flex"
+          className="hidden rounded-lg border border-black bg-white shadow-lg hover:bg-gray-100 md:mt-0 md:flex"
         >
           <a className="" href={projects.url}>
             <div className="space-y-2 p-4">
@@ -82,8 +85,8 @@ const Portfolio = ({ data }) => {
           <div className="text-gray-600 dark:text-white">
             Explore more of my work
           </div>
-          <Link href="/work">
-            <a className="mt-3 rounded-md bg-gray-800 py-1 px-6 text-gray-100 hover:bg-gray-700">
+          <Link href="/projects">
+            <a className="mt-3 rounded-md bg-gray-800 py-1 px-6 text-gray-100 hover:bg-gray-700 dark:bg-white dark:text-gray-800">
               View all
             </a>
           </Link>

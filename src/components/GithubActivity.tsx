@@ -12,13 +12,13 @@ const GithubActivity = ({ repos }) => {
             <li key={repo.id}>
               <a
                 href={repo.url}
-                className="my-4 -mx-4 block rounded-md p-4 hover:bg-gray-100"
+                className="my-4 -mx-4 block rounded-md p-4 hover:bg-gray-100 dark:hover:text-black"
               >
                 <div>
                   <span className="text-blue-400">{repo.owner.login}/</span>
                   <span className="text-blue-600">{repo.name}</span>
                 </div>
-                <div className="dark:hover:text-black">{repo.description}</div>
+                <div className="">{repo.description}</div>
               </a>
             </li>
           ))}
@@ -36,7 +36,7 @@ const GithubActivity = ({ repos }) => {
             <li key={repo.id}>
               <a
                 href={repo.url}
-                className="my-4 -mx-4 block rounded-md p-4 hover:bg-gray-100"
+                className="my-4 -mx-4 block rounded-md p-4 hover:bg-gray-100 dark:hover:text-black"
               >
                 <div>
                   <span className="text-blue-400">{repo.owner.login}/</span>
