@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { AppProps } from '../../node_modules/next/app'
 import Head from 'next/head'
+import { ThemeProvider } from 'next-themes'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -10,9 +11,9 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/two.png" />
         <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
-      <div className=" w-full bg-white ">
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
-      </div>
+      </ThemeProvider>
     </>
   )
 }

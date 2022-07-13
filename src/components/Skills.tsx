@@ -9,7 +9,7 @@ const Skills = ({ data }) => {
       return (
         <a
           key={skill.name}
-          className="h-fit rounded-lg border p-5 shadow-md"
+          className="h-fit rounded-lg border border-gray-700 p-5 shadow-md dark:bg-white"
           href={skill.url}
           //@ts-ignore
           name={skill.name}
@@ -23,7 +23,7 @@ const Skills = ({ data }) => {
               layout="fill"
             />
           </div>
-          <p className=" mx-auto truncate pt-4 text-center text-[10px]">
+          <p className=" mx-auto truncate pt-4 text-center text-[10px] dark:text-black">
             {skill.name}
           </p>
         </a>

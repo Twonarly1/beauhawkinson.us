@@ -143,16 +143,13 @@
           { "image": "graphql.svg", "name": "graphql" },
           { "image": "stepzen.svg", "name": "stepzen" },
           { "image": "firebase.svg", "name": "firebase" },
-          { "image": "supabase.svg", "name": "supabase" },
-          { "image": "tailwind.svg", "name": "tailwindCSS" },
-          { "image": "typescript.svg", "name": "typescript" }
+          { "image": "supabase.svg", "name": "supabase" }
         ]
       },
       {
         "title": "Muse DAO",
         "description": "Multiple (18) contributions for musedao. Private repository.",
-        "category": "",
-        "image": "muse.png",
+        "image": "pepesea.png",
         "url": "https://musedao.io/farm",
         "skills": [
           { "image": "vue.png", "name": "vue.js" },
@@ -162,8 +159,7 @@
       {
         "title": "Winsome-Tenley",
         "description": "2nd place winner. NFT minting website. Papa React challenge.",
-        "category": "",
-        "image": "papa.jpeg",
+        "image": "papa.png",
         "url": "https://winsome-tenley.vercel.app/",
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
@@ -175,8 +171,7 @@
       {
         "title": "instagram-clone",
         "description": "Papa React tutorial project.",
-        "category": "",
-        "image": "instagram.jpeg",
+        "image": "insta.png",
         "url": "https://github.com/Twonarly1/instagram-clone",
         "skills": [
           { "image": "firebase.svg", "name": "firebase" },
@@ -188,8 +183,7 @@
       {
         "title": "public-resume-template",
         "description": "nextjs-tailwindcss-resume-template",
-        "category": "",
-        "image": "7s.gif",
+        "image": "two.png",
         "url": "https://github.com/Twonarly1/public-resume-template",
         "skills": [
           { "image": "next.svg", "name": "next.js" },
@@ -199,8 +193,7 @@
       {
         "title": "decent-exchange",
         "description": "Decentralized exchange. Capstone project - Dapp University.",
-        "category": "",
-        "image": "dappuniversity.png",
+        "image": "dappuniv.png",
         "url": "https://github.com/Twonarly1/decent-exchange",
         "skills": [
           { "image": "truffle.png", "name": "ganache" },
@@ -211,8 +204,7 @@
       {
         "title": "specto",
         "description": "NFT collection project for LFGrow hackathon",
-        "category": "",
-        "image": "lens.jpeg",
+        "image": "lens.png",
         "url": "https://github.com/Ecto-Finance/specto",
         "skills": [
           { "image": "apollo.svg", "name": "apollo" },
