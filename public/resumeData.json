@@ -115,14 +115,18 @@
     ],
     "certificates": [
       {
-        "name": "",
-        "src": "odyssey-cert.svg",
-        "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
+        "name": "Apollo Graph Associate",
+        "src": "associate.svg",
+        "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be",
+        "date": "Apr 10, 2022",
+        "description": "Developers who obtain this certification possess a solid foundational knowledge of GraphQL and the Apollo tool suite to design a schema, run an Apollo Server, and perform queries with Apollo Client on the frontend."
       },
       {
-        "name": "",
-        "src": "odyssey-cert-pro.svg",
-        "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be"
+        "name": "Apollo Graph Professional",
+        "src": "professional.svg",
+        "url": "https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be",
+        "date": "Jul 7, 2022",
+        "description": "Developers who obtain this certification demonstrate strong familiarity with Apollo Federation concepts. They can apply those concepts to build a federated supergraph or move an existing monolithic graph to federation."
       }
     ],
     "testimonials": [
@@ -163,7 +167,7 @@
         "url": "https://winsome-tenley.vercel.app/",
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
-          { "image": "third.png", "name": "thirdweb" },
+          { "image": "thirdweb.png", "name": "thirdweb" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" }
         ]
