@@ -163,7 +163,7 @@
         "url": "https://winsome-tenley.vercel.app/",
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
-          { "image": "thirdweb.png", "name": "thirdweb" },
+          { "image": "third.png", "name": "thirdweb" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" }
         ]
