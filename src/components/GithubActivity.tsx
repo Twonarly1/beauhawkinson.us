@@ -18,7 +18,7 @@ const GithubActivity = ({ repos }) => {
                   <span className="text-blue-400">{repo.owner.login}/</span>
                   <span className="text-blue-600">{repo.name}</span>
                 </div>
-                <div>{repo.description}</div>
+                <div className="dark:hover:text-black">{repo.description}</div>
               </a>
             </li>
           ))}
@@ -42,7 +42,7 @@ const GithubActivity = ({ repos }) => {
                   <span className="text-blue-400">{repo.owner.login}/</span>
                   <span className="text-blue-600">{repo.name}</span>
                 </div>
-                <div>{repo.description}</div>
+                <div className="dark:hover:text-black">{repo.description}</div>
               </a>
             </li>
           ))}
