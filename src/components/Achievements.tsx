@@ -33,15 +33,15 @@ const Achievements = ({ data }) => {
                         <TimeAgo date={certificate.date} />
                       </li>
                       <li>
-                        <div className="mt-1 w-fit rounded-full border border-black p-[2px]">
-                          <ChevronDownIcon className=" h-4 w-4" />
+                        <div className="mt-2 w-fit rounded-full border border-black p-[2px] dark:border-white">
+                          <ChevronDownIcon className="h-4 w-4 dark:text-white" />
                         </div>
                       </li>
                     </ul>
                   </Disclosure.Button>
                 </div>
                 <Disclosure.Panel className="mt-4 p-2 text-gray-500">
-                  <ul className="">
+                  <ul className="mx-auto w-[400px]">
                     <li className="">{certificate.description}</li>
                     <li className="mt-2">
                       <a
