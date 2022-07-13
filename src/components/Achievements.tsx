@@ -5,10 +5,10 @@ import Heading from './Heading'
 const Achievements = ({ data }) => {
   const [showMore, setShowMore] = useState(false)
   if (data) {
-    var certificates = data.certificates?.map(function (certificate, key) {
+    var certificates = data.certificates?.map(function (certificate, index) {
       var src = '/images/certificates/' + certificate.src
       return (
-        <div key={certificate.name}>
+        <div key={index}>
           <a
             href={certificate.url}
             //@ts-ignore

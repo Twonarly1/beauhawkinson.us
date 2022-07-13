@@ -3,11 +3,13 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        orange: '#F97316',
-        slate: '#E2E8F0',
+        'primary-dark': '#272727',
+        'secondary-dark': '#1c1c1c',
+        'primary-light': '#dddddd',
       },
       backgroundImage: {
         'header-background': "url('/images/header-background.jpg')",
