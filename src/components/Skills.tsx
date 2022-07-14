@@ -1,15 +1,19 @@
+import { Disclosure } from '@headlessui/react'
+import { InformationCircleIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import React from 'react'
 import Heading from './Heading'
 
 const Skills = ({ data }) => {
   if (data) {
-    var skills = data.skills.map(function (skill) {
+    var skills = data.skills.map((skill) => {
       var src = '/images/skills/' + skill.src
       return (
         <a
           key={skill.name}
-          className="h-fit rounded-lg border border-gray-700 p-5 shadow-md dark:bg-white"
+          className={` group h-fit rounded-lg border p-5 shadow-md dark:bg-white ${
+            skill.stack ? 'border-2 border-pink-300' : 'border-black'
+          }`}
           href={skill.url}
           //@ts-ignore
           name={skill.name}
@@ -23,7 +27,7 @@ const Skills = ({ data }) => {
               layout="fill"
             />
           </div>
-          <p className=" mx-auto truncate pt-4 text-center text-[10px] dark:text-black">
+          <p className=" mx-auto truncate pt-4 text-center text-[10px] dark:text-black ">
             {skill.name}
           </p>
         </a>
@@ -33,7 +37,12 @@ const Skills = ({ data }) => {
 
   return (
     <div className="w-full max-w-5xl">
-      <Heading title={'Skills'} subtitle={' Tools I Have Experience With'} />
+      <Heading
+        title={'Skills'}
+        subtitle={' Tools I Have Experience With'}
+        legend={'* preferred stack'}
+      />
+
       <div className="mt-6 grid max-w-5xl grid-cols-3 gap-2 overflow-auto scrollbar-hide sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
         {skills}
       </div>

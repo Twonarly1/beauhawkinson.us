@@ -5,112 +5,134 @@
       {
         "name": "React",
         "src": "react.svg",
-        "url": "https://reactjs.org/docs/getting-started.html"
+        "url": "https://reactjs.org/docs/getting-started.html",
+        "stack": true
       },
       {
         "name": "Next",
         "src": "next.svg",
-        "url": "https://nextjs.org/docs"
+        "url": "https://nextjs.org/docs",
+        "stack": true
       },
       {
         "name": "Apollo",
         "src": "apollo.svg",
-        "url": "https://www.apollographql.com/docs/apollo-server/"
+        "url": "https://www.apollographql.com/docs/apollo-server/",
+        "stack": true
       },
       {
         "name": "GraphQL",
         "src": "graphql.svg",
-        "url": "https://graphql.org/graphql-js/"
+        "url": "https://graphql.org/graphql-js/",
+        "stack": true
       },
       {
         "name": "Tailwind",
         "src": "tailwind.svg",
-        "url": "https://tailwindcss.com/docs/installation"
+        "url": "https://tailwindcss.com/docs/installation",
+        "stack": true
       },
       {
         "name": "TypeScript",
         "src": "TypeScript.svg",
-        "url": "https://www.typescriptlang.org/docs/"
+        "url": "https://www.typescriptlang.org/docs/",
+        "stack": true
       },
       {
         "name": "Nodejs",
         "src": "node.svg",
-        "url": "https://nodejs.org/en/docs/guides/getting-started-guide/"
+        "url": "https://nodejs.org/en/docs/guides/getting-started-guide/",
+        "stack": true
       },
       {
         "name": "Ethereum",
         "src": "ethereum.svg",
-        "url": "https://ethereum.org/en/"
+        "url": "https://ethereum.org/en/",
+        "stac": false
       },
       {
         "name": "Solidity",
         "src": "solidity.svg",
-        "url": "https://docs.soliditylang.org/en/v0.8.13/"
+        "url": "https://docs.soliditylang.org/en/v0.8.13/",
+        "stac": false
       },
       {
         "name": "Firebase",
         "src": "firebase.svg",
-        "url": "https://firebase.google.com/"
+        "url": "https://firebase.google.com/",
+        "stac": false
       },
       {
         "name": "Oauth",
         "src": "oauth.svg",
-        "url": "https://oauth.net/getting-started/"
+        "url": "https://oauth.net/getting-started/",
+        "stac": false
       },
       {
         "name": "JavaScript",
         "src": "js.png",
-        "url": "https://www.javascript.com/"
+        "url": "https://www.javascript.com/",
+        "stac": false
       },
       {
         "name": "StepZen",
         "src": "stepzen.svg",
-        "url": "https://www.javascript.com/"
+        "url": "https://www.javascript.com/",
+        "stac": false
       },
       {
         "name": "Vercel",
         "src": "vercel.svg",
-        "url": "https://vercel.com/home"
+        "url": "https://vercel.com/home",
+        "stac": false
       },
       {
         "name": "Ceramic",
         "src": "ceramic.png",
-        "url": "https://ceramic.network/"
+        "url": "https://ceramic.network/",
+        "stac": false
       },
       {
         "name": "Lens",
         "src": "lens.jpeg",
-        "url": "https://lens.xyz/"
+        "url": "https://lens.xyz/",
+        "stack": false
       },
       {
         "name": "Sanity",
         "src": "sanity.png",
-        "url": "https://sanity.io/"
+        "url": "https://sanity.io/",
+        "stack": false
       },
       {
         "name": "Supabase",
         "src": "supabase.svg",
-        "url": "https://supabase.com/"
+        "url": "https://supabase.com/",
+        "stack": false
       },
       {
         "name": "Vue",
         "src": "vue.png",
-        "url": "https://vuejs.org/"
+        "url": "https://vuejs.org/",
+        "stack": false
       },
       {
         "name": "ThirdWeb",
         "src": "third.png",
-        "url": "https://thirdweb.com/"
+        "url": "https://thirdweb.com/",
+        "stack": false
       },
       {
         "name": "Truffle Suite",
         "src": "truffle.png",
-        "url": "https://trufflesuite.com/"
+        "url": "https://trufflesuite.com/",
+        "stack": false
       },
       {
         "name": "Hardhat",
         "src": "hardhat.svg",
-        "url": "https://hardhat.org/"
+        "url": "https://hardhat.org/",
+        "stack": false
       }
     ],
     "certificates": [

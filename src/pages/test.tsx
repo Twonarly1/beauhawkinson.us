@@ -1,32 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
-import { useState } from 'react'
-import { ProfileImage } from '../components/ProfileImage'
-import Image from 'next/image'
-import hoverImage from '../../public/images/portfolio/pfp.jpeg'
-import pfp from '../../public/images/profilepic.jpg'
+import Link from 'next/link'
+import React from 'react'
 
-function Test() {
+const test = () => {
   return (
-    <>
-      <div className="relative h-64 w-64 rounded-full bg-red-100">
-        <Image
-          className="rounded-full"
-          src={pfp}
-          alt="Portrait photo of me"
-          quality={100}
-        />
-        <div className="absolute inset-0 z-10 flex items-center justify-center text-6xl font-semibold text-white opacity-0 duration-300 hover:opacity-100">
-          <Image
-            className="rounded-full"
-            src={hoverImage}
-            objectFit="cover"
-            alt="Portrait photo of me"
-            quality={100}
-          />
-        </div>
-      </div>
-    </>
+    <div className="group relative">
+      <div className="absolute -inset-px rounded-xl border-2 border-transparent opacity-0 [background:linear-gradient(var(--quick-links-hover-bg,theme(colors.sky.50)),var(--quick-links-hover-bg,theme(colors.sky.50)))_padding-box,linear-gradient(to_top,theme(colors.indigo.400),theme(colors.cyan.400),theme(colors.sky.500))_border-box] group-hover:opacity-100 dark:[--quick-links-hover-bg:theme(colors.slate.800)]" />
+      <div className="relative ">description herer</div>
+    </div>
   )
 }
 
-export default Test
+export default test
