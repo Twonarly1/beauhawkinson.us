@@ -1,22 +1,21 @@
-import { Disclosure } from '@headlessui/react'
-import { InformationCircleIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import React from 'react'
+import { Skill } from '../../typings'
 import Heading from './Heading'
 
 const Skills = ({ data }) => {
   if (data) {
-    var skills = data.skills.map((skill) => {
+    var skills = data.skills.map((skill: Skill, index) => {
       var src = '/images/skills/' + skill.src
       return (
         <a
-          key={skill.name}
-          className={` group h-fit rounded-lg border p-5 shadow-md dark:bg-white ${
-            skill.stack ? 'border-2 border-pink-300' : 'border-black'
+          key={index}
+          className={`group h-fit rounded-lg border p-5 shadow-md dark:bg-white ${
+            skill.stack
+              ? 'border border-pink-300 hover:border-pink-400'
+              : 'border-gray-300 hover:border-gray-400  '
           }`}
           href={skill.url}
-          //@ts-ignore
-          name={skill.name}
         >
           <div className="relative mx-auto h-12 w-12">
             <Image
@@ -27,7 +26,7 @@ const Skills = ({ data }) => {
               layout="fill"
             />
           </div>
-          <p className=" mx-auto truncate pt-4 text-center text-[10px] dark:text-black ">
+          <p className=" mx-auto truncate pt-4 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
             {skill.name}
           </p>
         </a>

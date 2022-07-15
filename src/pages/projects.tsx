@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Nav from '../components/Nav'
+import { Skill } from '../../typings'
 
 export default function Projects() {
   const [works, setWorks] = useState([])
@@ -15,15 +16,18 @@ export default function Projects() {
       })
   }, [])
 
-  const allProjects = works.map(function (projects, index) {
+  const allProjects = works.map(function (projects, index: number) {
     var projectImage = 'images/portfolio/' + projects.image
 
-    const skills = projects.skills?.map(function (skills, index) {
+    const skills = projects.skills?.map(function (
+      skills: Skill,
+      index: number
+    ) {
       var skillImage = 'images/skills/' + skills.image
       return (
         <div
           key={index}
-          className="flex space-x-2 rounded-full border p-1 shadow-lg"
+          className=" flex w-full justify-between space-x-2 rounded-full border p-1 shadow-lg hover:bg-white"
         >
           <img src={skillImage} className="h-6 w-6" alt="" />
           {/* <p className="text-sm md:hidden"> {skills.name}</p> */}

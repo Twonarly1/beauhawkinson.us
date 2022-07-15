@@ -1,22 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import Heading from './Heading'
 import TimeAgo from 'react-timeago'
 import { Disclosure } from '@headlessui/react'
-import {
-  ChevronDownIcon,
-  InformationCircleIcon,
-} from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/outline'
+import { Certificate } from '../../typings'
+
 const Achievements = ({ data }) => {
-  const [showMore, setShowMore] = useState(false)
   if (data) {
     var certificates = data.certificates
-      ?.map(function (certificate, index) {
+      ?.map(function (certificate: Certificate, index: number) {
         var src = '/images/certificates/' + certificate.src
         return (
           <div key={index}>
-            <div className="mb-6 items-center space-x-4">
+            <div className="mb-12 items-center space-x-4">
               <Disclosure>
                 <div className="flex space-x-4 ">
                   <Image
@@ -28,12 +26,14 @@ const Achievements = ({ data }) => {
                   />
                   <Disclosure.Button className=" py-2">
                     <ul className=" text-xl">
-                      <li className="flex items-center">{certificate.name}</li>
-                      <li className="flex w-60 text-right text-xs">
+                      <li className="flex items-center text-gray-900">
+                        {certificate.name}
+                      </li>
+                      <li className="flex w-60 text-right text-xs text-gray-500">
                         <TimeAgo date={certificate.date} />
                       </li>
                       <li>
-                        <div className="mt-2 w-fit rounded-full border border-black p-[2px] dark:border-white">
+                        <div className="mt-2 w-fit rounded-full border border-black p-[2px] text-gray-500 dark:border-white">
                           <ChevronDownIcon className="h-4 w-4 dark:text-white" />
                         </div>
                       </li>

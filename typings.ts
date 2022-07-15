@@ -18,12 +18,16 @@ export type Certificate = {
   name: string
   src: string
   url: string
+  date: Date
+  description: string
 }
 
 export type Skill = {
   name: string
   src: string
   url: string
+  stack?: boolean
+  image: string
 }
 export type ProjectSkill = {
   image: string

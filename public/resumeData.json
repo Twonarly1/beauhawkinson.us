@@ -34,7 +34,7 @@
       },
       {
         "name": "TypeScript",
-        "src": "TypeScript.svg",
+        "src": "ts.png",
         "url": "https://www.typescriptlang.org/docs/",
         "stack": true
       },
@@ -48,49 +48,49 @@
         "name": "Ethereum",
         "src": "ethereum.svg",
         "url": "https://ethereum.org/en/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Solidity",
         "src": "solidity.svg",
         "url": "https://docs.soliditylang.org/en/v0.8.13/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Firebase",
         "src": "firebase.svg",
         "url": "https://firebase.google.com/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Oauth",
         "src": "oauth.svg",
         "url": "https://oauth.net/getting-started/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "JavaScript",
         "src": "js.png",
         "url": "https://www.javascript.com/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "StepZen",
         "src": "stepzen.svg",
         "url": "https://www.javascript.com/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Vercel",
         "src": "vercel.svg",
         "url": "https://vercel.com/home",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Ceramic",
         "src": "ceramic.png",
         "url": "https://ceramic.network/",
-        "stac": false
+        "stack": false
       },
       {
         "name": "Lens",
@@ -189,7 +189,6 @@
         "url": "https://winsome-tenley.vercel.app/",
         "skills": [
           { "image": "sanity.png", "name": "sanity" },
-          { "image": "thirdweb.png", "name": "thirdweb" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" }
         ]
@@ -207,7 +206,7 @@
         ]
       },
       {
-        "title": "public-resume-template",
+        "title": "resume-template",
         "description": "nextjs-tailwindcss-resume-template",
         "image": "two.png",
         "url": "https://github.com/Twonarly1/public-resume-template",
@@ -238,7 +237,18 @@
           { "image": "lens.jpeg", "name": "lens" },
           { "image": "tailwind.svg", "name": "tailwindCSS" },
           { "image": "next.svg", "name": "next.js" },
-          { "image": "typescript.svg", "name": "typescript" }
+          { "image": "ts.png", "name": "typescript" }
+        ]
+      },
+      {
+        "title": "private website",
+        "description": "My personal website.",
+        "image": "two.png",
+        "url": "https://github.com/Twonarly1/",
+        "skills": [
+          { "image": "tailwind.svg", "name": "tailwindCSS" },
+          { "image": "next.svg", "name": "next.js" },
+          { "image": "ts.png", "name": "typescript" }
         ]
       }
     ]
