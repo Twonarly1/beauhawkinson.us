@@ -9,7 +9,7 @@ const GithubActivity = ({ starredItems }) => {
       <ul>
         <Heading subtitle={'Repos I Like'} />
         <div className="mx-auto mt-6 grid w-fit grid-cols-1 space-y-2">
-          {starredItems.map((item: Repo, index: number) => (
+          {starredItems?.map((item: Repo, index: number) => (
             <li key={index}>
               <a
                 href={item.url}

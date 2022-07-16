@@ -1,4 +1,5 @@
 export interface ResumeData {
+  projects: any
   main: {
     image: string
     skills: Skill[]
@@ -86,26 +87,27 @@ export interface Project {
 }
 
 export interface Repo {
+  description: string
   id: string
   name: string
+  openGraphImageUrl: string
   url: string
-  description: string
   owner: {
     login: string
   }
-  openGraphImageUrl: string
   pushedAt: string
   updatedAt: string
+  user: object[]
 }
 
 // We could use GraphQL Codegen here, but not worth the effort right now
 export interface RepoResponseData {
   user: {
-    repositoriesContributedTo: {
-      nodes: Repo[]
+    pinnedItems: {
+      nodes: any
     }
     starredRepositories: {
-      nodes: Repo[]
+      nodes: any
     }
   }
 }
