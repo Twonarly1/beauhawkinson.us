@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from '../components/Footer'
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import Nav from '../components/Nav'
-import { Repo, Skill } from '../../typings'
+import { Repo } from '../../typings'
 import { useQuery } from '@apollo/client'
-import { PRIVATE_REPOS } from '../lib/graphql/queries/publicItems'
+import { PRIVATE_REPOS } from '../lib/graphql/queries/privateItems'
 import Heading from '../components/Heading'
 import Timeago from 'react-timeago'
 

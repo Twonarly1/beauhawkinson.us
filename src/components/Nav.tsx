@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-//import { ThemeSwitcher } from './ThemeSwitcher'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 const Nav = () => {
   return (
@@ -11,7 +11,7 @@ const Nav = () => {
             bhawkinson.eth{' '}
           </a>
         </Link>
-        {/* <ThemeSwitcher /> */}
+        <ThemeSwitcher />
       </div>
       <Link href="/projects">
         <a className="rounded-md text-gray-700 dark:text-white">Projects</a>
