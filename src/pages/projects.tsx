@@ -15,9 +15,7 @@ export default function Projects() {
   if (loading) return 'Loading...'
   if (error) return `Error! ${error.message}`
   const { user } = data
-  const pinnedItems = user.repositoriesContributedTo.nodes
-
-  console.log(pinnedItems)
+  const allPublicRepos = user.repositoriesContributedTo.nodes
 
   return (
     <div className="mx-auto w-full bg-white dark:bg-gray-500">
@@ -26,7 +24,7 @@ export default function Projects() {
         <div className="h-20"></div>
         <Heading title={'Projects'} subtitle={'My Public Repos'} />
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {pinnedItems
+          {allPublicRepos
             .map((item, index: number) => (
               <div
                 key={index}
