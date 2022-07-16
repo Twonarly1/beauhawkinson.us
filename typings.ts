@@ -93,6 +93,9 @@ export interface Repo {
   owner: {
     login: string
   }
+  openGraphImageUrl: string
+  pushedAt: string
+  updatedAt: string
 }
 
 // We could use GraphQL Codegen here, but not worth the effort right now

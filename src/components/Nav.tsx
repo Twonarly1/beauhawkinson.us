@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { ThemeSwitcher } from './ThemeSwitcher'
+//import { ThemeSwitcher } from './ThemeSwitcher'
 
 const Nav = () => {
   return (

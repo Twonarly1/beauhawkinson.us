@@ -4,8 +4,6 @@ import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import { ApolloProvider } from '@apollo/client'
 import client from '../lib/apollo/client'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

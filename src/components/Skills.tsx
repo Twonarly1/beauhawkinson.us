@@ -5,7 +5,7 @@ import Heading from './Heading'
 
 const Skills = ({ data }) => {
   if (data) {
-    var skills = data.skills.map((skill: Skill, index) => {
+    var skills = data.skills.map((skill: Skill, index: number) => {
       var src = '/images/skills/' + skill.src
       return (
         <a

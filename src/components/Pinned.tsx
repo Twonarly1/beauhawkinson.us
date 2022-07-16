@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Items } from '../../typings'
-import Timeago from 'react-timeago'
+//import Timeago from 'react-timeago'
 import { StarIcon } from '@heroicons/react/solid'
 import Heading from './Heading'
 import Link from 'next/link'

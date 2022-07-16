@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Nav from '../components/Nav'
-import { Skill } from '../../typings'
+import { Repo, Skill } from '../../typings'
 import { useQuery } from '@apollo/client'
 import { PRIVATE_REPOS } from '../lib/graphql/queries/publicItems'
 import Heading from '../components/Heading'
@@ -25,7 +25,7 @@ export default function Projects() {
         <Heading title={'Projects'} subtitle={'My Public Repos'} />
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {allPublicRepos
-            .map((item, index: number) => (
+            .map((item: Repo, index: number) => (
               <div
                 key={index}
                 className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-300 bg-white text-center hover:border-gray-400 hover:shadow-md"
