@@ -19,7 +19,7 @@ export type Certificate = {
   name: string
   src: string
   url: string
-  date: Date
+  date: string
   description: string
 }
 
@@ -28,7 +28,6 @@ export type Skill = {
   src: string
   url: string
   stack?: boolean
-  image: string
 }
 export type ProjectSkill = {
   image: string

@@ -3,37 +3,142 @@ import React from 'react'
 import { Skill } from '../../typings'
 import Heading from './Heading'
 
-const Skills = ({ data }) => {
-  if (data) {
-    var skills = data.skills.map((skill: Skill, index: number) => {
-      var src = '/images/skills/' + skill.src
-      return (
-        <a
-          key={index}
-          className={`group h-fit rounded-lg border p-4 hover:shadow-md dark:bg-white ${
-            skill.stack
-              ? 'border border-pink-300 hover:border-pink-400'
-              : 'border-gray-300 hover:border-gray-400  '
-          }`}
-          href={skill.url}
-        >
-          <div className="relative mx-auto h-10 w-10 rounded-full">
-            <Image
-              src={src}
-              alt={skill.name}
-              className="rounded-full"
-              objectFit="contain"
-              layout="fill"
-            />
-          </div>
-          <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
-            {skill.name}
-          </p>
-        </a>
-      )
-    })
-  }
+const skills: Skill[] = [
+  {
+    name: 'React',
+    src: '/images/skills/react.svg',
+    url: 'https://reactjs.org/docs/getting-started.html',
+    stack: true,
+  },
+  {
+    name: 'Next',
+    src: '/images/skills/next.svg',
+    url: 'https://nextjs.org/docs',
+    stack: true,
+  },
+  {
+    name: 'Apollo',
+    src: '/images/skills/apollo.svg',
+    url: 'https://www.apollographql.com/docs/apollo-server/',
+    stack: true,
+  },
+  {
+    name: 'GraphQL',
+    src: '/images/skills/graphql.svg',
+    url: 'https://graphql.org/graphql-js/',
+    stack: true,
+  },
+  {
+    name: 'Tailwind',
+    src: '/images/skills/tailwind.svg',
+    url: 'https://tailwindcss.com/docs/installation',
+    stack: true,
+  },
+  {
+    name: 'TypeScript',
+    src: '/images/skills/ts.png',
+    url: 'https://www.typescriptlang.org/docs/',
+    stack: true,
+  },
+  {
+    name: 'Nodejs',
+    src: '/images/skills/node.svg',
+    url: 'https://nodejs.org/en/docs/guides/getting-started-guide/',
+    stack: true,
+  },
+  {
+    name: 'Ethereum',
+    src: '/images/skills/ethereum.svg',
+    url: 'https://ethereum.org/en/',
+    stack: false,
+  },
+  {
+    name: 'Solidity',
+    src: '/images/skills/solidity.svg',
+    url: 'https://docs.soliditylang.org/en/v0.8.13/',
+    stack: false,
+  },
+  {
+    name: 'Firebase',
+    src: '/images/skills/firebase.svg',
+    url: 'https://firebase.google.com/',
+    stack: false,
+  },
+  {
+    name: 'Oauth',
+    src: '/images/skills/oauth.svg',
+    url: 'https://oauth.net/getting-started/',
+    stack: false,
+  },
+  {
+    name: 'JavaScript',
+    src: '/images/skills/js.png',
+    url: 'https://www.javascript.com/',
+    stack: false,
+  },
+  {
+    name: 'StepZen',
+    src: '/images/skills/stepzen.svg',
+    url: 'https://www.javascript.com/',
+    stack: false,
+  },
+  {
+    name: 'Vercel',
+    src: '/images/skills/vercel.svg',
+    url: 'https://vercel.com/home',
+    stack: false,
+  },
+  {
+    name: 'Ceramic',
+    src: '/images/skills/ceramic.png',
+    url: 'https://ceramic.network/',
+    stack: false,
+  },
+  {
+    name: 'Lens',
+    src: '/images/skills/lens.jpeg',
+    url: 'https://lens.xyz/',
+    stack: false,
+  },
+  {
+    name: 'Sanity',
+    src: '/images/skills/sanity.png',
+    url: 'https://sanity.io/',
+    stack: false,
+  },
+  {
+    name: 'Supabase',
+    src: '/images/skills/supabase.svg',
+    url: 'https://supabase.com/',
+    stack: false,
+  },
+  {
+    name: 'Vue',
+    src: '/images/skills/vue.png',
+    url: 'https://vuejs.org/',
+    stack: false,
+  },
+  {
+    name: 'ThirdWeb',
+    src: '/images/skills/third.png',
+    url: 'https://thirdweb.com/',
+    stack: false,
+  },
+  {
+    name: 'Truffle Suite',
+    src: '/images/skills/truffle.png',
+    url: 'https://trufflesuite.com/',
+    stack: false,
+  },
+  {
+    name: 'Hardhat',
+    src: '/images/skills/hardhat.svg',
+    url: 'https://hardhat.org/',
+    stack: false,
+  },
+]
 
+const Skills = () => {
   return (
     <div className="w-full max-w-5xl">
       <Heading
@@ -43,7 +148,30 @@ const Skills = ({ data }) => {
       />
 
       <div className="mt-6 grid max-w-5xl grid-cols-3 gap-2 overflow-auto scrollbar-hide sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
-        {skills}
+        {skills.map((skill: Skill, index: number) => (
+          <a
+            key={index}
+            className={`group h-fit rounded-lg border p-4 hover:shadow-md dark:bg-white ${
+              skill.stack
+                ? 'border border-pink-300 hover:border-pink-400'
+                : 'border-gray-300 hover:border-gray-400  '
+            }`}
+            href={skill.url}
+          >
+            <div className="relative mx-auto h-10 w-10 rounded-full">
+              <Image
+                src={skill.src}
+                alt={skill.name}
+                className="rounded-full"
+                objectFit="contain"
+                layout="fill"
+              />
+            </div>
+            <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
+              {skill.name}
+            </p>
+          </a>
+        ))}
       </div>
     </div>
   )

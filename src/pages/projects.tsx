@@ -7,9 +7,7 @@ import {
   createHttpLink,
   gql,
   InMemoryCache,
-  useQuery,
 } from '@apollo/client'
-import { ALL_PUBLIC_REPOS } from '../lib/graphql/queries/privateItems'
 import Heading from '../components/Heading'
 import Timeago from 'react-timeago'
 import { setContext } from '@apollo/client/link/context'
