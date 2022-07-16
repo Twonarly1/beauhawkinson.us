@@ -10,23 +10,23 @@ const Skills = ({ data }) => {
       return (
         <a
           key={index}
-          className={`group h-fit rounded-lg border p-5 shadow-md dark:bg-white ${
+          className={`group h-fit rounded-lg border p-4 hover:shadow-md dark:bg-white ${
             skill.stack
               ? 'border border-pink-300 hover:border-pink-400'
               : 'border-gray-300 hover:border-gray-400  '
           }`}
           href={skill.url}
         >
-          <div className="relative mx-auto h-12 w-12">
+          <div className="relative mx-auto h-10 w-10 rounded-full">
             <Image
               src={src}
               alt={skill.name}
-              className=""
+              className="rounded-full"
               objectFit="contain"
               layout="fill"
             />
           </div>
-          <p className=" mx-auto truncate pt-4 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
+          <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
             {skill.name}
           </p>
         </a>

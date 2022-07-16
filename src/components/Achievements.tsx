@@ -14,27 +14,28 @@ const Achievements = ({ data }) => {
         var src = '/images/certificates/' + certificate.src
         return (
           <div key={index}>
-            <div className="mb-12 items-center space-x-4">
+            <div className="mb-6 items-center space-x-4">
               <Disclosure>
-                <div className="flex space-x-4 ">
+                <div className="flex space-x-4 rounded-lg border border-gray-300 p-3 hover:border-gray-400 hover:shadow-lg">
                   <Image
                     src={src}
                     alt=""
-                    height={161}
-                    width={161}
+                    height={100}
+                    width={100}
+                    quality={100}
                     className=""
                   />
                   <Disclosure.Button className=" py-2">
                     <ul className=" text-xl">
-                      <li className="flex items-center text-gray-900">
+                      <li className="flex items-center text-gray-900 dark:text-gray-200">
                         {certificate.name}
                       </li>
                       <li className="flex w-60 text-right text-xs text-gray-500">
                         <TimeAgo date={certificate.date} />
                       </li>
                       <li>
-                        <div className="mt-2 w-fit rounded-full border border-black p-[2px] text-gray-500 dark:border-white">
-                          <ChevronDownIcon className="h-4 w-4 dark:text-white" />
+                        <div className="mt-2 w-fit rounded-full border border-gray-400 p-[2px] text-gray-400 dark:border-gray-200">
+                          <ChevronDownIcon className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                         </div>
                       </li>
                     </ul>
@@ -66,7 +67,6 @@ const Achievements = ({ data }) => {
     <div className="w-full max-w-5xl">
       <Heading title={'Achievements'} subtitle={'Certifications and More.'} />
       <div className="flex">
-        {' '}
         <div className="mx-auto mt-12 ">{certificates}</div>
       </div>
       {/* <div className=" mt-6 flex items-center">

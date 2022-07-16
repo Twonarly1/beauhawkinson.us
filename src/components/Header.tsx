@@ -37,7 +37,7 @@ export const Header = () => (
             LinkedIn
           </a> */}
       <a
-        href={'/Resume.pdf'}
+        href={'/7.17-resume.pdf'}
         className="mx-1 rounded bg-purple-200 py-1 px-2 text-purple-800 hover:bg-purple-300 md:mx-2"
         data-splitbee-event="Open LinkedIn"
       >

@@ -38,6 +38,31 @@ export interface Portfolio {
   projects: [Project]
 }
 
+export interface Items {
+  description: string
+  id: string
+  name: string
+  openGraphImageUrl: string
+  owner: string
+  pushedAt: string
+  repositoryTopics: Nodes[]
+  stargazerCount: number
+  updatedAt: string
+  url: string
+  __typename: 'Repository'
+}
+
+export type Nodes = {
+  id: string
+  nodes: Node[]
+}
+
+export type Node = {
+  id: string
+  name: string
+  __typename: 'Topic'
+}
+
 export interface Portfolio {
   title: string
   description: string

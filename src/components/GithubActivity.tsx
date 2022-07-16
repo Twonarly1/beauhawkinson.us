@@ -2,67 +2,42 @@ import React from 'react'
 import { Repo } from '../../typings'
 import Heading from './Heading'
 
-const GithubActivity = ({ repos }) => {
+const GithubActivity = ({ starredItems }) => {
   return (
     <div className="max-w-5xl">
       <Heading title={'GitHub Activity'} />
-      <div className="grid grid-cols-1 gap-24  md:grid-cols-2 md:gap-32">
-        <ul className="">
-          <Heading subtitle={'Repos I Contributed to'} />
-          <div className="divide-y divide-gray-200">
-            {repos.contributedRepos.map((repo: Repo, index: number) => (
-              <li key={index}>
-                <a
-                  href={repo.url}
-                  className="my-4 -mx-4 block h-20 rounded-md p-4 text-lg hover:bg-gray-100 dark:hover:text-black"
-                >
-                  <div>
-                    <span className="text-indigo-400">{repo.owner.login}/</span>
-                    <span className="text-indigo-600">{repo.name}</span>
-                  </div>
-                  <div className="truncate text-base text-gray-500 dark:hover:text-black">
-                    {repo.description}
-                  </div>
-                </a>
-              </li>
-            ))}
-          </div>
-          <a
-            href={'https://github.com/Twonarly1?tab=repositories'}
-            className="text-sm text-indigo-600"
-          >
-            View more on <span className="font-semibold">GitHub</span> →
-          </a>
-        </ul>
-
-        <ul>
-          <Heading subtitle={'Repos I Like'} />
-          <div className="divide-y divide-gray-200">
-            {repos.starredRepos.map((repo: Repo, index: number) => (
-              <li key={index}>
-                <a
-                  href={repo.url}
-                  className="my-4 -mx-4 block h-20 rounded-md p-4 text-lg hover:bg-gray-100 dark:hover:text-black"
-                >
-                  <div>
-                    <span className="text-purple-400">{repo.owner.login}/</span>
-                    <span className="text-purple-600">{repo.name}</span>
-                  </div>
-                  <div className="truncate text-base text-gray-500">
-                    {repo.description}
-                  </div>
-                </a>
-              </li>
-            ))}
-          </div>
+      <ul>
+        <Heading subtitle={'Repos I Like'} />
+        <div className="mx-auto mt-6 grid w-fit grid-cols-1 space-y-2">
+          {starredItems.map((item: Repo, index: number) => (
+            <li key={index}>
+              <a
+                href={item.url}
+                className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 hover:border-gray-400 hover:shadow-md"
+              >
+                <div className="min-w-0 flex-1">
+                  <a href="#" className="focus:outline-none">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    <span className="text-lg font-medium text-gray-900">
+                      {item.owner.login}/
+                    </span>
+                    <span className="truncate text-[16px] text-gray-500">
+                      {item.name}
+                    </span>
+                    <div className="mt-1 text-gray-500">{item.description}</div>
+                  </a>
+                </div>
+              </a>
+            </li>
+          ))}
           <a
             href={'https://github.com/Twonarly1?tab=stars'}
-            className="text-sm text-purple-600"
+            className="mx-auto text-sm text-purple-600"
           >
             View more on <span className="font-semibold">GitHub</span> →
           </a>
-        </ul>
-      </div>
+        </div>
+      </ul>
     </div>
   )
 }
