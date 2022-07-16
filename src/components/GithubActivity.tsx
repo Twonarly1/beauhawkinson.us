@@ -16,16 +16,14 @@ const GithubActivity = ({ starredItems }) => {
                 className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 hover:border-gray-400 hover:shadow-md"
               >
                 <div className="min-w-0 flex-1">
-                  <a href="#" className="focus:outline-none">
-                    <span className="absolute inset-0" aria-hidden="true" />
-                    <span className="text-lg font-medium text-gray-900">
-                      {item.owner.login}/
-                    </span>
-                    <span className="truncate text-[16px] text-gray-500">
-                      {item.name}
-                    </span>
-                    <div className="mt-1 text-gray-500">{item.description}</div>
-                  </a>
+                  <span className="absolute inset-0" aria-hidden="true" />
+                  <span className="text-lg font-medium text-gray-900">
+                    {item.owner.login}/
+                  </span>
+                  <span className="truncate text-[16px] text-gray-500">
+                    {item.name}
+                  </span>
+                  <div className="mt-1 text-gray-500">{item.description}</div>
                 </div>
               </a>
             </li>

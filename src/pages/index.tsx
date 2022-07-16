@@ -13,6 +13,8 @@ import { STARRED_REPOS } from '../lib/graphql/queries/starredItems'
 
 export default function Home() {
   const { loading, error, data } = useQuery(PINNED_REPOS)
+  console.log(data)
+
   const {
     loading: starredRepoLoading,
     error: starredRepoError,
@@ -29,12 +31,8 @@ export default function Home() {
       })
   }, [])
 
-  if (loading) return 'Loading...'
-  if (error) return `Error! ${error.message}`
-  const { user } = data
-  const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
+  const pinnedItems = data?.user.pinnedItems.edges.map(({ node }) => node)
   console.log(data)
-
   if (starredRepoLoading) return 'Loading...'
   if (starredRepoError) return `Error! ${error.message}`
   const starredItems = starredRepoData.user.starredRepositories.nodes

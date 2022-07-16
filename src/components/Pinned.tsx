@@ -6,21 +6,20 @@ import { StarIcon } from '@heroicons/react/solid'
 import Heading from './Heading'
 import Link from 'next/link'
 
-interface AppProps {
-  pinnedItems: Items[]
-}
+const Pinned = ({ pinnedItems }) => {
+  // const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
+  console.log(pinnedItems)
 
-const Pinned = ({ pinnedItems }: AppProps) => {
   return (
     <div className=" mx-auto w-full max-w-5xl">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {pinnedItems.map((item, index: number) => (
+        {pinnedItems?.map((item: Items, index: number) => (
           <div
             key={index}
             className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-sm"
           >
-            <p className="absolute top-0 right-2 mx-auto mt-2 w-fit justify-between text-center text-[10px] text-gray-500">
+            <div className="absolute top-0 right-2 mx-auto mt-2 w-fit justify-between text-center text-[10px] text-gray-500">
               {item.stargazerCount > 0 && (
                 <p className="flex items-center">
                   <StarIcon className="h-4 w-4 text-yellow-400" />
@@ -35,7 +34,7 @@ const Pinned = ({ pinnedItems }: AppProps) => {
                 updated&nbsp;
                 <Timeago date={item.updatedAt} />
               </p> */}
-            </p>
+            </div>
             <div className="flex-shrink-0 rounded-full border-2 p-1">
               <img
                 src={item.openGraphImageUrl}

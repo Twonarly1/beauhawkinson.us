@@ -1,9 +1,8 @@
 import { gql } from '@apollo/client'
-const username = 'Twonarly1'
-const quantiy = 4
+
 export const PRIVATE_REPOS = gql`
   query GetPublicRepos {
-    user(login: "${username}" ) {
+    user(login: "Twonarly1") {
       repositoriesContributedTo(
         includeUserRepositories: true
         last: 20
@@ -15,7 +14,7 @@ export const PRIVATE_REPOS = gql`
           name
           url
           description
-          repositoryTopics(last: "${quantiy}") {
+          repositoryTopics(last: 4) {
             nodes {
               id
               topic {
