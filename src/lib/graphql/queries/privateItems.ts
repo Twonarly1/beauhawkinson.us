@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const PRIVATE_REPOS = gql`
+export const ALL_PUBLIC_REPOS = gql`
   query GetPublicRepos {
     user(login: "Twonarly1") {
       repositoriesContributedTo(
