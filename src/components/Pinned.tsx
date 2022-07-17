@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { Items } from '../../typings'
+import { Repo } from '../../typings'
 //import Timeago from 'react-timeago'
 import { StarIcon } from '@heroicons/react/solid'
 import Heading from './Heading'
@@ -10,11 +10,11 @@ const Pinned = ({ pinnedItems }) => {
   return (
     <div className="px-6 pt-12">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
-      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {pinnedItems.map((item: Items, index: number) => (
+      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {pinnedItems.map((item: Repo, index: number) => (
           <div
             key={index}
-            className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-sm"
+            className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-sm"
           >
             <div className="absolute top-0 right-2 mx-auto mt-2 w-fit justify-between text-center text-[10px] text-gray-500">
               {item.stargazerCount > 0 && (
@@ -42,7 +42,9 @@ const Pinned = ({ pinnedItems }) => {
             <div className="min-w-0 flex-1">
               <a href={item.url} className="focus:outline-none">
                 <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-medium text-gray-900">{item.name}</p>
+                <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                  {item.name}
+                </p>
                 <p className="text-sm text-gray-500">{item.description}</p>
               </a>
 

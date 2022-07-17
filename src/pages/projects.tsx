@@ -25,7 +25,7 @@ export default function Projects({ allPublicRepos }) {
         />
         <link rel="icon" href="/two.png" />
       </Head>
-      <div className="mx-auto w-full bg-white dark:bg-gray-500">
+      <div className="mx-auto w-full dark:bg-primary-dark dark:text-gray-300">
         <div className="mx-auto w-full max-w-5xl px-6">
           <Nav />
           <div className="h-20"></div>
@@ -35,7 +35,7 @@ export default function Projects({ allPublicRepos }) {
               .map((item: Repo, index: number) => (
                 <div
                   key={index}
-                  className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-300 bg-white text-center hover:border-gray-400 hover:shadow-md"
+                  className="col-span-1  flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-300  text-center hover:border-gray-400 hover:shadow-md"
                 >
                   <a className="" href={item.url}>
                     <div className="flex flex-1 flex-col p-8">
@@ -46,16 +46,16 @@ export default function Projects({ allPublicRepos }) {
                       />
 
                       <div className="mt-2 min-w-0 flex-1 px-3">
-                        <h3 className="mt-6 text-lg font-medium text-gray-900">
+                        <h3 className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
                           {item.name}
                         </h3>
 
-                        <p className=" h-16 pt-2 font-sans text-sm text-gray-500 md:text-sm">
+                        <p className=" h-16 pt-2 font-sans text-sm text-gray-500 dark:text-gray-300 md:text-sm">
                           {item.description}
                         </p>
                       </div>
                     </div>
-                    <div className="relative bottom-8 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500">
+                    <div className="relative bottom-8 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500 dark:border-gray-500 dark:text-gray-300">
                       <p>
                         created&nbsp;
                         <Timeago date={item.pushedAt} />
@@ -72,7 +72,7 @@ export default function Projects({ allPublicRepos }) {
                         item.repositoryTopics.nodes.map(
                           (topic: any, index: number) => (
                             <div
-                              className=" rounded-full border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400"
+                              className=" rounded-full border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500 dark:border-gray-100 dark:text-gray-300"
                               key={index}
                             >
                               {topic.topic.name}

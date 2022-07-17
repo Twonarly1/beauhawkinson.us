@@ -147,11 +147,11 @@ const Skills = () => {
         legend={'* preferred stack'}
       />
 
-      <div className="mt-6 grid max-w-5xl grid-cols-3 gap-2 overflow-auto scrollbar-hide sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
+      <div className="mt-12 grid max-w-5xl grid-cols-3 gap-2 overflow-auto scrollbar-hide sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
         {skills.map((skill: Skill, index: number) => (
           <a
             key={index}
-            className={`group h-fit rounded-lg border p-4 hover:shadow-md dark:bg-white ${
+            className={`group h-fit rounded-lg border p-4 hover:shadow-md ${
               skill.stack
                 ? 'border border-pink-300 hover:border-pink-400'
                 : 'border-gray-300 hover:border-gray-400  '
@@ -167,7 +167,7 @@ const Skills = () => {
                 layout="fill"
               />
             </div>
-            <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 ">
+            <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 dark:text-gray-300">
               {skill.name}
             </p>
           </a>

@@ -1,88 +1,9 @@
-export interface ResumeData {
-  projects: any
-  main: {
-    image: string
-    skills: Skill[]
-    certificates: Certificate[]
-    testimonials: object[]
-  }
-  portfolio: {
-    title: string
-    description: string
-    image: string
-    url: string
-    skills: ProjectSkill[]
-  }
-}
-
 export type Certificate = {
   name: string
   src: string
   url: string
   date: string
   description: string
-}
-
-export type Skill = {
-  name: string
-  src: string
-  url: string
-  stack?: boolean
-}
-export type ProjectSkill = {
-  image: string
-  name: string
-}
-
-export interface Portfolio {
-  projects: [Project]
-}
-
-export interface Items {
-  description: string
-  id: string
-  name: string
-  openGraphImageUrl: string
-  owner: string
-  pushedAt: string
-  repositoryTopics: Nodes[]
-  stargazerCount: number
-  updatedAt: string
-  url: string
-  __typename: 'Repository'
-}
-
-export type Nodes = {
-  id: string
-  nodes: Node[]
-}
-
-export type Node = {
-  id: string
-  name: string
-  __typename: 'Topic'
-}
-
-export interface Portfolio {
-  title: string
-  description: string
-  category: string
-  image: string
-  url: string
-}
-
-export type ProjectType = 'design' | 'code' | 'video'
-
-export interface Project {
-  id: string
-  preview: string
-  title: string
-  types: ProjectType[]
-  image: string
-  tags: string[]
-  slug: string
-  date: number
-  published: boolean
 }
 
 export interface Repo {
@@ -97,16 +18,16 @@ export interface Repo {
   pushedAt: string
   updatedAt: string
   user: object[]
+  stargazerCount: number
+  repositoryTopics: object[]
+  __typename: 'Repository'
 }
 
-// We could use GraphQL Codegen here, but not worth the effort right now
-export interface RepoResponseData {
-  user: {
-    pinnedItems: {
-      nodes: any
-    }
-    starredRepositories: {
-      nodes: any
-    }
-  }
+export type Skill = {
+  name: string
+  src: string
+  url: string
+  stack?: boolean
 }
+
+// export type ProjectType = 'design' | 'code' | 'video'
