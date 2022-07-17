@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const Pinned = ({ pinnedItems }) => {
   return (
-    <div className=" mx-auto w-full max-w-5xl">
+    <div className="px-6 pt-12">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
       <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {pinnedItems.map((item: Items, index: number) => (

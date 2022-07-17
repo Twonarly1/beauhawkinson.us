@@ -28,7 +28,7 @@ const certificates: Certificate[] = [
 
 const Achievements = () => {
   return (
-    <div className="w-full max-w-5xl">
+    <div className="w-full max-w-5xl px-6">
       <Heading title={'Achievements'} subtitle={'Certifications and More.'} />
       <div className="flex">
         <div className="mx-auto mt-12 ">
@@ -37,16 +37,18 @@ const Achievements = () => {
               <div key={index}>
                 <div className="mb-6 items-center space-x-4">
                   <Disclosure>
-                    <div className="flex space-x-4 rounded-lg border border-gray-300 p-3 hover:border-gray-400 hover:shadow-lg">
-                      <Image
-                        src={certificate.src}
-                        alt=""
-                        height={100}
-                        width={100}
-                        quality={100}
-                        className=""
-                      />
-                      <Disclosure.Button className=" py-2">
+                    <div className="flex h-auto space-x-4 rounded-lg border border-gray-300 text-center hover:border-gray-400 hover:shadow-lg">
+                      <div className="hidden sm:flex">
+                        <Image
+                          src={certificate.src}
+                          alt=""
+                          height={100}
+                          width={100}
+                          quality={100}
+                          className=""
+                        />
+                      </div>
+                      <Disclosure.Button className=" w-full py-2">
                         <ul className=" text-xl">
                           <li className="flex items-center text-gray-900 dark:text-gray-200">
                             {certificate.name}
@@ -63,7 +65,7 @@ const Achievements = () => {
                       </Disclosure.Button>
                     </div>
                     <Disclosure.Panel className="mt-4 p-2 text-gray-500">
-                      <ul className="mx-auto w-[400px]">
+                      <ul className="mx-auto w-auto">
                         <li className="">{certificate.description}</li>
                         <li className="mt-2">
                           <a

@@ -4,7 +4,7 @@ import Heading from './Heading'
 
 const GithubActivity = ({ starredItems }) => {
   return (
-    <div className="max-w-5xl">
+    <div className="max-w-5xl px-6">
       <Heading title={'GitHub Activity'} />
       <ul>
         <Heading subtitle={'Repos I Like'} />
@@ -20,7 +20,7 @@ const GithubActivity = ({ starredItems }) => {
                   <span className="text-lg font-medium text-gray-900">
                     {item.owner.login}/
                   </span>
-                  <span className="truncate text-[16px] text-gray-500">
+                  <span className=" text-[16px] text-gray-500">
                     {item.name}
                   </span>
                   <div className="mt-1 text-gray-500">{item.description}</div>

@@ -4,7 +4,7 @@ import Nav from './Nav'
 import { ProfileImage } from './ProfileImage'
 
 export const Header = () => (
-  <section className="w-full bg-gray-100 px-6 text-black dark:bg-primary-dark dark:text-white">
+  <section className="mx-auto w-full bg-gray-100 px-6 pb-8 text-black dark:bg-primary-dark dark:text-white">
     <Nav />
     <ProfileImage />
     <div className="text-center">

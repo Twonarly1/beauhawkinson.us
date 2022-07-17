@@ -140,7 +140,7 @@ const skills: Skill[] = [
 
 const Skills = () => {
   return (
-    <div className="w-full max-w-5xl">
+    <div className="w-full max-w-5xl px-6">
       <Heading
         title={'Skills'}
         subtitle={' Tools I Have Experience With'}

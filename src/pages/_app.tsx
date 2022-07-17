@@ -8,6 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>bhawkinson</title>
+        <meta name="description" content="View my personal website!" />
+        <meta
+          property="og:title"
+          content="I contribute and develop in the Web3 space."
+        />
         <link rel="icon" href="/two.png" />
         <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>

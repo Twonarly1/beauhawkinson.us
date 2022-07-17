@@ -21,9 +21,9 @@ interface AppProps {
 
 export default function Home({ pinnedItems, starredItems }: AppProps) {
   return (
-    <div className="mx-auto flex w-full flex-col items-center bg-white text-black dark:bg-primary-dark dark:text-white">
+    <div className="mx-auto w-full items-center bg-white text-black  scrollbar-hide dark:bg-primary-dark dark:text-white">
       <Header />
-      <div className="space-y-32 p-6">
+      <div className="mx-auto max-w-5xl space-y-32">
         <Pinned pinnedItems={pinnedItems} />
         <Skills />
         <Achievements />
