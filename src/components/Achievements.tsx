@@ -27,7 +27,6 @@ const certificates: Certificate[] = [
 ]
 
 const Achievements = () => {
-  console.log(certificates)
   return (
     <div className="w-full max-w-5xl">
       <Heading title={'Achievements'} subtitle={'Certifications and More.'} />

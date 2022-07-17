@@ -20,8 +20,6 @@ interface AppProps {
 }
 
 export default function Home({ pinnedItems, starredItems }: AppProps) {
-  console.log(pinnedItems, starredItems)
-
   return (
     <div className="mx-auto flex w-full flex-col items-center bg-white text-black dark:bg-primary-dark dark:text-white">
       <Header />

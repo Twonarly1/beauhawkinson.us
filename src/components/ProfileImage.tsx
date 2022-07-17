@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import hoverImage from '../../public/images/portfolio/pfp.jpeg'
-import pfp from '../../public/images/profilepic.jpg'
+import hoverImage from '../../public/images/profileImages/pfp.jpeg'
+import pfp from '../../public/images/profileImages/profilepic.jpg'
 
 export const ProfileImage: React.FC<{
   size?: number
 }> = ({ size = 128 }) => (
   <div className="mx-auto w-[128px] rounded-full pt-16 pb-8">
-    <div className="relative flex justify-center">
+    <div className="relative flex justify-center rounded-full border-2 border-gray-300 p-1">
       <Image
         className="rounded-full"
         src={pfp}

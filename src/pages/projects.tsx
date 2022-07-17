@@ -13,8 +13,6 @@ import Timeago from 'react-timeago'
 import { setContext } from '@apollo/client/link/context'
 
 export default function Projects({ allPublicRepos }) {
-  console.log(allPublicRepos)
-
   return (
     <div className="mx-auto w-full bg-white dark:bg-gray-500">
       <div className="mx-auto w-full max-w-5xl px-6">
@@ -33,7 +31,7 @@ export default function Projects({ allPublicRepos }) {
                     <img
                       src={item.openGraphImageUrl}
                       alt={item.name}
-                      className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+                      className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full border"
                     />
 
                     <div className="mt-2 min-w-0 flex-1 px-3">

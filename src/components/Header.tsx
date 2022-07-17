@@ -4,13 +4,13 @@ import Nav from './Nav'
 import { ProfileImage } from './ProfileImage'
 
 export const Header = () => (
-  <section className="w-full bg-gray-100 text-black dark:bg-primary-dark dark:text-white">
+  <section className="w-full bg-gray-100 px-6 text-black dark:bg-primary-dark dark:text-white">
     <Nav />
     <ProfileImage />
     <div className="text-center">
       <Heading
         title={"Hey, I'm Beau!"}
-        subtitle={'  I contribute and develop in the Web3 space.'}
+        subtitle={'I contribute and develop in the Web3 space.'}
       />
     </div>
 
@@ -29,13 +29,6 @@ export const Header = () => (
       >
         GitHub
       </a>
-      {/* <a
-            className="mx-1 rounded bg-pink-200 py-1 px-2 text-pink-800 hover:bg-pink-300 md:mx-2"
-            data-splitbee-event="Open LinkedIn"
-            href="https://www.linkedin.com/in/beau-hawkinson-6921bb84/"
-          >
-            LinkedIn
-          </a> */}
       <a
         href={'/7.17-resume.pdf'}
         className="mx-1 rounded bg-purple-200 py-1 px-2 text-purple-800 hover:bg-purple-300 md:mx-2"

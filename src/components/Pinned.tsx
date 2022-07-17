@@ -7,9 +7,6 @@ import Heading from './Heading'
 import Link from 'next/link'
 
 const Pinned = ({ pinnedItems }) => {
-  // const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
-  console.log(pinnedItems)
-
   return (
     <div className=" mx-auto w-full max-w-5xl">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
