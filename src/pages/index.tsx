@@ -5,14 +5,10 @@ import Skills from '../components/Skills'
 import { Repo } from '../../typings'
 import Achievements from '../components/Achievements'
 import GithubActivity from '../components/GithubActivity'
-import {
-  ApolloClient,
-  createHttpLink,
-  gql,
-  InMemoryCache,
-} from '@apollo/client'
 import Pinned from '../components/Pinned'
-import { setContext } from '@apollo/client/link/context'
+import client from '../../apollo-client'
+import { gql } from '@apollo/client'
+import CertificateList from '../components/CertificateList'
 
 interface AppProps {
   pinnedItems: Repo[]
@@ -26,7 +22,7 @@ export default function Home({ pinnedItems, starredItems }: AppProps) {
       <div className="mx-auto max-w-5xl space-y-32">
         <Pinned pinnedItems={pinnedItems} />
         <Skills />
-        <Achievements />
+        <CertificateList />
         <GithubActivity starredItems={starredItems} />
         <Footer />
       </div>
@@ -35,24 +31,6 @@ export default function Home({ pinnedItems, starredItems }: AppProps) {
 }
 
 export async function getStaticProps() {
-  const httpLink = createHttpLink({
-    uri: 'https://api.github.com/graphql',
-  })
-
-  const authLink = setContext((_, { headers }) => {
-    return {
-      headers: {
-        ...headers,
-        authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-      },
-    }
-  })
-
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  })
-
   const { data } = await client.query({
     query: gql`
       {

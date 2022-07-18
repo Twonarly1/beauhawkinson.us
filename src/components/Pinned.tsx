@@ -14,7 +14,7 @@ const Pinned = ({ pinnedItems }) => {
         {pinnedItems.map((item: Repo, index: number) => (
           <div
             key={index}
-            className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-sm"
+            className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 hover:shadow-md"
           >
             <div className="absolute top-0 right-2 mx-auto mt-2 w-fit justify-between text-center text-[10px] text-gray-500">
               {item.stargazerCount > 0 && (

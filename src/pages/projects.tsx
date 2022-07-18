@@ -2,16 +2,12 @@
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
 import { Repo } from '../../typings'
-import {
-  ApolloClient,
-  createHttpLink,
-  gql,
-  InMemoryCache,
-} from '@apollo/client'
 import Heading from '../components/Heading'
 import Timeago from 'react-timeago'
 import { setContext } from '@apollo/client/link/context'
 import Head from 'next/head'
+import client from '../../apollo-client'
+import { gql } from '@apollo/client'
 
 export default function Projects({ allPublicRepos }) {
   return (
@@ -94,24 +90,6 @@ export default function Projects({ allPublicRepos }) {
 }
 
 export async function getStaticProps() {
-  const httpLink = createHttpLink({
-    uri: 'https://api.github.com/graphql',
-  })
-
-  const authLink = setContext((_, { headers }) => {
-    return {
-      headers: {
-        ...headers,
-        authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-      },
-    }
-  })
-
-  const client = new ApolloClient({
-    link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
-  })
-
   const { data } = await client.query({
     query: gql`
       {

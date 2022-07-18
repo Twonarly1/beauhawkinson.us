@@ -21,6 +21,7 @@ export interface Repo {
   stargazerCount: number
   repositoryTopics: object[]
   __typename: 'Repository'
+  randomColor: boolean
 }
 
 export type Skill = {
