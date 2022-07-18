@@ -8,7 +8,6 @@ import GithubActivity from '../components/GithubActivity'
 import Pinned from '../components/Pinned'
 import client from '../../apollo-client'
 import { gql } from '@apollo/client'
-import CertificateList from '../components/CertificateList'
 
 interface AppProps {
   pinnedItems: Repo[]
@@ -22,7 +21,7 @@ export default function Home({ pinnedItems, starredItems }: AppProps) {
       <div className="mx-auto max-w-5xl space-y-32">
         <Pinned pinnedItems={pinnedItems} />
         <Skills />
-        <CertificateList />
+        <Achievements />
         <GithubActivity starredItems={starredItems} />
         <Footer />
       </div>
