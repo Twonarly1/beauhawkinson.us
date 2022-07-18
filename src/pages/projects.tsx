@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
-import { Repo } from '../../typings'
 import Heading from '../components/Heading'
-import Timeago from 'react-timeago'
-import { setContext } from '@apollo/client/link/context'
 import Head from 'next/head'
 import client from '../../apollo-client'
 import { gql } from '@apollo/client'
+import { ArrowLeftIcon } from '@heroicons/react/outline'
+import Link from 'next/link'
+import SearchBar from '../components/SearchBar'
 
 export default function Projects({ allPublicRepos }) {
   return (
@@ -24,65 +24,16 @@ export default function Projects({ allPublicRepos }) {
       <div className="mx-auto w-full dark:bg-primary-dark dark:text-gray-300">
         <div className="mx-auto w-full max-w-5xl px-6">
           <Nav />
-          <div className="h-20"></div>
+          <div className="h-12"></div>
           <Heading title={'Projects'} subtitle={'My Public Repos'} />
-          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {allPublicRepos
-              .map((item: Repo, index: number) => (
-                <div
-                  key={index}
-                  className="col-span-1  flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-300  text-center hover:border-gray-400 hover:shadow-md"
-                >
-                  <a className="" href={item.url}>
-                    <div className="flex flex-1 flex-col p-8">
-                      <img
-                        src={item.openGraphImageUrl}
-                        alt={item.name}
-                        className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full"
-                      />
-
-                      <div className="mt-2 min-w-0 flex-1 px-3">
-                        <h3 className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
-                          {item.name}
-                        </h3>
-
-                        <p className=" h-16 pt-2 font-sans text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="relative bottom-8 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500 dark:border-gray-500 dark:text-gray-300">
-                      <p>
-                        created&nbsp;
-                        <Timeago date={item.pushedAt} />
-                      </p>
-                      <p>
-                        updated&nbsp;
-                        <Timeago date={item.updatedAt} />
-                      </p>
-                    </div>
-                    <div className="relative bottom-2 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
-                      {
-                        //@ts-ignore
-                        // fix typing for "nodes"
-                        item.repositoryTopics.nodes.map(
-                          (topic: any, index: number) => (
-                            <div
-                              className=" rounded-full border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500 dark:border-gray-100 dark:text-gray-300"
-                              key={index}
-                            >
-                              {topic.topic.name}
-                            </div>
-                          )
-                        )
-                      }
-                    </div>
-                  </a>
-                </div>
-              ))
-              .reverse()}
-          </div>
+          <SearchBar
+            placeholder="Search Repositories..."
+            data={allPublicRepos}
+          />
         </div>
+        <Link href={'/'} className="">
+          <ArrowLeftIcon className=" mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border p-1 text-gray-400 hover:scale-110 hover:border-gray-400" />
+        </Link>
         <Footer />
       </div>
     </>

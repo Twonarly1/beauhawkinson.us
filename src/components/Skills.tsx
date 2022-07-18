@@ -151,10 +151,10 @@ const Skills = () => {
         {skills.map((skill: Skill, index: number) => (
           <a
             key={index}
-            className={`group h-fit rounded-lg border p-4 hover:shadow-md ${
+            className={`group h-fit rounded-lg border p-4 hover:shadow-md dark:shadow-sm ${
               skill.stack
-                ? 'border border-pink-300 hover:border-pink-400'
-                : 'border-gray-300 hover:border-gray-400  '
+                ? 'border border-pink-300 hover:border-pink-400 hover:dark:shadow-pink-400'
+                : 'border-gray-300 hover:border-gray-400 dark:border-gray-400  hover:dark:border-gray-300 hover:dark:shadow-white '
             }`}
             href={skill.url}
           >

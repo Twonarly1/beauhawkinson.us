@@ -14,7 +14,7 @@ const GithubActivity = ({ starredItems }) => {
               <li key={index}>
                 <a
                   href={item.url}
-                  className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5 hover:border-gray-400 hover:shadow-md"
+                  className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
                 >
                   <div className="min-w-0 flex-1">
                     <span className="absolute inset-0" aria-hidden="true" />
