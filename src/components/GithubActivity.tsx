@@ -12,14 +12,14 @@ const GithubActivity = ({ starredItems }) => {
             <a
               key={index}
               href={item.url}
-              className="relative flex items-center space-x-3 rounded-lg border border-gray-300 px-6 py-5  hover:border-gray-400 hover:shadow-sm dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
+              className="relative flex items-center rounded-lg border border-gray-300 p-3 hover:border-gray-400 hover:shadow-sm dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
             >
               <div className="min-w-0 flex-1">
                 <span className="absolute inset-0" aria-hidden="true" />
                 <span className="text-lg font-medium text-gray-900 dark:text-gray-100">
                   {item.owner.login}/
                 </span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-gray-500 dark:text-blue-300">
                   {item.name}
                 </span>
                 <div className="text-sm text-gray-500 dark:text-gray-400">

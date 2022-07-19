@@ -4,18 +4,12 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 
 const Nav = () => {
   return (
-    <nav className="mx-auto flex w-full max-w-5xl justify-between py-5">
-      <div className="flex space-x-4">
-        <Link href="/">
-          <a className="rounded-md text-gray-700 dark:text-white">
-            bhawkinson.eth{' '}
-          </a>
-        </Link>
+    <nav className="mx-auto flex max-w-5xl justify-between py-5 pb-12 ">
+      <div className="flex gap-x-4 text-gray-700 dark:text-gray-100">
+        <Link href="/">bhawkinson.eth</Link>
         <ThemeSwitcher />
       </div>
-      <Link href="/projects">
-        <a className="rounded-md text-gray-700 dark:text-white">Projects</a>
-      </Link>
+      <Link href="/projects">Projects</Link>
     </nav>
   )
 }

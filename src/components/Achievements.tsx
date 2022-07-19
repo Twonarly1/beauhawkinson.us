@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import TimeAgo from 'react-timeago'
 import { FingerPrintIcon } from '@heroicons/react/outline'
 import Heading from './Heading'
@@ -30,7 +29,7 @@ const Achievements = () => {
   const mobile = useIsMobile()
 
   return (
-    <div className="mx-auto mt-32 max-w-5xl px-6 ">
+    <div className="mx-auto mt-32 max-w-5xl px-6">
       <Heading title={'Achievements'} subtitle={'Certifications and More.'} />
       <div className="mx-auto mt-12 grid w-fit grid-cols-1 gap-y-4">
         {certificates.map((certificate, index: number) => (
@@ -46,16 +45,16 @@ const Achievements = () => {
               quality={100}
             />
             <div className="text-left">
-              <p className="w-auto text-gray-900 hover:opacity-0 dark:text-gray-200 sm:w-80">
+              <p className="w-auto text-gray-900 hover:opacity-0 dark:text-gray-100 sm:w-80">
                 {certificate.name}
               </p>
               <TimeAgo
                 date={certificate.date}
-                className="text-xs text-gray-500 hover:opacity-0"
+                className="text-sm text-gray-400 hover:opacity-0"
               />
             </div>
             {mobile == true && <FingerPrintIcon className="h-6 w-6" />}
-            <div className="absolute inset-0 right-2 z-10 flex items-center justify-center rounded-lg bg-white text-xs font-semibold text-gray-900 opacity-0 duration-300 ease-in-out hover:opacity-100 dark:bg-primary-dark  dark:text-gray-300">
+            <div className="absolute inset-0 right-2 z-10 flex items-center justify-center rounded-lg bg-white text-[10px] font-semibold text-gray-900 opacity-0 hover:opacity-100 dark:bg-primary-dark dark:text-gray-300 sm:text-sm">
               {certificate.description}
             </div>
           </div>

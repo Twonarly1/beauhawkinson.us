@@ -140,34 +140,33 @@ const skills: Skill[] = [
 
 const Skills = () => {
   return (
-    <div className="mx-auto w-full max-w-5xl px-6">
+    <div className="mx-auto mt-32 max-w-5xl px-6">
       <Heading
         title={'Skills'}
         subtitle={' Tools I Have Experience With'}
         legend={'* preferred stack'}
       />
 
-      <div className=" mt-12 grid max-w-5xl grid-cols-3 gap-2 sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
+      <div className="mt-12 grid max-w-5xl grid-cols-3 gap-2 sm:grid sm:grid-cols-5 md:grid md:grid-cols-7">
         {skills.map((skill: Skill, index: number) => (
           <a
             key={index}
-            className={`group h-fit rounded-lg border p-4 hover:shadow-sm dark:shadow-sm ${
+            className={`rounded-lg border p-4 hover:shadow-sm dark:shadow-sm ${
               skill.stack
-                ? ' border-pink-300 hover:border-pink-400 dark:border-pink-400 dark:hover:border-pink-300 dark:hover:shadow-pink-300'
-                : 'border-gray-300 hover:border-gray-400 dark:border-gray-400  hover:dark:border-gray-300 hover:dark:shadow-white '
+                ? 'border-pink-300 hover:border-pink-400 dark:border-pink-300 dark:hover:border-pink-400 dark:hover:shadow-pink-400'
+                : 'border-gray-300 hover:border-gray-400 dark:border-gray-400 hover:dark:border-gray-300 hover:dark:shadow-white'
             }`}
             href={skill.url}
           >
-            <div className="relative mx-auto h-10 w-10 rounded-full">
+            <div className="relative mx-auto h-10 w-10">
               <Image
                 src={skill.src}
                 alt={skill.name}
-                className="rounded-full"
                 objectFit="contain"
                 layout="fill"
               />
             </div>
-            <p className=" mx-auto truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 dark:text-gray-300">
+            <p className="truncate pt-2 text-center text-[10px] text-gray-500 hover:text-gray-900 dark:text-gray-300">
               {skill.name}
             </p>
           </a>

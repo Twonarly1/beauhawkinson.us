@@ -1,9 +1,7 @@
+@layer components {
+  /* .commonBordering { @apply **css** } */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .border {
-    @apply border-gray-300  hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white;
-  }
-}

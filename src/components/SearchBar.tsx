@@ -24,13 +24,13 @@ function SearchBar({ placeholder, data }) {
 
   return (
     <div>
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 ml-2 mt-4 flex items-center ">
-          <SearchIcon className="h-4 w-4 text-gray-400" />
+      <div className="relative mt-6 max-w-xs">
+        <div className="absolute inset-y-0 right-0 border-y border-transparent py-2 pr-3 text-sm text-gray-300">
+          <SearchIcon className="h-5 w-5 text-gray-400" />
         </div>
         <input
-          type="search"
-          className="mt-6 mb-2 w-full rounded-md border border-gray-300 px-2 py-[1px] pl-7 outline-none placeholder:pl-0 placeholder:text-gray-400 hover:border-gray-400 dark:bg-primary-dark dark:text-gray-300  sm:w-auto"
+          type="text"
+          className="block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:bg-primary-dark dark:text-gray-300 sm:text-sm"
           placeholder={placeholder}
           spellCheck="false"
           required
@@ -93,7 +93,7 @@ function SearchBar({ placeholder, data }) {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data
             .map((item: Repo, index: number) => (
               <div

@@ -18,7 +18,11 @@ export const ThemeSwitcher = () => {
       className="mt-[1px] h-5 w-5 items-center "
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'dark' ? <SunIcon /> : <MoonIcon className="text-gray-700" />}
+      {theme === 'dark' ? (
+        <SunIcon className="text-gray-100" />
+      ) : (
+        <MoonIcon className="text-gray-700" />
+      )}
     </button>
   )
 }

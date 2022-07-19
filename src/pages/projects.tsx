@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Footer from '../components/Footer'
 import Nav from '../components/Nav'
 import Heading from '../components/Heading'
@@ -21,18 +20,12 @@ export default function Projects({ allPublicRepos }) {
         />
         <link rel="icon" href="/two.png" />
       </Head>
-      <div className="mx-auto w-full dark:bg-primary-dark dark:text-gray-300">
-        <div className="mx-auto w-full max-w-5xl px-6">
-          <Nav />
-          <div className="h-12"></div>
-          <Heading title={'Projects'} subtitle={'My Public Repos'} />
-          <SearchBar
-            placeholder="Search Repositories..."
-            data={allPublicRepos}
-          />
-        </div>
-        <Link href={'/'} className="">
-          <ArrowLeftIcon className=" mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border p-1 text-gray-400 hover:scale-110 hover:border-gray-400" />
+      <div className="mx-auto w-full max-w-5xl px-6 dark:bg-primary-dark dark:text-gray-300">
+        <Nav />
+        <Heading title={'Projects'} subtitle={'My Public Repos'} />
+        <SearchBar placeholder="Search Repositories..." data={allPublicRepos} />
+        <Link href={'/'}>
+          <ArrowLeftIcon className="mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border p-1 text-gray-400 hover:scale-110 hover:border-gray-400" />
         </Link>
         <Footer />
       </div>
