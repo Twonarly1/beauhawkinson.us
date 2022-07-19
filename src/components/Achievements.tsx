@@ -35,7 +35,7 @@ const Achievements = () => {
         {certificates.map((certificate, index: number) => (
           <div
             key={index}
-            className="relative flex cursor-pointer items-center justify-between space-x-4 rounded-lg border border-gray-300 bg-black/5 p-2 px-6 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:bg-white/10 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
+            className="relative flex cursor-pointer items-center   rounded-lg border border-gray-300 bg-black/5 p-2 px-6 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:bg-white/10 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
           >
             <Image
               src={certificate.src}
@@ -44,7 +44,7 @@ const Achievements = () => {
               width={100}
               quality={100}
             />
-            <div className="text-left">
+            <div className="ml-2 text-left">
               <p className="w-auto text-gray-900 hover:opacity-0 dark:text-gray-100 sm:w-80">
                 {certificate.name}
               </p>
@@ -54,7 +54,7 @@ const Achievements = () => {
               />
             </div>
             {mobile == true && <FingerPrintIcon className="h-6 w-6" />}
-            <div className="absolute inset-0 right-2 z-10 flex items-center justify-center rounded-lg bg-white text-[10px] font-semibold text-gray-900 opacity-0 hover:opacity-100 dark:bg-primary-dark dark:text-gray-300 sm:text-sm">
+            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-white text-center text-[10px] font-semibold text-gray-900 opacity-0 hover:opacity-100 dark:bg-primary-dark dark:text-gray-300 sm:p-2 sm:text-sm">
               {certificate.description}
             </div>
           </div>
