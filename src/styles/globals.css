@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .projectsTitle {
-    @apply font-semibold text-gray-800 group-hover:text-gray-700;
-  }
-  .projectsDescription {
-    @apply font-sans text-sm font-light text-gray-500;
+  .border {
+    @apply border-gray-300  hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white;
   }
 }

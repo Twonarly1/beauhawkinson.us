@@ -1,13 +1,13 @@
 import React from 'react'
-import { Header } from '../components/Header'
-import Footer from '../components/Footer'
-import Skills from '../components/Skills'
+import client from '../../apollo-client'
+import { gql } from '@apollo/client'
 import { Repo } from '../../typings'
 import Achievements from '../components/Achievements'
 import GithubActivity from '../components/GithubActivity'
+import { Header } from '../components/Header'
 import Pinned from '../components/Pinned'
-import client from '../../apollo-client'
-import { gql } from '@apollo/client'
+import Footer from '../components/Footer'
+import Skills from '../components/Skills'
 
 interface AppProps {
   pinnedItems: Repo[]
@@ -16,15 +16,13 @@ interface AppProps {
 
 export default function Home({ pinnedItems, starredItems }: AppProps) {
   return (
-    <div className="mx-auto w-full items-center bg-white text-black  scrollbar-hide dark:bg-primary-dark dark:text-white">
+    <div className="w-full bg-white dark:bg-primary-dark">
       <Header />
-      <div className="mx-auto max-w-5xl space-y-32">
-        <Pinned pinnedItems={pinnedItems} />
-        <Skills />
-        <Achievements />
-        <GithubActivity starredItems={starredItems} />
-        <Footer />
-      </div>
+      <Pinned pinnedItems={pinnedItems} />
+      <Skills />
+      <Achievements />
+      <GithubActivity starredItems={starredItems} />
+      <Footer />
     </div>
   )
 }

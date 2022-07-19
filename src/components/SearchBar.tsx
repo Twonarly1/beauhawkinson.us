@@ -8,10 +8,10 @@ function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState('')
 
-  const handleFilter = (event) => {
+  const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = event.target.value
     setWordEntered(searchWord)
-    const newFilter = data.filter((item) => {
+    const newFilter = data.filter((item: Repo) => {
       return item.name.toLowerCase().includes(searchWord.toLowerCase())
     })
 
@@ -23,14 +23,14 @@ function SearchBar({ placeholder, data }) {
   }
 
   return (
-    <div className="search">
+    <div>
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 ml-2 mt-4 flex items-center ">
           <SearchIcon className="h-4 w-4 text-gray-400" />
         </div>
         <input
           type="search"
-          className="mt-6 mb-2 rounded-md border border-gray-300 px-2 py-[1px] pl-7 outline-none placeholder:pl-0 placeholder:text-gray-400 hover:border-gray-400 dark:bg-primary-dark  dark:text-gray-300"
+          className="mt-6 mb-2 w-full rounded-md border border-gray-300 px-2 py-[1px] pl-7 outline-none placeholder:pl-0 placeholder:text-gray-400 hover:border-gray-400 dark:bg-primary-dark dark:text-gray-300  sm:w-auto"
           placeholder={placeholder}
           spellCheck="false"
           required

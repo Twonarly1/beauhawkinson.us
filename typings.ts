@@ -19,9 +19,13 @@ export interface Repo {
   updatedAt: string
   user: object[]
   stargazerCount: number
-  repositoryTopics: object[]
+  repositoryTopics: Topic[]
   __typename: 'Repository'
   types: ProjectType[]
+}
+
+export type Topic = {
+  nodes: Repo[]
 }
 
 export type Skill = {

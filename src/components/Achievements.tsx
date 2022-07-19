@@ -27,12 +27,10 @@ const certificates: Certificate[] = [
 ]
 
 const Achievements = () => {
-  const [showMore, setShowMore] = useState<boolean>()
   const mobile = useIsMobile()
-  console.log(mobile)
 
   return (
-    <div className="max-w-5xl px-6">
+    <div className="mx-auto mt-32 max-w-5xl px-6 ">
       <Heading title={'Achievements'} subtitle={'Certifications and More.'} />
       <div className="mx-auto mt-12 grid w-fit grid-cols-1 gap-y-4">
         {certificates.map((certificate, index: number) => (
@@ -57,7 +55,7 @@ const Achievements = () => {
               />
             </div>
             {mobile == true && <FingerPrintIcon className="h-6 w-6" />}
-            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-white text-xs font-semibold text-gray-900 opacity-0 duration-300 ease-in-out hover:opacity-100 dark:bg-primary-dark dark:text-gray-300">
+            <div className="absolute inset-0 right-2 z-10 flex items-center justify-center rounded-lg bg-white text-xs font-semibold text-gray-900 opacity-0 duration-300 ease-in-out hover:opacity-100 dark:bg-primary-dark  dark:text-gray-300">
               {certificate.description}
             </div>
           </div>

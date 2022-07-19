@@ -1,17 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { Fragment, useState } from 'react'
+import React from 'react'
 import { Repo } from '../../typings'
-//import Timeago from 'react-timeago'
-import { StarIcon, XIcon } from '@heroicons/react/solid'
+import { StarIcon } from '@heroicons/react/solid'
 import Heading from './Heading'
 import Link from 'next/link'
-import { Transition, Dialog } from '@headlessui/react'
 
 const Pinned = ({ pinnedItems }) => {
-  const [open, setOpen] = useState(true)
-
   return (
-    <div className="px-6 pt-12">
+    <div className="mx-auto mt-12 max-w-5xl px-6">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {pinnedItems.map((item: Repo, index: number) => (
@@ -26,15 +22,6 @@ const Pinned = ({ pinnedItems }) => {
                   <span className="text-sm">{item.stargazerCount}</span>{' '}
                 </p>
               )}
-
-              {/* <p>
-                    created&nbsp;
-                    <Timeago date={item.pushedAt} />
-                  </p>
-              <p>
-                updated&nbsp;
-                <Timeago date={item.updatedAt} />
-              </p> */}
             </div>
 
             <div className="flex-shrink-0 rounded-full border-2 p-1 dark:border-gray-400">
@@ -58,11 +45,8 @@ const Pinned = ({ pinnedItems }) => {
       </div>
       <div className="mx-auto flex cursor-default flex-col items-center justify-center py-4 text-center">
         <Link href="/projects">
-          <a
-            href={'https://github.com/Twonarly1?tab=stars'}
-            className="mx-auto text-center text-sm text-purple-600"
-          >
-            View more <span className="font-semibold">Here</span> →
+          <a className="mx-auto text-center text-sm text-purple-600">
+            View more Here &rarr;
           </a>
         </Link>
       </div>

@@ -9,9 +9,7 @@ module.exports = {
       colors: {
         'primary-dark': '#272727',
         'secondary-dark': '#1c1c1c',
-        'primary-light': '#dddddd',
       },
     },
   },
-  plugins: [require('tailwind-scrollbar-hide', '@tailwindcss/aspect-ratio')],
 }
