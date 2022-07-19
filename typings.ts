@@ -1,11 +1,3 @@
-export type Certificate = {
-  name: string
-  src: string
-  url: string
-  date: string
-  description: string
-}
-
 export interface Repo {
   description: string
   id: string
@@ -19,13 +11,8 @@ export interface Repo {
   updatedAt: string
   user: object[]
   stargazerCount: number
-  repositoryTopics: Topic[]
+  repositoryTopics: any //unsure
   __typename: 'Repository'
-  types: ProjectType[]
-}
-
-export type Topic = {
-  nodes: Repo[]
 }
 
 export type Skill = {
@@ -35,4 +22,10 @@ export type Skill = {
   stack?: boolean
 }
 
-export type ProjectType = 'pinned' | 'starred' | 'public'
+export type Certificate = {
+  name: string
+  src: string
+  url: string
+  date: string
+  description: string
+}

@@ -7,6 +7,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        lora: "'Lora', serrif",
+      },
       colors: {
         'primary-dark': '#272727',
       },

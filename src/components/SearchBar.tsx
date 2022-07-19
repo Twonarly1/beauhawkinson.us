@@ -23,14 +23,14 @@ function SearchBar({ placeholder, data }) {
   }
 
   return (
-    <div>
-      <div className="relative mt-6 max-w-xs">
-        <div className="absolute inset-y-0 right-0 border-y border-transparent py-2 pr-3 text-sm text-gray-300">
+    <div className="mx-auto max-w-5xl">
+      <div className="relative  mt-12 max-w-xs">
+        <div className="absolute inset-y-0 right-0 mt-[2px] border-y border-transparent py-2 pr-3 text-sm text-gray-300">
           <SearchIcon className="h-5 w-5 text-gray-400" />
         </div>
         <input
           type="text"
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:bg-primary-dark dark:text-gray-300 sm:text-sm"
+          className="block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:bg-white/10 dark:bg-primary-dark dark:text-gray-300 sm:text-sm"
           placeholder={placeholder}
           spellCheck="false"
           required
@@ -38,11 +38,11 @@ function SearchBar({ placeholder, data }) {
         />
       </div>
       {filteredData.length != 0 ? (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredData.slice(0, 15).map((item: Repo, index: number) => (
             <div
               key={index}
-              className="col-span-1  flex flex-col rounded-lg border border-gray-300  text-center hover:border-gray-400 hover:shadow-md"
+              className="col-span-1 flex flex-col rounded-lg border border-gray-300 bg-black/5 text-center  hover:border-gray-400 hover:shadow-md dark:bg-white/10"
             >
               <a className="" href={item.url}>
                 <div className="flex flex-1 flex-col p-8">
@@ -62,7 +62,7 @@ function SearchBar({ placeholder, data }) {
                     </p>
                   </div>
                 </div>
-                <div className="relative bottom-8 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500 dark:border-gray-500 dark:text-gray-300">
+                <div className="relative bottom-4 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500 dark:border-gray-500 dark:text-gray-300">
                   <p>
                     created&nbsp;
                     <Timeago date={item.pushedAt} />
@@ -73,32 +73,28 @@ function SearchBar({ placeholder, data }) {
                   </p>
                 </div>
                 <div className="relative bottom-2 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
-                  {
-                    //@ts-ignore
-                    // fix typing for "nodes"
-                    item.repositoryTopics.nodes.map(
-                      (topic: any, index: number) => (
-                        <div
-                          className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
-                          key={index}
-                        >
-                          {topic.topic.name}
-                        </div>
-                      )
+                  {item.repositoryTopics.nodes.map(
+                    (topic: any, index: number) => (
+                      <div
+                        className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
+                        key={index}
+                      >
+                        {topic.topic.name}
+                      </div>
                     )
-                  }
+                  )}
                 </div>
               </a>
             </div>
           ))}
         </div>
       ) : (
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid  grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data
             .map((item: Repo, index: number) => (
               <div
                 key={index}
-                className="col-span-1  flex flex-col rounded-lg border border-gray-300  text-center hover:border-gray-400 hover:shadow-md"
+                className="col-span-1 flex flex-col rounded-lg border border-gray-300 bg-black/5 text-center  hover:border-gray-400 hover:shadow-md dark:bg-white/10"
               >
                 <a className="" href={item.url}>
                   <div className="flex flex-1 flex-col p-8">
@@ -109,40 +105,33 @@ function SearchBar({ placeholder, data }) {
                     />
 
                     <div className="mt-2 min-w-0 flex-1 px-3">
-                      <h3 className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
+                      <h3 className="mt-6 text-2xl font-medium text-gray-900 dark:text-gray-100 sm:text-lg">
                         {item.name}
                       </h3>
 
-                      <p className=" h-16 pt-2 font-sans text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                      <p className=" text-md h-16 pt-2 text-gray-500 dark:text-gray-300 md:text-sm">
                         {item.description}
                       </p>
                     </div>
                   </div>
-                  <div className="relative bottom-8 mx-auto mt-2 w-fit justify-between rounded-md border px-3 text-center text-xs text-gray-500 dark:border-gray-500 dark:text-gray-300">
-                    <p>
-                      created&nbsp;
-                      <Timeago date={item.pushedAt} />
-                    </p>
-                    <p>
-                      updated&nbsp;
-                      <Timeago date={item.updatedAt} />
-                    </p>
-                  </div>
-                  <div className="relative bottom-2 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
-                    {
-                      //@ts-ignore
-                      // fix typing for "nodes"
-                      item.repositoryTopics.nodes.map(
-                        (topic: any, index: number) => (
-                          <div
-                            className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
-                            key={index}
-                          >
-                            {topic.topic.name}
-                          </div>
-                        )
+
+                  <div className="relative bottom-4 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
+                    {item.repositoryTopics.nodes.map(
+                      (topic: any, index: number) => (
+                        <div
+                          className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
+                          key={index}
+                        >
+                          {topic.topic.name}
+                        </div>
                       )
-                    }
+                    )}
+                  </div>
+                  <div className="relative bottom-0 mx-auto flex  text-center text-xs text-gray-500 dark:text-gray-300">
+                    <p className="mx-1">
+                      last updated&nbsp;
+                      <Timeago date={item.updatedAt} />.
+                    </p>
                   </div>
                 </a>
               </div>

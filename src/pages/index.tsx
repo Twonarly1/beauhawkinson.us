@@ -16,7 +16,8 @@ interface AppProps {
 
 export default function Home({ pinnedItems, starredItems }: AppProps) {
   return (
-    <div className="w-full bg-white dark:bg-primary-dark">
+    // className font-lora will import the fontFamily.
+    <div className=" w-full bg-white dark:bg-primary-dark">
       <Header />
       <Pinned pinnedItems={pinnedItems} />
       <Skills />

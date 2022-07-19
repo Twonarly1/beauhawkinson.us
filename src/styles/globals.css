@@ -1,7 +1,17 @@
-@layer components {
-  /* .commonBordering { @apply **css** } */
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    /* 
+    Choose font-family. 
+    Not the best approach because it's not specific. 
+    Modify the tailwinc config file. 
+    */
+  }
+}
+
+@layer components {
+  /* .commonBordering { @apply **css** } */
+}

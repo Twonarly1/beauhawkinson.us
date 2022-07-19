@@ -28,9 +28,9 @@ export const Header = () => {
           GitHub
         </a>
         <a
-          href={'/7.17-resume.pdf'}
           className="bg-purple-200 text-purple-800 hover:bg-purple-300"
           data-splitbee-event="Open LinkedIn"
+          href={'/7.17-resume.pdf'}
         >
           Resume
         </a>

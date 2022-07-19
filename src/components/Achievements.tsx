@@ -35,7 +35,7 @@ const Achievements = () => {
         {certificates.map((certificate, index: number) => (
           <div
             key={index}
-            className="relative flex cursor-pointer items-center justify-between space-x-4 rounded-lg border border-gray-300 p-2 px-6 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
+            className="relative flex cursor-pointer items-center justify-between space-x-4 rounded-lg border border-gray-300 bg-black/5 p-2 px-6 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:bg-white/10 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
           >
             <Image
               src={certificate.src}
