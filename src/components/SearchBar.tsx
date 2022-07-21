@@ -30,7 +30,7 @@ function SearchBar({ placeholder, data }) {
         </div>
         <input
           type="text"
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:bg-white/10 dark:bg-primary-dark dark:text-gray-300 sm:text-sm"
+          className="block w-full rounded-md border border-gray-300 bg-black/5 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:bg-white/10 dark:bg-primary-dark dark:text-gray-300 sm:text-sm"
           placeholder={placeholder}
           spellCheck="false"
           required

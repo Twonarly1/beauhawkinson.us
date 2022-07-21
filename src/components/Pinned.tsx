@@ -32,10 +32,10 @@ const Pinned = ({ pinnedItems }) => {
             />
             <a href={item.url} className="focus:outline-none">
               <span className="absolute inset-0" aria-hidden="true" />
-              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {item.name}
                 <p className="text-sm text-gray-400">{item.description}</p>
-              </p>
+              </div>
             </a>
           </div>
         ))}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface Props {
   title?: string
@@ -6,7 +6,25 @@ interface Props {
   legend?: string
 }
 
+function generateRandomColor() {
+  var letters = '0123456789ABCDEF'
+  var color = '#'
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
+
 const Heading = ({ title, subtitle, legend }: Props) => {
+  const [color, setColor] = useState('')
+  var randomColor = generateRandomColor()
+  console.log(randomColor)
+
+  useEffect(() => {
+    var randomColor = generateRandomColor()
+    setColor(randomColor), []
+  }, [])
+
   return (
     <div className=" mx-auto max-w-5xl">
       <h1 className="cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100">
@@ -16,6 +34,7 @@ const Heading = ({ title, subtitle, legend }: Props) => {
         {subtitle}
       </div>
       <p className="text-xs text-pink-400">{legend}</p>
+      <p className={`bg-${color}`}>{color}</p>
     </div>
   )
 }
