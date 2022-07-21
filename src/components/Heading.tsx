@@ -34,7 +34,6 @@ const Heading = ({ title, subtitle, legend }: Props) => {
         {subtitle}
       </div>
       <p className="text-xs text-pink-400">{legend}</p>
-      <p className={`bg-${color}`}>{color}</p>
     </div>
   )
 }
