@@ -29,3 +29,10 @@ export type Certificate = {
   date: string
   description: string
 }
+
+export interface DragItem {
+  type: string
+  id: string
+  top: number
+  left: number
+}

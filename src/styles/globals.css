@@ -14,4 +14,17 @@
 
 @layer components {
   /* .commonBordering { @apply **css** } */
+
+  .dot {
+    @apply absolute top-[100px] cursor-pointer overflow-hidden rounded-full shadow-sm;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }

@@ -138,6 +138,10 @@ const skills: Skill[] = [
   },
 ]
 
+export function classNames(...classes: (false | null | undefined | string)[]) {
+  return classes.filter(Boolean).join(' ')
+}
+
 const Skills = () => {
   return (
     <div className="mx-auto mt-32 max-w-5xl px-6">
