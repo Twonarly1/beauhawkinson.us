@@ -2,7 +2,7 @@
 import { SearchIcon } from '@heroicons/react/outline'
 import React, { useState } from 'react'
 import Timeago from 'react-timeago'
-import { Repo } from '../../typings'
+import { Repo } from '../../../typings'
 
 export default function AllProjects({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([])
@@ -23,7 +23,7 @@ export default function AllProjects({ placeholder, data }) {
   }
 
   return (
-    <div className="mx-auto max-w-5xl">
+    <>
       <div className="relative  mt-12 max-w-xs">
         <div className="absolute inset-y-0 right-0 border-y border-transparent py-2 pr-3 text-sm">
           <SearchIcon className="h-5 w-5" />
@@ -85,7 +85,7 @@ export default function AllProjects({ placeholder, data }) {
           ))}
         </div>
       ) : (
-        <div className="mt-6 grid  grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {data
             .map((item: Repo, index: number) => (
               <div
@@ -135,6 +135,6 @@ export default function AllProjects({ placeholder, data }) {
             .reverse()}
         </div>
       )}
-    </div>
+    </>
   )
 }

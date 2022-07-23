@@ -42,3 +42,11 @@ export interface Headings {
   subtitle?: any
   legend?: string
 }
+
+interface Dot {
+  iD: number
+  diameter: number
+  rgb: any
+  top: number
+  left: number
+}

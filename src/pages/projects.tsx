@@ -3,15 +3,20 @@ import client from '../../apollo-client'
 import { gql } from '@apollo/client'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import AllProjects from '../components/AllProjects'
+import AllProjects from '../components/sections/AllProjects'
 
 export default function Projects({ allPublicRepos }) {
   return (
     <>
-      <Heading title={'Projects'} subtitle={'My Public Repos'} />
-      <AllProjects placeholder="Search Repositories..." data={allPublicRepos} />
+      <div className="section">
+        <Heading title={'Projects'} subtitle={'My Public Repos'} />
+        <AllProjects
+          placeholder="Search Repositories..."
+          data={allPublicRepos}
+        />
+      </div>
       <Link href={'/'}>
-        <ArrowLeftIcon className="mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border bg-gray-50 p-1 text-gray-400 hover:scale-110 hover:border-gray-400 dark:bg-slate-800" />
+        <ArrowLeftIcon className="mx-auto h-8 w-8 cursor-pointer rounded-full border bg-gray-50 p-1 text-gray-400 hover:scale-110 hover:border-gray-400 dark:bg-slate-800" />
       </Link>
     </>
   )
