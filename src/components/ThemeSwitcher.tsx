@@ -1,28 +1,30 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import Button from './Button'
 
 export const ThemeSwitcher = () => {
+  const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
 
   if (!mounted) return null
 
-  return (
-    <button
-      aria-label="Toggle Dark Mode"
-      type="button"
-      className="mt-[1px] h-5 w-5 items-center "
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-    >
-      {theme === 'dark' ? (
-        <SunIcon className="text-gray-100" />
-      ) : (
-        <MoonIcon className="text-gray-700" />
-      )}
-    </button>
-  )
+  const renderThemeChanger = () => {
+    if (!mounted) return null
+    const currentTheme = theme === 'system' ? systemTheme : theme
+    if (currentTheme === 'dark') {
+      return (
+        <Button Icon={SunIcon} onClick={async () => setTheme('light')}></Button>
+      )
+    } else {
+      return (
+        <Button Icon={MoonIcon} onClick={async () => setTheme('dark')}></Button>
+      )
+    }
+  }
+
+  return <> {renderThemeChanger()}</>
 }

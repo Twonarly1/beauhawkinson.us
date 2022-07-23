@@ -2,12 +2,11 @@ import React from 'react'
 import client from '../../apollo-client'
 import { gql } from '@apollo/client'
 import { Repo } from '../../typings'
-import Achievements from '../components/Achievements'
-import GithubActivity from '../components/GithubActivity'
-import { Header } from '../components/Header'
-import Pinned from '../components/Pinned'
-import Footer from '../components/Footer'
-import Skills from '../components/Skills'
+import Achievements from '../components/sections/Achievements'
+import GithubActivity from '../components/sections/GithubActivity'
+import About from '../components/sections/About'
+import Pinned from '../components/sections/Pinned'
+import Skills from '../components/sections/Skills'
 
 interface AppProps {
   pinnedItems: Repo[]
@@ -16,15 +15,13 @@ interface AppProps {
 
 export default function Home({ pinnedItems, starredItems }: AppProps) {
   return (
-    // className font-lora will import the fontFamily.
-    <div className=" w-full bg-white dark:bg-primary-dark">
-      <Header />
+    <>
+      <About />
       <Pinned pinnedItems={pinnedItems} />
       <Skills />
       <Achievements />
       <GithubActivity starredItems={starredItems} />
-      <Footer />
-    </div>
+    </>
   )
 }
 

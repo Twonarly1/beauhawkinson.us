@@ -36,3 +36,9 @@ export interface DragItem {
   top: number
   left: number
 }
+
+export interface Headings {
+  title?: string
+  subtitle?: any
+  legend?: string
+}

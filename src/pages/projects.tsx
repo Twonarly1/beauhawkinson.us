@@ -1,34 +1,18 @@
-import Footer from '../components/Footer'
-import Nav from '../components/Nav'
 import Heading from '../components/Heading'
-import Head from 'next/head'
 import client from '../../apollo-client'
 import { gql } from '@apollo/client'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
-import SearchBar from '../components/SearchBar'
+import AllProjects from '../components/AllProjects'
 
 export default function Projects({ allPublicRepos }) {
   return (
     <>
-      <Head>
-        <title>Projects - view all my public repos!</title>
-        <meta name="description" content="All my public repos" />
-        <meta
-          property="og:title"
-          content="Projects - view all my public repos"
-        />
-        <link rel="icon" href="/two.png" />
-      </Head>
-      <div className=" mx-auto w-full  px-6 dark:bg-primary-dark dark:text-gray-300">
-        <Nav />
-        <Heading title={'Projects'} subtitle={'My Public Repos'} />
-        <SearchBar placeholder="Search Repositories..." data={allPublicRepos} />
-        <Link href={'/'}>
-          <ArrowLeftIcon className="mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border bg-black/5 p-1 text-gray-400 hover:scale-110 hover:border-gray-400" />
-        </Link>
-        <Footer />
-      </div>
+      <Heading title={'Projects'} subtitle={'My Public Repos'} />
+      <AllProjects placeholder="Search Repositories..." data={allPublicRepos} />
+      <Link href={'/'}>
+        <ArrowLeftIcon className="mx-auto mt-6 h-8 w-8 cursor-pointer rounded-full border bg-gray-50 p-1 text-gray-400 hover:scale-110 hover:border-gray-400 dark:bg-slate-800" />
+      </Link>
     </>
   )
 }
