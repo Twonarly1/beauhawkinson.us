@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import { AppProps } from '../../node_modules/next/app'
-import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import Layout from '../components/layout/Layout'
 

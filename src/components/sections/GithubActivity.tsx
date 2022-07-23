@@ -12,9 +12,9 @@ const GithubActivity = ({ starredItems }: Props) => {
       <Heading title={'GitHub Activity'} subtitle={'Repos I Like'} />
       <div className="flex items-center justify-center px-16">
         <div className="relative w-full max-w-lg ">
-          <div className="absolute top-40 -left-4 z-0 h-72 w-72 animate-blob rounded-full bg-purple-300 opacity-20 mix-blend-multiply blur-sm filter dark:bg-purple-500 dark:opacity-100"></div>
-          <div className="animation-delay-2000 absolute top-40 -right-4 z-0 h-72 w-72 animate-blob rounded-full bg-yellow-300 opacity-20 mix-blend-multiply blur-sm filter dark:bg-yellow-500  dark:opacity-100"></div>
-          <div className="animation-delay-4000 absolute top-56 left-20 z-0 h-72 w-72 animate-blob rounded-full bg-pink-300 opacity-20 mix-blend-multiply blur-sm filter dark:bg-red-500  dark:opacity-100"></div>
+          <div className="blobAnimation top-40 -left-4 bg-purple-300 dark:bg-purple-500"></div>
+          <div className="animation-delay-2000 blobAnimation top-40 -right-4 bg-yellow-300 dark:bg-yellow-500"></div>
+          <div className="animation-delay-4000 blobAnimation top-56 left-20 bg-pink-300 dark:bg-red-500"></div>
           <div className="relative z-10 space-y-4">
             <div className="relative mx-auto mt-12 grid w-fit grid-cols-1 gap-y-4">
               {starredItems?.map((item: Repo, index: number) => {
@@ -22,18 +22,16 @@ const GithubActivity = ({ starredItems }: Props) => {
                   <a
                     key={index}
                     href={item.url}
-                    className="relative flex items-center rounded-lg border border-gray-300 bg-gray-50 p-3 hover:border-gray-400 hover:shadow-sm dark:border-gray-400 dark:bg-slate-800 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
+                    className="commonBordering relative flex items-center p-3 dark:bg-slate-800"
                   >
                     <div className="min-w-0 flex-1">
-                      <span className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                      <span className="offColorHeading text-lg font-medium">
                         {item.owner.login}/
                       </span>
-                      <span className="text-sm text-gray-400 dark:text-blue-300">
+                      <span className="text-sm dark:text-blue-300">
                         {item.name}
                       </span>
-                      <div className="text-sm text-gray-400">
-                        {item.description}
-                      </div>
+                      <div className="text-sm ">{item.description}</div>
                     </div>
                   </a>
                 )
@@ -41,7 +39,7 @@ const GithubActivity = ({ starredItems }: Props) => {
 
               <a
                 href={'https://github.com/Twonarly1?tab=stars'}
-                className="mx-auto text-sm text-gray-100"
+                className="offColorHeading mx-auto text-sm "
               >
                 View more on GitHub &rarr;
               </a>

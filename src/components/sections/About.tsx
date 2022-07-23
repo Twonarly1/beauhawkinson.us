@@ -1,8 +1,8 @@
-import React from 'react'
-import Heading from '../Heading'
 import Image from 'next/image'
+import React from 'react'
 import hoverImage from '../../../public/images/profileImages/pfp.jpeg'
 import pfp from '../../../public/images/profileImages/profilepic.jpg'
+import Heading from '../Heading'
 
 export default function About() {
   const size = 128

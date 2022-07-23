@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { SearchIcon } from '@heroicons/react/outline'
 import React, { useState } from 'react'
 import Timeago from 'react-timeago'
+import { SearchIcon } from '@heroicons/react/outline'
 import { Repo } from '../../../typings'
 
 type Props = {
@@ -48,22 +48,22 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
           {filteredData.slice(0, 15).map((item: Repo, index: number) => (
             <div
               key={index}
-              className="col-span-1 flex flex-col rounded-lg border border-gray-300 bg-gray-50 text-center  hover:border-gray-400 hover:shadow-md dark:bg-slate-800 dark:hover:shadow-sm dark:hover:shadow-white"
+              className="commonBordering col-span-1 flex flex-col text-center dark:bg-slate-800"
             >
-              <a className="" href={item.url}>
+              <a href={item.url}>
                 <div className="flex flex-1 flex-col p-8">
                   <img
                     src={item.openGraphImageUrl}
                     alt={item.name}
-                    className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+                    className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
                   />
 
                   <div className="mt-2 min-w-0 flex-1 px-3">
-                    <h3 className="mt-6 text-lg font-medium text-gray-900 dark:text-gray-100">
+                    <h3 className="offColorHeading mt-6 text-lg font-medium">
                       {item.name}
                     </h3>
 
-                    <p className=" h-16 pt-2 font-sans text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                    <p className="h-16 pt-2 font-sans text-sm text-gray-500 dark:text-gray-300 md:text-sm">
                       {item.description}
                     </p>
                   </div>
@@ -72,7 +72,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                   {item.repositoryTopics.nodes.map(
                     (topic: any, index: number) => (
                       <div
-                        className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
+                        className="offColorHeading rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
                         key={index}
                       >
                         {topic.topic.name}
@@ -80,7 +80,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                     )
                   )}
                 </div>
-                <div className="relative bottom-0 mx-auto flex p-2  text-center text-xs text-gray-500 dark:text-gray-300">
+                <div className="relative bottom-0 mx-auto flex p-2 text-center text-xs dark:font-light">
                   <p className="mx-1">
                     last updated&nbsp;
                     <Timeago date={item.updatedAt} />.
@@ -96,7 +96,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
             .map((item: Repo, index: number) => (
               <div
                 key={index}
-                className="col-span-1 flex flex-col rounded-lg border border-gray-300 bg-gray-50 text-center hover:border-gray-400 hover:shadow-md  dark:bg-slate-800 dark:hover:shadow-sm dark:hover:shadow-white"
+                className="commonBordering col-span-1 flex flex-col text-center dark:bg-slate-800"
               >
                 <a className="" href={item.url}>
                   <div className="flex flex-1 flex-col p-8">
@@ -107,11 +107,11 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                     />
 
                     <div className="mt-2 min-w-0 flex-1 px-3">
-                      <h3 className="mt-6 text-2xl font-medium text-gray-900 dark:text-gray-100 sm:text-lg">
+                      <h3 className="offColorHeading mt-6 text-2xl font-medium sm:text-lg">
                         {item.name}
                       </h3>
 
-                      <p className=" text-md h-16 pt-2 text-gray-400 md:text-sm">
+                      <p className=" text-md h-16 pt-2 text-gray-500 md:text-sm">
                         {item.description}
                       </p>
                     </div>
@@ -121,7 +121,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                     {item.repositoryTopics.nodes.map(
                       (topic: any, index: number) => (
                         <div
-                          className=" rounded-md border border-gray-300 px-[5px] text-xs text-gray-500 hover:border-gray-400 dark:border-gray-500  dark:text-gray-300"
+                          className="offColorHeading rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
                           key={index}
                         >
                           {topic.topic.name}
@@ -129,7 +129,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                       )
                     )}
                   </div>
-                  <div className="relative bottom-0 mx-auto flex p-2  text-center text-xs text-gray-500 dark:text-gray-300">
+                  <div className="relative bottom-0 mx-auto flex p-2 text-center text-xs dark:font-light">
                     <p className="mx-1">
                       last updated&nbsp;
                       <Timeago date={item.updatedAt} />.

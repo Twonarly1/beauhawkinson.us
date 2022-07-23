@@ -2,9 +2,9 @@ import Image from 'next/image'
 import React from 'react'
 import TimeAgo from 'react-timeago'
 import { FingerPrintIcon } from '@heroicons/react/outline'
-import Heading from '../Heading'
-import useIsMobile from '../../lib/useIsMobile'
 import { Certificate } from '../../../typings'
+import useIsMobile from '../../lib/useIsMobile'
+import Heading from '../Heading'
 
 const certificates: Certificate[] = [
   {
@@ -35,7 +35,7 @@ const Achievements = () => {
         {certificates.map((certificate, index: number) => (
           <div
             key={index}
-            className="relative flex cursor-pointer items-center rounded-lg border border-gray-300 bg-gray-50 p-2 px-6 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:bg-slate-800 dark:shadow-sm hover:dark:border-gray-300 hover:dark:shadow-white"
+            className="commonBordering relative flex cursor-pointer items-center p-2 px-6 dark:bg-slate-800 "
           >
             <Image
               src={certificate.src}
@@ -54,7 +54,7 @@ const Achievements = () => {
               />
             </div>
             {mobile == true && <FingerPrintIcon className="h-6 w-6" />}
-            <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-white text-center text-[10px] text-gray-900 opacity-0 hover:opacity-100 dark:bg-slate-800 dark:text-gray-300 sm:p-2 sm:text-sm">
+            <div className="commonBordering absolute inset-0 z-10 flex items-center justify-center border-none text-center text-[10px] text-gray-900 opacity-0 hover:opacity-100 dark:bg-slate-800 dark:text-gray-100 sm:p-2 sm:text-sm">
               {certificate.description}
             </div>
           </div>

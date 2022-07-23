@@ -1,12 +1,12 @@
 import React from 'react'
-import client from '../../apollo-client'
 import { gql } from '@apollo/client'
+import client from '../../apollo-client'
 import { Repo } from '../../typings'
-import Achievements from '../components/sections/Achievements'
-import GithubActivity from '../components/sections/GithubActivity'
 import About from '../components/sections/About'
 import Pinned from '../components/sections/Pinned'
 import Skills from '../components/sections/Skills'
+import Achievements from '../components/sections/Achievements'
+import GithubActivity from '../components/sections/GithubActivity'
 
 interface AppProps {
   pinnedItems: Repo[]

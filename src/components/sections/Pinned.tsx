@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import { Repo } from '../../../typings'
-import { StarIcon } from '@heroicons/react/outline'
-import Heading from '../Heading'
 import Link from 'next/link'
+import React from 'react'
+import { StarIcon } from '@heroicons/react/outline'
+import { Repo } from '../../../typings'
+import Heading from '../Heading'
 
 type Props = {
   pinnedItems: Repo[]
@@ -17,15 +17,15 @@ const Pinned = ({ pinnedItems }: Props) => {
         {pinnedItems.map((item: Repo, index: number) => (
           <div
             key={index}
-            className="relative flex items-center gap-x-4 rounded-lg border border-gray-300 bg-gray-50 px-6 py-5 hover:border-gray-400 hover:shadow-md dark:border-gray-400 dark:bg-slate-800 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white [&>*:nth-child(3)_p:first-child]:hover:text-yellow-500"
+            className="commonBordering relative flex items-center gap-x-4 px-6 py-5 dark:bg-slate-800"
           >
             <div className="absolute top-1 right-2 mx-auto w-fit justify-between">
               {item.stargazerCount > 0 && (
                 <p className="flex items-center">
-                  <StarIcon className="h-4 w-4 text-yellow-500  " />
+                  <StarIcon className="h-4 w-4 text-yellow-500" />
                   <span className="text-sm dark:text-gray-400">
                     {item.stargazerCount}
-                  </span>{' '}
+                  </span>
                 </p>
               )}
             </div>
@@ -36,9 +36,7 @@ const Pinned = ({ pinnedItems }: Props) => {
             />
             <a href={item.url} className="focus:outline-none">
               <span className="absolute inset-0" aria-hidden="true" />
-              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                {item.name}
-              </p>
+              <p className="offColorHeading text-sm font-medium">{item.name}</p>
               <p className="text-sm">{item.description}</p>
             </a>
           </div>
@@ -50,7 +48,7 @@ const Pinned = ({ pinnedItems }: Props) => {
           Explore more of my work
         </div>
         <Link href="/projects">
-          <a className="mt-2 rounded-md border border-gray-300 bg-gray-50 py-1 px-6 text-gray-900 hover:border-gray-400 hover:shadow-md dark:bg-slate-800 dark:text-gray-100 dark:hover:shadow-sm dark:hover:shadow-white">
+          <a className="commonBordering offColorHeading mt-2 py-1 px-6 dark:bg-slate-800 ">
             View all
           </a>
         </Link>
