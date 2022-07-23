@@ -4,20 +4,26 @@ import React, { useState } from 'react'
 import Timeago from 'react-timeago'
 import { Repo } from '../../../typings'
 
-export default function AllProjects({ placeholder, data }) {
+type Props = {
+  placeholder: string
+  allPublicRepos: Repo[]
+}
+
+export default function AllProjects({ placeholder, allPublicRepos }: Props) {
   const [filteredData, setFilteredData] = useState([])
   const [wordEntered, setWordEntered] = useState('')
 
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchWord = event.target.value
     setWordEntered(searchWord)
-    const newFilter = data.filter((item: Repo) => {
+    const newFilter = allPublicRepos.filter((item: Repo) => {
       return item.name.toLowerCase().includes(searchWord.toLowerCase())
     })
 
     if (searchWord === '') {
       setFilteredData([])
     } else {
+      //@ts-ignore
       setFilteredData(newFilter)
     }
   }
@@ -86,7 +92,7 @@ export default function AllProjects({ placeholder, data }) {
         </div>
       ) : (
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {data
+          {allPublicRepos
             .map((item: Repo, index: number) => (
               <div
                 key={index}

@@ -5,7 +5,11 @@ import { StarIcon } from '@heroicons/react/outline'
 import Heading from '../Heading'
 import Link from 'next/link'
 
-const Pinned = ({ pinnedItems }) => {
+type Props = {
+  pinnedItems: Repo[]
+}
+
+const Pinned = ({ pinnedItems }: Props) => {
   return (
     <div className="section">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />

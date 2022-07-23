@@ -4,15 +4,20 @@ import { gql } from '@apollo/client'
 import { ArrowLeftIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import AllProjects from '../components/sections/AllProjects'
+import { Repo } from '../../typings'
 
-export default function Projects({ allPublicRepos }) {
+interface AppProps {
+  allPublicRepos: Repo[]
+}
+
+export default function Projects({ allPublicRepos }: AppProps) {
   return (
     <>
       <div className="section">
         <Heading title={'Projects'} subtitle={'My Public Repos'} />
         <AllProjects
           placeholder="Search Repositories..."
-          data={allPublicRepos}
+          allPublicRepos={allPublicRepos}
         />
       </div>
       <Link href={'/'}>

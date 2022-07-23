@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function DotsLayout({ dot }) {
+type Props = {
+  dot: any
+}
+
+export default function DotsLayout({ dot }: Props) {
   return (
     <div
       className="absolute z-0 rounded-full opacity-20 active:cursor-move"

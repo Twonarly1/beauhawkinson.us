@@ -2,7 +2,11 @@ import React from 'react'
 import { Repo } from '../../../typings'
 import Heading from '../Heading'
 
-const GithubActivity = ({ starredItems }) => {
+type Props = {
+  starredItems: Repo[]
+}
+
+const GithubActivity = ({ starredItems }: Props) => {
   return (
     <div className="section">
       <Heading title={'GitHub Activity'} subtitle={'Repos I Like'} />

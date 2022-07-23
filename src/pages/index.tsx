@@ -76,7 +76,7 @@ export async function getStaticProps() {
   })
 
   const { user } = data
-  const pinnedItems = user.pinnedItems.edges.map(({ node }) => node)
+  const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
   const starredItems = user.starredRepositories.nodes
   return {
     props: { pinnedItems, starredItems },

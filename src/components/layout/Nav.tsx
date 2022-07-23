@@ -16,7 +16,9 @@ const Nav = () => {
 
   function generateDotData() {
     let dotData = []
-    let count: number = parseInt(`${Number((height + width) / 75)}`)
+    //@ts-ignore
+
+    let count = parseInt(`${Number((height + width) / 75)}`)
     for (let i = 0; i < count; i++) {
       //@ts-ignore
       const dot: Dot = {}
@@ -27,7 +29,10 @@ const Nav = () => {
         g: getRandomInt(100, 255),
         b: getRandomInt(100, 255),
       }
+      //@ts-ignore
+
       dot.top = getRandomInt(10, height - 110)
+      //@ts-ignore
       dot.left = getRandomInt(10, width - 110)
       dotData.push(dot)
     }
