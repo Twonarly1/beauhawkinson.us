@@ -43,10 +43,16 @@ export interface Headings {
   legend?: string
 }
 
-interface Dot {
+export interface Dot {
+  id: number
   iD: number
   diameter: number
   rgb: any
   top: number
   left: number
+}
+
+export type Tab = {
+  name: string
+  path: string
 }

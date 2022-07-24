@@ -1,15 +1,13 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 import { MoonIcon, SunIcon } from '@heroicons/react/outline'
-import Button from './Button'
 
 export const ThemeSwitcher = () => {
   const { systemTheme, theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState<boolean>(false)
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
-
   if (!mounted) return null
 
   const renderThemeChanger = () => {
@@ -17,11 +15,17 @@ export const ThemeSwitcher = () => {
     const currentTheme = theme === 'system' ? systemTheme : theme
     if (currentTheme === 'dark') {
       return (
-        <Button Icon={SunIcon} onClick={async () => setTheme('light')}></Button>
+        <SunIcon
+          onClick={async () => setTheme('light')}
+          className="commonBordering navButton dark:bg-slate-800"
+        />
       )
     } else {
       return (
-        <Button Icon={MoonIcon} onClick={async () => setTheme('dark')}></Button>
+        <MoonIcon
+          onClick={async () => setTheme('dark')}
+          className="commonBordering navButton dark:bg-slate-800"
+        />
       )
     }
   }

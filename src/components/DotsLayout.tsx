@@ -1,7 +1,8 @@
 import React from 'react'
+import { Dot } from '../../typings'
 
 type Props = {
-  dot: any
+  dot: Dot
 }
 
 export default function DotsLayout({ dot }: Props) {

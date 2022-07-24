@@ -1,21 +1,28 @@
 import { SparklesIcon } from '@heroicons/react/outline'
-import Link from 'next/link'
-import React, { useState } from 'react'
-import { Dot } from '../../../typings'
+import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
+import { Dot, Tab } from '../../../typings'
 import getRandomInt from '../../lib/getRandomInt'
 import useWindowDimensions from '../../lib/useWindowDimensions'
-import Button from '../Button'
 import DotsLayout from '../DotsLayout'
 import { ThemeSwitcher } from '../ThemeSwitcher'
 
+const navigations: Tab[] = [
+  { name: 'home', path: '/' },
+  { name: 'projects', path: '/projects' },
+]
+
 const Nav = () => {
+  const router = useRouter()
   const [dotDATA, setDotDATA] = useState<Dot[]>()
   const { height, width } = useWindowDimensions()
+  const [activeTab, setActiveTab] = useState<string>('')
 
   function generateDotData() {
     let dotData = []
-    //@ts-ignore
-    let count = parseInt(`${Number((height + width) / 75)}`)
+    let h: any = height
+    let w: any = width
+    let count = parseInt(`${Number((h + w) / 75)}`)
     for (let i = 0; i < count; i++) {
       //@ts-ignore
       const dot: Dot = {}
@@ -26,36 +33,63 @@ const Nav = () => {
         g: getRandomInt(100, 255),
         b: getRandomInt(100, 255),
       }
-      //@ts-ignore
-      dot.top = getRandomInt(10, height - 110)
-      //@ts-ignore
-      dot.left = getRandomInt(10, width - 110)
+      dot.top = getRandomInt(10, h - 110)
+      dot.left = getRandomInt(10, w - 110)
       dotData.push(dot)
     }
     setDotDATA(dotData)
     return dotData
   }
 
-  const navigations = [
-    { label: 'bhawkinson.eth', path: '/' },
-    { label: 'projects', path: '/projects' },
-  ]
+  const handleClick = (tabName: string) => {
+    if (tabName == 'home') {
+      router.push('/')
+    } else {
+      router.push(`/${tabName}`)
+    }
+  }
+
+  useEffect(() => {
+    if (router.pathname == '/') setActiveTab('home')
+    else {
+      setActiveTab(router.pathname.substring(1))
+    }
+  }, [router.pathname])
+
+  function capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
 
   return (
-    <nav className="offColorHeading flex max-w-5xl justify-between px-6 py-5 pb-12">
+    <nav className="offColorHeading flex justify-between px-6 py-5 pb-12">
       <div className="flex gap-4">
-        {navigations.map((nav, index) => (
-          <Link key={index} href={nav.path}>
-            <p className="cursor-pointer italic">{nav.label}</p>
-          </Link>
+        {navigations.map((tab: Tab, index: number) => (
+          <a
+            key={index}
+            href={tab.path}
+            onClick={() => handleClick(tab.name || tab.path)}
+            className={`commonBordering cursor-pointer rounded-md px-3 py-2 text-sm font-medium dark:bg-slate-800 ${
+              tab.name == activeTab
+                ? 'text-pink-400 dark:text-pink-200'
+                : 'offColorHeading'
+            }`}
+          >
+            <div className="flex items-center space-x-2">
+              {capitalizeFirstLetter(tab.name)}
+            </div>
+          </a>
         ))}
       </div>
       <div className="flex gap-4">
         <ThemeSwitcher />
-        <Button Icon={SparklesIcon} onClick={() => generateDotData()}></Button>
+        <SparklesIcon
+          onClick={() => generateDotData()}
+          className="commonBordering navButton dark:bg-slate-800"
+        />
       </div>
+
       {dotDATA &&
-        dotDATA.map((dot: any, index: number) => (
+        dotDATA.map((dot: Dot, index: number) => (
           <DotsLayout dot={dot} key={index} />
         ))}
     </nav>

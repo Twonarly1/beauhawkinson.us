@@ -10,6 +10,7 @@
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.4",
     "graphql": "^16.5.0",
     "next": "latest",
     "next-themes": "^0.2.0",
