@@ -11,7 +11,7 @@ const GithubActivity = ({ starredItems }: Props) => {
     <div className="section">
       <Heading title={'GitHub Activity'} subtitle={'Repos I Like'} />
       <div className="flex items-center justify-center lg:px-16">
-        <div className="relative w-full max-w-lg ">
+        <div className="relative w-full max-w-lg">
           <div className="blobAnimation top-40 -left-4 bg-purple-300 dark:bg-purple-500"></div>
           <div className="animation-delay-2000 blobAnimation top-40 -right-4 bg-yellow-300 dark:bg-yellow-500"></div>
           <div className="animation-delay-4000 blobAnimation top-56 left-20 bg-pink-300 dark:bg-red-500"></div>
