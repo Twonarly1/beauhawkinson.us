@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply mx-auto w-full max-w-5xl;
+    @apply mx-auto w-full;
     @apply bg-white text-gray-400 dark:bg-primary-dark dark:text-gray-400;
   }
 }
@@ -14,7 +14,7 @@
     @apply mx-auto max-w-5xl px-6 pb-32;
   }
   .commonBordering {
-    @apply rounded-lg  border border-gray-300 bg-gray-50 hover:border-gray-400 hover:shadow-md dark:border-gray-400 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white;
+    @apply rounded-lg border border-gray-300 bg-gray-50 hover:border-gray-400 hover:shadow-md dark:border-gray-400 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white;
   }
   .blobAnimation {
     @apply absolute z-0 h-72 w-72 animate-blob rounded-full opacity-20 mix-blend-multiply blur-sm filter dark:opacity-100;

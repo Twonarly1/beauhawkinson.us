@@ -11,7 +11,7 @@ type Props = {
 
 const Pinned = ({ pinnedItems }: Props) => {
   return (
-    <div className="section">
+    <div className="section  mt-12">
       <Heading title={'Projects'} subtitle={'My Pinned Repos'} />
       <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {pinnedItems.map((item: Repo, index: number) => (
@@ -32,7 +32,7 @@ const Pinned = ({ pinnedItems }: Props) => {
             <img
               src={item.openGraphImageUrl}
               alt={item.name}
-              className="h-20 w-20 rounded-full "
+              className="h-10 w-10 rounded-full sm:h-20 sm:w-20 "
             />
             <a href={item.url} className="focus:outline-none">
               <span className="absolute inset-0" aria-hidden="true" />

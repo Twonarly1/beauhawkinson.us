@@ -61,31 +61,33 @@ const Nav = () => {
   }
 
   return (
-    <nav className="offColorHeading flex justify-between px-6 py-5 pb-12">
-      <div className="flex gap-4">
-        {navigations.map((tab: Tab, index: number) => (
-          <a
-            key={index}
-            href={tab.path}
-            onClick={() => handleClick(tab.name || tab.path)}
-            className={`commonBordering cursor-pointer rounded-md px-3 py-2 text-sm font-medium dark:bg-slate-800 ${
-              tab.name == activeTab
-                ? 'text-pink-400 dark:text-pink-200'
-                : 'offColorHeading'
-            }`}
-          >
-            <div className="flex items-center space-x-2">
-              {capitalizeFirstLetter(tab.name)}
-            </div>
-          </a>
-        ))}
-      </div>
-      <div className="flex gap-4">
-        <ThemeSwitcher />
-        <SparklesIcon
-          onClick={() => generateDotData()}
-          className="commonBordering navButton dark:bg-slate-800"
-        />
+    <nav className="offColorHeading flex justify-between bg-black/5 px-6 py-5 pb-5 dark:bg-white/10">
+      <div className="mx-auto flex w-full max-w-5xl justify-between gap-4">
+        <div className="flex gap-4">
+          {navigations.map((tab: Tab, index: number) => (
+            <a
+              key={index}
+              href={tab.path}
+              onClick={() => handleClick(tab.name || tab.path)}
+              className={`commonBordering cursor-pointer rounded-md px-3 py-2 text-sm font-medium dark:bg-slate-800 ${
+                tab.name == activeTab
+                  ? 'text-pink-400 dark:text-pink-200'
+                  : 'offColorHeading'
+              }`}
+            >
+              <div className="flex items-center space-x-2">
+                {capitalizeFirstLetter(tab.name)}
+              </div>
+            </a>
+          ))}
+        </div>
+        <div className="flex items-center gap-4">
+          <ThemeSwitcher />
+          <SparklesIcon
+            onClick={() => generateDotData()}
+            className="commonBordering navButton dark:bg-slate-800"
+          />
+        </div>
       </div>
 
       {dotDATA &&

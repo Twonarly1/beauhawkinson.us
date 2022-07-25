@@ -68,11 +68,11 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                     </p>
                   </div>
                 </div>
-                <div className="relative bottom-4 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
+                <div className="mb-4 grid grid-cols-1 space-y-1 lg:flex lg:space-y-0">
                   {item.repositoryTopics.nodes.map(
                     (topic: any, index: number) => (
                       <div
-                        className="offColorHeading rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
+                        className="offColorHeading mx-auto w-fit rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
                         key={index}
                       >
                         {topic.topic.name}
@@ -99,11 +99,11 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                 className="commonBordering col-span-1 flex flex-col text-center dark:bg-slate-800"
               >
                 <a className="" href={item.url}>
-                  <div className="flex flex-1 flex-col p-8">
+                  <div className="flex flex-1 flex-col p-4">
                     <img
                       src={item.openGraphImageUrl}
                       alt={item.name}
-                      className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+                      className=" mx-auto h-32 w-32 flex-shrink-0 rounded-full p-2"
                     />
 
                     <div className="mt-2 min-w-0 flex-1 px-3">
@@ -111,17 +111,17 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                         {item.name}
                       </h3>
 
-                      <p className=" text-md h-16 pt-2 text-gray-500 md:text-sm">
+                      <p className="mt-2 h-12 w-full text-center text-sm text-gray-500 md:text-sm">
                         {item.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="relative bottom-4 mx-auto mb-2 flex justify-center space-x-[7px] px-3 text-sm">
+                  <div className="mb-4 grid grid-cols-1 space-y-1 lg:flex lg:space-y-0">
                     {item.repositoryTopics.nodes.map(
                       (topic: any, index: number) => (
                         <div
-                          className="offColorHeading rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
+                          className="offColorHeading mx-auto w-fit rounded-md border border-gray-300 px-[5px] text-xs dark:border-gray-400 dark:font-light"
                           key={index}
                         >
                           {topic.topic.name}
@@ -129,7 +129,7 @@ export default function AllProjects({ placeholder, allPublicRepos }: Props) {
                       )
                     )}
                   </div>
-                  <div className="relative bottom-0 mx-auto flex p-2 text-center text-xs dark:font-light">
+                  <div className=" relative bottom-0 mx-auto flex p-2 text-xs dark:font-light">
                     <p className="mx-1">
                       last updated&nbsp;
                       <Timeago date={item.updatedAt} />.

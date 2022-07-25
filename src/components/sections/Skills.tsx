@@ -162,7 +162,7 @@ const Skills = () => {
             }`}
             href={skill.url}
           >
-            <div className="relative mx-auto h-10 w-10">
+            <div className="relative mx-auto h-6 w-6 xs:h-10 xs:w-10">
               <Image
                 src={skill.src}
                 alt={skill.name}

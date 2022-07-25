@@ -14,6 +14,7 @@ export default function Projects({ allPublicRepos }: AppProps) {
   return (
     <>
       <div className="section">
+        <h2 className="h-12"></h2>
         <Heading title={'Projects'} subtitle={'My Public Repos'} />
         <AllProjects
           placeholder="Search Repositories..."
