@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Dot, Tab } from '../../../typings'
 import getRandomInt from '../../lib/getRandomInt'
 import useWindowDimensions from '../../lib/useWindowDimensions'
+import { capitalizeFirstLetter } from '../../lib/utils'
 import DotsLayout from '../DotsLayout'
 import { ThemeSwitcher } from '../ThemeSwitcher'
 
@@ -56,12 +57,8 @@ const Nav = () => {
     }
   }, [router.pathname])
 
-  function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
-
   return (
-    <nav className="offColorHeading flex justify-between bg-black/5 px-6 py-5 pb-5 dark:bg-white/10">
+    <nav className="offColorHeading sticky top-0 z-50 flex justify-between bg-black/5 px-6 py-5 pb-5 backdrop-blur-md dark:bg-white/10">
       <div className="mx-auto flex w-full max-w-5xl justify-between gap-4">
         <div className="flex gap-4">
           {navigations.map((tab: Tab, index: number) => (
