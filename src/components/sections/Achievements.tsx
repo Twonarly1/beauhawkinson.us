@@ -8,6 +8,20 @@ import Heading from '../Heading'
 
 const certificates: Certificate[] = [
   {
+    name: 'Solidity Basics',
+    src: '/images/certificates/solidity-basics.webp',
+    url: 'https://github.com/smartcontractkit/full-blockchain-solidity-course-js',
+    date: 'Jul 30, 2022',
+    description: 'Solidity Basics. Patrick Collins - Chainlink - FCC',
+  },
+  {
+    name: 'Blockchain Basics',
+    src: '/images/certificates/blockchain-basics.webp',
+    url: 'https://github.com/smartcontractkit/full-blockchain-solidity-course-js',
+    date: 'Jul 30, 2022',
+    description: 'Blockchain Basics. Patrick Collins - Chainlink - FCC',
+  },
+  {
     name: 'Apollo Graph Professional',
     src: '/images/certificates/professional.svg',
     url: 'https://www.apollographql.com/tutorials/certifications/84c7debb-7749-4eef-a19b-67d766d1d1be',
