@@ -49,23 +49,25 @@ const Achievements = () => {
         {certificates.map((certificate, index: number) => (
           <div
             key={index}
-            className="commonBordering relative flex cursor-pointer items-center p-2 px-6 dark:bg-slate-800 "
+            className="commonBordering relative flex cursor-pointer items-center justify-between p-2 px-6 dark:bg-slate-800 "
           >
-            <Image
-              src={certificate.src}
-              alt={certificate.name}
-              height={100}
-              width={100}
-              quality={100}
-            />
-            <div className="ml-2 text-left">
-              <p className="w-auto text-gray-900 hover:opacity-0 dark:text-gray-100 sm:w-80">
-                {certificate.name}
-              </p>
-              <TimeAgo
-                date={certificate.date}
-                className="text-sm hover:opacity-0"
+            <div className="flex items-center">
+              <Image
+                src={certificate.src}
+                alt={certificate.name}
+                height={100}
+                width={100}
+                quality={100}
               />
+              <div className="ml-4 text-left">
+                <p className="w-auto text-gray-900 hover:opacity-0 dark:text-gray-100 sm:w-80 xs:w-60">
+                  {certificate.name}
+                </p>
+                <TimeAgo
+                  date={certificate.date}
+                  className="text-sm hover:opacity-0"
+                />
+              </div>
             </div>
             {mobile == true && <FingerPrintIcon className="h-6 w-6" />}
             <div className="commonBordering absolute inset-0 z-10 flex items-center justify-center border-none text-center text-[10px] text-gray-900 opacity-0 hover:opacity-100 dark:bg-slate-800 dark:text-gray-100 sm:p-2 sm:text-sm">
