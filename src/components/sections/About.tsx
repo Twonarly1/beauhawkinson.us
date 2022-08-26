@@ -6,8 +6,8 @@ import Heading from "../Heading"
 
 export default function About() {
     return (
-        <div className="mx-auto  bg-black/5 px-6 pb-32 dark:bg-white/10">
-            <div className="flex items-center justify-center gap-x-16 py-6 ">
+        <div className="mx-auto bg-black/5 px-6 pb-32 dark:bg-white/10">
+            <div className="flex items-center justify-center gap-x-16 py-16 ">
                 <div className="group h-[127px] w-[127px] cursor-pointer bg-transparent perspective">
                     <div className="relative h-full w-full duration-1000 preserve-3d group-hover:my-rotate-y-180">
                         <div className="absolute h-[127px] w-[127px] rounded-full backface-hidden">

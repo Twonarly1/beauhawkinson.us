@@ -24,7 +24,6 @@ const Nav = () => {
         let h: any = height
         let w: any = width
         let count = parseInt(`${Number((h + w) / 75)}`)
-
         while (circles.length < count) {
             // for (let i = 0; i < 25; i++) {
             let h: any = height
