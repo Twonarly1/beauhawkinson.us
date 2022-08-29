@@ -12,13 +12,13 @@ type Props = {
 const Pinned = ({ pinnedItems }: Props) => {
     console.log(pinnedItems)
     return (
-        <div className="section mt-12">
+        <div className="section mt-12 mega:-mt-12">
             <Heading title={"Projects"} subtitle={"My Pinned Repos"} />
             <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {pinnedItems.map((item: Repo, index: number) => (
                     <div
                         key={index}
-                        className="commonBordering relative flex items-center gap-x-4 px-6 py-5 dark:bg-slate-800"
+                        className="commonBordering duration-600 relative flex items-center gap-x-4 px-6 py-5 transition fade-up dark:bg-slate-800"
                     >
                         <div className="absolute top-1 right-2 mx-auto w-fit justify-between">
                             {item.stargazerCount > 0 && (

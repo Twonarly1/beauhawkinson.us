@@ -20,7 +20,7 @@ export default function Home({ pinnedItems, starredItems }: AppProps) {
                 entries.forEach((entry) => {
                     entry.target.classList.toggle("faded", entry.isIntersecting)
                     if (entry.isIntersecting) fadeUpObserver.unobserve(entry.target)
-                    // console.log(entry)
+                    console.log(entry)
                 })
             },
             { threshold: 0.4 }

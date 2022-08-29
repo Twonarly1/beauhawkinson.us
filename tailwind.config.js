@@ -19,7 +19,7 @@ const Myclass = plugin(function ({ addUtilities, theme }) {
             transition:
                 "transform 1s cubic-bezier(0.64, 0.04, 0.26, 0.87), opacity 0.8s cubic-bezier(0.64, 0.04, 0.26, 0.87)",
             opacity: theme("opacity.0"),
-            transform: "translate3d(3rem, 0, 0) ",
+            transform: "translate3d(2rem, 0, 0) ",
         },
         ".faded": {
             opacity: theme("opacity.100"),
@@ -34,6 +34,7 @@ module.exports = {
         extend: {
             screens: {
                 xs: "400px",
+                mega: "1600px",
             },
 
             fontFamily: {
