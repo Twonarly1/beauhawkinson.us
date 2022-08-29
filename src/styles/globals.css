@@ -4,7 +4,7 @@
 
 @layer base {
     body {
-        @apply mx-auto w-full;
+        @apply mx-auto w-full scrollbar-hide;
         @apply bg-white text-gray-400 dark:bg-primary-dark dark:text-gray-400;
     }
 }

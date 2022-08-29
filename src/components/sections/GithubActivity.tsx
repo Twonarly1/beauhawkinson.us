@@ -41,7 +41,7 @@ const GithubActivity = ({ starredItems }: Props) => {
                                 href={"https://github.com/Twonarly1?tab=stars"}
                                 className="offColorHeading mx-auto text-sm "
                             >
-                                View more on GitHub &rarr;
+                                View more on GitHub
                             </a>
                         </div>
                     </div>
