@@ -10,7 +10,6 @@ type Props = {
 }
 
 const Pinned = ({ pinnedItems }: Props) => {
-    console.log(pinnedItems)
     return (
         <div className="section mt-12 mega:-mt-12">
             <Heading title={"Projects"} subtitle={"My Pinned Repos"} />
