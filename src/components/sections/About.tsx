@@ -54,9 +54,9 @@ export default function About() {
         <>
             <div className="mx-auto bg-black/5 px-6 pb-32 dark:bg-white/10 mega:h-[550px]">
                 <div className="flex items-center justify-center gap-x-16 py-8">
-                    <div className="group h-[127px] w-[127px] cursor-pointer bg-transparent perspective">
+                    <div className="group h-[254px] w-[254px] cursor-pointer bg-transparent perspective">
                         <div className="relative h-full w-full duration-1000 preserve-3d group-hover:my-rotate-y-180">
-                            <div className="absolute h-[127px] w-[127px] rounded-full backface-hidden">
+                            <div className="absolute h-[254px] w-[254px] rounded-full backface-hidden">
                                 <Image
                                     priority
                                     className="rounded-full"
@@ -67,7 +67,7 @@ export default function About() {
                                     quality={100}
                                 />
                             </div>
-                            <div className="absolute h-[127px] w-[127px] my-rotate-y-180 backface-hidden ">
+                            <div className="absolute h-[254px] w-[254px] rounded-full my-rotate-y-180 backface-hidden ">
                                 <Image
                                     loading="lazy"
                                     className="rounded-full"
@@ -82,10 +82,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className=" text-center">
-                    <Heading
-                        title={"Hey, I'm Beau!"}
-                        subtitle={"I contribute and develop in the Web3 space."}
-                    />
+                    <Heading title={"Beau Hawkinson"} subtitle={"bhawkinson@yahoo.com"} />
                     <div className="space-x-3 pt-6 ">
                         <a
                             className="rounded bg-blue-200 p-1 px-2 text-blue-800 hover:bg-blue-300"

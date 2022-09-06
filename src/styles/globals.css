@@ -17,7 +17,7 @@
         @apply rounded-lg border border-gray-300 bg-gray-50 hover:border-gray-400 hover:shadow-md dark:border-gray-400 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white;
     }
     .blobAnimation {
-        @apply absolute z-0  hidden animate-blob rounded-full opacity-20 mix-blend-multiply blur-sm  filter dark:opacity-100 lg:flex lg:h-72 lg:w-72;
+        @apply absolute z-0 hidden animate-blob rounded-full opacity-20 mix-blend-multiply blur-sm  filter dark:opacity-100 lg:flex lg:h-72 lg:w-72;
     }
     .offColorHeading {
         @apply text-gray-900 dark:text-gray-100;
