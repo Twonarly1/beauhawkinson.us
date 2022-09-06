@@ -33,9 +33,9 @@ export default function Projects({ allPublicRepos }: AppProps) {
                 <Heading title={"Projects"} subtitle={"My Public Repos"} />
                 <AllProjects placeholder="Search Repositories..." allPublicRepos={allPublicRepos} />
             </div>
-            <Link href={"/"}>
+            <a href={"/"}>
                 <ArrowLeftIcon className="commonBordering mx-auto h-8 w-8 cursor-pointer rounded-full p-1 hover:scale-110 dark:bg-slate-800" />
-            </Link>
+            </a>
         </>
     )
 }
