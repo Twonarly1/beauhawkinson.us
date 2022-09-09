@@ -82,7 +82,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className=" text-center">
-                    <Heading title={"Beau Hawkinson"} subtitle={"bhawkinson@yahoo.com"} />
+                    <Heading title={"Beau Hawkinson"} subtitle={"hawkinson.beau@yahoo.com"} />
                     <div className="space-x-3 pt-6 ">
                         <a
                             className="rounded bg-blue-200 p-1 px-2 text-blue-800 hover:bg-blue-300"
