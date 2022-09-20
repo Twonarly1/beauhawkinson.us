@@ -14,6 +14,7 @@
         "@sanity/image-url": "^1.0.1",
         "@tailwindcss/aspect-ratio": "^0.4.0",
         "@tailwindcss/typography": "^0.5.4",
+        "global": "^4.4.0",
         "graphql": "^16.5.0",
         "next": "latest",
         "next-sanity": "^0.8.4",
@@ -26,6 +27,7 @@
         "react-social-icons": "^5.14.0",
         "react-timeago": "^7.1.0",
         "tailwind-scrollbar-hide": "^1.1.7",
+        "vercel": "^28.3.0",
         "zod": "^3.19.1"
     },
     "devDependencies": {

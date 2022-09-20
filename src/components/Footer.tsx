@@ -1,9 +1,11 @@
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
-type Props = {}
+import { PageInfo } from "../../typings"
+import { urlFor } from "../../sanity"
+type Props = { pageInfo: PageInfo }
 
-function Footer({}: Props) {
+function Footer({ pageInfo }: Props) {
     return (
         <footer className="sticky bottom-5 z-50 w-full ">
             <Link href="#about">
@@ -11,7 +13,7 @@ function Footer({}: Props) {
                     <Image
                         priority
                         className=" mx-auto cursor-pointer rounded-full grayscale filter hover:grayscale-0 "
-                        src="/two-uni.jpg"
+                        src={urlFor(pageInfo.profilePic).url()}
                         alt="Portrait photo of me"
                         objectFit="cover"
                         layout="fill"
