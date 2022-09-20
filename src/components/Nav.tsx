@@ -58,7 +58,6 @@ const Nav = ({ socials }: Props) => {
     }
 
     useEffect(() => {
-        generatedotData()
         setTimeout(() => {
             setDotData([])
             toast.custom(
@@ -72,11 +71,8 @@ const Nav = ({ socials }: Props) => {
                             onClick={() => toast.dismiss(t.id)}
                             className="flex items-center gap-4"
                         >
-                            Click the sparkles Icon for more dots!!
-                            <SparklesIcon
-                                onClick={() => generatedotData()}
-                                className="commonBordering navButton animate-pulse  "
-                            />
+                            Click the sparkles Icon for dots!!
+                            <SparklesIcon className="commonBordering navButton animate-pulse  " />
                         </button>
                     </div>
                 ),
