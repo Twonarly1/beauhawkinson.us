@@ -1,19 +1,41 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
-import { gql } from "@apollo/client"
-import client from "../../apollo-client"
-import { Repo } from "../../typings"
+import { GetStaticProps } from "next"
+import { Achievement, Experience, PageInfo, Project, Skill, Social } from "../../typings"
 import About from "../components/sections/About"
-import Pinned from "../components/sections/Pinned"
 import Skills from "../components/sections/Skills"
 import Achievements from "../components/sections/Achievements"
-import GithubActivity from "../components/sections/GithubActivity"
+import Projects from "../components/sections/projects/Projects"
+import Footer from "../components/Footer"
+import Nav from "../components/Nav"
+import {
+    fetchAchievements,
+    fetchExperiences,
+    fetchPageInfo,
+    fetchProjects,
+    fetchSkills,
+    fetchSocials,
+} from "../lib/sanity"
+import BkgCircles from "../components/BkgCircles"
+import ContactMe from "../components/sections/ContactMe"
 
-interface AppProps {
-    pinnedItems: Repo[]
-    starredItems: Repo[]
+type ScriptProps = {
+    pageInfo: PageInfo
+    experiences: Experience[]
+    skills: Skill[]
+    projects: Project[]
+    socials: Social[]
+    achievements: Achievement[]
 }
 
-export default function Home({ pinnedItems, starredItems }: AppProps) {
+export default function Home({
+    pageInfo,
+    experiences,
+    skills,
+    projects,
+    socials,
+    achievements,
+}: ScriptProps) {
     if (typeof window !== "undefined") {
         const fadeUpObserver = new IntersectionObserver(
             (entries) => {
@@ -31,70 +53,47 @@ export default function Home({ pinnedItems, starredItems }: AppProps) {
     }
 
     return (
-        <>
-            <About />
-            <Pinned pinnedItems={pinnedItems} />
-            <Skills />
-            <Achievements />
-            <GithubActivity starredItems={starredItems} />
-        </>
+        <div className="h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll">
+            <Nav socials={socials} />
+            <section id="about" className="snap-start">
+                <About pageInfo={pageInfo} />
+            </section>
+            <section id="projects" className="snap-start">
+                <Projects projects={projects} />
+            </section>
+            <section id="skills" className="snap-start">
+                <Skills skills={skills} />
+            </section>
+            <section id="achievements" className="snap-start">
+                <Achievements achievements={achievements} />
+            </section>
+            <section id="contact" className="snap-start">
+                <ContactMe />
+            </section>
+            <Footer />
+        </div>
     )
 }
 
-export async function getStaticProps() {
-    const { data } = await client.query({
-        query: gql`
-            {
-                user(login: "Twonarly1") {
-                    pinnedItems(first: 6) {
-                        totalCount
-                        edges {
-                            node {
-                                ... on Repository {
-                                    id
-                                    name
-                                    description
-                                    url
-                                    stargazerCount
-                                    openGraphImageUrl
-                                    repositoryTopics(last: 4) {
-                                        nodes {
-                                            id
-                                            topic {
-                                                id
-                                                name
-                                            }
-                                        }
-                                    }
-                                    updatedAt
-                                    pushedAt
-                                    owner {
-                                        login
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    starredRepositories(last: 6) {
-                        nodes {
-                            id
-                            name
-                            description
-                            url
-                            owner {
-                                login
-                            }
-                        }
-                    }
-                }
-            }
-        `,
-    })
-
-    const { user } = data
-    const pinnedItems = user.pinnedItems.edges.map(({ node }: any) => node)
-    const starredItems = user.starredRepositories.nodes
+export const getStaticProps: GetStaticProps<ScriptProps> = async () => {
+    const pageInfo: PageInfo = await fetchPageInfo()
+    const experiences: Experience[] = await fetchExperiences()
+    const skills: Skill[] = await fetchSkills()
+    const projects: Project[] = await fetchProjects()
+    const socials: Social[] = await fetchSocials()
+    const achievements: Achievement[] = await fetchAchievements()
     return {
-        props: { pinnedItems, starredItems },
+        props: {
+            pageInfo,
+            experiences,
+            skills,
+            projects,
+            socials,
+            achievements,
+        } as ScriptProps,
+        //next.js will attempt to re-generate the page:
+        // - when request comes in
+        // - At most one every 10 seconds
+        revalidate: 10,
     }
 }

@@ -1,58 +1,94 @@
-export interface Repo {
-  description: string
-  id: string
-  name: string
-  openGraphImageUrl: string
-  url: string
-  owner: {
-    login: string
-  }
-  pushedAt: string
-  updatedAt: string
-  user: object[]
-  stargazerCount: number
-  repositoryTopics: any //unsure
-  __typename: 'Repository'
-}
-
-export type Skill = {
-  name: string
-  src: string
-  url: string
-  stack?: boolean
-}
-
-export type Certificate = {
-  name: string
-  src: string
-  url: string
-  date: string
-  description: string
-}
-
-export interface DragItem {
-  type: string
-  id: string
-  top: number
-  left: number
-}
-
 export interface Headings {
-  title?: string
-  subtitle?: any
-  legend?: string
+    title?: string
+    subtitle?: string
+    other?: string
 }
 
 export interface Dot {
-  id: number
-  iD: number
-  diameter: number
-  rgb: any
-  top: number
-  left: number
+    id: number
+    iD: number
+    diameter: number
+    rgb: any
+    top: number
+    left: number
 }
 
-export type Tab = {
-  name: string
-  path: string
+// Sanity
+interface SanityBody {
+    _createdAt: string
+    id: string
+    rev: string
+    updatedAt: string
+}
+
+interface Image {
+    _type: "image"
+    asset: {
+        _ref: string
+        _type: "reference"
+    }
+}
+
+export interface PageInfo extends SanityBody {
+    _type: "pageInfo"
+    address: string
+    backgroundInformation: string
+    email: string
+    role: string
+    heroImage: Image
+    name: string
+    phoneNumber: string
+    profilePic: Image
+}
+
+export interface Technology extends SanityBody {
+    _type: "skill"
+    image: Image
+    progress: number
+    title: string
+}
+
+export interface Skill extends SanityBody {
+    _type: "skill"
+    image: Image
+    progress: number
+    title: string
+    stack: boolean
+}
+
+export interface Project extends SanityBody {
+    title: string
+    _type: "project"
+    image: Image
+    linkToBuild: string
+    summary: string
+    technologies: Technology[]
+    points: string[]
+}
+
+export interface Experience extends SanityBody {
+    _type: "experience"
+    company: string
+    companyImage: Image
+    dateStarted: date
+    dateEnded: date
+    isCurrentlyWorkingHere: boolean
+    jobTitle: string
+    points: string[]
+    technologies: Technology[]
+}
+
+export interface Social extends SanityBody {
+    _type: "social"
+    title: string
+    url: string
+}
+
+export interface Achievement extends SanityBody {
+    _type: "Achievement"
+    title: string
+    url: string
+    dateEarned: date
+    image: Image
+    summary: string
 }

@@ -10,9 +10,6 @@
 }
 
 @layer components {
-    .section {
-        @apply mx-auto w-full max-w-5xl px-6 pb-32;
-    }
     .commonBordering {
         @apply rounded-lg border border-gray-300 bg-gray-50 hover:border-gray-400 hover:shadow-md dark:border-gray-400 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white;
     }
@@ -24,6 +21,20 @@
     }
     .navButton {
         @apply h-7 w-7 cursor-pointer rounded-full p-1;
+    }
+    .heroButton {
+        @apply rounded-full border-gray-400 px-4 py-[3px] text-xs uppercase tracking-widest text-gray-500 underline
+        transition-all hover:border-gray-500/40 hover:text-gray-500/40
+        dark:border-gray-500 dark:text-gray-400 dark:hover:border-gray-200 dark:hover:text-gray-200;
+    }
+    .input-container {
+        @apply relative -space-y-px rounded-md text-base shadow-sm;
+    }
+    .input {
+        @apply block  w-full appearance-none rounded border border-gray-300 px-3 py-2 text-base  text-gray-400  focus:outline-none hover:cursor-text dark:text-white;
+    }
+    .label {
+        @apply absolute left-3 -top-6 text-base  text-gray-400 transition-all focus:outline  hover:cursor-text;
     }
 }
 

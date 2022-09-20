@@ -1,11 +1,18 @@
+/* eslint-disable @next/next/no-img-element */
 import { useTheme } from "next-themes"
 import Image from "next/image"
 import React, { useEffect, useState } from "react"
-import hoverImage from "../../../public/images/profileImages/pfp.jpeg"
-import pfp from "../../../public/images/profileImages/profilepic.jpg"
 import Heading from "../Heading"
+import { PageInfo } from "../../../typings"
+import { urlFor } from "../../../sanity"
+import Link from "next/link"
+import BkgCircles from "../BkgCircles"
 
-export default function About() {
+type Props = {
+    pageInfo: PageInfo
+}
+
+export default function About({ pageInfo }: Props) {
     const { systemTheme, theme, setTheme } = useTheme()
     const currentTheme = theme === "system" ? systemTheme : theme
     const [mounted, setMounted] = useState<boolean>(false)
@@ -16,7 +23,7 @@ export default function About() {
         if (!mounted) return null
         if (currentTheme === "light") {
             return (
-                <div className="rounded-bl-4xl relative h-12 bg-gray-100 dark:bg-white/10 sm:h-36 ">
+                <div className="rounded-bl-4xl relative h-20 bg-gray-100 dark:bg-white/10 sm:h-36 md:h-60 ">
                     <svg
                         className="absolute bottom-0 "
                         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +40,7 @@ export default function About() {
         }
         if (currentTheme === "dark") {
             return (
-                <div className="rounded-bl-4xl relative h-12 bg-gray-100 dark:bg-white/10 sm:h-36 ">
+                <div className="rounded-bl-4xl relative h-20 bg-gray-100 dark:bg-white/10 sm:h-36 md:h-60 ">
                     <svg
                         className="absolute bottom-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -51,64 +58,58 @@ export default function About() {
     }
 
     return (
-        <>
-            <div className="mx-auto bg-black/5 px-6 pb-32 dark:bg-white/10 mega:h-[750px]">
-                <div className="flex items-center justify-center gap-x-16 py-8">
+        <div className="h-screen">
+            <BkgCircles />
+            <div className="mx-auto bg-black/5 px-6 pt-32 pb-12 dark:bg-white/10 mega:h-[750px]">
+                <div className=" flex items-center justify-center gap-x-16 ">
+                    {/* ToDo: Flickering is happening here on scroll snap */}
                     <div className="group h-[254px] w-[254px] cursor-pointer bg-transparent perspective">
                         <div className="relative h-full w-full duration-1000 preserve-3d group-hover:my-rotate-y-180">
-                            <div className="absolute h-[254px] w-[254px] rounded-full backface-hidden">
+                            <div className="absolute mt-6  rounded-full backface-hidden">
                                 <Image
                                     priority
                                     className="rounded-full"
-                                    src={pfp}
+                                    src={urlFor(pageInfo.heroImage).url()}
                                     alt="Portrait photo of me"
-                                    objectFit="cover"
-                                    layout="fill"
-                                    quality={100}
+                                    height={254}
+                                    width={254}
                                 />
                             </div>
-                            <div className="absolute h-[254px] w-[254px] rounded-full my-rotate-y-180 backface-hidden ">
+                            <div className="absolute mt-6 rounded-full my-rotate-y-180 backface-hidden ">
                                 <Image
-                                    loading="lazy"
+                                    priority
                                     className="rounded-full"
-                                    src={hoverImage}
+                                    src={urlFor(pageInfo.profilePic).url()}
                                     alt="Portrait photo of me"
-                                    quality={100}
-                                    objectFit="cover"
-                                    layout="fill"
+                                    height={254}
+                                    width={254}
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className=" text-center">
-                    <Heading title={"Beau Hawkinson"} subtitle={"hawkinson.beau@yahoo.com"} />
-                    <div className="space-x-3 pt-6 ">
-                        <a
-                            className="rounded bg-blue-200 p-1 px-2 text-blue-800 hover:bg-blue-300"
-                            data-splitbee-event="Open Twitter"
-                            href="https://twitter.com/twonarly"
-                        >
-                            Twitter
-                        </a>
-                        <a
-                            className="rounded bg-gray-300 p-1 px-2 text-gray-800 hover:bg-gray-400"
-                            data-splitbee-event="Open GitHub"
-                            href="https://github.com/Twonarly1"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            className="rounded bg-purple-200 p-1 px-2 text-purple-800 hover:bg-purple-300"
-                            data-splitbee-event="Open LinkedIn"
-                            href={"/7.17-resume.pdf"}
-                        >
-                            Resume
-                        </a>
+                <div className=" mt-12 text-center ">
+                    <Heading title={pageInfo?.name} subtitle={pageInfo?.role} />
+
+                    <div className="mt-2 flex flex-col items-center justify-center gap-2 p-2 md:gap-4 2xs:flex-row">
+                        <Link href="#projects">
+                            <button className="heroButton ">Projects</button>
+                        </Link>
+
+                        <Link href="#skills">
+                            <button className="heroButton ">Technologies</button>
+                        </Link>
+                        <Link href="#achievements">
+                            <button className="heroButton ">Achievements</button>
+                        </Link>
+                        <Link href="#contact">
+                            <button className="heroButton ">Contact</button>
+                        </Link>
                     </div>
                 </div>
             </div>
+
             {switchSvgFillOnTheme()}
-        </>
+        </div>
     )
 }

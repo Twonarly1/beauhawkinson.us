@@ -1,0 +1,6 @@
+export { default as fetchAchievements } from "./fetchAchievements"
+export { default as fetchExperiences } from "./fetchExperiences"
+export { default as fetchPageInfo } from "./fetchPageInfo"
+export { default as fetchProjects } from "./fetchProjects"
+export { default as fetchSkills } from "./fetchSkills"
+export { default as fetchSocials } from "./fetchSocials"

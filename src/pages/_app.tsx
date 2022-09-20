@@ -1,16 +1,15 @@
-import '../styles/globals.css'
-import { AppProps } from '../../node_modules/next/app'
-import { ThemeProvider } from 'next-themes'
-import Layout from '../components/layout/Layout'
+import "../styles/globals.css"
+import { AppProps } from "../../node_modules/next/app"
+import { ThemeProvider } from "next-themes"
+import { Toaster } from "react-hot-toast"
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <ThemeProvider attribute="class">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
-    </>
-  )
+    return (
+        <>
+            <ThemeProvider attribute="class">
+                <Component {...pageProps} />
+                <Toaster position="top-right" reverseOrder={false} />
+            </ThemeProvider>
+        </>
+    )
 }
