@@ -4,6 +4,7 @@
 /node_modules
 
 # next.js
+.env
 .next
 /.next/
 /out/
