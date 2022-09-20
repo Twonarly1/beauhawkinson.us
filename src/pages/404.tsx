@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export default function PageNotFound() {
     return (
         <>
@@ -19,11 +17,11 @@ export default function PageNotFound() {
                                 </p>
                             </div>
                             <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-                                <Link href="/">
+                                <a href="https://bhawkinson-twonarly1.vercel.app/">
                                     <p className="inline-flex items-center rounded-md border border-transparent bg-pink-200 px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 hover:bg-indigo-700">
                                         Go back home
                                     </p>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </main>

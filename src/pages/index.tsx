@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { GetStaticProps } from "next"
 import { Achievement, Experience, PageInfo, Project, Skill, Social } from "../../typings"
@@ -16,7 +15,6 @@ import {
     fetchSkills,
     fetchSocials,
 } from "../lib/sanity"
-import BkgCircles from "../components/BkgCircles"
 import ContactMe from "../components/sections/ContactMe"
 
 type ScriptProps = {
