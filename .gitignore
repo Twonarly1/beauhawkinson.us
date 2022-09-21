@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 
+
 sanity/node_modules
 
 # debug
@@ -29,6 +30,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
