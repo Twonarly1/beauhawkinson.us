@@ -115,7 +115,7 @@ function ContactMe({}: Props) {
                 </div>
                 <button
                     type="submit"
-                    className="group flex justify-center gap-2 rounded-md bg-pink-100 py-4 px-10 text-lg font-bold text-black hover:bg-pink-200"
+                    className="group flex justify-center gap-2 rounded-md bg-pink-100/50 py-4 px-10 text-lg font-bold text-black hover:bg-pink-100"
                 >
                     <p>Send</p>
                     <PaperAirplaneIcon

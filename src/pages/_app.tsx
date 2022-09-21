@@ -10,7 +10,10 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                 <title>bhawkinson</title>
                 <meta name="description" content="View my personal website!" />
-                <meta property="og:title" content="Web Developer. Interested in web3." />
+                <meta
+                    property="og:title"
+                    content="Beau Hawkinson's website. Web Developer. Interested in web3."
+                />
                 <link rel="icon" href="/two.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />

@@ -1,19 +1,3 @@
-export interface Headings {
-    title?: string
-    subtitle?: string
-    other?: string
-}
-
-export interface Dot {
-    id: number
-    iD: number
-    diameter: number
-    rgb: any
-    top: number
-    left: number
-}
-
-// Sanity
 interface SanityBody {
     _createdAt: string
     id: string

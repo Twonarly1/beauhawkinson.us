@@ -1,6 +1,6 @@
 import React from "react"
-import useWindowDimensions from "../lib/hooks/useWindowDimensions"
-import getRandomInt from "../lib/utils"
+import useWindowDimensions from "../../../lib/hooks/useWindowDimensions"
+import getRandomInt from "../../../lib/utils"
 
 type Props = {}
 

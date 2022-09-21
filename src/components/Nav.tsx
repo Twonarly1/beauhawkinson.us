@@ -1,30 +1,46 @@
 import React, { useEffect, useState } from "react"
-import { Dot, Social } from "../../typings"
+import { Social } from "../../typings"
 import getRandomInt from "../lib/utils"
-import useWindowDimensions from "../lib/hooks/useWindowDimensions"
 import { ThemeSwitcher } from "./ThemeSwitcher"
 import { SocialIcon } from "react-social-icons"
 import Link from "next/link"
 import { SparklesIcon } from "@heroicons/react/24/solid"
 import toast from "react-hot-toast"
+import useWindowSize from "../lib/hooks/useWindowDimensions"
 
 type Props = {
     socials: Social[]
 }
 
+type Size = {
+    width: number | undefined
+    height: number | undefined
+}
+
+type Dot = {
+    rgb: {
+        r: number
+        g: number
+        b: number
+    }
+    x: number
+    y: number
+    r: number
+}
+
 const Nav = ({ socials }: Props) => {
     const [dotData, setDotData] = useState<Dot[]>()
-    const { height, width } = useWindowDimensions()
+    const size: Size = useWindowSize()
 
     const generatedotData = () => {
-        let circles: any = []
+        let circles: Dot[] = []
         var protection = 0
-        let h: any = height
-        let w: any = width
-        let count = parseInt(`${Number((h + w) / 75)}`)
+        let h: any = size.height
+        let w: any = size.width
+
+        let count = parseInt(`${(h + w) / 75}`)
+
         while (circles.length < count) {
-            let h: any = height
-            let w: any = width
             const circle = {
                 x: getRandomInt(10, w - 110),
                 y: getRandomInt(10, h - 110),
@@ -67,6 +83,7 @@ const Nav = ({ socials }: Props) => {
                             t.visible ? "animate-enter" : "animate-leave"
                         } pointer-events-auto mr-2 -mt-2 flex max-w-4xl rounded-lg border-[4px] border-pink-400 bg-white px-4 py-2 shadow-lg `}
                     >
+                        {/* ToDo: create toggle */}
                         <button
                             onClick={() => toast.dismiss(t.id)}
                             className="flex items-center gap-4"
@@ -124,12 +141,12 @@ const Nav = ({ socials }: Props) => {
                             draggable="true"
                             key={i}
                             style={{
-                                top: dot?.y + "px",
-                                left: dot?.x + "px",
-                                height: dot?.r * 2,
-                                width: dot?.r * 2,
+                                top: dot.y + "px",
+                                left: dot.x + "px",
+                                height: dot.r * 2,
+                                width: dot.r * 2,
                                 background:
-                                    "rgb(" + dot?.rgb.r + "," + dot?.rgb.g + "," + dot?.rgb.b + ")",
+                                    "rgb(" + dot.rgb.r + "," + dot.rgb.g + "," + dot.rgb.b + ")",
                             }}
                         ></div>
                     )

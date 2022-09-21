@@ -1,4 +1,8 @@
-import { Headings } from "../../typings"
+type Headings = {
+    title?: string
+    subtitle?: string
+    other?: string
+}
 
 export default function Heading({ title, subtitle, other }: Headings) {
     return (
