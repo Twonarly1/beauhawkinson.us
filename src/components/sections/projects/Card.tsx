@@ -8,13 +8,13 @@ type Props = { project: Project }
 
 function Card({ project }: Props) {
     return (
-        <article className="relative  flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll  rounded-lg bg-gray-100 py-4 px-4 opacity-40 transition-opacity duration-200 scrollbar-thin  hover:opacity-100 md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px]">
+        <article className="relative flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll   rounded-lg bg-gray-100 py-4 px-4 opacity-40 transition-opacity duration-200 scrollbar-thin  hover:opacity-100 md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px]">
             <img
                 src={urlFor(project?.image).url()}
                 alt=""
                 className="h-40 w-fit rounded object-cover sm:h-80 xs:h-fit 2xs:mt-2 2xs:h-60 "
             />
-            <div className="px-4 xs:px-10">
+            <div className=" px-4 pb-12 scrollbar-hide xs:px-10">
                 <p className="text-center text-xl font-bold uppercase xs:text-2xl">
                     {project.title}
                 </p>
@@ -37,14 +37,14 @@ function Card({ project }: Props) {
                     {project?.points.map((bullet: any, i: number) => (
                         <li key={i}>{bullet}</li>
                     ))}
-                </ul>
 
-                <a
-                    href={project.linkToBuild}
-                    className="  absolute bottom-0  left-0 flex w-full items-center justify-center bg-pink-100  text-center hover:bg-pink-200 "
-                >
-                    <p className="py-2 text-xl">Go to Build.</p>
-                </a>
+                    <a
+                        href={project.linkToBuild}
+                        className="  relative bottom-0 left-0 flex w-full items-center justify-center bg-pink-100  text-center hover:bg-pink-200 "
+                    >
+                        <p className="py-2 text-xl">Go to Build.</p>
+                    </a>
+                </ul>
             </div>
         </article>
     )
