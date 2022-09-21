@@ -1,6 +1,6 @@
 import React from "react"
 import { urlFor } from "../../../../sanity"
-import Image from "next/Image"
+import Image from "next/image"
 import { Skill } from "../../../../typings"
 
 type Props = {
