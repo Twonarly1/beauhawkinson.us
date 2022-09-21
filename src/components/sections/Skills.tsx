@@ -25,7 +25,7 @@ const Skills = ({ skills }: Props) => {
                 <div className="animation-delay-2000 blobAnimation top-32 -right-4 bg-yellow-300 dark:bg-yellow-200"></div>
                 <div className="animation-delay-4000 blobAnimation top-48 left-20 bg-pink-300 dark:bg-red-200"></div>
                 <div className="relative  z-10 space-y-4">
-                    <div className="mx-auto mt-12 grid max-w-xs grid-cols-3 gap-6  transition-transform duration-500 2xs:max-w-md 2xs:grid-cols-4 ">
+                    <div className="mx-auto mt-12 grid max-w-xs grid-cols-3 gap-2 transition-transform  duration-500 xs:gap-6 2xs:max-w-md 2xs:grid-cols-4 ">
                         {skills
                             .map((skill: Skill, index: number) => {
                                 if (skill.stack)
@@ -38,7 +38,7 @@ const Skills = ({ skills }: Props) => {
                                                     : "commonBordering"
                                             }`}
                                         >
-                                            <div className="group-hover:grayscale-100 relative mx-auto h-10 w-10 opacity-100 grayscale-0 group-hover:opacity-20">
+                                            <div className="group-hover:grayscale-100 relative mx-auto h-6 w-6 opacity-100 grayscale-0 group-hover:opacity-20 xs:h-10 xs:w-10">
                                                 <Image
                                                     src={urlFor(skill?.image).url()}
                                                     alt={skill.title}
@@ -65,7 +65,7 @@ const Skills = ({ skills }: Props) => {
                                                         : "commonBordering"
                                                 }`}
                                             >
-                                                <div className="group-hover:grayscale-100 relative mx-auto h-10 w-10 opacity-100 grayscale-0 group-hover:opacity-20">
+                                                <div className="group-hover:grayscale-100 relative mx-auto h-6 w-6 opacity-100 grayscale-0 group-hover:opacity-20 xs:h-10 xs:w-10">
                                                     <Image
                                                         src={urlFor(skill?.image).url()}
                                                         alt={skill.title}

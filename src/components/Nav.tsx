@@ -117,12 +117,12 @@ const Nav = ({ socials }: Props) => {
             </div>
 
             <div className="">
-                {dotData?.map((dot: any) => {
+                {dotData?.map((dot: any, i: number) => {
                     return (
                         <div
                             className="absolute  rounded-full opacity-10 mix-blend-multiply active:cursor-move"
                             draggable="true"
-                            key={dot?.iD}
+                            key={i}
                             style={{
                                 top: dot?.y + "px",
                                 left: dot?.x + "px",

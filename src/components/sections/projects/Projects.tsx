@@ -3,6 +3,7 @@ import React from "react"
 import { Project } from "../../../../typings"
 import Card from "./Card"
 import Heading from "../../Heading"
+import { useInView } from "react-intersection-observer"
 
 type Props = {
     projects: Project[]
