@@ -8,8 +8,8 @@ import { useInView } from "react-intersection-observer"
 type Props = { project: Project }
 
 const Article = ({ project }: Props) => {
+    // toDo: change bkg opacity when article is inView.
     const { ref, inView } = useInView()
-    console.log(inView, project.title)
 
     return (
         <article

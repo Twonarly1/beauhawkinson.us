@@ -7,8 +7,11 @@ const BkgSvg = () => {
     const [mounted, setMounted] = useState<boolean>(false)
 
     useEffect(() => setMounted(true), [])
+    if (!mounted) {
+        return <></>
+    }
 
-    return mounted && currentTheme === "light" ? (
+    return currentTheme === "light" ? (
         <div className="rounded-bl-4xl relative h-20 bg-gray-100 dark:bg-white/10 sm:h-36 md:h-60 ">
             <svg
                 className="absolute bottom-0 "
