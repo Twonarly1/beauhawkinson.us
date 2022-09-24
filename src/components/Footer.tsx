@@ -3,12 +3,20 @@ import React from "react"
 import Image from "next/image"
 import { PageInfo } from "../../typings"
 import { urlFor } from "../../sanity"
-type Props = { pageInfo: PageInfo }
 
-function Footer({ pageInfo }: Props) {
+function Footer() {
     return (
-        <footer className="sticky bottom-5 z-50 w-full ">
-            <Link href="#about">
+        <footer className="relative z-50 mx-auto w-full pt-12 ">
+            <div className="mt-32 p-4 text-center">
+                © {new Date().getFullYear()} bhawkinson ·{" "}
+                <a
+                    className="text-pink-200 hover:text-pink-300 hover:underline"
+                    href="https://github.com/Twonarly1/bhawkinson-twonarly1"
+                >
+                    <code>code</code>
+                </a>
+            </div>
+            {/* <Link href="#about">
                 <div className="commonBordering relative mx-auto flex h-10 w-10 items-center justify-center rounded-full border">
                     <Image
                         priority
@@ -20,18 +28,8 @@ function Footer({ pageInfo }: Props) {
                         quality={100}
                     />
                 </div>
-            </Link>
+            </Link> */}
         </footer>
-
-        //       <div className="mt-32 p-4 text-center">
-        //   © {new Date().getFullYear()} bhawkinson ·{' '}
-        //   <a
-        //     className="text-blue-500"
-        //     href="https://github.com/Twonarly1/bhawkinson-twonarly1"
-        //   >
-        //     <code>code</code>
-        //   </a>
-        // </div>
     )
 }
 

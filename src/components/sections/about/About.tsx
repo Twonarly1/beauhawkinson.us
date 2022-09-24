@@ -61,10 +61,16 @@ const About = ({ pageInfo }: Props) => {
             )
         }
     }
+
     return (
         <div className="h-screen">
             <BkgCircles />
             <div className="mx-auto bg-black/5 px-6 pt-32 pb-12 dark:bg-white/10 mega:h-[750px]">
+                {/* <div className="relative mx-auto w-full max-w-sm">
+                    <div className="blobAnimation  -left-4 bg-purple-300 dark:bg-purple-200"></div>
+                    <div className="animation-delay-2000 blobAnimation -right-4 bg-yellow-300 dark:bg-yellow-200"></div>
+                    <div className="animation-delay-4000 blobAnimation left-20 bg-pink-300 dark:bg-red-200"></div> */}
+
                 <div className=" flex items-center justify-center gap-x-16 ">
                     {/* ToDo: Flickering is happening here on scroll snap */}
                     <div className="group h-[254px] w-[254px] cursor-pointer bg-transparent perspective">

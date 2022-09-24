@@ -1,6 +1,7 @@
 import PaperAirplaneIcon from "@heroicons/react/24/outline/PaperAirplaneIcon"
 import React, { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
+import Footer from "../Footer"
 import Heading from "../Heading"
 
 type Inputs = {
@@ -24,18 +25,16 @@ function ContactMe({}: Props) {
     }
 
     return (
-        <div className="relative mx-auto h-screen max-w-2xl flex-col items-center justify-start px-10 pt-32 text-center md:flex-row md:text-left">
-            <div className="mb-12">
-                <Heading
-                    title={"Contact Me"}
-                    subtitle={" I have got just what you need."}
-                    other={"Lets Talk."}
-                />
-            </div>
+        <div className="relative mx-auto h-screen max-w-2xl flex-col items-center justify-center px-10 pt-32 text-center md:flex-row md:text-left">
+            <Heading
+                title={"Contact Me"}
+                subtitle={" I have got just what you need."}
+                other={"Lets Talk."}
+            />
 
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="mx-auto flex w-full  flex-col space-y-8 rounded-xl  pt-12"
+                className="mx-auto mt-12 flex w-full flex-col space-y-8 rounded-xl"
             >
                 <div className="input-container">
                     <input
@@ -125,6 +124,7 @@ function ContactMe({}: Props) {
                     />
                 </button>
             </form>
+            <Footer />
         </div>
     )
 }

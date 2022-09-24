@@ -4,7 +4,7 @@ import getRandomInt from "../lib/utils"
 import { ThemeSwitcher } from "./ThemeSwitcher"
 import { SocialIcon } from "react-social-icons"
 import Link from "next/link"
-import { SparklesIcon } from "@heroicons/react/24/solid"
+import { SparklesIcon } from "@heroicons/react/24/outline"
 import toast from "react-hot-toast"
 import useWindowSize from "../lib/hooks/useWindowDimensions"
 
@@ -89,7 +89,7 @@ const Nav = ({ socials }: Props) => {
                             className="flex items-center gap-4"
                         >
                             Click the sparkles Icon for dots!!
-                            <SparklesIcon className="commonBordering navButton animate-pulse  " />
+                            <SparklesIcon className=" navButton  text-black hover:animate-wiggle dark:text-gray-400" />
                         </button>
                     </div>
                 ),
@@ -107,28 +107,28 @@ const Nav = ({ socials }: Props) => {
                             style={{ width: "28px", height: "28px" }}
                             key={i}
                             url={social.url}
-                            className="commonBordering rounded-full"
+                            className=" rounded-full hover:scale-90"
                         />
                     ))}
                     <Link href="#contact">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3">
                             <SocialIcon
                                 style={{ width: "28px", height: "28px" }}
-                                className="commonBordering cursor-pointer rounded-full"
+                                className="cursor-pointer rounded-full hover:scale-90"
                                 network="email"
                             />
-                            <p className="hidden cursor-pointer font-winner tracking-wide hover:underline dark:font-thin xs:inline-flex">
+                            <p className="hidden cursor-pointer font-winner  font-bold tracking-wide text-gray-900 hover:underline dark:font-thin dark:text-gray-100 xs:inline-flex">
                                 Get In Touch...
                             </p>
                         </div>
                     </Link>
                 </div>
 
-                <div className="z-10 flex items-center gap-4">
+                <div className="z-10 flex items-center gap-3">
                     <ThemeSwitcher />
                     <SparklesIcon
                         onClick={() => generatedotData()}
-                        className="commonBordering navButton hover:animate-wiggle dark:bg-slate-800"
+                        className=" navButton  text-black hover:animate-wiggle dark:text-gray-400"
                     />
                 </div>
             </div>

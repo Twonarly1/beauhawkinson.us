@@ -10,17 +10,12 @@
 }
 
 @layer components {
-    .commonBordering {
-        @apply rounded-lg border border-gray-300 bg-gray-50 hover:border-gray-400 hover:shadow-md dark:border-gray-400 hover:dark:border-gray-300 dark:hover:shadow-sm hover:dark:shadow-white;
-    }
     .blobAnimation {
-        @apply absolute z-0 hidden animate-blob rounded-full opacity-20 mix-blend-multiply blur-sm  filter dark:opacity-100 lg:flex lg:h-72 lg:w-72;
+        @apply absolute z-0 mt-12 hidden animate-blob rounded-full opacity-20 mix-blend-multiply blur-sm  filter dark:opacity-100 lg:flex lg:h-60 lg:w-60;
     }
-    .offColorHeading {
-        @apply text-gray-900 dark:text-gray-100;
-    }
+
     .navButton {
-        @apply h-7 w-7 cursor-pointer rounded-full p-1;
+        @apply h-5 w-5 cursor-pointer rounded-full;
     }
     .heroButton {
         @apply rounded-full border-gray-400 px-4 py-[3px] text-xs uppercase tracking-widest text-gray-500 underline

@@ -3,7 +3,7 @@ import { GetStaticProps } from "next"
 import { Achievement, Experience, PageInfo, Project, Skill, Social } from "../../typings"
 import About from "../components/sections/about/About"
 import Skills from "../components/sections/skills/Skills"
-import Achievements from "../components/sections/Achievements"
+import Achievements from "../components/sections/achievements/Achievements"
 import Projects from "../components/sections/projects/Projects"
 import Footer from "../components/Footer"
 import Nav from "../components/Nav"
@@ -34,41 +34,41 @@ export default function Home({
     socials,
     achievements,
 }: ScriptProps) {
-    if (typeof window !== "undefined") {
-        const fadeUpObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    entry.target.classList.toggle("faded", entry.isIntersecting)
-                    if (entry.isIntersecting) fadeUpObserver.unobserve(entry.target)
-                })
-            },
-            { threshold: 0.4 }
-        )
+    // if (typeof window !== "undefined") {
+    //     const fadeUpObserver = new IntersectionObserver(
+    //         (entries) => {
+    //             entries.forEach((entry) => {
+    //                 entry.target.classList.toggle("faded", entry.isIntersecting)
+    //                 if (entry.isIntersecting) fadeUpObserver.unobserve(entry.target)
+    //             })
+    //         },
+    //         { threshold: 0.4 }
+    //     )
 
-        document.querySelectorAll(".fade-up").forEach((item) => {
-            fadeUpObserver.observe(item)
-        })
-    }
+    //     document.querySelectorAll(".fade-up").forEach((item) => {
+    //         fadeUpObserver.observe(item)
+    //     })
+    // }
 
     return (
-        <div className="h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll">
+        <div className="h-screen snap-y overflow-x-hidden overflow-y-scroll">
             <Nav socials={socials} />
-            <section id="about" className="snap-start">
+            <section id="about" className="">
                 <About pageInfo={pageInfo} />
             </section>
-            <section id="projects" className="snap-start">
+            <section id="projects" className="">
                 <Projects projects={projects} />
             </section>
-            <section id="skills" className="snap-start">
+            <section id="skills" className="">
                 <Skills skills={skills} />
             </section>
-            <section id="achievements" className="snap-start">
+            <section id="achievements" className="">
                 <Achievements achievements={achievements} />
             </section>
-            <section id="contact" className="snap-start">
+            <section id="contact" className="">
                 <ContactMe />
             </section>
-            <Footer pageInfo={pageInfo} />
+            {/* <Footer pageInfo={pageInfo} /> */}
         </div>
     )
 }

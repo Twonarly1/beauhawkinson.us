@@ -1,39 +1,69 @@
-import React from "react"
+import React, { useState } from "react"
 import { Skill } from "../../../../typings"
 import Heading from "../../Heading"
 import IndividualSkill from "./IndividualSkill"
+import { Switch } from "@headlessui/react"
 
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ")
+}
 type Props = {
     skills: Skill[]
 }
 
 const SkillsSection = ({ skills }: Props) => {
+    const [enabled, setEnabled] = useState(false)
+
     return (
-        <div className="relative mx-auto flex h-screen w-full max-w-5xl flex-col items-center justify-start px-6 pt-32">
-            <Heading
-                title={"Skills"}
-                subtitle={" Tools I have experinece with."}
-                other={"* preferred stack"}
-            />
-            <div className="relative w-full max-w-lg">
-                <div className="blobAnimation top-32 -left-4 bg-purple-300 dark:bg-purple-200"></div>
-                <div className="animation-delay-2000 blobAnimation top-32 -right-4 bg-yellow-300 dark:bg-yellow-200"></div>
-                <div className="animation-delay-4000 blobAnimation top-48 left-20 bg-pink-300 dark:bg-red-200"></div>
-                <div className="relative  z-10 space-y-4">
-                    <div className="mx-auto mt-12 grid max-w-xs grid-cols-3 gap-2 transition-transform  duration-500 xs:gap-6 2xs:max-w-md 2xs:grid-cols-4 ">
-                        {skills
-                            .map((skill, i: number) => {
-                                if (skill.stack)
-                                    return <IndividualSkill key={i} individualSkill={skill} />
-                            })
-                            .concat(
-                                skills.map((skill: Skill, i: number) => {
-                                    if (!skill.stack)
-                                        return <IndividualSkill key={i} individualSkill={skill} />
-                                })
-                            )}
-                    </div>
-                </div>
+        <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-start px-6 pt-32">
+            <Heading title={"Skills"} subtitle={" Tools I have experinece with."} />
+            <Switch.Group as="div" className="mt-12 flex items-center">
+                <Switch
+                    checked={enabled}
+                    onChange={setEnabled}
+                    className={classNames(
+                        enabled ? "bg-pink-400" : "bg-gray-200",
+                        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none "
+                    )}
+                >
+                    <span
+                        aria-hidden="true"
+                        className={classNames(
+                            enabled ? "translate-x-5" : "translate-x-0",
+                            "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out dark:bg-gray-400"
+                        )}
+                    />
+                </Switch>
+                <Switch.Label as="span" className="ml-3">
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-400">
+                        preffered stack
+                    </span>
+                </Switch.Label>
+            </Switch.Group>
+            <div className="mt-6 grid  grid-cols-3  gap-4 gap-y-6  transition-transform  duration-500 2xs:grid-cols-5 ">
+                {skills
+                    .map((skill, i: number) => {
+                        if (skill.stack)
+                            return (
+                                <IndividualSkill
+                                    enabled={enabled}
+                                    key={i}
+                                    individualSkill={skill}
+                                />
+                            )
+                    })
+                    .concat(
+                        skills.map((skill: Skill, i: number) => {
+                            if (!skill.stack)
+                                return (
+                                    <IndividualSkill
+                                        enabled={enabled}
+                                        key={i}
+                                        individualSkill={skill}
+                                    />
+                                )
+                        })
+                    )}
             </div>
         </div>
     )

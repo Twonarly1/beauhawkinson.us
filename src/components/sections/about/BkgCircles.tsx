@@ -2,16 +2,15 @@ import React from "react"
 import useWindowDimensions from "../../../lib/hooks/useWindowDimensions"
 import getRandomInt from "../../../lib/utils"
 
-type Props = {}
-
-function BkgCircles({}: Props) {
+function BkgCircles() {
     const { height, width } = useWindowDimensions()
     let w: any = width
     let h: any = height
+
     return (
         <div
             draggable
-            style={{ left: getRandomInt(0, w), top: getRandomInt(32, h / 4) }}
+            style={{ left: getRandomInt(0, w) + "px", top: getRandomInt(32, h / 4) }}
             className="relative z-0 flex cursor-move  items-center"
         >
             <div className="absolute mt-0 h-[25px] w-[25px] animate-ping rounded-full  border border-gray-300 delay-[2000ms]" />

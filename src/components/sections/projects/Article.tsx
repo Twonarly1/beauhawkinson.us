@@ -14,7 +14,7 @@ const Article = ({ project }: Props) => {
     return (
         <article
             ref={ref}
-            className={`relative flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll   rounded-lg  bg-gray-100 py-4 px-4  transition-opacity duration-200 scrollbar-thin  md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px] ${
+            className={` relative flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll   rounded-lg  bg-gray-100 py-4 px-4  transition-opacity duration-200 scrollbar-thin  md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px] ${
                 project.title && inView ? "opacity-100" : "opacity-40"
             } `}
         >

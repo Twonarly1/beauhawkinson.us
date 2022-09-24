@@ -1,5 +1,5 @@
-import MoonIcon from "@heroicons/react/24/solid/MoonIcon"
-import SunIcon from "@heroicons/react/24/solid/SunIcon"
+import MoonIcon from "@heroicons/react/24/outline/MoonIcon"
+import SunIcon from "@heroicons/react/24/outline/SunIcon"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 
@@ -18,14 +18,14 @@ export const ThemeSwitcher = () => {
             return (
                 <SunIcon
                     onClick={async () => setTheme("light")}
-                    className="commonBordering navButton hover:animate-wiggle dark:bg-slate-800"
+                    className=" navButton hover:animate-wiggle "
                 />
             )
         } else {
             return (
                 <MoonIcon
                     onClick={async () => setTheme("dark")}
-                    className="commonBordering navButton hover:animate-wiggle dark:bg-slate-800"
+                    className=" navButton text-black hover:animate-wiggle"
                 />
             )
         }
