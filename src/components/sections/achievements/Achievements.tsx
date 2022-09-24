@@ -11,7 +11,7 @@ const Achievements = ({ achievements }: Props) => {
     return (
         <div className="relative mx-auto flex min-h-screen  w-full  flex-col items-center justify-start px-6 pt-32">
             <Heading title={"Achievements"} subtitle={"Click card to view details"} />
-            <div className="z-10 mx-auto mt-24 grid  grid-cols-1 gap-6 gap-y-20 sm:grid-cols-2">
+            <div className="z-10 mx-auto mt-12 grid  grid-cols-1 gap-6 gap-y-20 sm:grid-cols-2">
                 {achievements
                     .map((achievement, i: number) => {
                         if (achievement.title.includes("Apollo"))

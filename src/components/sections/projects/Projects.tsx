@@ -9,10 +9,10 @@ type Props = {
 
 function Projects({ projects }: Props) {
     return (
-        <div className=" mx-auto flex h-screen max-w-3xl flex-col items-center justify-start overflow-hidden px-6 pb-12 pt-32">
+        <div className=" mx-auto flex h-screen max-w-3xl flex-col items-center justify-start overflow-hidden  px-6 pb-12 pt-32">
             <Heading title={"Projects"} subtitle={"View more projects on GitHub."} />
 
-            <div className=" flex w-full snap-x snap-mandatory space-x-7 overflow-x-scroll p-6 scrollbar  scrollbar-track-gray-400/20 scrollbar-thumb-pink-100">
+            <div className=" flex w-full snap-x snap-mandatory space-x-7 overflow-x-scroll p-6 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-pink-100">
                 {projects
                     .map((project, i: number) => <Article project={project} key={i} />)
                     .reverse()}

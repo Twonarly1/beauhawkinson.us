@@ -1,8 +1,8 @@
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
-import { PageInfo } from "../../typings"
-import { urlFor } from "../../sanity"
+import { PageInfo } from "../../../../typings"
+import { urlFor } from "../../../../sanity"
 
 function Footer() {
     return (

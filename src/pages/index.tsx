@@ -5,8 +5,7 @@ import About from "../components/sections/about/About"
 import Skills from "../components/sections/skills/Skills"
 import Achievements from "../components/sections/achievements/Achievements"
 import Projects from "../components/sections/projects/Projects"
-import Footer from "../components/Footer"
-import Nav from "../components/Nav"
+import Nav from "../components/header/Nav"
 import {
     fetchAchievements,
     fetchExperiences,
@@ -15,7 +14,7 @@ import {
     fetchSkills,
     fetchSocials,
 } from "../lib/sanity"
-import ContactMe from "../components/sections/ContactMe"
+import ContactMe from "../components/sections/contact/ContactMe"
 
 type ScriptProps = {
     pageInfo: PageInfo
@@ -51,24 +50,23 @@ export default function Home({
     // }
 
     return (
-        <div className="h-screen snap-y overflow-x-hidden overflow-y-scroll">
+        <div className="h-screen snap-y overflow-x-hidden overflow-y-scroll scrollbar-hide">
             <Nav socials={socials} />
-            <section id="about" className="">
+            <section id="about">
                 <About pageInfo={pageInfo} />
             </section>
-            <section id="projects" className="">
+            <section id="projects">
                 <Projects projects={projects} />
             </section>
-            <section id="skills" className="">
+            <section id="skills">
                 <Skills skills={skills} />
             </section>
-            <section id="achievements" className="">
+            <section id="achievements">
                 <Achievements achievements={achievements} />
             </section>
-            <section id="contact" className="">
+            <section id="contact">
                 <ContactMe />
             </section>
-            {/* <Footer pageInfo={pageInfo} /> */}
         </div>
     )
 }

@@ -63,6 +63,7 @@ export interface Experience extends SanityBody {
 }
 
 export interface Social extends SanityBody {
+    image: Image
     _type: "social"
     title: string
     url: string

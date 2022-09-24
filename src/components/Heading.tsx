@@ -6,7 +6,7 @@ type Headings = {
 
 export default function Heading({ title, subtitle, other }: Headings) {
     return (
-        <div className="text-center">
+        <div className="mb-12 text-center">
             <h1 className="cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100">
                 {title}
             </h1>

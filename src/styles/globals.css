@@ -15,13 +15,9 @@
     }
 
     .navButton {
-        @apply h-5 w-5 cursor-pointer rounded-full;
+        @apply h-6 w-6 cursor-pointer;
     }
-    .heroButton {
-        @apply rounded-full border-gray-400 px-4 py-[3px] text-xs uppercase tracking-widest text-gray-500 underline
-        transition-all hover:border-gray-500/40 hover:text-gray-500/40
-        dark:border-gray-500 dark:text-gray-400 dark:hover:border-gray-200 dark:hover:text-gray-200;
-    }
+
     .input-container {
         @apply relative -space-y-px rounded-md text-base shadow-sm;
     }

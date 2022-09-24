@@ -14,5 +14,11 @@ export default {
             title: "Url",
             type: "url",
         },
+        {
+            name: "image",
+            title: "Image",
+            type: "image",
+            options: { hotspot: true },
+        },
     ],
 }

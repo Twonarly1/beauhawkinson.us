@@ -3,18 +3,18 @@ const plugin = require("tailwindcss/plugin")
 
 const Myclass = plugin(function ({ addUtilities, theme }) {
     addUtilities({
-        ".my-rotate-y-180": {
-            transform: "rotateY(180deg)",
-        },
-        ".preserve-3d": {
-            transformStyle: "preserve-3d",
-        },
-        ".perspective": {
-            perspective: "1000px",
-        },
-        ".backface-hidden": {
-            backfaceVisibility: "hidden",
-        },
+        // ".my-rotate-y-180": {
+        //     transform: "rotateY(180deg)",
+        // },
+        // ".preserve-3d": {
+        //     transformStyle: "preserve-3d",
+        // },
+        // ".perspective": {
+        //     perspective: "1000px",
+        // },
+        // ".backface-hidden": {
+        //     backfaceVisibility: "hidden",
+        // },
         ".fade-up": {
             transition:
                 "transform 1s cubic-bezier(0.64, 0.04, 0.26, 0.87), opacity 0.8s cubic-bezier(0.64, 0.04, 0.26, 0.87)",
@@ -102,6 +102,7 @@ module.exports = {
         require("@tailwindcss/typography"),
         require("tailwind-scrollbar-hide"),
         require("tailwind-scrollbar"),
+        require("@tailwindcss/forms"),
         Myclass,
     ],
 }

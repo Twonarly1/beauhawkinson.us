@@ -17,7 +17,7 @@ const SkillsSection = ({ skills }: Props) => {
     return (
         <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-start px-6 pt-32">
             <Heading title={"Skills"} subtitle={" Tools I have experinece with."} />
-            <Switch.Group as="div" className="mt-12 flex items-center">
+            <Switch.Group as="div" className="flex items-center">
                 <Switch
                     checked={enabled}
                     onChange={setEnabled}
@@ -40,7 +40,7 @@ const SkillsSection = ({ skills }: Props) => {
                     </span>
                 </Switch.Label>
             </Switch.Group>
-            <div className="mt-6 grid  grid-cols-3  gap-4 gap-y-6  transition-transform  duration-500 2xs:grid-cols-5 ">
+            <div className="mt-6 grid  grid-cols-4  gap-4 gap-y-6  transition-transform  duration-500 2xs:grid-cols-5 ">
                 {skills
                     .map((skill, i: number) => {
                         if (skill.stack)
