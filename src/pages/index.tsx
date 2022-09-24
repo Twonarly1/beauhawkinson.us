@@ -15,6 +15,7 @@ import {
     fetchSocials,
 } from "../lib/sanity"
 import ContactMe from "../components/sections/contact/ContactMe"
+import Experiences from "../components/sections/experiences/Experiences"
 
 type ScriptProps = {
     pageInfo: PageInfo
@@ -60,6 +61,9 @@ export default function Home({
             </section>
             <section id="skills">
                 <Skills skills={skills} />
+            </section>
+            <section id="experiences">
+                <Experiences experiences={experiences} />
             </section>
             <section id="achievements">
                 <Achievements achievements={achievements} />

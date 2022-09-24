@@ -17,6 +17,14 @@ export default {
             },
         },
         {
+            name: "secondaryImage",
+            title: "Secondary Image",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+        },
+        {
             name: "company",
             title: "Company",
             type: "text",

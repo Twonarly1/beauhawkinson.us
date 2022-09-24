@@ -54,6 +54,7 @@ export interface Experience extends SanityBody {
     _type: "experience"
     company: string
     companyImage: Image
+    secondaryImage: Image
     dateStarted: date
     dateEnded: date
     isCurrentlyWorkingHere: boolean

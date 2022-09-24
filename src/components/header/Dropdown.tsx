@@ -174,7 +174,7 @@ export default function Dropdown() {
                                             active
                                                 ? "bg-gray-100 text-gray-900 dark:bg-white/5"
                                                 : "text-gray-700 ",
-                                            "block rounded-b-md px-4 py-2 text-sm dark:text-white"
+                                            "group block rounded-b-md px-4 py-2 text-sm dark:text-white"
                                         )}
                                     >
                                         <div
@@ -188,7 +188,7 @@ export default function Dropdown() {
                                                 checked={isDotTheme}
                                                 onChange={(e) => setIsDotTheme(e.target.checked)}
                                                 type="checkbox"
-                                                className="h-5 w-5 border-gray-300 bg-white text-pink-200 "
+                                                className="h-5 w-5 rounded border border-gray-300 bg-white text-pink-100"
                                             />
                                             <p>Dots</p>
                                         </div>

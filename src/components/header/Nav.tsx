@@ -46,14 +46,14 @@ const Nav = ({ socials }: Props) => {
                             url={social.url}
                             fgColor="gray"
                             bgColor="transparent"
-                            className="rounded-full hover:bg-pink-200 "
+                            className="rounded-full hover:bg-pink-100 "
                         />
                     ))}
                     <Link href="#contact">
                         <div className="group flex items-center gap-1">
                             <SocialIcon
                                 style={{ width: "40px", height: "40px" }}
-                                className="cursor-pointer rounded-full group-hover:bg-pink-200"
+                                className="cursor-pointer rounded-full group-hover:bg-pink-100"
                                 network="email"
                                 fgColor="gray"
                                 bgColor="transparent"

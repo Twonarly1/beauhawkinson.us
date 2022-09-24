@@ -14,7 +14,7 @@ const Article = ({ project }: Props) => {
     return (
         <article
             ref={ref}
-            className="relative flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll   rounded-lg  bg-gray-100 p-4 transition-opacity duration-200 scrollbar-thin  md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px]"
+            className="relative flex w-[260px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-4 overflow-x-hidden overflow-y-scroll   rounded-lg  bg-gray-100 p-4 transition-opacity duration-200 scrollbar-thin dark:bg-white/5  md:w-[600px] xl:w-[600px] xs:w-[340px] 2xs:w-[540px]"
         >
             <p className="text-center text-xl font-bold uppercase xs:text-2xl">{project.title}</p>
             <img

@@ -14,6 +14,7 @@ type Props = {
 const NavItems = [
     { href: "#projects", title: "Projects" },
     { href: "#skills", title: "Technologies" },
+    { href: "#experiences", title: "Experience" },
     { href: "#achievements", title: "Achievements" },
     { href: "#contact", title: "Contact" },
 ]
@@ -66,16 +67,12 @@ const About = ({ pageInfo }: Props) => {
         <div className="bg-black/5 dark:bg-white/10">
             <div className="    mega:h-[750px]">
                 <BkgCircles />
-                {/* <div className="relative mx-auto w-full max-w-sm">
-                    <div className="blobAnimation  -left-4 bg-purple-300 dark:bg-purple-200"></div>
-                    <div className="animation-delay-2000 blobAnimation -right-4 bg-yellow-300 dark:bg-yellow-200"></div>
-                    <div className="animation-delay-4000 blobAnimation left-20 bg-pink-300 dark:bg-red-200"></div> */}
                 <HeroImage heroImage={pageInfo?.heroImage} />
                 <Heading title={pageInfo?.name} subtitle={pageInfo?.role} />
                 <div className=" -mt-6 mb-32 flex flex-col items-center justify-center gap-2 p-2 md:gap-4 2xs:flex-row">
                     {NavItems.map((item, i: number) => (
                         <Link key={i} href={item.href}>
-                            <button className="z-10 px-2 text-xs uppercase tracking-widest text-gray-400 underline transition-all hover:text-pink-200 dark:text-gray-200 dark:hover:text-pink-200">
+                            <button className="z-10 px-2 text-xs uppercase tracking-widest text-gray-400 underline transition-all hover:scale-105 hover:text-pink-300 dark:text-gray-200 dark:hover:text-pink-200">
                                 {item.title}
                             </button>
                         </Link>
