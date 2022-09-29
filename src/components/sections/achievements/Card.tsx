@@ -32,10 +32,6 @@ const Card = ({ achievement }: Props) => {
             <p className=" -mt-2 items-center  justify-center rounded-2xl border-none  p-6 text-center text-[14px] text-gray-400   dark:text-gray-100  ">
                 {achievement?.summary}
             </p>
-            {/* <a
-                href={achievement.url}
-                className="mx-auto mb-2 h-4 w-4 rounded-full border bg-gray-100 text-center hover:bg-white"
-            ></a> */}
         </a>
     )
 }

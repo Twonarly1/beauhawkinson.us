@@ -17,6 +17,7 @@ const SkillsSection = ({ skills }: Props) => {
     return (
         <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-start px-6 pt-32">
             <Heading title={"Skills"} subtitle={" Tools I have experinece with."} />
+
             <Switch.Group as="div" className="flex items-center">
                 <Switch
                     checked={enabled}
@@ -34,12 +35,16 @@ const SkillsSection = ({ skills }: Props) => {
                         )}
                     />
                 </Switch>
-                <Switch.Label as="span" className="ml-3">
-                    <span className="text-sm font-medium text-gray-900 dark:text-gray-400">
-                        preffered stack
+                <Switch.Label
+                    as="button"
+                    className="ml-3 rounded-full transition-all duration-1000"
+                >
+                    <span className="px-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                        preffered
                     </span>
                 </Switch.Label>
             </Switch.Group>
+
             <div className="mt-6 grid  grid-cols-4  gap-4 gap-y-6  transition-transform  duration-500 2xs:grid-cols-5 ">
                 {skills
                     .map((skill, i: number) => {

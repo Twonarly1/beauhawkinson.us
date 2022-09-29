@@ -52,6 +52,7 @@ module.exports = {
                 blob: "blob 7s infinite",
                 airplane: "airplane 5s",
                 wiggle: "wiggle 1s ease-in-out  infinite",
+                "spin-slow": "spin 5s linear infinite",
             },
             keyframes: {
                 blob: {
@@ -91,6 +92,11 @@ module.exports = {
                 wiggle: {
                     "0%, 100%": { transform: "rotate(-10deg)" },
                     "50%": { transform: "rotate(10deg)" },
+                },
+                spinning: {
+                    "0%, 100%": {
+                        transform: "rotate(360deg)",
+                    },
                 },
             },
             colors: {

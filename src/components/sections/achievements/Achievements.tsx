@@ -24,7 +24,7 @@ const Achievements = ({ achievements }: Props) => {
                         })
                     )}
             </div>
-            <div className="absolute top-[25%] left-0 h-[1200px] w-full -skew-y-12 bg-pink-200/10 dark:bg-white/10 2xs:h-[600px]" />
+            <div className="absolute top-[25%] left-0 h-[1800px] w-full -skew-y-12 bg-pink-200/10 dark:bg-white/10 2xs:h-[850px]" />
         </div>
     )
 }

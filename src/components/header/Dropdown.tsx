@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react"
 import { Menu, Transition } from "@headlessui/react"
-import { ChevronDownIcon, MoonIcon, SparklesIcon, SunIcon } from "@heroicons/react/20/solid"
+import { ChevronDownIcon, MoonIcon, SunIcon } from "@heroicons/react/20/solid"
 import { useTheme } from "next-themes"
 import useWindowSize from "../../lib/hooks/useWindowDimensions"
 import getRandomInt from "../../lib/utils"
@@ -104,14 +104,18 @@ export default function Dropdown() {
     }
 
     return (
-        <>
-            <Menu as="div" className=" relative inline-block text-left">
-                <div>
-                    <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700 shadow-sm focus:outline-none hover:bg-white dark:bg-black/5 dark:text-gray-100 dark:hover:bg-primary-dark">
-                        Theme
-                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
-                    </Menu.Button>
-                </div>
+        <div>
+            <Menu
+                as="div"
+                className="relative inline-block rounded-lg bg-white text-left dark:bg-black/5"
+            >
+                <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700  hover:bg-white dark:bg-black/5 dark:text-gray-100 dark:hover:bg-primary-dark">
+                    <p className="dark:group-hover:text-pink-100"> Theme</p>
+                    <ChevronDownIcon
+                        className="-mr-1 ml-2 h-5 w-5 dark:group-hover:text-pink-100"
+                        aria-hidden="true"
+                    />
+                </Menu.Button>
 
                 <Transition
                     as={Fragment}
@@ -122,77 +126,62 @@ export default function Dropdown() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-primary-dark dark:ring-gray-200">
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-primary-dark dark:ring-gray-200">
                         <div className="">
                             <Menu.Item>
                                 {({ active }) => (
-                                    <a
-                                        href="#"
+                                    <button
+                                        onClick={renderLightTheme}
                                         className={classNames(
                                             active
-                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5 "
+                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                 : "text-gray-700 ",
-                                            "block rounded-t-md px-4 py-2 text-sm dark:text-white"
+                                            "group flex w-full items-center space-x-4 rounded-t-md px-4 py-2 text-sm dark:text-white"
                                         )}
                                     >
-                                        <div
-                                            onClick={renderLightTheme}
-                                            className="flex items-center space-x-4"
-                                        >
-                                            <SunIcon className=" navButton hover:animate-wiggle " />
-                                            <p>Light Mode</p>
-                                        </div>
-                                    </a>
+                                        <SunIcon className=" navButton group-hover:animate-wiggle " />
+                                        <p>Light Mode</p>
+                                    </button>
                                 )}
                             </Menu.Item>
                             <Menu.Item>
                                 {({ active }) => (
-                                    <a
-                                        href="#"
+                                    <button
+                                        onClick={renderDarkTheme}
                                         className={classNames(
                                             active
-                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5 "
+                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                 : "text-gray-700 ",
-                                            "block px-4 py-2 text-sm dark:text-white"
+                                            "group flex w-full items-center space-x-4 px-4 py-2 text-sm dark:text-white"
                                         )}
                                     >
-                                        <div
-                                            onClick={renderDarkTheme}
-                                            className="flex items-center space-x-4"
-                                        >
-                                            <MoonIcon className=" navButton  hover:animate-wiggle" />
-                                            <p>Dark Mode</p>
-                                        </div>
-                                    </a>
+                                        <MoonIcon className=" navButton  group-hover:animate-wiggle" />
+                                        <p>Dark Mode</p>
+                                    </button>
                                 )}
                             </Menu.Item>
                             <Menu.Item>
                                 {({ active }) => (
-                                    <a
-                                        href="#"
+                                    <button
+                                        onClick={handleDotTheme}
                                         className={classNames(
                                             active
-                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5"
+                                                ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                 : "text-gray-700 ",
-                                            "group block rounded-b-md px-4 py-2 text-sm dark:text-white"
+                                            "group flex w-full space-x-4 rounded-b-md px-4 py-2 text-sm dark:text-white"
                                         )}
                                     >
-                                        <div
-                                            onClick={handleDotTheme}
-                                            className="ml-[3px] flex w-full items-center space-x-4"
-                                        >
-                                            <input
-                                                id="comments"
-                                                aria-describedby="comments-description"
-                                                name="comments"
-                                                checked={isDotTheme}
-                                                onChange={(e) => setIsDotTheme(e.target.checked)}
-                                                type="checkbox"
-                                                className="h-5 w-5 rounded border border-gray-300 bg-white text-pink-100"
-                                            />
-                                            <p>Dots</p>
-                                        </div>
-                                    </a>
+                                        <input
+                                            id="comments"
+                                            aria-describedby="comments-description"
+                                            name="comments"
+                                            checked={isDotTheme}
+                                            onChange={(e) => setIsDotTheme(e.target.checked)}
+                                            type="checkbox"
+                                            className="h-5 w-5 rounded border border-gray-300 bg-white text-pink-100  group-hover:border-black dark:group-hover:bg-pink-100 "
+                                        />
+                                        <p className="">Dots</p>
+                                    </button>
                                 )}
                             </Menu.Item>
                         </div>
@@ -203,7 +192,7 @@ export default function Dropdown() {
             {dotData?.map((dot: any, i: number) => {
                 return (
                     <div
-                        className="absolute z-0 h-full rounded-full opacity-20 mix-blend-multiply active:cursor-move"
+                        className="absolute -z-50 h-full rounded-full opacity-5 mix-blend-multiply active:cursor-move"
                         draggable="true"
                         key={i}
                         style={{
@@ -217,6 +206,6 @@ export default function Dropdown() {
                     ></div>
                 )
             })}
-        </>
+        </div>
     )
 }

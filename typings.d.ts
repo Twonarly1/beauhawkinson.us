@@ -41,10 +41,17 @@ export interface Skill extends SanityBody {
 }
 
 export interface Project extends SanityBody {
+    id: number
     title: string
+    date: string
     _type: "project"
     image: Image
+    secondImage?: Image
+    thirdImage?: Image
+    fourthImage?: Image
+    fifthImage?: Image
     linkToBuild: string
+    linkToWebsite: string
     summary: string
     technologies: Technology[]
     points: string[]

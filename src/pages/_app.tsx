@@ -3,6 +3,7 @@ import { AppProps } from "../../node_modules/next/app"
 import { ThemeProvider } from "next-themes"
 import { Toaster } from "react-hot-toast"
 import Head from "next/head"
+import Nav from "../components/header/Nav"
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 {/* <script async src="https://cdn.splitbee.io/sb.js"></script> */}
             </Head>
             <ThemeProvider attribute="class">
+                <Nav />
                 <Component {...pageProps} />
                 <Toaster position="top-right" reverseOrder={false} />
             </ThemeProvider>

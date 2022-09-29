@@ -9,7 +9,7 @@ type Props = {
 
 const HeroImage = ({ heroImage }: Props) => {
     return (
-        <div className="relative  m-6 flex justify-center rounded-full">
+        <div className="relative flex justify-center rounded-full pb-6 pt-12">
             <Image
                 priority
                 className="rounded-full"

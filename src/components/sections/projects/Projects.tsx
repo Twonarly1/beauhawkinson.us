@@ -1,21 +1,23 @@
 import React from "react"
 import { Project } from "../../../../typings"
-import Article from "./Article"
 import Heading from "../../Heading"
+import Article from "./Article"
 
 type Props = {
     projects: Project[]
 }
 
 function Projects({ projects }: Props) {
+    console.log("project", projects)
+
     return (
-        <div className=" mx-auto flex h-screen max-w-3xl flex-col items-center justify-start overflow-hidden  px-6 pb-12 pt-32">
+        <div className=" mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start overflow-hidden px-6 pt-32 scrollbar-hide">
             <Heading title={"Projects"} subtitle={"View more projects on GitHub."} />
 
-            <div className=" flex w-full snap-x snap-mandatory space-x-7 overflow-x-scroll p-6 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-pink-100">
-                {projects
-                    .map((project, i: number) => <Article project={project} key={i} />)
-                    .reverse()}
+            <div className="mx-auto flex flex-col gap-y-4 overflow-x-scroll p-1 scrollbar-hide">
+                {projects.map((project, i: number) => (
+                    <Article project={project} id={i} key={i} />
+                ))}
             </div>
         </div>
     )

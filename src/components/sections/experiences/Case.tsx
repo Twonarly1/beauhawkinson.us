@@ -5,13 +5,11 @@ import { Experience, Technology } from "../../../../typings"
 
 type Props = {
     experience: Experience
-    index: number
-    length: number
 }
 
-const Case = ({ experience, index, length }: Props) => {
+const Case = ({ experience }: Props) => {
     return (
-        <div className="relative mb-6  flex w-full flex-shrink-0 snap-center flex-col items-center justify-center  2xs:px-12  ">
+        <div className="relative   mb-6  flex w-full flex-shrink-0 snap-center flex-col items-center justify-center  2xs:px-12  ">
             <img
                 src={urlFor(experience?.companyImage).url()}
                 alt=""
@@ -32,12 +30,10 @@ const Case = ({ experience, index, length }: Props) => {
                         />
                     ))}
                 </div>
-                <div className="scrollbar-thumb:pink-100 mx-auto h-60 w-full overflow-y-scroll scrollbar-hide">
-                    <p className="space-y-2 text-left text-lg 2xs:px-12">
-                        {experience.points.map((point, i: number) => (
-                            <li key={i}>{point}</li>
-                        ))}
-                    </p>
+                <div className="mx-auto h-60 w-full space-y-4 p-2 px-4 py-4 text-left backdrop-blur-lg scrollbar-hide">
+                    {experience.points.map((point, i: number) => (
+                        <p key={i}>{point}</p>
+                    ))}
                 </div>
             </div>
         </div>
