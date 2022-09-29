@@ -11,7 +11,7 @@ function Projects({ projects }: Props) {
     console.log("project", projects)
 
     return (
-        <div className=" mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start overflow-hidden px-6 pt-32 scrollbar-hide">
+        <div className=" mx-auto  flex min-h-screen max-w-5xl flex-col items-center justify-start overflow-hidden px-6 scrollbar-hide">
             <Heading title={"Projects"} subtitle={"View more projects on GitHub."} />
 
             <div className="mx-auto flex flex-col gap-y-4 overflow-x-scroll p-1 scrollbar-hide">

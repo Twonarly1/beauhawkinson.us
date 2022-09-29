@@ -5,7 +5,6 @@ import { fetchProjects } from "../lib/sanity"
 import { useRouter } from "next/router"
 import { urlFor } from "../../sanity"
 import Image from "next/image"
-import Moment from "moment"
 import { CodeBracketIcon } from "@heroicons/react/20/solid"
 import Footer from "../components/sections/contact/Footer"
 
@@ -31,10 +30,10 @@ function Page({ res }: ScriptProps) {
     return (
         <div className="mt-12  min-h-screen w-full overflow-y-scroll p-4 text-sm text-gray-700 scrollbar-hide sm:mt-32 sm:p-0 sm:text-xl">
             <div className="relative mx-auto mb-32 max-w-lg justify-center tracking-[0.5px]">
-                <div className=" text-[22px]  text-gray-900">{project.title}</div>
-                <div className="mt-[2px] text-sm text-gray-400">{project.date}</div>
+                <div className=" text-[22px]  text-gray-900">{project?.title}</div>
+                <div className="mt-[2px] text-sm text-gray-400">{project?.date}</div>
                 <div className="mt-8 flex space-x-2">
-                    {project.technologies.map((tech: any, i: number) => (
+                    {project?.technologies.map((tech: any, i: number) => (
                         <div key={i} className="relative h-6 w-6 rounded-full bg-white">
                             <Image
                                 loading="lazy"
@@ -58,32 +57,34 @@ function Page({ res }: ScriptProps) {
                     </div>
                 </div>
                 <div className="relative flex h-20 w-full items-center justify-between">
-                    <a href={project.linkToBuild} className="rounded-lg">
+                    <a href={project?.linkToBuild} className="rounded-lg">
                         <CodeBracketIcon className="h-10 w-10 rounded-lg border bg-white p-2 hover:bg-gray-50" />
                     </a>
-                    {project.linkToWebsite && (
+                    {project?.linkToWebsite && (
                         <a
-                            href={project.linkToWebsite}
+                            href={project?.linkToWebsite}
                             className="h-auto cursor-default items-center truncate rounded-lg border p-2 text-sm hover:bg-gray-50"
                         >
-                            {project.linkToWebsite}
+                            {project?.linkToWebsite}
                         </a>
                     )}
                 </div>
-                <div className="image-bkg">
-                    <img src={urlFor(project?.image).url()} alt="" className="image" />
-                </div>
-                {project.secondImage && (
+                {project?.image && (
+                    <div className="image-bkg">
+                        <img src={urlFor(project?.image).url()} alt="" className="image" />
+                    </div>
+                )}
+                {project?.secondImage && (
                     <div className="image-bkg">
                         <img src={urlFor(project?.secondImage).url()} alt="" className="image" />
                     </div>
                 )}
-                {project.thirdImage && (
+                {project?.thirdImage && (
                     <div className="image-bkg">
                         <img src={urlFor(project?.thirdImage).url()} alt="" className="image" />
                     </div>
                 )}
-                {project.fourthImage && (
+                {project?.fourthImage && (
                     <div className="image-bkg">
                         <img src={urlFor(project?.fourthImage).url()} alt="" className="image" />
                     </div>

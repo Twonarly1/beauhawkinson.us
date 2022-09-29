@@ -45,7 +45,7 @@ const SkillsSection = ({ skills }: Props) => {
                 </Switch.Label>
             </Switch.Group>
 
-            <div className="mt-6 grid  grid-cols-4  gap-4 gap-y-6  transition-transform  duration-500 2xs:grid-cols-5 ">
+            <div className="mt-12 grid  grid-cols-4  gap-4 gap-y-6  transition-transform  duration-500 sm:grid-cols-6">
                 {skills
                     .map((skill, i: number) => {
                         if (skill.stack)
