@@ -11,9 +11,9 @@ const Article = ({ project, id }: Props) => {
     return (
         <a
             href={"/" + project.id}
-            className="rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:hover:from-gray-600 dark:hover:to-slate-800"
+            className="group cursor-default rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:hover:from-gray-600 dark:hover:to-slate-800"
         >
-            <div className="group relative flex w-full flex-shrink-0 cursor-default flex-col rounded-2xl  ">
+            <div className="relative flex w-full flex-shrink-0  flex-col rounded-2xl  ">
                 <div className="w-full space-y-2">
                     <b className="text-left text-lg text-black/80  dark:text-white/80 xs:text-xl">
                         {project.title}

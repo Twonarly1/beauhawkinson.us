@@ -12,7 +12,7 @@ const navItems = [
 
 const Nav = () => {
     return (
-        <header className="sticky top-0 z-50 flex max-w-5xl justify-between bg-white p-5 dark:bg-primary-dark">
+        <header className="sticky top-0 z-50 mx-auto flex max-w-5xl justify-between bg-white p-5 dark:bg-primary-dark">
             <div className="mx-auto flex w-full items-center gap-2">
                 <Link href="/" className=" ">
                     <button className="rounded-full p-2 hover:bg-pink-100">
