@@ -180,7 +180,7 @@ function Coffee() {
                     as="div"
                     className="relative z-10"
                     initialFocus={cancelButtonRef}
-                    onClose={setOpen}
+                    onClose={() => setOpen(true)}
                 >
                     <Transition.Child
                         as={Fragment}
@@ -191,12 +191,15 @@ function Coffee() {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                        <div className="fixed inset-0 bg-gray-500 bg-opacity-100 transition-opacity" />
                     </Transition.Child>
 
                     <div className="fixed inset-0 z-10 mx-auto flex w-full max-w-5xl flex-col space-y-5 overflow-y-auto p-5 pt-24  ">
-                        <button onClick={() => setOpen(false)} className="">
-                            <XCircleIcon className="mx-auto h-12 w-12 cursor-pointer text-white" />
+                        <button
+                            onClick={() => setOpen(false)}
+                            className="mx-auto h-12 w-12 rounded-full hover:scale-105"
+                        >
+                            <XCircleIcon className=" cursor-pointer  text-white" />
                         </button>
                         {!currentAccount ? (
                             <div className="flex w-full items-end justify-center text-center">
@@ -209,11 +212,11 @@ function Coffee() {
                                     leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                                     leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                 >
-                                    <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+                                    <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white  px-4 pt-5  pb-4 text-left shadow-xl transition-all  dark:bg-primary-dark sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                                         <div className="w-full text-center">
                                             <Dialog.Title
                                                 as="h3"
-                                                className="justify-center text-lg text-gray-900"
+                                                className="justify-center text-lg text-gray-900 dark:text-gray-100"
                                             >
                                                 Buy me a coffee!
                                             </Dialog.Title>
@@ -221,12 +224,13 @@ function Coffee() {
                                                 Switch to the Goerli Test Network!
                                             </Dialog.Description>
                                             <b>
-                                                {currentAccount.slice(0, 6) +
-                                                    "..." +
-                                                    currentAccount.slice(
-                                                        currentAccount.length - 6,
-                                                        currentAccount.length
-                                                    )}
+                                                {currentAccount &&
+                                                    currentAccount.slice(0, 6) +
+                                                        "..." +
+                                                        currentAccount.slice(
+                                                            currentAccount.length - 6,
+                                                            currentAccount.length
+                                                        )}
                                             </b>
                                         </div>
 
@@ -242,7 +246,7 @@ function Coffee() {
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                        className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white  px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
                                                         onClick={() => setOpen(false)}
                                                         ref={cancelButtonRef}
                                                     >
@@ -266,17 +270,17 @@ function Coffee() {
                                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                     >
-                                        <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all ">
+                                        <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-primary-dark ">
                                             <div className="w-full text-center">
                                                 <Dialog.Title
                                                     as="h3"
-                                                    className="justify-center text-lg text-gray-900"
+                                                    className="justify-center text-lg text-gray-900 dark:text-gray-100"
                                                 >
                                                     Send 1 Coffee for 0.001 ETH
                                                 </Dialog.Title>
 
                                                 {currentAccount && (
-                                                    <form className="z-30 mx-auto mt-4 w-full justify-center text-center">
+                                                    <form className=" mx-auto mt-4 w-full justify-center text-center">
                                                         <div className="input-container">
                                                             <input
                                                                 onChange={onNameChange}
@@ -341,28 +345,6 @@ function Coffee() {
                                                     </form>
                                                 )}
                                             </div>
-
-                                            {/* <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
-                                        {!currentAccount && (
-                                            <>
-                                                <button
-                                                    type="button"
-                                                    className="inline-flex w-full justify-center rounded-md  border bg-yellow-100 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
-                                                    onClick={connectWallet}
-                                                >
-                                                    Connect your wallet
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
-                                                    onClick={() => setOpen(false)}
-                                                    ref={cancelButtonRef}
-                                                >
-                                                    Cancel
-                                                </button>
-                                            </>
-                                        )}
-                                    </div> */}
                                         </Dialog.Panel>
                                     </Transition.Child>
                                 </div>
@@ -376,11 +358,11 @@ function Coffee() {
                                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                     >
-                                        <Dialog.Panel className=" relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all ">
+                                        <Dialog.Panel className=" relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all dark:bg-primary-dark ">
                                             <div className="w-full text-center">
                                                 <Dialog.Title
                                                     as="h3"
-                                                    className="justify-center text-lg text-gray-900"
+                                                    className="justify-center text-lg text-gray-900 dark:text-gray-100"
                                                 >
                                                     {currentAccount && "Memos received"}
                                                 </Dialog.Title>
@@ -391,7 +373,7 @@ function Coffee() {
                                                             return (
                                                                 <div
                                                                     key={idx}
-                                                                    className="mx-auto h-12 w-full rounded-full border-b text-left"
+                                                                    className="mx-auto h-12 w-full border-b text-left"
                                                                 >
                                                                     <p>
                                                                         From: {memo?.name} at{" "}

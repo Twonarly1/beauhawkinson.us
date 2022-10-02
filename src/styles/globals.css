@@ -25,7 +25,7 @@
     }
 
     .input-container {
-        @apply relative z-10 -space-y-px rounded-md bg-white text-base shadow-sm dark:bg-primary-dark;
+        @apply relative -space-y-px rounded-md bg-white text-base shadow-sm dark:bg-primary-dark;
     }
     .input {
         @apply block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-base text-gray-400   hover:cursor-text dark:bg-white/5 dark:text-white;
