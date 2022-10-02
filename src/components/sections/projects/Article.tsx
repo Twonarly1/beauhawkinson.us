@@ -11,7 +11,7 @@ const Article = ({ project, id }: Props) => {
     return (
         <a
             href={"/" + project.id}
-            className="group cursor-default rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:hover:from-gray-600 dark:hover:to-slate-800"
+            className="group z-10 cursor-default rounded-2xl bg-white  p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:bg-primary-dark dark:hover:from-gray-600 dark:hover:to-slate-800"
         >
             <div className="relative flex w-full flex-shrink-0  flex-col rounded-2xl  ">
                 <div className="w-full space-y-2">
@@ -30,7 +30,7 @@ const Article = ({ project, id }: Props) => {
                             >
                                 <Image
                                     loading="lazy"
-                                    className="h-6 w-6 rounded-full opacity-10 grayscale group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-80"
+                                    className="h-6 w-6 rounded-full opacity-0 grayscale group-hover:opacity-50 group-hover:grayscale-0 dark:opacity-0"
                                     src={urlFor(tech?.image).url()}
                                     alt="Portrait photo of me"
                                     quality={100}

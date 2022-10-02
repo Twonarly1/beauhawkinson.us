@@ -4,11 +4,8 @@ import { ethers } from "ethers"
 import Head from "next/head"
 import React, { useEffect, useState, Fragment, useRef } from "react"
 import { Dialog, Transition } from "@headlessui/react"
-import { XMarkIcon } from "@heroicons/react/24/outline"
+import { XCircleIcon } from "@heroicons/react/24/outline"
 
-// interface Window {
-//     ethereum: any
-// }
 declare var window: any
 
 function Coffee() {
@@ -100,14 +97,21 @@ function Coffee() {
         }
     }
 
+    console.log(memos)
+
     // Function to fetch all memos stored on-chain.
     const getMemos = async () => {
         try {
             const { ethereum } = window
             if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum)
+                // console.log("provider", provider)
+
                 const signer = provider.getSigner()
+                // console.log("signer", signer)
+
                 const buyMeACoffee = new ethers.Contract(contractAddress, contractABI, signer)
+                // console.log("buyMeACoffee", buyMeACoffee)
 
                 console.log("fetching memos from the blockchain..")
                 const memos = await buyMeACoffee.getMemos()
@@ -160,10 +164,10 @@ function Coffee() {
     }, [])
 
     return (
-        <div className="p-2">
+        <div className="rounded-full p-2">
             <button
                 disabled={open}
-                className={`mt-6 w-full items-center bg-yellow-100 py-2 text-black hover:bg-yellow-200 ${
+                className={`mt-6 w-full items-center rounded-lg bg-yellow-100 py-2 text-black hover:bg-yellow-200 ${
                     open && "cursor-not-allowed opacity-0"
                 }`}
                 onClick={() => setOpen(true)}
@@ -190,46 +194,102 @@ function Coffee() {
                         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                     </Transition.Child>
 
-                    <div className="fixed inset-0 z-10 overflow-y-auto">
-                        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                            <Transition.Child
-                                as={Fragment}
-                                enter="ease-out duration-300"
-                                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                enterTo="opacity-100 translate-y-0 sm:scale-100"
-                                leave="ease-in duration-200"
-                                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                            >
-                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
-                                    <div className="w-full text-center">
-                                        <Dialog.Title
-                                            as="h3"
-                                            className="justify-center text-lg text-gray-900"
-                                        >
-                                            Buy me a coffee!
-                                        </Dialog.Title>
-                                        <p>Switch to the Matic Network!</p>
-                                        <XMarkIcon
-                                            onClick={() => setOpen(false)}
-                                            className="absolute top-1 right-1 h-8 w-8 cursor-pointer rounded-md border hover:bg-gray-50"
-                                        />
+                    <div className="fixed inset-0 z-10 mx-auto flex w-full max-w-5xl flex-col space-y-5 overflow-y-auto p-5 pt-24  ">
+                        <button onClick={() => setOpen(false)} className="">
+                            <XCircleIcon className="mx-auto h-12 w-12 cursor-pointer text-white" />
+                        </button>
+                        {!currentAccount ? (
+                            <div className="flex w-full items-end justify-center text-center">
+                                <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    enterTo="opacity-100 translate-y-0 sm:scale-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                                    leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                >
+                                    <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+                                        <div className="w-full text-center">
+                                            <Dialog.Title
+                                                as="h3"
+                                                className="justify-center text-lg text-gray-900"
+                                            >
+                                                Buy me a coffee!
+                                            </Dialog.Title>
+                                            <Dialog.Description>
+                                                Switch to the Goerli Test Network!
+                                            </Dialog.Description>
+                                            <b>
+                                                {currentAccount.slice(0, 6) +
+                                                    "..." +
+                                                    currentAccount.slice(
+                                                        currentAccount.length - 6,
+                                                        currentAccount.length
+                                                    )}
+                                            </b>
+                                        </div>
 
-                                        {currentAccount && (
-                                            <form className="mx-auto mt-4  w-full justify-center text-center">
-                                                <div className="input-container">
-                                                    <input
-                                                        onChange={onNameChange}
-                                                        placeholder="Name"
-                                                        className="input peer text-black placeholder-transparent "
-                                                        id="name"
-                                                        name="name"
-                                                        type="text"
-                                                        required
-                                                    />
-                                                    <label
-                                                        htmlFor="name"
-                                                        className="
+                                        <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                                            {!currentAccount && (
+                                                <>
+                                                    <button
+                                                        type="button"
+                                                        className="inline-flex w-full justify-center rounded-md  border bg-yellow-100 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
+                                                        onClick={connectWallet}
+                                                    >
+                                                        Connect your wallet
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                        onClick={() => setOpen(false)}
+                                                        ref={cancelButtonRef}
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                </>
+                                            )}
+                                        </div>
+                                    </Dialog.Panel>
+                                </Transition.Child>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-5">
+                                <div className="mx-auto flex w-full justify-center text-center lg:w-[500px]">
+                                    <Transition.Child
+                                        as={Fragment}
+                                        enter="ease-out duration-300"
+                                        enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                        enterTo="opacity-100 translate-y-0 sm:scale-100"
+                                        leave="ease-in duration-200"
+                                        leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                                        leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    >
+                                        <Dialog.Panel className="relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all ">
+                                            <div className="w-full text-center">
+                                                <Dialog.Title
+                                                    as="h3"
+                                                    className="justify-center text-lg text-gray-900"
+                                                >
+                                                    Send 1 Coffee for 0.001 ETH
+                                                </Dialog.Title>
+
+                                                {currentAccount && (
+                                                    <form className="z-30 mx-auto mt-4 w-full justify-center text-center">
+                                                        <div className="input-container">
+                                                            <input
+                                                                onChange={onNameChange}
+                                                                placeholder="Name"
+                                                                className="input peer text-black placeholder-transparent "
+                                                                id="name"
+                                                                name="name"
+                                                                type="text"
+                                                                required
+                                                            />
+                                                            <label
+                                                                htmlFor="name"
+                                                                className="
                                                             label
                                                             peer-placeholder-shown:top-2.5
                                                             peer-placeholder-shown:left-3
@@ -238,24 +298,24 @@ function Coffee() {
                                                             peer-focus:-top-6
                                                             peer-focus:text-base
                                                             peer-focus:text-gray-400"
-                                                    >
-                                                        Name
-                                                    </label>
-                                                </div>
+                                                            >
+                                                                Name
+                                                            </label>
+                                                        </div>
 
-                                                <div className="input-container mt-8">
-                                                    <textarea
-                                                        required
-                                                        rows={2}
-                                                        onChange={onMessageChange}
-                                                        placeholder="Enjoy your coffee!"
-                                                        id="message"
-                                                        name="message"
-                                                        className="input peer text-black placeholder-transparent"
-                                                    />
-                                                    <label
-                                                        htmlFor="message"
-                                                        className="
+                                                        <div className="input-container mt-8">
+                                                            <textarea
+                                                                required
+                                                                rows={2}
+                                                                onChange={onMessageChange}
+                                                                placeholder="Enjoy your coffee!"
+                                                                id="message"
+                                                                name="message"
+                                                                className="input peer text-black placeholder-transparent"
+                                                            />
+                                                            <label
+                                                                htmlFor="message"
+                                                                className="
                                                             label 
                                                             peer-placeholder-shown:top-2.5
                                                             peer-placeholder-shown:left-3
@@ -264,58 +324,37 @@ function Coffee() {
                                                             peer-focus:-top-6
                                                             peer-focus:text-base
                                                             peer-focus:text-gray-400"
-                                                    >
-                                                        Message
-                                                    </label>
-                                                </div>
+                                                            >
+                                                                Message
+                                                            </label>
+                                                        </div>
 
-                                                <div className="mt-6">
-                                                    <button
-                                                        type="button"
-                                                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-yellow-100 py-4 text-black shadow-sm focus:outline-none hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
-                                                        onClick={buyCoffee}
-                                                    >
-                                                        <p className="text-[14px]">
-                                                            Send 1 Coffee for 0.001ETH
-                                                        </p>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        )}
+                                                        <div className="mt-6">
+                                                            <button
+                                                                type="button"
+                                                                className="inline-flex w-full justify-center rounded-md border border-transparent bg-yellow-100 py-4 text-black shadow-sm hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
+                                                                onClick={buyCoffee}
+                                                            >
+                                                                <p className="text-[14px]">Send</p>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                )}
+                                            </div>
 
-                                        {/* <div className="text-left">
-                                                        {currentAccount && <h1>Memos received</h1>}
-                                                        {currentAccount &&
-                                                            memos.map((memo: any, idx: number) => {
-                                                                return (
-                                                                    <div
-                                                                        key={idx}
-                                                                        className="mx-auto h-12 w-80 rounded-full"
-                                                                    >
-                                                                        <b>{memo?.message}</b>
-                                                                        <p>
-                                                                            From: {memo?.name} at{" "}
-                                                                            {memo?.timestamp.toString()}
-                                                                        </p>
-                                                                    </div>
-                                                                )
-                                                            })}
-                                                    </div> */}
-                                    </div>
-
-                                    <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                                            {/* <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                                         {!currentAccount && (
                                             <>
                                                 <button
                                                     type="button"
-                                                    className="inline-flex w-full justify-center rounded-md border border-transparent bg-yellow-100 px-4 py-2 text-base font-medium text-black shadow-sm focus:outline-none hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
+                                                    className="inline-flex w-full justify-center rounded-md  border bg-yellow-100 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
                                                     onClick={connectWallet}
                                                 >
                                                     Connect your wallet
                                                 </button>
                                                 <button
                                                     type="button"
-                                                    className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm focus:outline-none  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                    className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
                                                     onClick={() => setOpen(false)}
                                                     ref={cancelButtonRef}
                                                 >
@@ -323,10 +362,77 @@ function Coffee() {
                                                 </button>
                                             </>
                                         )}
-                                    </div>
-                                </Dialog.Panel>
-                            </Transition.Child>
-                        </div>
+                                    </div> */}
+                                        </Dialog.Panel>
+                                    </Transition.Child>
+                                </div>
+                                <div className="flex w-full justify-center text-center">
+                                    <Transition.Child
+                                        as={Fragment}
+                                        enter="ease-out duration-300"
+                                        enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                        enterTo="opacity-100 translate-y-0 sm:scale-100"
+                                        leave="ease-in duration-200"
+                                        leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                                        leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    >
+                                        <Dialog.Panel className=" relative w-full transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all ">
+                                            <div className="w-full text-center">
+                                                <Dialog.Title
+                                                    as="h3"
+                                                    className="justify-center text-lg text-gray-900"
+                                                >
+                                                    {currentAccount && "Memos received"}
+                                                </Dialog.Title>
+
+                                                <div className="flex flex-col gap-y-2  text-center">
+                                                    {currentAccount &&
+                                                        memos.map((memo: any, idx: number) => {
+                                                            return (
+                                                                <div
+                                                                    key={idx}
+                                                                    className="mx-auto h-12 w-full rounded-full border-b text-left"
+                                                                >
+                                                                    <p>
+                                                                        From: {memo?.name} at{" "}
+                                                                        {memo?.timestamp.toString()}
+                                                                    </p>
+
+                                                                    <b className="">
+                                                                        {memo?.message}
+                                                                    </b>
+                                                                </div>
+                                                            )
+                                                        })}
+                                                </div>
+                                            </div>
+
+                                            {/* <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                                        {!currentAccount && (
+                                            <>
+                                                <button
+                                                    type="button"
+                                                    className="inline-flex w-full justify-center rounded-md  border bg-yellow-100 px-4 py-2 text-base font-medium text-black shadow-sm hover:bg-yellow-200   sm:col-start-2 sm:text-sm"
+                                                    onClick={connectWallet}
+                                                >
+                                                    Connect your wallet
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm  hover:bg-gray-50 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                    onClick={() => setOpen(false)}
+                                                    ref={cancelButtonRef}
+                                                >
+                                                    Cancel
+                                                </button>
+                                            </>
+                                        )}
+                                    </div> */}
+                                        </Dialog.Panel>
+                                    </Transition.Child>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </Dialog>
             </Transition.Root>

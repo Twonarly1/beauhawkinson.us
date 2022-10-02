@@ -12,19 +12,19 @@ type Props = {
 }
 
 const SkillsSection = ({ skills }: Props) => {
-    const [enabled, setEnabled] = useState(false)
+    const [enabled, setEnabled] = useState(true)
 
     return (
         <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-start px-6 pt-32">
             <Heading title={"Skills"} subtitle={" Tools I have experinece with."} />
 
-            <Switch.Group as="div" className="flex items-center">
+            <Switch.Group as="div" className="z-10 flex items-center">
                 <Switch
                     checked={enabled}
                     onChange={setEnabled}
                     className={classNames(
                         enabled ? "bg-pink-100" : "bg-gray-200",
-                        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none "
+                        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out "
                     )}
                 >
                     <span
@@ -37,15 +37,21 @@ const SkillsSection = ({ skills }: Props) => {
                 </Switch>
                 <Switch.Label
                     as="button"
-                    className="ml-3 rounded-full transition-all duration-1000"
+                    className="ml-3 flex h-full w-6 items-center justify-center rounded-full transition-all duration-1000"
                 >
-                    <span className="px-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                        preffered
-                    </span>
+                    {enabled ? (
+                        <p className="px-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                            pref
+                        </p>
+                    ) : (
+                        <p className="px-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                            all
+                        </p>
+                    )}
                 </Switch.Label>
             </Switch.Group>
 
-            <div className="mt-12 grid  grid-cols-4  gap-4 gap-y-6  transition-transform  duration-500 sm:grid-cols-6">
+            <div className="z-10 mt-12 grid grid-cols-4  gap-4  gap-y-6 transition-transform  duration-500  dark:bg-primary-dark sm:grid-cols-6">
                 {skills
                     .map((skill, i: number) => {
                         if (skill.stack)

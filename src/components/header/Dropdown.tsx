@@ -60,10 +60,10 @@ export default function Dropdown() {
 
         let count = parseInt(`${(h + w) / 75}`)
 
-        while (circles.length < count) {
+        while (circles.length < 500) {
             const circle = {
-                x: getRandomInt(10, w),
-                y: getRandomInt(100, h),
+                x: getRandomInt(0, w),
+                y: getRandomInt(0, h),
                 r: getRandomInt(6, 36),
                 rgb: {
                     r: getRandomInt(100, 255),
@@ -104,15 +104,15 @@ export default function Dropdown() {
     }
 
     return (
-        <div>
+        <div className="z-0">
             <Menu
                 as="div"
-                className="relative inline-block rounded-lg bg-white text-left dark:bg-black/5"
+                className="relative z-50 inline-block rounded-lg bg-white text-left dark:bg-black/5"
             >
-                <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-400 px-4 py-2 text-sm font-medium text-gray-700  hover:bg-white dark:bg-black/5 dark:text-gray-100 dark:hover:bg-primary-dark">
+                <Menu.Button className="group inline-flex w-full justify-center rounded-md border  px-2 py-2 text-sm font-medium text-gray-700 ring-1 ring-gray-300 hover:bg-white  dark:bg-black/5 dark:text-gray-100 dark:ring-gray-200 dark:hover:bg-primary-dark">
                     <p className="dark:group-hover:text-pink-100"> Theme</p>
                     <ChevronDownIcon
-                        className="-mr-1 ml-2 h-5 w-5 dark:group-hover:text-pink-100"
+                        className=" ml-2 h-5 w-5 dark:group-hover:text-pink-100"
                         aria-hidden="true"
                     />
                 </Menu.Button>
@@ -126,7 +126,7 @@ export default function Dropdown() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                 >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dark:border-gray-600 dark:bg-primary-dark dark:ring-gray-200">
+                    <Menu.Items className="absolute right-0 mt-2 w-36 origin-top-right rounded-md bg-white ring-2 ring-gray-300  dark:bg-primary-dark dark:ring-gray-200">
                         <div className="">
                             <Menu.Item>
                                 {({ active }) => (
@@ -160,7 +160,7 @@ export default function Dropdown() {
                                     </button>
                                 )}
                             </Menu.Item>
-                            <Menu.Item>
+                            {/* <Menu.Item>
                                 {({ active }) => (
                                     <button
                                         onClick={handleDotTheme}
@@ -183,16 +183,16 @@ export default function Dropdown() {
                                         <p className="">Dots</p>
                                     </button>
                                 )}
-                            </Menu.Item>
+                            </Menu.Item> */}
                         </div>
                     </Menu.Items>
                 </Transition>
             </Menu>
 
-            {dotData?.map((dot: any, i: number) => {
+            {/* {dotData?.map((dot: any, i: number) => {
                 return (
                     <div
-                        className="absolute -z-50 h-full rounded-full opacity-5 mix-blend-multiply active:cursor-move"
+                        className="absolute  z-0 h-full rounded-full opacity-10 mix-blend-multiply active:cursor-move"
                         draggable="true"
                         key={i}
                         style={{
@@ -205,7 +205,7 @@ export default function Dropdown() {
                         }}
                     ></div>
                 )
-            })}
+            })} */}
         </div>
     )
 }

@@ -25,8 +25,8 @@ type ScriptProps = {
 
 function Home({ pageInfo, experiences, skills, projects, achievements }: ScriptProps) {
     return (
-        <div className="h-screen snap-y overflow-x-hidden overflow-y-scroll scrollbar-hide">
-            <section id="about">
+        <div className="h-screen overflow-x-hidden overflow-y-scroll scrollbar-hide">
+            <section id="about ">
                 <About pageInfo={pageInfo} />
             </section>
             <section id="projects">

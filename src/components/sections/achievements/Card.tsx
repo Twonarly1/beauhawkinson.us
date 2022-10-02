@@ -10,11 +10,8 @@ type Props = {
 
 const Card = ({ achievement }: Props) => {
     return (
-        <a
-            href={achievement.url}
-            className="group relative mx-auto h-fit w-60 cursor-pointer items-center justify-between rounded-2xl border-2 border-gray-100  bg-white transition duration-300 hover:bg-gray-50 dark:border-gray-600  dark:bg-slate-800 dark:hover:bg-slate-600 xs:w-80 "
-        >
-            <div className="relative mx-auto -mt-14 h-32 w-32 items-center">
+        <a href={achievement.url} className="-mb-2 rounded-lg p-2">
+            <div className="relative mx-auto h-32 w-32 items-center">
                 <Image
                     src={urlFor(achievement?.image).url()}
                     alt={achievement?.title}

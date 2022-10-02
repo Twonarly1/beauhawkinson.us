@@ -30,7 +30,7 @@ const Case = ({ experience }: Props) => {
                         />
                     ))}
                 </div>
-                <div className="mx-auto h-60 w-full space-y-4 p-2 px-4 py-4 text-left backdrop-blur-lg scrollbar-hide">
+                <div className=" mx-auto h-60 w-full space-y-4 p-2 px-4 py-4 text-left  scrollbar-hide">
                     {experience.points.map((point, i: number) => (
                         <p key={i}>{point}</p>
                     ))}

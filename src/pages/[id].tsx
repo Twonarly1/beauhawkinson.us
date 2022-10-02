@@ -28,13 +28,18 @@ function Page({ res }: ScriptProps) {
     const project = res[path]
 
     return (
-        <div className="mt-12  min-h-screen w-full overflow-y-scroll p-4 text-sm text-gray-700 scrollbar-hide sm:mt-32 sm:p-0 sm:text-xl">
+        <div className="mt-12  min-h-screen w-full overflow-y-scroll p-4 text-sm text-gray-700 scrollbar-hide dark:text-gray-400 sm:mt-32 sm:p-0 sm:text-xl">
             <div className="relative mx-auto mb-32 max-w-lg justify-center tracking-[0.5px]">
-                <div className=" text-[22px]  text-gray-900">{project?.title}</div>
+                <div className=" text-[22px] text-gray-900 dark:text-gray-100">
+                    {project?.title}
+                </div>
                 <div className="mt-[2px] text-sm text-gray-400">{project?.date}</div>
                 <div className="mt-8 flex space-x-2">
                     {project?.technologies.map((tech: any, i: number) => (
-                        <div key={i} className="relative h-6 w-6 rounded-full bg-white">
+                        <div
+                            key={i}
+                            className="relative h-6 w-6 rounded-full bg-white dark:bg-primary-dark"
+                        >
                             <Image
                                 loading="lazy"
                                 className="h-6 w-6 rounded-full"
@@ -58,12 +63,12 @@ function Page({ res }: ScriptProps) {
                 </div>
                 <div className="relative flex h-20 w-full items-center justify-between">
                     <a href={project?.linkToBuild} className="rounded-lg">
-                        <CodeBracketIcon className="h-10 w-10 rounded-lg border bg-white p-2 hover:bg-gray-50" />
+                        <CodeBracketIcon className="h-10 w-10 rounded-lg border bg-white p-2 focus:outline-none hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5 dark:hover:bg-gray-500" />
                     </a>
                     {project?.linkToWebsite && (
                         <a
                             href={project?.linkToWebsite}
-                            className="h-auto cursor-default items-center truncate rounded-lg border p-2 text-sm hover:bg-gray-50"
+                            className="h-auto cursor-pointer items-center truncate rounded-lg border p-2 text-sm hover:bg-gray-50 dark:hover:bg-white/5"
                         >
                             {project?.linkToWebsite}
                         </a>

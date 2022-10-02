@@ -3,7 +3,7 @@ import Coffee from "./Coffee"
 
 function Footer() {
     return (
-        <footer className="relative z-50 w-full justify-center">
+        <footer className="relative z-50 mx-auto max-w-5xl justify-center rounded-xl">
             <Coffee />
         </footer>
     )
