@@ -26,7 +26,7 @@ const SkillsSection = ({ skills }: Props) => {
         <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col items-center justify-start px-6 pt-32">
             <Heading
                 title={"Skills"}
-                subtitle={enabled ? "Preffered stack" : "Tools I have experinece with."}
+                subtitle={enabled ? "Preferred stack" : "Tools I have experinece with."}
             />
             <button
                 onClick={handleToggle}
