@@ -1,8 +1,8 @@
 import React from "react"
-import { urlFor } from "../../../../sanity"
-import { Achievement } from "../../../../typings"
 import Image from "next/image"
 import TimeAgo from "react-timeago"
+import { Achievement } from "typings"
+import { urlFor } from "sanity"
 
 type Props = {
     achievement: Achievement

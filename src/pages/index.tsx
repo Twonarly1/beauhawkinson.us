@@ -1,19 +1,14 @@
 import React from "react"
 import { GetStaticProps } from "next"
-import { Achievement, Experience, PageInfo, Project, Skill } from "../../typings"
-import About from "../components/sections/about/About"
-import Skills from "../components/sections/skills/Skills"
-import Achievements from "../components/sections/achievements/Achievements"
-import Projects from "../components/sections/projects/Projects"
+import { About, Projects, Skills, Experiences, Achievements, ContactMe } from "src/components"
 import {
     fetchAchievements,
     fetchExperiences,
     fetchPageInfo,
     fetchProjects,
     fetchSkills,
-} from "../lib/sanity"
-import ContactMe from "../components/sections/contact/ContactMe"
-import Experiences from "../components/sections/experiences/Experiences"
+} from "src/lib/sanity"
+import { PageInfo, Experience, Skill, Project, Achievement } from "typings"
 
 type ScriptProps = {
     pageInfo: PageInfo
@@ -64,6 +59,6 @@ export const getStaticProps: GetStaticProps<ScriptProps> = async () => {
             projects,
             achievements,
         } as ScriptProps,
-        revalidate: 60,
+        revalidate: 600, // defaults to false 10sec max
     }
 }

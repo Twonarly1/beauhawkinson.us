@@ -1,6 +1,6 @@
 import React from "react"
-import { Experience } from "../../../../typings"
-import Heading from "../../Heading"
+import { Heading } from "src/components/core"
+import { Experience } from "typings"
 import Case from "./Case"
 
 type Props = {

@@ -1,9 +1,7 @@
 import PaperAirplaneIcon from "@heroicons/react/24/outline/PaperAirplaneIcon"
 import React, { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
-import Footer from "./Footer"
-import Heading from "../../Heading"
-import Coffee from "./Coffee"
+import { Heading } from "src/components/core"
 
 type Inputs = {
     name: string
@@ -123,7 +121,6 @@ function ContactMe({}: Props) {
                     </button>
                 </form>
             </div>
-            <Footer />
         </div>
     )
 }

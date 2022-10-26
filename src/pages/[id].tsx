@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react"
-import { Project } from "../../typings"
-import { fetchProjects } from "../lib/sanity"
 import { useRouter } from "next/router"
-import { urlFor } from "../../sanity"
 import Image from "next/image"
 import { CodeBracketIcon } from "@heroicons/react/20/solid"
-import Footer from "../components/sections/contact/Footer"
+import { urlFor } from "sanity"
+import { fetchProjects } from "src/lib/sanity"
+import { Project } from "typings"
 
 type ScriptProps = {
     res: Project[]
@@ -95,7 +94,6 @@ function Page({ res }: ScriptProps) {
                     </div>
                 )}
             </div>
-            <Footer />
         </div>
     )
 }

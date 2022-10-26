@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react"
-import { urlFor } from "../../../../sanity"
-import { Experience, Technology } from "../../../../typings"
+import { urlFor } from "sanity"
+import { Experience, Technology } from "typings"
 
 type Props = {
     experience: Experience

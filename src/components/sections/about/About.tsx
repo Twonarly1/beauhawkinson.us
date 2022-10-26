@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
-import Heading from "../../Heading"
-import { PageInfo } from "../../../../typings"
+import React from "react"
 import Link from "next/link"
-import { useTheme } from "next-themes"
+// import { useTheme } from "next-themes"
 import HeroImage from "./HeroImage"
+import { Heading } from "src/components/core"
+import { PageInfo } from "typings"
 
 type Props = {
     pageInfo: PageInfo

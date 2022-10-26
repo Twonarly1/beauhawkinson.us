@@ -4,8 +4,10 @@
 
 @layer base {
     body {
-        @apply mx-auto w-full scrollbar-hide;
-        @apply bg-white text-gray-400 dark:bg-primary-dark dark:text-gray-400;
+        @apply mx-auto w-full 
+            scrollbar-hide;
+        @apply bg-white text-gray-400 
+            dark:bg-primary-dark dark:text-gray-400;
     }
 }
 
@@ -17,7 +19,8 @@
         @apply rounded-3xl bg-black/5 backdrop-blur-md dark:bg-white/5;
     }
     .blobAnimation {
-        @apply absolute flex h-80 w-80 animate-blob rounded-full opacity-5 mix-blend-multiply  filter dark:opacity-100;
+        @apply absolute flex h-80 w-80 animate-blob rounded-full opacity-5  mix-blend-multiply filter
+               dark:opacity-100;
     }
 
     .navButton {
@@ -25,7 +28,8 @@
     }
 
     .input-container {
-        @apply relative -space-y-px rounded-md bg-white text-base shadow-sm dark:bg-primary-dark;
+        @apply relative -space-y-px rounded-md bg-white text-base shadow-sm 
+             dark:bg-primary-dark;
     }
     .input {
         @apply block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-base text-gray-400   hover:cursor-text dark:bg-white/5 dark:text-white;

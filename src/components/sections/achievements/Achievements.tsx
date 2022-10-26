@@ -1,6 +1,6 @@
 import React from "react"
-import { Achievement } from "../../../../typings"
-import Heading from "../../Heading"
+import { Heading } from "src/components/core"
+import { Achievement } from "typings"
 import Card from "./Card"
 
 type Props = {

@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { Skill } from "../../../../typings"
-import Heading from "../../Heading"
+import { Skill } from "typings"
+import { Heading } from "src/components/core"
 import IndividualSkill from "./IndividualSkill"
-import { Switch } from "@headlessui/react"
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ")

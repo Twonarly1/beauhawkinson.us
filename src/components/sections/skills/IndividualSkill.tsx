@@ -1,7 +1,7 @@
 import React from "react"
-import { urlFor } from "../../../../sanity"
+import { urlFor } from "sanity"
 import Image from "next/image"
-import { Skill } from "../../../../typings"
+import { Skill } from "typings"
 
 type Props = {
     individualSkill: Skill
