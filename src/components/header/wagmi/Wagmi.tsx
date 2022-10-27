@@ -40,6 +40,7 @@ export default function Wagmi() {
     const { chains, pendingChainId, switchNetwork } = useSwitchNetwork()
     const { data, isError } = useBalance({
         addressOrName: address,
+        chainId: 5,
     })
     const sendTo = "0xBdBD49770aE869d06F688c0c1d62f175537aef63"
     const [debouncedTo] = useDebounce(sendTo, 500)
@@ -63,7 +64,7 @@ export default function Wagmi() {
     const { isLoading, isSuccess } = useWaitForTransaction({
         hash: contractWrite.data?.hash,
     })
-    const [balance, setBalance] = useState<any>("")
+    let [balance, setBalance] = useState<any>("")
 
     useEffect(() => {
         if (!data) return
@@ -144,11 +145,9 @@ export default function Wagmi() {
                                         </div>
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <div className="group -mt-4 w-full cursor-default items-center justify-end space-x-4 rounded-b-md px-4 py-2 text-right text-sm dark:text-white">
-                                            <div className="flex justify-end space-x-2">
-                                                <p> {balance}</p>
-                                                <p>{data?.symbol}</p>
-                                            </div>
+                                        <div className="group -mt-4 flex w-full cursor-default items-center justify-end space-x-2 rounded-b-md px-4 py-2 text-right text-sm dark:text-white">
+                                            <p>{balance}</p>
+                                            <p>{data?.symbol}</p>
                                         </div>
                                     </Menu.Item>
 
