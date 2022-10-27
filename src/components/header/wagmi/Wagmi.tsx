@@ -136,10 +136,7 @@ export default function Wagmi() {
                                         </div>
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <div
-                                            className="group -mt-4 w-full cursor-default items-center justify-end space-x-4 rounded-b-md px-4 py-2 text-right text-sm dark:text-white"
-                                            onClick={() => disconnect()}
-                                        >
+                                        <div className="group -mt-4 w-full cursor-default items-center justify-end space-x-4 rounded-b-md px-4 py-2 text-right text-sm dark:text-white">
                                             <div className="flex justify-end space-x-2">
                                                 <p> {Number(data?.formatted).toFixed(3)}</p>
                                                 <p>{data?.symbol}</p>
@@ -147,7 +144,7 @@ export default function Wagmi() {
                                         </div>
                                     </Menu.Item>
 
-                                    <Menu.Item>
+                                    {/* <Menu.Item>
                                         {({ active }) => (
                                             <button
                                                 className={classNames(
@@ -161,7 +158,7 @@ export default function Wagmi() {
                                                 Copy Address
                                             </button>
                                         )}
-                                    </Menu.Item>
+                                    </Menu.Item> */}
                                     <Menu.Item>
                                         {({ active }) => (
                                             <button
