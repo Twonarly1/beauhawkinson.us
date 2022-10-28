@@ -118,8 +118,7 @@ export default function Wagmi() {
                                         <div className="group flex w-full cursor-default items-center justify-end rounded-t-md px-4 py-2 text-center text-sm dark:text-white">
                                             <div className="">
                                                 <p> {chain?.name ?? chain?.id}</p>
-
-                                                {chain?.unsupported && " (unsupported)"}
+                                                {/* {chain?.unsupported && " (unsupported)"} */}
                                             </div>
 
                                             {switchNetwork && (
@@ -177,6 +176,7 @@ export default function Wagmi() {
                                                     "group flex w-full items-center space-x-4 rounded-b-md px-4 py-2 text-sm dark:text-white"
                                                 )}
                                                 disabled={
+                                                    chain?.name != "Goerli" ||
                                                     isLoading ||
                                                     !sendTransaction ||
                                                     !sendTo ||
