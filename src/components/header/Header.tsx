@@ -112,7 +112,7 @@ const Nav = () => {
                 <div className="group relative z-20 cursor-pointer lg:hidden">
                     <Bars3Icon
                         onClick={() => setOpen(true)}
-                        className=" mx-auto h-[38px] w-[38px] rounded-full  hover:bg-pink-100 dark:hover:bg-pink-100"
+                        className=" mx-auto h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 dark:hover:bg-pink-100"
                     />
                 </div>
                 <Transition.Root show={open} as={Fragment}>

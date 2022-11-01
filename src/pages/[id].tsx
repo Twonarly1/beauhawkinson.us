@@ -93,6 +93,11 @@ function Page({ res }: ScriptProps) {
                         <img src={urlFor(project?.fourthImage).url()} alt="" className="image" />
                     </div>
                 )}
+                {project?.fifthImage && (
+                    <div className="image-bkg">
+                        <img src={urlFor(project?.fifthImage).url()} alt="" className="image" />
+                    </div>
+                )}
             </div>
         </div>
     )
