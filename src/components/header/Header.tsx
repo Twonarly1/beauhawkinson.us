@@ -51,7 +51,7 @@ const Nav = () => {
                             </a>
                         </Link>
 
-                        <p className="invisible absolute transition duration-500 ease-in-out group-hover:visible">
+                        <p className="invisible absolute top-10 text-xs transition duration-500 ease-in-out group-hover:visible">
                             Home
                         </p>
                     </div>
@@ -68,7 +68,7 @@ const Nav = () => {
                                 />
                             </svg>
                         </a>
-                        <p className="invisible absolute transition duration-500 ease-in-out group-hover:visible">
+                        <p className="invisible absolute top-10 text-xs transition duration-500 ease-in-out group-hover:visible">
                             Twitter
                         </p>
                     </div>
@@ -85,25 +85,26 @@ const Nav = () => {
                                 />
                             </svg>
                         </a>
-                        <p className="invisible absolute transition duration-500 ease-in-out group-hover:visible">
+                        <p className="invisible absolute top-10 text-xs transition duration-500 ease-in-out group-hover:visible">
                             GitHub
                         </p>
                     </div>
-                    <div className="group relative z-20 cursor-pointer">
+
+                    <div className="group relative z-20 cursor-pointer border-l">
                         <SunIcon
                             onClick={renderLightTheme}
-                            className=" mx-auto h-[38px] w-[38px] rounded-full p-[5.5px] hover:bg-pink-100 dark:hover:bg-pink-100"
+                            className="mx-auto ml-3 h-[38px] w-[38px] rounded-full p-[5.5px] hover:bg-pink-100 dark:hover:bg-pink-100"
                         />
-                        <p className="invisible absolute transition duration-500 ease-in-out group-hover:visible">
+                        <p className="invisible absolute top-10 right-[5px]  text-xs transition duration-500 ease-in-out group-hover:visible">
                             Light
                         </p>
                     </div>
                     <div className="group relative z-20 cursor-pointer">
                         <MoonIcon
                             onClick={renderDarkTheme}
-                            className=" mx-auto h-[38px] w-[38px] rounded-full p-[7px] hover:bg-pink-100 dark:hover:bg-pink-100"
+                            className=" mx-auto  h-[38px] w-[38px] rounded-full p-[7px] hover:bg-pink-100 dark:hover:bg-pink-100"
                         />
-                        <p className="invisible absolute transition duration-500 ease-in-out group-hover:visible">
+                        <p className="invisible absolute left-2 top-10 text-xs transition duration-500 ease-in-out group-hover:visible">
                             Dark
                         </p>
                     </div>
@@ -111,7 +112,7 @@ const Nav = () => {
                 <div className="group relative z-20 cursor-pointer lg:hidden">
                     <Bars3Icon
                         onClick={() => setOpen(true)}
-                        className=" mx-auto h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 dark:hover:bg-pink-100"
+                        className=" mx-auto h-[38px] w-[38px] rounded-full  hover:bg-pink-100 dark:hover:bg-pink-100"
                     />
                 </div>
                 <Transition.Root show={open} as={Fragment}>

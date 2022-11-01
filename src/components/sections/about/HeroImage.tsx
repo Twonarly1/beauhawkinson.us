@@ -9,10 +9,10 @@ type Props = {
 
 const HeroImage = ({ heroImage }: Props) => {
     return (
-        <div className="relative mt-12 flex justify-center rounded-full pb-6">
+        <div className="relative mx-auto mt-12 flex w-fit justify-center rounded-full bg-gray-100 px-1 py-1 ">
             <Image
                 priority
-                className="rounded-full"
+                className="rounded-full "
                 src={urlFor(heroImage).url()}
                 alt="Portrait photo of me"
                 height={254}

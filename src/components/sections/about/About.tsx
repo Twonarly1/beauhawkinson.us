@@ -18,10 +18,14 @@ const NavItems = [
 ]
 
 const About = ({ pageInfo }: Props) => {
+    console.log(pageInfo)
+
     return (
         <div className="h-screen">
             <HeroImage heroImage={pageInfo?.heroImage} />
-            <Heading title={pageInfo?.name} subtitle={pageInfo?.role} />
+            <div className="mt-8">
+                <Heading title={pageInfo?.name} subtitle={pageInfo?.role} />
+            </div>
             <div className="-mt-4 flex flex-col items-center justify-center gap-2 md:gap-3 2xs:flex-row">
                 {NavItems.map((item, i: number) => (
                     <Link key={i} href={item.href}>

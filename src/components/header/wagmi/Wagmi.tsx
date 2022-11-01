@@ -24,6 +24,7 @@ import {
     useWaitForTransaction,
 } from "wagmi"
 import abi from "src/lib/abi/BuyMeACoffee.json"
+import { CopyHelper } from "src/components/core"
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ")
@@ -115,56 +116,54 @@ export default function Wagmi() {
                             <Menu.Items className="absolute right-0 mt-4 w-36 origin-top-right rounded-md bg-white ring-2 ring-gray-300  dark:bg-primary-dark">
                                 <div className="">
                                     <Menu.Item>
-                                        <div className="group flex w-full cursor-default items-center justify-end rounded-t-md px-4 py-2 text-center text-sm dark:text-white">
-                                            <div className="">
-                                                <p> {chain?.name ?? chain?.id}</p>
-                                                {/* {chain?.unsupported && " (unsupported)"} */}
-                                            </div>
-
-                                            {switchNetwork && (
-                                                <div>
-                                                    {chains.map((x) =>
+                                        <div className="group mt-2 flex w-full cursor-default items-center justify-end space-x-2 px-4 py-2 text-right text-sm dark:text-white">
+                                            <p className="truncate">{ensNameData && ensNameData}</p>
+                                            <p>{balance}</p>
+                                            <p>{data?.symbol}</p>
+                                        </div>
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        {({ active }) => (
+                                            <div>
+                                                {switchNetwork &&
+                                                    chains.map((x) =>
                                                         x.id === chain?.id ? null : (
                                                             <button
+                                                                className={classNames(
+                                                                    active
+                                                                        ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
+                                                                        : "text-gray-700 ",
+                                                                    "group flex w-full items-center space-x-4 px-4 py-2 text-sm dark:text-white"
+                                                                )}
                                                                 key={x.id}
                                                                 onClick={() => switchNetwork(x.id)}
                                                             >
-                                                                {x.name}
-                                                                {data?.symbol}
+                                                                Switch to {x.name}
                                                                 {isLoading &&
                                                                     x.id === pendingChainId &&
                                                                     " (switching)"}
                                                             </button>
                                                         )
                                                     )}
-                                                </div>
-                                            )}
-
-                                            <div>{error && error.message}</div>
-                                        </div>
+                                            </div>
+                                        )}
                                     </Menu.Item>
+
                                     <Menu.Item>
-                                        <div className="group -mt-4 flex w-full cursor-default items-center justify-end space-x-2 rounded-b-md px-4 py-2 text-right text-sm dark:text-white">
-                                            <p>{balance}</p>
-                                            <p>{data?.symbol}</p>
-                                        </div>
-                                    </Menu.Item>
-
-                                    {/* <Menu.Item>
                                         {({ active }) => (
                                             <button
                                                 className={classNames(
                                                     active
                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                         : "text-gray-700 ",
-                                                    "group flex w-full items-center space-x-4 rounded-b-md border-t px-4 py-2 text-sm dark:text-white"
+                                                    "group flex w-full items-center space-x-2  px-4 py-2 text-sm dark:text-white"
                                                 )}
-                                                onClick={() => disconnect()}
                                             >
-                                                Copy Address
+                                                <p>Copy Address</p>
+                                                <CopyHelper toCopy={address.toString()} />
                                             </button>
                                         )}
-                                    </Menu.Item> */}
+                                    </Menu.Item>
                                     <Menu.Item>
                                         {({ active }) => (
                                             <button
@@ -172,8 +171,8 @@ export default function Wagmi() {
                                                 className={classNames(
                                                     active
                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
-                                                        : "text-gray-700 ",
-                                                    "group flex w-full items-center space-x-4 rounded-b-md px-4 py-2 text-sm dark:text-white"
+                                                        : "text-gray-700 disabled:cursor-not-allowed disabled:hover:bg-gray-100",
+                                                    "group flex w-full items-center space-x-4  px-4 py-2 text-sm dark:text-white"
                                                 )}
                                                 disabled={
                                                     chain?.name != "Goerli" ||
@@ -186,15 +185,15 @@ export default function Wagmi() {
                                                 {isLoading ? (
                                                     "Sending..."
                                                 ) : (
-                                                    <div className="flex space-x-1">
+                                                    <div className="bg-bkg flex space-x-1">
                                                         <p>Send</p>
                                                         <img
                                                             src="/coffee.jpg"
-                                                            className="h-4 w-4 animate-wiggle"
+                                                            className="h-4  w-4 animate-wiggle bg-transparent "
                                                             alt=""
                                                         />
                                                         <p className=" text-[10px] font-medium">
-                                                            .001 ETH
+                                                            (.001 ETH)
                                                         </p>
                                                     </div>
                                                 )}
