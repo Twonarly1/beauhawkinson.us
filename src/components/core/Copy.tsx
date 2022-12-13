@@ -4,14 +4,14 @@ import {
     DocumentDuplicateIcon,
 } from "@heroicons/react/24/outline"
 import React from "react"
-import { copyClipboard } from "src/lib/hooks"
+import { CopyClipboard } from "src/lib/hooks"
 
 interface CopyProps {
     toCopy: string
 }
 
 export default function CopyHelper({ toCopy }: CopyProps) {
-    const [isCopied, setCopied] = copyClipboard()
+    const [isCopied, setCopied] = CopyClipboard()
 
     return (
         <button aria-label="justify" className="bg-transparent" onClick={() => setCopied(toCopy)}>
