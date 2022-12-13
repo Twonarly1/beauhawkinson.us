@@ -22,11 +22,9 @@
         @apply absolute flex h-80 w-80 animate-blob rounded-full opacity-5  mix-blend-multiply filter
                dark:opacity-100;
     }
-
     .navButton {
         @apply h-6 w-6 cursor-pointer;
     }
-
     .input-container {
         @apply relative -space-y-px rounded-md bg-white text-base shadow-sm 
              dark:bg-primary-dark;
