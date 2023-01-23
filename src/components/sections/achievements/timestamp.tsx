@@ -34,7 +34,8 @@ export const Timestamp: React.FC<TimestampProps> = ({ date, endDate, className }
                     "transition-all duration-200 ease-in-out",
                 )}
             >
-                <span>{info}</span> <span className="text-gray-200">{suffix}</span>
+                <span>{info}</span>{" "}
+                <span className="text-gray-600 dark:text-gray-200">{suffix}</span>
             </div>
             <br />
             <div
@@ -43,7 +44,7 @@ export const Timestamp: React.FC<TimestampProps> = ({ date, endDate, className }
                     "opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-0",
                 )}
             >
-                <span className="text-gray-200">
+                <span className="text-gray-600 dark:text-gray-200">
                     {current ? "Now" : relevantDate.format("MMM")}
                 </span>{" "}
                 <span className="transform group-hover:translate-x-3">

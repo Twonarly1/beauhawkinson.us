@@ -4,6 +4,7 @@ type Technology = {
 
 type Project = {
     id: number
+    slug: string
     title: string
     summary: string
     date: string

@@ -1,6 +1,7 @@
 export const getProjects = () => [
     {
-        id: "0",
+        id: 0,
+        slug: "ebay-marketplace",
         title: "Ebay Marketplace",
         summary: "A web3 marketplace built on the Polygon (Mumbai) test network. ",
         date: "Oct 30, 2022",
@@ -41,7 +42,8 @@ export const getProjects = () => [
         ],
     },
     {
-        id: "1",
+        id: 1,
+        slug: "meets",
         title: "Swim Meets",
         summary: "Personalized swimming and diving data for coaches and users.",
         date: "Oct 11, 2022",
@@ -79,7 +81,8 @@ export const getProjects = () => [
         ],
     },
     {
-        id: "2",
+        id: 2,
+        slug: "twonarly-lottery",
         title: "⏳ Twonarly Lottery ⌛️",
         summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
         date: "Sep 1, 2022",
@@ -114,7 +117,8 @@ export const getProjects = () => [
         ],
     },
     {
-        id: "3",
+        id: 3,
+        slug: "tailwindcss-shapes",
         title: "Tailwind css shapes 📐 ",
         summary: "Beautifully designed shapes and components using tailwind-css.",
         date: "Aug 14, 2022",
@@ -140,7 +144,8 @@ export const getProjects = () => [
         ],
     },
     {
-        id: "4",
+        id: 4,
+        slug: "poh-social-platform",
         title: "Proof of Humanity - Social Platform 🗺️",
         summary: "Search the Proof of Humanity registry and interact with other registrants.",
         date: "Jul 21, 2022",
@@ -181,7 +186,8 @@ export const getProjects = () => [
         ],
     },
     {
-        id: "5",
+        id: 5,
+        slug: "winsome-tenley",
         title: "Winsome Tenley 🖼️",
         summary: "NFT minting website on the Matic test network. 2nd place winner. 🎉 🎊",
         date: "Mar 31, 2022",
