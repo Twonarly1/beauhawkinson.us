@@ -20,7 +20,7 @@ export default function CopyHelper({ toCopy }: CopyProps) {
             ) : (
                 <DocumentDuplicateIcon
                     aria-hidden="true"
-                    className="inline-flex w-4  text-gray-700 "
+                    className="inline-flex w-4 text-gray-700 dark:text-gray-200 "
                 />
             )}
         </button>

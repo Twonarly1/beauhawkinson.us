@@ -40,8 +40,8 @@ export default function Wagmi() {
     const { chain } = useNetwork()
     const { chains, pendingChainId, switchNetwork } = useSwitchNetwork()
     const { data, isError } = useBalance({
-        addressOrName: address,
-        chainId: 5,
+        address: address,
+        chainId: chain?.id,
     })
     const sendTo = "0xBdBD49770aE869d06F688c0c1d62f175537aef63"
     const [debouncedTo] = useDebounce(sendTo, 500)
@@ -79,10 +79,10 @@ export default function Wagmi() {
     if (!isMounted) return null
 
     return (
-        <div className="z-0">
+        <div className="z-0 lg:-mt-6">
             <Menu
                 as="div"
-                className="relative z-50 inline-block rounded-lg bg-white text-left dark:bg-black/5"
+                className="relative flex items-start rounded-md bg-white text-left dark:bg-black/5"
             >
                 <>
                     <Menu.Button as={React.Fragment}>
@@ -113,13 +113,14 @@ export default function Wagmi() {
                             leaveFrom="transform opacity-100 scale-100"
                             leaveTo="transform opacity-0 scale-95"
                         >
-                            <Menu.Items className="absolute right-0 mt-4 w-36 origin-top-right rounded-md bg-white ring-2 ring-gray-300  dark:bg-primary-dark">
+                            <Menu.Items className="absolute right-0 top-12 w-40 rounded-md bg-white ring-2 ring-gray-300  dark:bg-primary-dark">
                                 <div className="">
                                     <Menu.Item>
-                                        <div className="group mt-2 flex w-full cursor-default items-center justify-end space-x-2 px-4 py-2 text-right text-sm dark:text-white">
+                                        <div className="group w-full cursor-default items-center px-4 py-2 text-sm dark:text-white">
                                             <p className="truncate">{ensNameData && ensNameData}</p>
-                                            <p>{balance}</p>
-                                            <p>{data?.symbol}</p>
+                                            <p>
+                                                {balance} {data?.symbol}
+                                            </p>
                                         </div>
                                     </Menu.Item>
                                     <Menu.Item>
@@ -133,7 +134,7 @@ export default function Wagmi() {
                                                                     active
                                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                                         : "text-gray-700 ",
-                                                                    "group flex w-full items-center space-x-4 px-4 py-2 text-sm dark:text-white"
+                                                                    "group flex w-full items-center space-x-4 px-4 py-2 text-sm dark:text-white",
                                                                 )}
                                                                 key={x.id}
                                                                 onClick={() => switchNetwork(x.id)}
@@ -143,7 +144,7 @@ export default function Wagmi() {
                                                                     x.id === pendingChainId &&
                                                                     " (switching)"}
                                                             </button>
-                                                        )
+                                                        ),
                                                     )}
                                             </div>
                                         )}
@@ -156,7 +157,7 @@ export default function Wagmi() {
                                                     active
                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                         : "text-gray-700 ",
-                                                    "group flex w-full items-center space-x-2  px-4 py-2 text-sm dark:text-white"
+                                                    "group flex w-full items-center space-x-2 px-4 py-2 text-sm dark:text-white",
                                                 )}
                                             >
                                                 <p>Copy Address</p>
@@ -171,8 +172,8 @@ export default function Wagmi() {
                                                 className={classNames(
                                                     active
                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
-                                                        : "text-gray-700 disabled:cursor-not-allowed disabled:hover:bg-gray-100",
-                                                    "group flex w-full items-center space-x-4  px-4 py-2 text-sm dark:text-white"
+                                                        : "text-gray-700 disabled:cursor-not-allowed disabled:hover:bg-gray-100 dark:disabled:hover:bg-white/5",
+                                                    "group flex w-full items-center space-x-4  px-4 py-2 text-sm dark:text-white",
                                                 )}
                                                 disabled={
                                                     chain?.name != "Goerli" ||
@@ -185,16 +186,8 @@ export default function Wagmi() {
                                                 {isLoading ? (
                                                     "Sending..."
                                                 ) : (
-                                                    <div className="bg-bkg flex space-x-1">
-                                                        <p>Send</p>
-                                                        <img
-                                                            src="/coffee.jpg"
-                                                            className="h-4  w-4 animate-wiggle bg-transparent "
-                                                            alt=""
-                                                        />
-                                                        <p className=" text-[10px] font-medium">
-                                                            (.001 ETH)
-                                                        </p>
+                                                    <div className="bg-bkg flex space-x-1 text-center font-medium">
+                                                        Send (.001 ETH)
                                                     </div>
                                                 )}
                                             </button>
@@ -207,7 +200,7 @@ export default function Wagmi() {
                                                     active
                                                         ? "bg-gray-100 text-gray-900 dark:bg-white/5 dark:text-pink-100"
                                                         : "text-gray-700 ",
-                                                    "group flex w-full items-center space-x-4 rounded-b-md px-4 py-2 text-sm dark:text-white"
+                                                    "group flex w-full items-center space-x-4 rounded-b-md px-4 py-2 text-sm dark:text-white",
                                                 )}
                                                 onClick={() => disconnect()}
                                             >

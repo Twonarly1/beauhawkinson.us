@@ -8,3 +8,6 @@
 // core
 export const NODE_ENV = process.env.NODE_ENV
 export const NEXT_PUBLIC_ALCHEMY_API_KEY = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY!
+export const NEXT_PUBLIC_SANITY_DATABASE = process.env.NEXT_PUBLIC_SANITY_DATABASE
+export const NEXT_PUBLIC_SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+export const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL

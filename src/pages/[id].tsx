@@ -1,18 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { useRouter } from "next/router"
 import Image from "next/image"
 import { CodeBracketIcon } from "@heroicons/react/20/solid"
-import { urlFor } from "sanity"
-import { fetchProjects } from "src/lib/sanity"
-import { Project } from "typings"
+import { fetchProjectsData } from "src/lib/constants/fetch-projects"
 
 type ScriptProps = {
     res: Project[]
 }
 
 export const getServerSideProps = async () => {
-    const res = await fetchProjects()
+    const res = await fetchProjectsData()
 
     return {
         props: {
@@ -42,11 +39,11 @@ function Page({ res }: ScriptProps) {
                             <Image
                                 loading="lazy"
                                 className="h-6 w-6 rounded-full"
-                                src={urlFor(tech?.image).url()}
+                                src={tech.imageSrc}
                                 alt="Portrait photo of me"
                                 quality={100}
-                                objectFit="contain"
-                                layout="fill"
+                                height={24}
+                                width={24}
                             />
                         </div>
                     ))}
@@ -73,31 +70,19 @@ function Page({ res }: ScriptProps) {
                         </a>
                     )}
                 </div>
-                {project?.image && (
-                    <div className="image-bkg">
-                        <img src={urlFor(project?.image).url()} alt="" className="image" />
+                {project?.images.map((p: string, i: number) => (
+                    <div key={i} className="image-bkg">
+                        <Image
+                            loading="lazy"
+                            className="mt-20 h-auto w-full rounded-2xl object-cover p-8"
+                            src={p}
+                            alt="Portrait photo of me"
+                            quality={100}
+                            height={400}
+                            width={400}
+                        />
                     </div>
-                )}
-                {project?.secondImage && (
-                    <div className="image-bkg">
-                        <img src={urlFor(project?.secondImage).url()} alt="" className="image" />
-                    </div>
-                )}
-                {project?.thirdImage && (
-                    <div className="image-bkg">
-                        <img src={urlFor(project?.thirdImage).url()} alt="" className="image" />
-                    </div>
-                )}
-                {project?.fourthImage && (
-                    <div className="image-bkg">
-                        <img src={urlFor(project?.fourthImage).url()} alt="" className="image" />
-                    </div>
-                )}
-                {project?.fifthImage && (
-                    <div className="image-bkg">
-                        <img src={urlFor(project?.fifthImage).url()} alt="" className="image" />
-                    </div>
-                )}
+                ))}
             </div>
         </div>
     )

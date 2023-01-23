@@ -4,20 +4,40 @@ import { Toaster } from "react-hot-toast"
 import Head from "next/head"
 import { Header } from "src/components"
 import { AppProps } from "next/app"
-import { WagmiConfig, createClient, configureChains, chain, defaultChains } from "wagmi"
-import { alchemyProvider } from "wagmi/providers/alchemy"
+import { WagmiConfig } from "wagmi"
+import { createClient, createStorage, configureChains, goerli, mainnet } from "wagmi"
+import { InjectedConnector } from "wagmi/connectors/injected"
 import { MetaMaskConnector } from "wagmi/connectors/metaMask"
+
+import { alchemyProvider } from "wagmi/providers/alchemy"
+import { publicProvider } from "wagmi/providers/public"
 import { NEXT_PUBLIC_ALCHEMY_API_KEY } from "src/lib/env"
 
-const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
-    alchemyProvider({ apiKey: NEXT_PUBLIC_ALCHEMY_API_KEY }),
-])
+// Configure chains & providers with the Alchemy provider.
+// Two popular providers are Alchemy (alchemy.com) and Infura (infura.io)
+const { chains, provider, webSocketProvider } = configureChains(
+    [mainnet, goerli],
+    [alchemyProvider({ apiKey: NEXT_PUBLIC_ALCHEMY_API_KEY }), publicProvider()],
+    { targetQuorum: 1 },
+)
 
+// Set up client
 const client = createClient({
-    autoConnect: false,
-    connectors: [new MetaMaskConnector({ chains: [chain.goerli] })],
-    webSocketProvider,
+    autoConnect: true,
+    connectors: [
+        new MetaMaskConnector({ chains }),
+
+        new InjectedConnector({
+            chains,
+            options: {
+                name: "Injected",
+                shimDisconnect: true,
+            },
+        }),
+    ],
     provider,
+    // storage: createStorage({ storage: window.localStorage }),
+    webSocketProvider,
 })
 
 export default function App({ Component, pageProps }: AppProps) {
