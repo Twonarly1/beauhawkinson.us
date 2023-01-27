@@ -1,1 +1,1 @@
-export { default as ContactMe } from "./ContactMe"
+export { default as ContactMe } from "./contact-me"
