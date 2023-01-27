@@ -1,0 +1,7 @@
+export * from "./about"
+export * from "./achievements"
+export * from "./contact"
+export * from "./experiences"
+export * from "./projects"
+export * from "./resume"
+export * from "./skills"

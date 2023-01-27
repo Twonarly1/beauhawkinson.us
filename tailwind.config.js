@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-    content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
+    content: ["./components/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
     darkMode: "class",
     theme: {
         extend: {
@@ -20,10 +20,6 @@ module.exports = {
                 "2xs": "540px",
             },
 
-            fontFamily: {
-                sans: ["Outfit", "sans-serif"],
-                winner: ["Great Vibes", "cursive"],
-            },
             animation: {
                 airplane: "airplane 5s",
                 wiggle: "wiggle 1s ease-in-out  infinite",
