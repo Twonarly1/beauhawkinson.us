@@ -123,69 +123,6 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 3,
-        slug: "twonarly-lottery",
-        title: "⏳ Twonarly Lottery ⌛️",
-        summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
-        date: "Sep 1, 2022",
-        images: ["/projects/lottery/lottery-1.png", "/projects/lottery/lottery-2.png"],
-        technologies: [
-            {
-                imageSrc: "/skills/ethereum.png",
-            },
-            {
-                imageSrc: "/skills/thirdweb.webp",
-            },
-            {
-                imageSrc: "/skills/sol.png",
-            },
-            {
-                imageSrc: "/skills/next.svg",
-            },
-            {
-                imageSrc: "/skills/tailwindcss.svg",
-            },
-            {
-                imageSrc: "/skills/ts.png",
-            },
-        ],
-        linkToBuild: "https://github.com/Twonarly1/twonarly-lottery",
-        linkToWebsite: "",
-        points: [
-            "Smart contract lottery built on Matic Network. Use ThirdWeb to deploy solidity smart contracts.",
-            "Connect your digital wallet with MetaMask.",
-            "Enter the lottery by purchasing tickets with your digital wallet. A user can purchase as many tickets, but there is a maximum per transaction.",
-            "The deployer (admin) handles all ThirdWeb actions for drawing a random winner, restart the lottery draw, collect commissions, and the ability to refund all users in the account of a problem. This can be modified for users to have control of these admin controls.",
-        ],
-    },
-    {
-        id: 4,
-        slug: "tailwind-shapes",
-        title: "Tailwind css shapes 📐 ",
-        summary: "Beautifully designed shapes and components using tailwind-css.",
-        date: "Aug 14, 2022",
-        images: ["/projects/shapes/shapes-1.jpg", "/projects/shapes/shapes-2.png"],
-        technologies: [
-            {
-                imageSrc: "/skills/next.svg",
-            },
-            {
-                imageSrc: "/skills/tailwindcss.svg",
-            },
-            {
-                imageSrc: "/skills/ts.png",
-            },
-        ],
-        linkToBuild: "https://github.com/Twonarly1/tailwindcss-shapes",
-        linkToWebsite: "https://tailwindcss-shapes.vercel.app/",
-        points: [
-            "Included are 18 shapes designed using tailwind css borders and several components also designed with tailwind css and javascript.",
-            "You can find shapes like the pentagon (my favorite), 🔺, right angle triangle, 🟢, 1/4 circle, 1/2 circle, 3/4 circle, hexagon, 🟦, trapezoid, ♦️, ♥️, 🌙, cone, octagon, 💎, parallelogram, and a 6 point ⭐️.",
-            "Components include a coin-flip animation on image hover, curved text wrapping a circular image with animated spin, and a pausable marquee that span a flex-box. Check them out!",
-            "Copy and paste the code directly into your workspace. Were talking HTML, JS, and Config code.",
-        ],
-    },
-    {
-        id: 5,
         slug: "poh",
         title: "Proof of Humanity - Social Platform 🗺️",
         summary: "Search the Proof of Humanity registry and interact with other registrants.",
@@ -226,6 +163,70 @@ export const getProjects = cache((): Project[] => [
             "Users who are not verified can view the different threads and feeds, but cannot write or post themselves.",
         ],
     },
+    {
+        id: 4,
+        slug: "twonarly-lottery",
+        title: "⏳ Twonarly Lottery ⌛️",
+        summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
+        date: "Sep 1, 2022",
+        images: ["/projects/lottery/lottery-1.png", "/projects/lottery/lottery-2.png"],
+        technologies: [
+            {
+                imageSrc: "/skills/ethereum.png",
+            },
+            {
+                imageSrc: "/skills/thirdweb.webp",
+            },
+            {
+                imageSrc: "/skills/sol.png",
+            },
+            {
+                imageSrc: "/skills/next.svg",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/twonarly-lottery",
+        linkToWebsite: "",
+        points: [
+            "Smart contract lottery built on Matic Network. Use ThirdWeb to deploy solidity smart contracts.",
+            "Connect your digital wallet with MetaMask.",
+            "Enter the lottery by purchasing tickets with your digital wallet. A user can purchase as many tickets, but there is a maximum per transaction.",
+            "The deployer (admin) handles all ThirdWeb actions for drawing a random winner, restart the lottery draw, collect commissions, and the ability to refund all users in the account of a problem. This can be modified for users to have control of these admin controls.",
+        ],
+    },
+    {
+        id: 5,
+        slug: "tailwind-shapes",
+        title: "Tailwind css shapes 📐 ",
+        summary: "Beautifully designed shapes and components using tailwind-css.",
+        date: "Aug 14, 2022",
+        images: ["/projects/shapes/shapes-1.jpg", "/projects/shapes/shapes-2.png"],
+        technologies: [
+            {
+                imageSrc: "/skills/next.svg",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/tailwindcss-shapes",
+        linkToWebsite: "https://tailwindcss-shapes.vercel.app/",
+        points: [
+            "Included are 18 shapes designed using tailwind css borders and several components also designed with tailwind css and javascript.",
+            "You can find shapes like the pentagon (my favorite), 🔺, right angle triangle, 🟢, 1/4 circle, 1/2 circle, 3/4 circle, hexagon, 🟦, trapezoid, ♦️, ♥️, 🌙, cone, octagon, 💎, parallelogram, and a 6 point ⭐️.",
+            "Components include a coin-flip animation on image hover, curved text wrapping a circular image with animated spin, and a pausable marquee that span a flex-box. Check them out!",
+            "Copy and paste the code directly into your workspace. Were talking HTML, JS, and Config code.",
+        ],
+    },
+
     {
         id: 6,
         slug: "winsomw-tenley",

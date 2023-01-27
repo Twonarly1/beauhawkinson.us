@@ -35,19 +35,6 @@ export function LinkedInIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGEle
     )
 }
 
-// function DesktopSocialLink({ icon: Icon, href, tooltip, ...props }: SocialLinkProps) {
-//     return (
-//         <div className="group relative z-20">
-//             <a rel="noopener noreferrer" target="_blank" href={href} {...props}>
-//                 <Icon className="z-20 mx-auto mb-2 h-[38px] w-[38px] cursor-pointer rounded-full p-2  hover:bg-pink-100  dark:hover:bg-pink-100 " />
-//             </a>
-//             <p className=" invisible mx-auto items-center justify-center text-xs transition duration-500 ease-in-out group-hover:visible">
-//                 {tooltip}
-//             </p>
-//         </div>
-//     )
-// }
-
 export function MobileSocialLink({
     icon: Icon,
     href,
@@ -59,12 +46,12 @@ export function MobileSocialLink({
         <a
             onClick={() => onClick?.()}
             rel="noopener noreferrer"
-            className="group z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-gray-500"
+            className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
             target="_blank"
             href={href}
             {...props}
         >
-            <Icon className="z-20 h-[38px] w-[38px] cursor-pointer rounded-full p-2  hover:bg-pink-100  dark:hover:bg-pink-100" />
+            <Icon className="common_icon" />
             <p className="mr-2">{tooltip}</p>
         </a>
     )

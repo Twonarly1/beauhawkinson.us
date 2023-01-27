@@ -180,12 +180,12 @@ const SkillsSection = () => {
                         aria-hidden="true"
                         className={classNames(
                             enabled ? "translate-x-5" : "translate-x-0",
-                            "pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out dark:bg-gray-400",
+                            "pointer-events-none inline-block h-5 w-5 transform rounded-full shadow ring-0 transition duration-200 ease-in-out",
                         )}
                     />
                 </button>
 
-                <div className="z-10 mt-12 grid grid-cols-4  gap-4  gap-y-6 transition-transform  duration-500  dark:bg-primary-dark sm:grid-cols-6">
+                <div className="z-10 mt-12 grid grid-cols-4 gap-4 gap-y-6 transition-transform duration-500 dark:bg-primary-dark sm:grid-cols-6">
                     {skillsData
                         .map((skill, i: number) => {
                             if (skill.preferredStack)
@@ -205,7 +205,7 @@ const SkillsSection = () => {
                                             width={56}
                                             height={56}
                                         />
-                                        <p className="pointer-events-none absolute -left-0 -bottom-6  mx-auto w-full justify-center text-center text-sm opacity-0 transition group-hover:opacity-100">
+                                        <p className="pointer-events-none absolute -left-0 -bottom-6 mx-auto w-full justify-center text-center text-sm opacity-0 transition group-hover:opacity-100">
                                             {skill.tooltip}
                                         </p>
                                     </div>
@@ -223,15 +223,13 @@ const SkillsSection = () => {
                                                 "opacity-20 grayscale"
                                             }`}
                                         >
-                                            <div className="relative mx-auto h-14 w-14 ">
-                                                <Image
-                                                    src={skill.imageSrc}
-                                                    alt={skill.tooltip}
-                                                    width={56}
-                                                    height={56}
-                                                    className="flex-shrink-0"
-                                                />
-                                            </div>
+                                            <Image
+                                                src={skill.imageSrc}
+                                                alt={skill.tooltip}
+                                                width={56}
+                                                height={56}
+                                                className="flex-shrink-0"
+                                            />
                                             <p className="pointer-events-none absolute -left-0 -bottom-6  mx-auto w-full justify-center text-center text-sm opacity-0 transition group-hover:opacity-100">
                                                 {skill.tooltip}
                                             </p>

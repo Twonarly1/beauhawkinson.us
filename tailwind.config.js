@@ -17,7 +17,6 @@ module.exports = {
             },
             screens: {
                 xs: "440px",
-                "2xs": "540px",
             },
 
             animation: {

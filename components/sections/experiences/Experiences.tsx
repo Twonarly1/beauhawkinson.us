@@ -41,26 +41,26 @@ const experiencesData: Experience[] = [
 const Experiences = () => {
     return (
         <section id="experiences">
-            <div className="relative mx-auto max-w-2xl flex-col items-center justify-center px-10 text-center">
+            <div className="container relative max-w-2xl">
                 <Heading
                     title={"Experience"}
                     subtitle={"Official contributions and previous work."}
                 />
 
-                <div className="relative  z-0 -mt-6 flex w-full snap-x snap-mandatory gap-12 overflow-x-scroll overflow-y-hidden scrollbar-thin scrollbar-thumb-gray-300">
+                <div className="relative z-0 -mt-6 flex w-full snap-x snap-mandatory gap-12 overflow-x-scroll overflow-y-hidden scrollbar-thin scrollbar-thumb-gray-300">
                     {experiencesData.map((e, i) => (
                         <div
                             key={i}
-                            className="relative mb-6 flex w-full flex-shrink-0 snap-center flex-col items-center justify-center  2xs:px-12  "
+                            className="relative mb-6 flex w-full flex-shrink-0 snap-center flex-col items-center justify-center"
                         >
                             <Image
                                 width={200}
                                 height={200}
                                 src={e.imageSrc}
                                 alt={e.company}
-                                className=" rounded-full"
+                                className="rounded-full"
                             />
-                            <div className=" mt-6 max-w-6xl space-y-2 px-0">
+                            <div className="mt-6 max-w-6xl space-y-2 px-0">
                                 <h4 className="text-center text-4xl font-semibold">{e.company}</h4>
                                 <h4 className="text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">
                                     {e.title}
@@ -76,7 +76,7 @@ const Experiences = () => {
                                         />
                                     ))}
                                 </div>
-                                <div className=" mx-auto h-full w-full space-y-4 p-2 px-4 py-4 text-left  scrollbar-hide">
+                                <div className="mx-auto h-full w-full space-y-4 p-2 px-4 py-4 text-left scrollbar-hide">
                                     {e.points.map((point, i: number) => (
                                         <p key={i}>{point}</p>
                                     ))}

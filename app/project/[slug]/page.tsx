@@ -15,13 +15,10 @@ async function Work({ params }: Props) {
                 <div className=" text-[22px] text-gray-900 dark:text-gray-100">
                     {projectData?.title}
                 </div>
-                <div className="mt-[2px] text-sm text-gray-400">{projectData?.date}</div>
+                <div className="mt-[2px] text-sm">{projectData?.date}</div>
                 <div className="mt-8 flex space-x-2">
                     {projectData?.technologies.map((tech: any, i: number) => (
-                        <div
-                            key={i}
-                            className="relative h-6 w-6 rounded-full bg-white dark:bg-primary-dark"
-                        >
+                        <div key={i} className="relative h-6 w-6 rounded-full dark:bg-primary-dark">
                             <Image
                                 loading="lazy"
                                 className="h-6 w-6 rounded-full"
@@ -50,7 +47,7 @@ async function Work({ params }: Props) {
                     {projectData?.linkToWebsite && (
                         <a
                             href={projectData?.linkToWebsite}
-                            className="h-auto cursor-pointer items-center truncate rounded-lg border p-2 text-sm hover:bg-gray-50 dark:hover:bg-white/5"
+                            className="h-auto cursor-pointer items-center truncate rounded-lg border bg-white p-2 text-sm hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5"
                         >
                             {projectData?.linkToWebsite}
                         </a>
