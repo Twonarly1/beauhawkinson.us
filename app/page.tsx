@@ -1,5 +1,13 @@
-import { About, Skills, Experiences, Achievements, ContactMe, Resume, Projects } from "components"
-import { GitHubActivity } from "components/sections/github-activity"
+import {
+    About,
+    Skills,
+    Experiences,
+    Achievements,
+    ContactMe,
+    Resume,
+    Projects,
+    GitHubActivity,
+} from "components"
 import { config } from "lib/config"
 import { fetchProjectsData } from "lib/fetch-projects"
 import { fetchRepos } from "lib/github"
