@@ -52,6 +52,16 @@ function Projects({ projects }: Props) {
                         </Link>
                     ))}
                 </div>
+
+                <div className="mt-4 flex justify-center">
+                    <Link
+                        href="/projects"
+                        className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800 dark:text-zinc-100"
+                        data-splitbee-event="Toggle Achievements"
+                    >
+                        show more &rarr;
+                    </Link>
+                </div>
             </div>
         </section>
     )
