@@ -173,14 +173,14 @@ const SkillsSection = () => {
                     onClick={handleToggle}
                     className={classNames(
                         enabled ? "bg-pink-100" : "bg-gray-200",
-                        "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ",
+                        "relative inline-flex h-9 w-16 flex-shrink-0 cursor-pointer items-center rounded-full border transition-colors duration-200 ease-in-out ",
                     )}
                 >
                     <span
                         aria-hidden="true"
                         className={classNames(
-                            enabled ? "translate-x-5" : "translate-x-0",
-                            "pointer-events-none inline-block h-5 w-5 transform rounded-full shadow ring-0 transition duration-200 ease-in-out",
+                            enabled ? "translate-x-8" : "translate-x-0.5",
+                            "pointer-events-none inline-block h-7 w-7 transform rounded-full border bg-white  transition duration-200 ease-in-out dark:bg-gray-400",
                         )}
                     />
                 </button>
