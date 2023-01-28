@@ -3,8 +3,9 @@ import { cache } from "react"
 export const getProjects = cache((): Project[] => [
     {
         id: 0,
+        highlight: true,
         slug: "chisago-hardware",
-        title: "Chisago Hardware",
+        title: "🔧 Chisago Hardware 🛠️",
         summary: "A business website for Chisago Hardware & Just Ask Rental!",
         date: "Jan 23, 2022",
         images: [
@@ -42,6 +43,7 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 1,
+        highlight: false,
         slug: "ebay-marketplace",
         title: "Ebay Marketplace",
         summary: "A web3 marketplace built on the Polygon (Mumbai) test network. ",
@@ -84,8 +86,9 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 2,
+        highlight: false,
         slug: "meets",
-        title: "Swim Meets",
+        title: "Swim Meets 🥽 🏊",
         summary: "Personalized swimming and diving data for coaches and users.",
         date: "Oct 11, 2022",
         images: [],
@@ -123,6 +126,7 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 3,
+        highlight: false,
         slug: "poh",
         title: "Proof of Humanity - Social Platform 🗺️",
         summary: "Search the Proof of Humanity registry and interact with other registrants.",
@@ -165,6 +169,7 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 4,
+        highlight: false,
         slug: "twonarly-lottery",
         title: "⏳ Twonarly Lottery ⌛️",
         summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
@@ -201,6 +206,7 @@ export const getProjects = cache((): Project[] => [
     },
     {
         id: 5,
+        highlight: false,
         slug: "tailwind-shapes",
         title: "Tailwind css shapes 📐 ",
         summary: "Beautifully designed shapes and components using tailwind-css.",
@@ -229,6 +235,7 @@ export const getProjects = cache((): Project[] => [
 
     {
         id: 6,
+        highlight: false,
         slug: "winsomw-tenley",
         title: "Winsome Tenley 🖼️",
         summary: "NFT minting website on the Matic test network. 2nd place winner. 🎉 🎊",
