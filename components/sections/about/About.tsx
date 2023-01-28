@@ -18,7 +18,7 @@ const About = () => {
             <div className="mt-16 flex min-h-screen flex-col gap-y-8">
                 <Image
                     priority
-                    className="mx-auto flex rounded-full bg-gray-100 px-1 py-1"
+                    className="mx-auto flex h-[144px] w-[144px] rounded-full bg-gray-100 px-1 py-1 sm:h-[254px] sm:w-[254px]"
                     src="/bhawkinson.jpeg"
                     alt="Portrait photo of me"
                     height={254}
