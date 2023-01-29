@@ -18,10 +18,10 @@ async function Work({ params }: Props) {
                 <div className="mt-[2px] text-sm">{projectData?.date}</div>
                 <div className="mt-8 flex space-x-2">
                     {projectData?.technologies.map((tech: any, i: number) => (
-                        <div key={i} className="relative h-6 w-6 rounded-full dark:bg-primary-dark">
+                        <div key={i} className="relative h-6 w-6 dark:bg-primary-dark">
                             <Image
                                 loading="lazy"
-                                className="h-6 w-6 rounded-full"
+                                className="h-6 w-6"
                                 src={tech.imageSrc}
                                 alt="Portrait photo of me"
                                 quality={100}

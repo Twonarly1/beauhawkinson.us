@@ -9,11 +9,10 @@ export const getProjects = cache((): Project[] => [
         summary: "A business website for Chisago Hardware & Just Ask Rental!",
         date: "Jan 23, 2022",
         images: [
-            "/projects/ebay/ebay-1.png",
-            "/projects/ebay/ebay-2.png",
-            "/projects/ebay/ebay-3.png",
-            "/projects/ebay/ebay-4.png",
-            "/projects/ebay/ebay-5.png",
+            "/projects/ch/1.png",
+            "/projects/ch/2.png",
+            "/projects/ch/3.png",
+            "/projects/ch/4.png",
         ],
         technologies: [
             {
@@ -35,10 +34,10 @@ export const getProjects = cache((): Project[] => [
         linkToBuild: "https://github.com/Twonarly1/ebay-clone",
         linkToWebsite: "https://ebay-clone-ten.vercel.app/",
         points: [
-            "ebay clone marketplace built on the Matic test network using Thirdweb contracts.",
-            "Add items to your personal inventory.",
-            "List items from your inventory to the marketplace.",
-            "submit offers and bids on listed marketplace items.",
+            "Full stack website build for a local hardware/convienence store and Just Ask Rental",
+            "Rental database built with Supabase backend",
+            "Popular products including Grilling Products & Dog Food Products.",
+            "Gallery with company images, and an Info page for hours & directions.",
         ],
     },
     {
