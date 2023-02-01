@@ -1,5 +1,5 @@
 import "styles/globals.css"
-import { Footer, Header } from "~/core"
+import { AnalyticsWrapper, Footer, Header } from "~/core"
 
 import Providers from "./providers"
 
@@ -16,6 +16,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                     <Footer />
                 </Providers>
+
+                <AnalyticsWrapper />
             </body>
         </html>
     )
