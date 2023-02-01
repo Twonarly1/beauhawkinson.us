@@ -1,8 +1,28 @@
-import React from "react"
-import { Heading } from "components/core"
 import Image from "next/image"
 
+import { Heading } from "~/core"
+
 const experiencesData: Experience[] = [
+    {
+        imageSrc: "/resume/ch.png",
+        company: "CHisago Hardware",
+        title: "Freelance Full Stack Developer",
+        dateStarted: "2022-11-01",
+        dateEnded: "2023-01-23",
+        technologies: [
+            "/skills/next.svg",
+            "/skills/tailwindcss.svg",
+            "/skills/vercel.svg",
+            "/skills/supabase.svg",
+            "/skills/ts.png",
+        ],
+        points: [
+            "Full stack website build for a local hardware/convienence store and Just Ask Rental",
+            "Rental database built with Supabase backend.",
+            "Popular products including Grilling Products & Dog Food Products.",
+            "Gallery with company images, and an Info page for hours & directions.",
+        ],
+    },
     {
         imageSrc: "/experience/muse.webp",
         company: "Muse Dao",
@@ -38,7 +58,7 @@ const experiencesData: Experience[] = [
     },
 ]
 
-const Experiences = () => {
+function Experiences() {
     return (
         <section id="experiences">
             <div className="container relative max-w-2xl">
@@ -60,11 +80,14 @@ const Experiences = () => {
                                 alt={e.company}
                                 className="rounded-full"
                             />
+
                             <div className="mt-6 max-w-6xl space-y-2 px-0">
                                 <h4 className="text-center text-4xl font-semibold">{e.company}</h4>
+
                                 <h4 className="text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">
                                     {e.title}
                                 </h4>
+
                                 <div className="flex items-center justify-center gap-4 p-4">
                                     {e?.technologies.map((technology, i: number) => (
                                         <Image
@@ -76,6 +99,7 @@ const Experiences = () => {
                                         />
                                     ))}
                                 </div>
+
                                 <div className="mx-auto h-full w-full space-y-4 p-2 px-4 py-4 text-left scrollbar-hide">
                                     {e.points.map((point, i: number) => (
                                         <p key={i}>{point}</p>

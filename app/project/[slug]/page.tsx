@@ -1,6 +1,7 @@
 import { CodeBracketIcon } from "@heroicons/react/24/outline"
-import { fetchProjectBySlug, fetchProjectsData } from "lib/fetch-projects"
 import Image from "next/image"
+
+import { fetchProjectBySlug, fetchProjectsData } from "~/lib"
 
 type Props = {
     params: Project
@@ -15,7 +16,9 @@ async function Work({ params }: Props) {
                 <div className=" text-[22px] text-gray-900 dark:text-gray-100">
                     {projectData?.title}
                 </div>
+
                 <div className="mt-[2px] text-sm">{projectData?.date}</div>
+
                 <div className="mt-8 flex space-x-2">
                     {projectData?.technologies.map((tech: any, i: number) => (
                         <div key={i} className="relative h-6 w-6 dark:bg-primary-dark">
@@ -31,6 +34,7 @@ async function Work({ params }: Props) {
                         </div>
                     ))}
                 </div>
+
                 <div className="py-6 text-[16px] ">
                     <div className="mt-4 space-y-5">
                         {projectData?.points.map((bullet: any, i: number) => (
@@ -40,10 +44,12 @@ async function Work({ params }: Props) {
                         ))}
                     </div>
                 </div>
+
                 <div className="relative flex h-20 w-full items-center justify-between">
                     <a href={projectData?.linkToBuild} className="rounded-lg">
                         <CodeBracketIcon className="h-10 w-10 rounded-lg border bg-white p-2 focus:outline-none hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5 dark:hover:bg-gray-500" />
                     </a>
+
                     {projectData?.linkToWebsite && (
                         <a
                             href={projectData?.linkToWebsite}
@@ -53,9 +59,13 @@ async function Work({ params }: Props) {
                         </a>
                     )}
                 </div>
+
                 <div>
                     {projectData?.images.map((p: string, i: number) => (
-                        <div key={i} className="image-bkg">
+                        <div
+                            key={i}
+                            className="rounded-3xl bg-black/5 backdrop-blur-md dark:bg-white/5"
+                        >
                             <Image
                                 loading="lazy"
                                 className="mt-20 h-auto w-full rounded-2xl object-cover p-8"

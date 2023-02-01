@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useState } from "react"
-import { Heading } from "components/core"
 import Image from "next/image"
+import { useState } from "react"
+
+import { Heading } from "~/core"
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ")
@@ -151,7 +152,7 @@ const skillsData: Skill[] = [
     },
 ]
 
-const SkillsSection = () => {
+function SkillsSection() {
     const [enabled, setEnabled] = useState(true)
 
     const handleToggle = () => {
@@ -169,6 +170,7 @@ const SkillsSection = () => {
                     title={"Skills"}
                     subtitle={enabled ? "Preferred stack" : "Tools I have experinece with."}
                 />
+
                 <button
                     onClick={handleToggle}
                     className={classNames(
@@ -205,6 +207,7 @@ const SkillsSection = () => {
                                             width={56}
                                             height={56}
                                         />
+
                                         <p className="pointer-events-none absolute -left-0 -bottom-6 mx-auto w-full justify-center text-center text-sm opacity-0 transition group-hover:opacity-100">
                                             {skill.tooltip}
                                         </p>
@@ -230,6 +233,7 @@ const SkillsSection = () => {
                                                 height={56}
                                                 className="flex-shrink-0"
                                             />
+
                                             <p className="pointer-events-none absolute -left-0 -bottom-6  mx-auto w-full justify-center text-center text-sm opacity-0 transition group-hover:opacity-100">
                                                 {skill.tooltip}
                                             </p>

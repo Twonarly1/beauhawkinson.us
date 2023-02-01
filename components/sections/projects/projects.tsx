@@ -1,7 +1,7 @@
-import React from "react"
-import { Heading } from "components/core"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+
+import { Heading } from "~/core"
 
 type Props = {
     projects: Project[]
@@ -31,10 +31,13 @@ function Projects({ projects }: Props) {
                                     <b className="text-left text-lg text-black  dark:text-white/80 xs:text-xl">
                                         {project.title}
                                     </b>
+
                                     <div className="mx-auto flex h-fit w-full flex-wrap items-center gap-y-2 text-left text-sm tracking-wide xs:text-lg ">
                                         {project.summary}
                                     </div>
+
                                     <p className="text-xs">{project.date}</p>
+
                                     <div className="hidden justify-end space-x-2 pt-2 xs:flex xs:pt-0">
                                         {project.technologies.map((tech: any, i: number) => (
                                             <div

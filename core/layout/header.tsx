@@ -1,20 +1,19 @@
 "use client"
 
-import React, { Fragment, useEffect, useState } from "react"
-import Link from "next/link"
-import { useTheme } from "next-themes"
+import { Dialog, Transition } from "@headlessui/react"
 import {
     Bars3Icon,
-    CodeBracketIcon,
     CodeBracketSquareIcon,
     HomeIcon,
     MoonIcon,
     SunIcon,
     XMarkIcon,
 } from "@heroicons/react/20/solid"
-import { Transition, Dialog } from "@headlessui/react"
-import { TwitterIcon, GitHubIcon, LinkedInIcon, MobileSocialLink } from "./social-icons"
-import CoreTooltip from "./tooltip"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import React, { Fragment, useEffect, useState } from "react"
+
+import { CoreTooltip, GitHubIcon, LinkedInIcon, MobileSocialLink, TwitterIcon } from ".."
 
 function Header() {
     const [open, setOpen] = useState(false)
@@ -53,29 +52,34 @@ function Header() {
                 <div className="hidden lg:flex lg:gap-4">
                     <CoreTooltip content="Home">
                         <Link href="/" className="mx-auto">
-                            <HomeIcon className="common_icon" />
+                            <HomeIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
                         </Link>
                     </CoreTooltip>
+
                     <CoreTooltip content="Light">
                         <button onClick={renderLightTheme}>
-                            <SunIcon className="common_icon" />
+                            <SunIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
                         </button>
                     </CoreTooltip>
+
                     <CoreTooltip content="Dark">
                         <button onClick={renderDarkTheme}>
-                            <MoonIcon className="common_icon" />
+                            <MoonIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
                         </button>
                     </CoreTooltip>
                 </div>
+
                 <button
                     className="group relative z-20 cursor-pointer lg:hidden"
                     onClick={() => setOpen(true)}
                 >
                     <Bars3Icon className="mx-auto h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
                 </button>
+
                 <Transition.Root show={open} as={Fragment}>
                     <Dialog as="div" className="relative z-50" onClose={setOpen}>
                         <div className="fixed inset-0 bg-black/30" />
+
                         <div className="fixed inset-0 overflow-hidden">
                             <div className="absolute inset-0 overflow-hidden ">
                                 <div className="pointer-events-none fixed inset-y-0 left-0 flex max-w-full">
@@ -104,30 +108,37 @@ function Header() {
                                                         </button>
                                                     </div>
                                                 </div>
+
                                                 <Dialog.Title className="pt-4 pb-1">
                                                     Beau Hawkinson
                                                 </Dialog.Title>
+
                                                 <div className=" flex w-full flex-col justify-start space-y-1 text-left">
                                                     <Link
                                                         href="/"
                                                         onClick={() => setOpen(false)}
-                                                        className="mobile_items"
+                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                         aria-label="Go Home"
                                                     >
-                                                        <HomeIcon className="common_icon" />
+                                                        <HomeIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+
                                                         <p>Home</p>
                                                     </Link>
+
                                                     <Link
                                                         href="/projects"
                                                         onClick={() => setOpen(false)}
-                                                        className="mobile_items"
+                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                     >
-                                                        <CodeBracketSquareIcon className="common_icon" />
+                                                        <CodeBracketSquareIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+
                                                         <p>Projects</p>
                                                     </Link>
+
                                                     <Dialog.Title className=" pt-4">
                                                         Socials
                                                     </Dialog.Title>
+
                                                     <MobileSocialLink
                                                         href="https://twitter.com/twonarly"
                                                         aria-label="Follow on Twitter"
@@ -135,6 +146,7 @@ function Header() {
                                                         tooltip="Twitter"
                                                         onClick={() => setOpen(false)}
                                                     />
+
                                                     <MobileSocialLink
                                                         href="https://github.com/Twonarly1"
                                                         aria-label="Follow on GitHub"
@@ -142,6 +154,7 @@ function Header() {
                                                         tooltip="GitHub"
                                                         onClick={() => setOpen(false)}
                                                     />
+
                                                     <MobileSocialLink
                                                         href="https://www.linkedin.com/in/beau-hawkinson-6921bb84/"
                                                         aria-label="Follow on LinkedIn"
@@ -149,24 +162,30 @@ function Header() {
                                                         tooltip="LinkedIn"
                                                         onClick={() => setOpen(false)}
                                                     />
+
                                                     <Dialog.Title className=" pt-4">
                                                         Theme
                                                     </Dialog.Title>
+
                                                     <button
                                                         onClick={renderLightTheme}
-                                                        className="mobile_items"
+                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                     >
-                                                        <SunIcon className="common_icon" />
+                                                        <SunIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+
                                                         <p>Light</p>
                                                     </button>
+
                                                     <button
                                                         onClick={renderDarkTheme}
-                                                        className="mobile_items"
+                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                     >
-                                                        <MoonIcon className="common_icon" />
+                                                        <MoonIcon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+
                                                         <p>Dark</p>
                                                     </button>
                                                 </div>
+
                                                 <footer>
                                                     <a
                                                         className="absolute left-3 bottom-2 cursor-pointer text-sm outline-none"
@@ -183,6 +202,7 @@ function Header() {
                         </div>
                     </Dialog>
                 </Transition.Root>
+
                 <Link href="/projects" className="flex items-center justify-center p-2">
                     Projects
                 </Link>

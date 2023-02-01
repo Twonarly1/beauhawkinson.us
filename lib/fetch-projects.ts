@@ -31,8 +31,8 @@ export const getProjects = cache((): Project[] => [
                 imageSrc: "/skills/vercel.svg",
             },
         ],
-        linkToBuild: "https://github.com/Twonarly1/ebay-clone",
-        linkToWebsite: "https://ebay-clone-ten.vercel.app/",
+        linkToBuild: "",
+        linkToWebsite: "https://www.chisagohardware.com/",
         points: [
             "Full stack website build for a local hardware/convienence store and Just Ask Rental",
             "Rental database built with Supabase backend",

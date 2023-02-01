@@ -1,6 +1,7 @@
 import classNames from "classnames"
 import dayjs from "dayjs"
-import { config } from "lib/config"
+
+import { config } from "~/lib"
 
 interface TimestampProps {
     date: Date
@@ -8,7 +9,7 @@ interface TimestampProps {
     className?: string
 }
 
-export const Timestamp: React.FC<TimestampProps> = ({ date, endDate, className }) => {
+function Timestamp({ date, endDate, className }: TimestampProps) {
     const day = dayjs(date)
     const current = endDate && dayjs().isBefore(endDate)
     const endDay = dayjs(current ? new Date() : endDate)
@@ -37,7 +38,9 @@ export const Timestamp: React.FC<TimestampProps> = ({ date, endDate, className }
                 <span>{info}</span>{" "}
                 <span className="text-gray-600 dark:text-gray-200">{suffix}</span>
             </div>
+
             <br />
+
             <div
                 className={classNames(
                     "absolute transform group-hover:translate-y-8",
@@ -54,3 +57,5 @@ export const Timestamp: React.FC<TimestampProps> = ({ date, endDate, className }
         </div>
     )
 }
+
+export default Timestamp

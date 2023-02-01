@@ -1,9 +1,11 @@
 "use client"
 
-import React, { useState } from "react"
-import { Heading } from "components/core"
 import Image from "next/image"
-import { Timestamp } from "./timestamp"
+import { useState } from "react"
+
+import { Heading } from "~/components"
+
+import Timestamp from "./timestamp"
 
 const achievementData = [
     {
@@ -71,7 +73,7 @@ const achievementData = [
     },
 ]
 
-const Achievements = () => {
+function Achievements() {
     const [showMore, setShowMore] = useState(false)
 
     return (
@@ -91,13 +93,16 @@ const Achievements = () => {
                                     height={96}
                                     width={96}
                                 />
+
                                 <h4 className="mx-4 flex-1">
                                     <div className="font-semibold dark:text-white">{a.title}</div>
+
                                     {/* <NotionRenderer blockMap={blockMap} /> */}
                                     <div className="text-xs leading-4 dark:text-white sm:text-sm md:leading-6">
                                         {a.description}
                                     </div>
                                 </h4>
+
                                 <div>
                                     <Timestamp
                                         className="ml-2 border-l pl-2 dark:text-white"
@@ -108,6 +113,7 @@ const Achievements = () => {
                             </div>
                         ))}
                 </div>
+
                 <div className="flex justify-center">
                     <button
                         className="shadow-xs rounded border border-gray-300 px-2 py-1 text-gray-800 dark:text-zinc-100"

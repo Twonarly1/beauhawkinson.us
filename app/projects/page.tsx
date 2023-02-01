@@ -1,7 +1,9 @@
-import { fetchProjectsData } from "lib/fetch-projects"
-import Link from "next/link"
 import Image from "next/image"
-import { Heading } from "components"
+import Link from "next/link"
+
+import { Heading } from "~/components"
+
+import { fetchProjectsData } from "~/lib"
 
 async function Projects() {
     const projects: Project[] = await fetchProjectsData()
@@ -22,10 +24,13 @@ async function Projects() {
                                 <b className="text-left text-lg text-black/80  dark:text-white/80 xs:text-xl">
                                     {project.title}
                                 </b>
+
                                 <div className="mx-auto flex h-fit w-full flex-wrap items-center gap-y-2 text-left text-sm tracking-wide xs:text-lg ">
                                     {project.summary}
                                 </div>
+
                                 <p className="text-xs">{project.date}</p>
+
                                 <div className="hidden justify-end space-x-2 pt-2 xs:flex xs:pt-0">
                                     {project.technologies.map((tech: any, i: number) => (
                                         <div key={i} className="relative h-6 w-6">

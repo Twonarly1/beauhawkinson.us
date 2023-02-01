@@ -1,13 +1,8 @@
 "use client"
 import Link from "next/link"
-import React from "react"
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-    return (
-        <Link href={href} className="">
-            {children}
-        </Link>
-    )
+    return <Link href={href}>{children}</Link>
 }
 
 function Footer() {
@@ -20,6 +15,7 @@ function Footer() {
                             <div className="flex gap-6 text-sm font-medium">
                                 <NavLink href="/projects">projects</NavLink>
                             </div>
+
                             <p className="text-sm">
                                 &copy; {new Date().getFullYear()} Beau Hawkinson. All rights
                                 reserved.

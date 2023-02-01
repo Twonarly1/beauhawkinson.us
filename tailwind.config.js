@@ -1,10 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-    content: ["./components/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
+    content: ["./(app|core|components)/**/*.{ts,tsx}"],
     darkMode: "class",
+    plugins: [
+        require("@tailwindcss/typography"),
+        require("tailwind-scrollbar-hide"),
+        require("tailwind-scrollbar"),
+        require("@tailwindcss/forms"),
+    ],
     theme: {
         extend: {
+            animation: {
+                airplane: "airplane 5s",
+                wiggle: "wiggle 1s ease-in-out infinite",
+            },
+            colors: {
+                "primary-dark": "#272727",
+            },
             container: {
                 center: true,
                 padding: {
@@ -14,15 +27,6 @@ module.exports = {
                     xl: "5rem",
                     "2xl": "6rem",
                 },
-            },
-            screens: {
-                xs: "440px",
-            },
-
-            animation: {
-                airplane: "airplane 5s",
-                wiggle: "wiggle 1s ease-in-out  infinite",
-                "spin-slow": "spin 5s linear infinite",
             },
             keyframes: {
                 airplane: {
@@ -49,21 +53,10 @@ module.exports = {
                     "0%, 100%": { transform: "rotate(-10deg)" },
                     "50%": { transform: "rotate(10deg)" },
                 },
-                spinning: {
-                    "0%, 100%": {
-                        transform: "rotate(360deg)",
-                    },
-                },
             },
-            colors: {
-                "primary-dark": "#272727",
+            screens: {
+                xs: "440px",
             },
         },
     },
-    plugins: [
-        require("@tailwindcss/typography"),
-        require("tailwind-scrollbar-hide"),
-        require("tailwind-scrollbar"),
-        require("@tailwindcss/forms"),
-    ],
 }
