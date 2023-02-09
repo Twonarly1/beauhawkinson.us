@@ -105,25 +105,28 @@ export function Achievements() {
         <section id="achievements" className="container">
             <Stack alignItems="center">
                 <Stack alignItems="center">
-                    <Heading as="h1">Achievements</Heading>
+                    <Heading as="h2">Achievements</Heading>
 
-                    <Heading as="h2">Things I have achieved</Heading>
+                    <Heading as="h3">Things I have achieved</Heading>
                 </Stack>
 
                 <Section>
                     {achievementData
                         .filter((a) => showMore || a.highlight)
                         .map((a, i) => (
-                            <div key={i} className="my-8 flex items-center sm:my-8">
+                            <div
+                                key={i}
+                                className="my-8 flex flex-col items-center sm:my-8 sm:flex-row"
+                            >
                                 <Image
-                                    className="h-[40px] w-[40px] rounded sm:h-[96px] sm:w-[96px]"
+                                    className="h-[96px] w-[96px] rounded"
                                     src={a.imageSrc}
                                     alt={a.title}
                                     height={96}
                                     width={96}
                                 />
 
-                                <div className="mx-8 flex flex-1 flex-col space-y-2">
+                                <div className="mx-8 mt-4 flex flex-1 flex-col space-y-2 sm:mt-0">
                                     <Text size="lg" weight="bold" color={400}>
                                         {a.title}
                                     </Text>
@@ -133,7 +136,7 @@ export function Achievements() {
                                     </Text>
                                 </div>
 
-                                <div>
+                                <div className="mt-4 sm:mt-0">
                                     <Timestamp
                                         className="ml-2 border-l pl-2 dark:text-white"
                                         date={new Date(a.date)}
@@ -180,7 +183,7 @@ function Timestamp({ date, endDate, className }: TimestampProps) {
             >
                 <span>{info}</span>
 
-                <span className="ml-1 text-gray-600 dark:text-gray-200">{suffix}</span>
+                <span className="ml-1">{suffix}</span>
             </div>
 
             <br />
@@ -191,9 +194,7 @@ function Timestamp({ date, endDate, className }: TimestampProps) {
                     "opacity-100 transition-all duration-200 ease-in-out group-hover:opacity-0",
                 )}
             >
-                <span className="text-gray-600 dark:text-gray-200">
-                    {current ? "Now" : relevantDate.format("MMM")}
-                </span>
+                <span>{current ? "Now" : relevantDate.format("MMM")}</span>
 
                 <span className="ml-1 transform group-hover:translate-x-3">
                     {!current && relevantDate.format("YYYY")}

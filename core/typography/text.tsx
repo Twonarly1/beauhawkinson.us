@@ -4,7 +4,7 @@ import { ForwardedRef, ReactNode, forwardRef } from "react"
 type Props = {
     as?: "p" | "span"
     children: ReactNode
-    color?: 0 | 50 | 100 | 200 | 300 | 400 | 1000
+    color?: 0 | 50 | 100 | 200 | 300 | 400 | 500 | 1000
     id?: string
     serif?: boolean
     size?: "xs" | "sm" | "base" | "lg" | "xl" | "2xl" | "3xl"
@@ -43,6 +43,7 @@ export const Text = forwardRef<HTMLParagraphElement | HTMLSpanElement, Props>(fu
         "text-slate-200": color === 200,
         "text-slate-300": color === 300,
         "text-pink-400 dark:text-pink-200": color === 400,
+        "text-slate-500 dark:text-zinc-200": color === 500,
         "text-black dark:text-white": color === 1000,
         "tracking-tighter": tracking === "tighter",
         "tracking-tight": tracking === "tight",

@@ -11,6 +11,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            animation: {
+                blink: "blink 1s steps(2) infinite",
+            },
             colors: {
                 "primary-dark": "#272727",
             },
@@ -24,7 +27,11 @@ module.exports = {
                     "2xl": "6rem",
                 },
             },
-
+            keyframes: {
+                blink: {
+                    "0%": { opacity: "0" },
+                },
+            },
             screens: {
                 xs: "440px",
             },

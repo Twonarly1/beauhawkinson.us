@@ -1,47 +1,16 @@
-"use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
 
-import { CoreTooltip, Heading, Stack } from "~/core"
-import { Code, GitHubIcon, Info, LinkedInIcon, Moon, Sun, TwitterIcon } from "~/core/icon"
+import { CoreTooltip, Heading, MainviewThemeSwitcher, Stack, Text, Typewriter } from "~/core"
+import { Code, GitHubIcon, Info, LinkedInIcon, TwitterIcon } from "~/core/icon"
 
 export function About() {
-    const [mounted, setMounted] = useState(false)
-    const { systemTheme, theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) {
-        return null
-    }
-
-    const renderLightTheme = () => {
-        if (currentTheme === "light") {
-            return
-        } else {
-            return setTheme("light")
-        }
-    }
-
-    const renderDarkTheme = () => {
-        if (currentTheme === "dark") {
-            return
-        } else {
-            return setTheme("dark")
-        }
-    }
-
-    const currentTheme = theme === "system" ? systemTheme : theme
     return (
         <section id="about">
             <Stack alignItems="center" gap={8}>
                 <Image
                     priority
-                    className="mx-auto mt-10 flex h-[254px] w-[254px] rounded-full bg-gray-100 px-1 py-1"
+                    className="mx-auto mt-10 flex h-[254px] w-[254px] rounded-full bg-pink-200 px-1 py-1"
                     src="/bhawkinson.jpeg"
                     alt="Portrait photo of me"
                     height={254}
@@ -49,11 +18,30 @@ export function About() {
                     quality={100}
                 />
 
-                <Stack gap={4} alignItems="center">
-                    <Stack alignItems="center">
+                <Stack gap={8} alignItems="center">
+                    <Stack gap={2} alignItems="center">
                         <Heading as="h1">Beau Hawkinson</Heading>
 
-                        <Heading as="h2">Full Stack Developer</Heading>
+                        <Stack direction="horizontal" gap={2}>
+                            <Text color={500} size="xl" tracking="tight">
+                                Freelance
+                            </Text>
+
+                            <Typewriter
+                                text={[
+                                    "Software",
+                                    "Frontend",
+                                    "Backend",
+                                    "Full-stack",
+                                    "Product",
+                                    "UX/UI",
+                                ]}
+                            />
+
+                            <Text color={500} size="xl" tracking="tight">
+                                Engineer
+                            </Text>
+                        </Stack>
                     </Stack>
 
                     <Stack direction="horizontal" gap={4}>
@@ -71,7 +59,7 @@ export function About() {
 
                         <CoreTooltip content="LinkedIn">
                             <a href="https://www.linkedin.com/in/beau-hawkinson-6921bb84/">
-                                <LinkedInIcon className="h-8 w-8 hover:scale-110" />
+                                <LinkedInIcon />
                             </a>
                         </CoreTooltip>
 
@@ -87,17 +75,7 @@ export function About() {
                             </Link>
                         </CoreTooltip>
 
-                        <CoreTooltip content="Light">
-                            <button onClick={renderLightTheme}>
-                                <Sun className="h-8 w-8 hover:scale-110" />
-                            </button>
-                        </CoreTooltip>
-
-                        <CoreTooltip content="Dark">
-                            <button onClick={renderDarkTheme}>
-                                <Moon className="h-8 w-8 hover:scale-110" />
-                            </button>
-                        </CoreTooltip>
+                        <MainviewThemeSwitcher />
                     </Stack>
                 </Stack>
             </Stack>

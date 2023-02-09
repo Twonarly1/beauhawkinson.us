@@ -172,9 +172,9 @@ export function SkillsSection() {
         <section id="skills">
             <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center justify-start px-6">
                 <Stack alignItems="center">
-                    <Heading as="h1">Skills</Heading>
+                    <Heading as="h2">Skills</Heading>
 
-                    <Heading as="h2">
+                    <Heading as="h3">
                         {enabled ? "Preferred stack" : "Tools I have experinece with."}
                     </Heading>
                 </Stack>
@@ -190,7 +190,7 @@ export function SkillsSection() {
                         aria-hidden="true"
                         className={classNames(
                             enabled ? "translate-x-8" : "translate-x-0.5",
-                            "pointer-events-none inline-block h-7 w-7 transform rounded-full border bg-white  transition duration-200 ease-in-out dark:bg-gray-400",
+                            "pointer-events-none inline-block h-7 w-7 transform rounded-full border bg-white transition duration-200 ease-in-out dark:bg-gray-400",
                         )}
                     />
                 </button>

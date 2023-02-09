@@ -62,12 +62,12 @@ export function Experiences() {
     return (
         <section id="experiences" className="container max-w-2xl">
             <Stack alignItems="center">
-                <Heading as="h1">Experience</Heading>
+                <Heading as="h2">Experience</Heading>
 
-                <Heading as="h2">Official contributions and previous work.</Heading>
+                <Heading as="h3">Official contributions and previous work.</Heading>
             </Stack>
 
-            <div className="relative z-0 mt-6 flex w-full snap-x snap-mandatory gap-12 overflow-y-hidden overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-300">
+            <div className="relative z-0 mt-6 flex w-full snap-x snap-mandatory gap-12 overflow-x-scroll overflow-y-hidden scrollbar-thin scrollbar-thumb-gray-300">
                 {experiencesData.map((e, i) => (
                     <div
                         key={i}

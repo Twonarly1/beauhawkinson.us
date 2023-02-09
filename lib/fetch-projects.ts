@@ -164,90 +164,8 @@ export const getProjects = cache((): Project[] => [
             "Users who are not verified can view the different threads and feeds, but cannot write or post themselves.",
         ],
     },
-    // {
-    //     id: 4,
-    //     highlight: false,
-    //     pastProject: false,
-    //     slug: "ebay-marketplace",
-    //     title: "Ebay Marketplace",
-    //     summary: "A web3 marketplace built on the Polygon (Mumbai) test network. ",
-    //     date: "Oct 30, 2022",
-    //     images: [
-    //         "/projects/ebay/ebay-1.png",
-    //         "/projects/ebay/ebay-2.png",
-    //         "/projects/ebay/ebay-3.png",
-    //         "/projects/ebay/ebay-4.png",
-    //         "/projects/ebay/ebay-5.png",
-    //     ],
-    //     technologies: [
-    //         {
-    //             imageSrc: "/skills/next.svg",
-    //         },
-    //         {
-    //             imageSrc: "/skills/thirdweb.webp",
-    //         },
-    //         {
-    //             imageSrc: "/skills/tailwindcss.svg",
-    //         },
-    //         {
-    //             imageSrc: "/skills/ts.png",
-    //         },
-    //         {
-    //             imageSrc: "/skills/mm.webp",
-    //         },
-    //         {
-    //             imageSrc: "/skills/vercel.svg",
-    //         },
-    //     ],
-    //     linkToBuild: "https://github.com/Twonarly1/ebay-clone",
-    //     linkToWebsite: "https://ebay-clone-ten.vercel.app/",
-    //     points: [
-    //         "ebay clone marketplace built on the Matic test network using Thirdweb contracts.",
-    //         "Add items to your personal inventory.",
-    //         "List items from your inventory to the marketplace.",
-    //         "submit offers and bids on listed marketplace items.",
-    //     ],
-    // },
-    // {
-    //     id: 5,
-    //     highlight: false,
-    //     pastProject: false,
-    //     slug: "twonarly-lottery",
-    //     title: "⏳ Twonarly Lottery ⌛️",
-    //     summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
-    //     date: "Sep 1, 2022",
-    //     images: ["/projects/lottery/lottery-1.png", "/projects/lottery/lottery-2.png"],
-    //     technologies: [
-    //         {
-    //             imageSrc: "/skills/ethereum.png",
-    //         },
-    //         {
-    //             imageSrc: "/skills/thirdweb.webp",
-    //         },
-    //         {
-    //             imageSrc: "/skills/sol.png",
-    //         },
-    //         {
-    //             imageSrc: "/skills/next.svg",
-    //         },
-    //         {
-    //             imageSrc: "/skills/tailwindcss.svg",
-    //         },
-    //         {
-    //             imageSrc: "/skills/ts.png",
-    //         },
-    //     ],
-    //     linkToBuild: "https://github.com/Twonarly1/twonarly-lottery",
-    //     linkToWebsite: "",
-    //     points: [
-    //         "Smart contract lottery built on Matic Network. Use ThirdWeb to deploy solidity smart contracts.",
-    //         "Connect your digital wallet with MetaMask.",
-    //         "Enter the lottery by purchasing tickets with your digital wallet. A user can purchase as many tickets, but there is a maximum per transaction.",
-    //         "The deployer (admin) handles all ThirdWeb actions for drawing a random winner, restart the lottery draw, collect commissions, and the ability to refund all users in the account of a problem. This can be modified for users to have control of these admin controls.",
-    //     ],
-    // },
     {
-        id: 6,
+        id: 4,
         highlight: false,
         pastProject: false,
         slug: "tailwind-shapes",
@@ -275,42 +193,124 @@ export const getProjects = cache((): Project[] => [
             "Copy and paste the code directly into your workspace. Were talking HTML, JS, and Config code.",
         ],
     },
+    {
+        id: 5,
+        highlight: false,
+        pastProject: false,
+        slug: "ebay-marketplace",
+        title: "Ebay Marketplace",
+        summary: "A web3 marketplace built on the Polygon (Mumbai) test network. ",
+        date: "Oct 30, 2022",
+        images: [
+            "/projects/ebay/ebay-1.png",
+            "/projects/ebay/ebay-2.png",
+            "/projects/ebay/ebay-3.png",
+            "/projects/ebay/ebay-4.png",
+            "/projects/ebay/ebay-5.png",
+        ],
+        technologies: [
+            {
+                imageSrc: "/skills/next.svg",
+            },
+            {
+                imageSrc: "/skills/thirdweb.webp",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+            },
+            {
+                imageSrc: "/skills/mm.webp",
+            },
+            {
+                imageSrc: "/skills/vercel.svg",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/ebay-clone",
+        linkToWebsite: "https://ebay-clone-ten.vercel.app/",
+        points: [
+            "ebay clone marketplace built on the Matic test network using Thirdweb contracts.",
+            "Add items to your personal inventory.",
+            "List items from your inventory to the marketplace.",
+            "submit offers and bids on listed marketplace items.",
+        ],
+    },
+    {
+        id: 6,
+        highlight: false,
+        pastProject: false,
+        slug: "twonarly-lottery",
+        title: "⏳ Twonarly Lottery ⌛️",
+        summary: "Decentralized, random lottery on the Matic test network. A Papa React tutorial.",
+        date: "Sep 1, 2022",
+        images: ["/projects/lottery/lottery-1.png", "/projects/lottery/lottery-2.png"],
+        technologies: [
+            {
+                imageSrc: "/skills/ethereum.png",
+            },
+            {
+                imageSrc: "/skills/thirdweb.webp",
+            },
+            {
+                imageSrc: "/skills/sol.png",
+            },
+            {
+                imageSrc: "/skills/next.svg",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/twonarly-lottery",
+        linkToWebsite: "",
+        points: [
+            "Smart contract lottery built on Matic Network. Use ThirdWeb to deploy solidity smart contracts.",
+            "Connect your digital wallet with MetaMask.",
+            "Enter the lottery by purchasing tickets with your digital wallet. A user can purchase as many tickets, but there is a maximum per transaction.",
+            "The deployer (admin) handles all ThirdWeb actions for drawing a random winner, restart the lottery draw, collect commissions, and the ability to refund all users in the account of a problem. This can be modified for users to have control of these admin controls.",
+        ],
+    },
 
-    // {
-    //     id: 7,
-    //     highlight: false,
-    //     pastProject: false,
-    //     slug: "winsomw-tenley",
-    //     title: "Winsome Tenley 🖼️",
-    //     summary: "NFT minting website on the Matic test network. 2nd place winner. 🎉 🎊",
-    //     date: "Mar 31, 2022",
-    //     images: ["/projects/winsome/winsome-1.jpg", "/projects/winsome/winsome-2.png"],
-    //     technologies: [
-    //         {
-    //             imageSrc: "/skills/ethereum.png",
-    //         },
-    //         {
-    //             imageSrc: "/skills/thirdweb.webp",
-    //         },
-    //         {
-    //             imageSrc: "/skills/sanity.webp",
-    //         },
-    //         {
-    //             imageSrc: "/skills/tailwindcss.svg",
-    //         },
-    //         {
-    //             imageSrc: "/skills/js.webp",
-    //         },
-    //     ],
-    //     linkToBuild: "https://github.com/Twonarly1/Winsome-Tenley",
-    //     linkToWebsite: "https://winsome-tenley.vercel.app/",
-    //     points: [
-    //         "This applications purpose is for an artist to deploy their NFT collection on any network using the power of ThirdWeb deployments.",
-    //         "Users can connect their wallets and mint NFT's until the maximum drop size is met. Multiple purchases are allowed at once, yet there is a maximum number per transaction.",
-    //         "Keep track of the current minting count and how many are still remaining.",
-    //         "2nd place winner 🎉 🎊. Papa React NFT Drop Challenge. Competitive challenge throughout 5 days!",
-    //     ],
-    // },
+    {
+        id: 7,
+        highlight: false,
+        pastProject: false,
+        slug: "winsomw-tenley",
+        title: "Winsome Tenley 🖼️",
+        summary: "NFT minting website on the Matic test network. 2nd place winner. 🎉 🎊",
+        date: "Mar 31, 2022",
+        images: ["/projects/winsome/winsome-1.jpg", "/projects/winsome/winsome-2.png"],
+        technologies: [
+            {
+                imageSrc: "/skills/ethereum.png",
+            },
+            {
+                imageSrc: "/skills/thirdweb.webp",
+            },
+            {
+                imageSrc: "/skills/sanity.webp",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+            },
+            {
+                imageSrc: "/skills/js.webp",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/Winsome-Tenley",
+        linkToWebsite: "https://winsome-tenley.vercel.app/",
+        points: [
+            "This applications purpose is for an artist to deploy their NFT collection on any network using the power of ThirdWeb deployments.",
+            "Users can connect their wallets and mint NFT's until the maximum drop size is met. Multiple purchases are allowed at once, yet there is a maximum number per transaction.",
+            "Keep track of the current minting count and how many are still remaining.",
+            "2nd place winner 🎉 🎊. Papa React NFT Drop Challenge. Competitive challenge throughout 5 days!",
+        ],
+    },
 ])
 
 export async function fetchProjectsData(): Promise<any[]> {

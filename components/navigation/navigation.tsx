@@ -2,55 +2,15 @@
 
 import { Dialog, Transition } from "@headlessui/react"
 import Link from "next/link"
-import { useTheme } from "next-themes"
-import React, { Fragment, useEffect, useState } from "react"
+import { Fragment, useState } from "react"
 
-import { MobileSocialLink, Stack } from "~/core"
-import {
-    Code,
-    GitHubIcon,
-    House,
-    Info,
-    LinkedInIcon,
-    List,
-    Moon,
-    Sun,
-    TwitterIcon,
-    X,
-} from "~/core/icon"
+import { MobileSocialLink, SlideoverThemeSwitcher, Stack } from "~/core"
+import { Code, GitHubIcon, House, Info, LinkedInIcon, List, TwitterIcon, X } from "~/core/icon"
 
 import { NavigationContactButton } from "./navigation-contact-button"
 
 export function Navigation() {
     const [open, setOpen] = useState(false)
-    const [mounted, setMounted] = useState(false)
-    const { systemTheme, theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) {
-        return null
-    }
-
-    const renderLightTheme = () => {
-        if (currentTheme === "light") {
-            return
-        } else {
-            return setTheme("light")
-        }
-    }
-
-    const renderDarkTheme = () => {
-        if (currentTheme === "dark") {
-            return
-        } else {
-            return setTheme("dark")
-        }
-    }
-
-    const currentTheme = theme === "system" ? systemTheme : theme
 
     return (
         <header className="sticky top-0 z-20 mx-auto flex w-full justify-between bg-gray-50 p-5 dark:bg-primary-dark">
@@ -66,36 +26,6 @@ export function Navigation() {
                     <Link href="/" className="mx-auto p-2">
                         Home
                     </Link>
-
-                    {/* <CoreTooltip content="Home">
-                        <Link href="/" className="mx-auto">
-                            <House className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-                        </Link>
-                    </CoreTooltip> */}
-                    {/* 
-                    <CoreTooltip content="Light">
-                        <button onClick={renderLightTheme}>
-                            <Sun className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-                        </button>
-                    </CoreTooltip>
-
-                    <CoreTooltip content="Dark">
-                        <button onClick={renderDarkTheme}>
-                            <Moon className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-                        </button>
-                    </CoreTooltip> */}
-
-                    {/* <CoreTooltip content="Projects">
-                        <Link href="/projects">
-                            <Code className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-                        </Link>
-                    </CoreTooltip>
-
-                    <CoreTooltip content="Resume">
-                        <Link href="/projects">
-                            <Info className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-                        </Link>
-                    </CoreTooltip> */}
                 </Stack>
 
                 <Transition.Root show={open} as={Fragment}>
@@ -114,21 +44,19 @@ export function Navigation() {
                                         leaveFrom="-translate-x-0"
                                         leaveTo="-translate-x-full"
                                     >
-                                        <Dialog.Panel className="pointer-events-auto flex w-[297px] flex-col bg-white dark:bg-primary-dark dark:text-gray-300">
-                                            <div className="flex flex-col px-3">
-                                                <div className="h-full items-center justify-between">
-                                                    <div className="px-2 py-5">
-                                                        <button
-                                                            type="button"
-                                                            className="rounded-full hover:bg-pink-100 hover:text-gray-500"
-                                                            onClick={() => setOpen(false)}
-                                                        >
-                                                            <X
-                                                                className="h-[38px] w-[38px] rounded-full p-[5.5px] hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100"
-                                                                aria-hidden="true"
-                                                            />
-                                                        </button>
-                                                    </div>
+                                        <Dialog.Panel className="pointer-events-auto flex w-[297px] flex-col bg-white dark:bg-primary-dark">
+                                            <div className="mx-3 flex flex-col">
+                                                <div className="px-2 py-5">
+                                                    <button
+                                                        type="button"
+                                                        className=""
+                                                        onClick={() => setOpen(false)}
+                                                    >
+                                                        <X
+                                                            className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100"
+                                                            aria-hidden="true"
+                                                        />
+                                                    </button>
                                                 </div>
 
                                                 <Dialog.Title className="pt-4 pb-1">
@@ -142,7 +70,7 @@ export function Navigation() {
                                                         className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                         aria-label="Go Home"
                                                     >
-                                                        <House className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                                        <House className="h-[38px] w-[38px] rounded-full p-2 " />
 
                                                         <p>Home</p>
                                                     </Link>
@@ -152,7 +80,7 @@ export function Navigation() {
                                                         onClick={() => setOpen(false)}
                                                         className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                     >
-                                                        <Code className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                                        <Code className="h-[38px] w-[38px] rounded-full p-2 " />
 
                                                         <p>Projects</p>
                                                     </Link>
@@ -162,12 +90,12 @@ export function Navigation() {
                                                         onClick={() => setOpen(false)}
                                                         className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
                                                     >
-                                                        <Info className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                                        <Info className="h-[38px] w-[38px] rounded-full p-2 " />
 
                                                         <p>Resume</p>
                                                     </Link>
 
-                                                    <Dialog.Title className=" pt-4">
+                                                    <Dialog.Title className="pt-4">
                                                         Socials
                                                     </Dialog.Title>
 
@@ -195,34 +123,15 @@ export function Navigation() {
                                                         onClick={() => setOpen(false)}
                                                     />
 
-                                                    <Dialog.Title className=" pt-4">
+                                                    <Dialog.Title className="pt-4">
                                                         Theme
                                                     </Dialog.Title>
 
-                                                    <button
-                                                        onClick={renderLightTheme}
-                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
-                                                    >
-                                                        <Sun className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-
-                                                        <p>Light</p>
-                                                    </button>
-
-                                                    <button
-                                                        onClick={renderDarkTheme}
-                                                        className="z-20 flex items-center space-x-1 rounded-lg py-1 hover:bg-pink-100 hover:text-black"
-                                                    >
-                                                        <Moon className="h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
-
-                                                        <p>Dark</p>
-                                                    </button>
+                                                    <SlideoverThemeSwitcher />
                                                 </div>
 
                                                 <footer>
-                                                    <a
-                                                        className="absolute left-3 bottom-2 cursor-pointer text-sm outline-none"
-                                                        // href="https://beauhawkinson.us/"
-                                                    >
+                                                    <a className="absolute left-3 bottom-2 cursor-pointer text-sm outline-none">
                                                         © {new Date().getFullYear()} bhawkinson
                                                     </a>
                                                 </footer>

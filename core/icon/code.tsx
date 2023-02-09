@@ -33,7 +33,7 @@ export function Code({ className }: Props) {
                 fill="none"
                 stroke="#3eb991"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="16"
             ></line>
         </IconBase>

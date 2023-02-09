@@ -25,25 +25,21 @@ function RepoList({ repos, title, url }: RepoList) {
                     <li key={id}>
                         <a
                             href={url}
-                            data-splitbee-event={"Open External Link"}
-                            data-splitbee-event-url={url}
                             className="my-4 -mx-4 block rounded-md p-4 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:bg-primary-dark dark:hover:from-gray-600 dark:hover:to-slate-800"
                         >
                             <div>
-                                <span className="text-gray-800 dark:text-gray-200">
-                                    {owner.login}/
-                                </span>
+                                <span>{owner.login}/</span>
 
-                                <span className="text-gray-500 dark:text-gray-400">{name}</span>
+                                <span>{name}</span>
                             </div>
 
-                            <div className="">{description}</div>
+                            <div>{description}</div>
                         </a>
                     </li>
                 ))}
             </ul>
 
-            <a href={url} className="text-sm text-black dark:text-white">
+            <a href={url} rel="noopener noreferrer" target="_blank" className="p-1 text-sm">
                 View more on <span className="font-semibold">GitHub</span> →
             </a>
         </div>
@@ -54,7 +50,7 @@ export function GitHubActivity({ starredRepos, pinnedRepos }: GithubActivity) {
     return (
         <div className="container max-w-7xl">
             <Stack alignItems="center">
-                <Heading as="h1">GitHub Activity</Heading>
+                <Heading as="h2">GitHub Activity</Heading>
             </Stack>
 
             <div className="container mt-12 grid grid-cols-1 gap-24 md:grid-cols-2 md:gap-32">

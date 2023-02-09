@@ -1,11 +1,11 @@
 "use client"
 import Link from "next/link"
 
-import { Section, Stack } from "~/core"
+import { Section, Stack, Text } from "~/core"
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
     return (
-        <Link className="text-sm font-medium" href={href}>
+        <Link className="p-1 text-sm font-medium" href={href}>
             {children}
         </Link>
     )
@@ -28,12 +28,12 @@ export function Footer() {
                     </Stack>
 
                     <Stack alignItems="center" direction="horizontal" gap={1}>
-                        <p className="text-xs">
+                        <Text size="xs" color={1000}>
                             &copy; {new Date().getFullYear()} Beau Hawkinson ·
-                        </p>
+                        </Text>
 
                         <a
-                            className="text-xs text-pink-400 dark:text-pink-200"
+                            className="p-1 text-xs text-pink-400 dark:text-pink-200"
                             href="https://github.com/Twonarly1"
                         >
                             Source

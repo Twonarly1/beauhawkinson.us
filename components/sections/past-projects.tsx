@@ -7,19 +7,17 @@ type Props = {
     projects: Project[]
 }
 
-function ProjectSection() {}
-
 export function PastProjects({ projects }: Props) {
     return (
         <Stack gap={16}>
             <Stack alignItems="center">
-                <Heading as="h1">Past Projects</Heading>
+                <Heading as="h2">Past Projects</Heading>
 
-                <Heading as="h2">Select for more details</Heading>
+                <Heading as="h3">Select for more details</Heading>
             </Stack>
 
-            <div className="mx-auto flex flex-col gap-y-4">
-                {projects.map((p, i: number) => {
+            <div className="mx-auto flex flex-col gap-y-4 px-10 sm:px-0">
+                {projects.slice(0, 5).map((p, i: number) => {
                     return (
                         <Link
                             key={i}
