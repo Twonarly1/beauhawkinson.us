@@ -12,7 +12,7 @@ export function Info({ className }: Props) {
                 cy="128"
                 r="96"
                 fill="none"
-                stroke="currentColor"
+                stroke="#9146ff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="16"
@@ -20,14 +20,14 @@ export function Info({ className }: Props) {
 
             <polyline
                 points="120 120 128 120 128 176 136 176"
-                fill="none"
-                stroke="currentColor"
+                fill="#9146ff"
+                stroke="#9146ff"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="16"
             ></polyline>
 
-            <circle cx="126" cy="84" r="12"></circle>
+            <circle fill="#9146ff" stroke="#9146ff" cx="126" cy="84" r="12"></circle>
         </IconBase>
     )
 }

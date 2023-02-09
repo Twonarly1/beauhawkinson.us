@@ -9,8 +9,8 @@ export function Moon({ className }: Props) {
         <IconBase className={className}>
             <path
                 d="M216.7,152.6A91.9,91.9,0,0,1,103.4,39.3h0A92,92,0,1,0,216.7,152.6Z"
-                fill="currentColor"
-                stroke="currentColor"
+                fill="#6a76ac"
+                stroke="#6a76ac"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="16"

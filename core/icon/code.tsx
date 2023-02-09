@@ -10,7 +10,7 @@ export function Code({ className }: Props) {
             <polyline
                 points="64 88 16 128 64 168"
                 fill="none"
-                stroke="currentColor"
+                stroke="#3eb991"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="16"
@@ -19,7 +19,7 @@ export function Code({ className }: Props) {
             <polyline
                 points="192 88 240 128 192 168"
                 fill="none"
-                stroke="currentColor"
+                stroke="#3eb991"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="16"
@@ -31,7 +31,7 @@ export function Code({ className }: Props) {
                 x2="96"
                 y2="216"
                 fill="none"
-                stroke="currentColor"
+                stroke="#3eb991"
                 strokeLinecap="round"
                 stroke-linejoin="round"
                 strokeWidth="16"

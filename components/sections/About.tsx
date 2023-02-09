@@ -56,46 +56,46 @@ export function About() {
                         <Heading as="h2">Full Stack Developer</Heading>
                     </Stack>
 
-                    <Stack direction="horizontal" gap={2}>
+                    <Stack direction="horizontal" gap={4}>
                         <CoreTooltip content="Twitter">
                             <a href="https://twitter.com/twonarly">
-                                <TwitterIcon className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <TwitterIcon className="h-8 w-8 hover:scale-110" />
                             </a>
                         </CoreTooltip>
 
                         <CoreTooltip content="GitHub">
                             <a href="https://github.com/Twonarly1">
-                                <GitHubIcon className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <GitHubIcon className="h-8 w-8 text-[#333] hover:scale-110 dark:text-[#FFF]" />
                             </a>
                         </CoreTooltip>
 
                         <CoreTooltip content="LinkedIn">
                             <a href="https://www.linkedin.com/in/beau-hawkinson-6921bb84/">
-                                <LinkedInIcon className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <LinkedInIcon className="h-8 w-8 hover:scale-110" />
                             </a>
                         </CoreTooltip>
 
                         <CoreTooltip content="Projects">
                             <Link href="/projects">
-                                <Code className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <Code className="h-8 w-8 hover:scale-110" />
                             </Link>
                         </CoreTooltip>
 
                         <CoreTooltip content="Resume">
                             <Link href="/resume">
-                                <Info className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <Info className="h-8 w-8 hover:scale-110" />
                             </Link>
                         </CoreTooltip>
 
                         <CoreTooltip content="Light">
                             <button onClick={renderLightTheme}>
-                                <Sun className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <Sun className="h-8 w-8 hover:scale-110" />
                             </button>
                         </CoreTooltip>
 
                         <CoreTooltip content="Dark">
                             <button onClick={renderDarkTheme}>
-                                <Moon className=" h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+                                <Moon className="h-8 w-8 hover:scale-110" />
                             </button>
                         </CoreTooltip>
                     </Stack>

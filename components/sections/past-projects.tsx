@@ -42,12 +42,12 @@ export function PastProjects({ projects }: Props) {
                                         {p.summary}
                                     </Text>
 
-                                    <div className="hidden  space-x-2 pt-4 xs:flex">
+                                    <div className="hidden space-x-2 pt-4 xs:flex">
                                         {p.technologies.map((tech: any, i: number) => (
                                             <Image
                                                 key={i}
                                                 loading="lazy"
-                                                className="h-6 w-6 opacity-0 grayscale group-hover:opacity-50 group-hover:grayscale-0 dark:opacity-0"
+                                                className="h-6 w-6 opacity-0 grayscale transition duration-1000 ease-in-out group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-0"
                                                 src={tech.imageSrc}
                                                 alt="Portrait photo of me"
                                                 quality={100}

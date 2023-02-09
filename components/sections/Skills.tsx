@@ -108,7 +108,7 @@ const skillsData: Skill[] = [
     {
         imageSrc: "/skills/stepzen.png",
         tooltip: "Stepzen",
-        preferredStack: false,
+        preferredStack: true,
     },
     {
         imageSrc: "/skills/supabase.svg",
