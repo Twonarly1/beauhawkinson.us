@@ -23,7 +23,7 @@ export function CompanyPosition({ endDate, location, startDate, title }: Props) 
 
     return (
         <div>
-            <Heading as="h2">{title}</Heading>
+            <Heading as="h3">{title}</Heading>
 
             <p className="">{tenureString}</p>
 

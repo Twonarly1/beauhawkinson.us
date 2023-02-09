@@ -9,9 +9,9 @@ export default function ResumePage() {
             <Section>
                 <Stack gap={16}>
                     <Stack gap={4}>
-                        <Heading as="h1">Beau Hawkinson</Heading>
+                        <Heading as="h2">Beau Hawkinson</Heading>
 
-                        <Heading as="h2">
+                        <Heading as="h3">
                             To me, the most important goal in life is to learn new things - whether
                             that be professionally in my career, or in my personal life while
                             meeting new people, discovering new places and trying new things.
@@ -19,7 +19,7 @@ export default function ResumePage() {
                     </Stack>
 
                     <Stack gap={8}>
-                        <Heading as="h2">👨‍💻 Experience</Heading>
+                        <Heading as="h3">👨‍💻 Experience</Heading>
 
                         <Grid columns={{ base: 1, sm: 2 }} rows={{ base: 1, sm: "auto" }} gap={16}>
                             <Company
@@ -102,11 +102,11 @@ export default function ResumePage() {
 
                     <Grid columns={2} gap={16}>
                         <Stack gap={8}>
-                            <Heading as="h2">📚 Education</Heading>
+                            <Heading as="h3">📚 Education</Heading>
 
                             <Stack gap={8}>
                                 <div>
-                                    <Heading as="h2">Marketing</Heading>
+                                    <Heading as="h3">Marketing</Heading>
 
                                     <p>Bachelor of Science (BSc)</p>
 
@@ -120,16 +120,16 @@ export default function ResumePage() {
 
                         <Stack gap={16}>
                             <Stack gap={8}>
-                                <Heading as="h2">📜 Certifications</Heading>
+                                <Heading as="h3">📜 Certifications</Heading>
 
                                 <div>
-                                    <Heading as="h2">GraphQL Professional</Heading>
+                                    <Heading as="h3">GraphQL Professional</Heading>
 
                                     <p>Apollo · June 2022</p>
                                 </div>
 
                                 <div>
-                                    <Heading as="h2">Web 3 Patrick Collins</Heading>
+                                    <Heading as="h3">Web 3 Patrick Collins</Heading>
 
                                     <p>Full Stack, Hardhat, Solidity, Blockchain</p>
 
@@ -138,7 +138,7 @@ export default function ResumePage() {
                             </Stack>
 
                             <Stack gap={8}>
-                                <Heading as="h2">🧔‍♂️ Random facts</Heading>
+                                <Heading as="h3">🧔‍♂️ Random facts</Heading>
 
                                 <ul className="ml-6 list-disc">
                                     <li>
