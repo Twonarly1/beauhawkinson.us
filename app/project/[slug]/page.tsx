@@ -1,5 +1,6 @@
-import { CodeBracketIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+
+import { Code } from "core/icon/code"
 
 import { fetchProjectBySlug, fetchProjectsData } from "~/lib"
 
@@ -47,7 +48,7 @@ async function Work({ params }: Props) {
 
                 <div className="relative flex h-20 w-full items-center justify-between">
                     <a href={projectData?.linkToBuild} className="rounded-lg">
-                        <CodeBracketIcon className="h-10 w-10 rounded-lg border bg-white p-2 focus:outline-none hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5 dark:hover:bg-gray-500" />
+                        <Code className="h-10 w-10 rounded-lg border bg-white p-2 focus:outline-none hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5 dark:hover:bg-gray-500" />
                     </a>
 
                     {projectData?.linkToWebsite && (

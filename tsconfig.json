@@ -18,7 +18,8 @@
         "paths": {
             "~/styles": ["./styles"],
             "~/core": ["./core"],
-            "~/components": ["./components"],
+            "~/core/icon": ["./core/icon"],
+            "~/*": ["./components/*"],
             "~/lib": ["./lib"]
         },
         "plugins": [

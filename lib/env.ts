@@ -5,7 +5,12 @@
  * @see https://github.com/vercel/next.js/issues/15574
  */
 
-// core
+// private
 export const NODE_ENV = process.env.NODE_ENV
+export const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+export const GOOGLE_SHEET_KEY = process.env.GOOGLE_SHEET_KEY
+
+// public
 export const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
-export const NEXT_PUBLIC_GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN
+export const NEXT_PUBLIC_GOOGLE_SHEET_ENDPOINT = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ENDPOINT!
+export const NEXT_PUBLIC_GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!

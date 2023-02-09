@@ -1,23 +1,25 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { Heading } from "~/components"
-
 import { fetchProjectsData } from "~/lib"
 
+import { Heading } from "~/core"
+
 async function Projects() {
-    const projects: Project[] = await fetchProjectsData()
+    const pastProjects: Project[] = await fetchProjectsData()
 
     return (
         <div className="mx-auto mt-16 flex max-w-5xl flex-col items-center justify-start overflow-hidden px-6 scrollbar-hide">
-            <Heading title={"Projects"} subtitle={"Select for more details"} />
+            <Heading as="h1">Projects</Heading>
 
-            <div className="mx-auto flex flex-col gap-y-4 overflow-x-scroll p-1 scrollbar-hide">
-                {projects.map((project, i: number) => (
+            <Heading as="h2">Select for more details</Heading>
+
+            <div className="mx-auto mt-16 flex flex-col gap-y-4 overflow-x-scroll p-1 scrollbar-hide">
+                {pastProjects.map((project, i: number) => (
                     <Link
                         key={i}
                         href={`../project/${project.slug}`}
-                        className="group z-10 cursor-default rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:bg-primary-dark dark:hover:from-gray-600 dark:hover:to-slate-800"
+                        className="group z-10 cursor-pointer rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:bg-primary-dark dark:hover:from-gray-600 dark:hover:to-slate-800"
                     >
                         <div className="relative flex w-full flex-shrink-0  flex-col rounded-2xl  ">
                             <div className="w-full space-y-2">

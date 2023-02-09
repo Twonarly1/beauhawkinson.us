@@ -24,10 +24,10 @@ module.exports = {
                         pattern: "~/components",
                         group: "internal",
                     },
-                    // {
-                    //     pattern: "~/design/icon",
-                    //     group: "internal",
-                    // },
+                    {
+                        pattern: "~/design/icon",
+                        group: "internal",
+                    },
                     {
                         pattern: "~/lib",
                         group: "internal",

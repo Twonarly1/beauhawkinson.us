@@ -1,6 +1,6 @@
-import { NEXT_PUBLIC_GITHUB_TOKEN } from "./env"
+import { GITHUB_TOKEN } from "lib/env"
 
-const githubToken = NEXT_PUBLIC_GITHUB_TOKEN
+const githubToken = `${GITHUB_TOKEN}`
 
 if (!githubToken) {
     throw new Error("Missing environment variable GITHUB_TOKEN.")
@@ -8,7 +8,7 @@ if (!githubToken) {
 
 export const config = {
     name: "Beau Hawkinson",
-    subtitle: "Code · Design · Film",
+    subtitle: "Code · Design",
     birthday: "1994-04-07",
     githubUsername: "Twonarly1",
     githubToken,

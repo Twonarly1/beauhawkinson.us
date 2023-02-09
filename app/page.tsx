@@ -1,40 +1,26 @@
-import {
-    About,
-    Achievements,
-    ContactMe,
-    Experiences,
-    GitHubActivity,
-    Projects,
-    Skills,
-} from "~/components"
-
 import { config, fetchProjectsData, fetchRepos } from "~/lib"
 
+import { Stack } from "~/core"
+import { About, Achievements, GitHubActivity, PastProjects, SkillsSection } from "~/sections"
+
 async function HomePage() {
-    const projects: Project[] = await fetchProjectsData()
+    const pastProjects: Project[] = await fetchProjectsData()
     const { starredRepos, pinnedRepos } = await fetchRepos(
         config.githubUsername,
         config.githubToken,
     )
     return (
-        <div className="flex flex-col overflow-y-scroll scrollbar-hide overflow-x-hidden">
+        <Stack gap={64}>
             <About />
 
-            {/* <Resume /> */}
-            <div className="flex flex-col space-y-60">
-                <Projects projects={projects} />
+            <PastProjects projects={pastProjects} />
 
-                <Skills />
+            <SkillsSection />
 
-                <Experiences />
+            <Achievements />
 
-                <Achievements />
-
-                <ContactMe />
-
-                <GitHubActivity starredRepos={starredRepos} pinnedRepos={pinnedRepos} />
-            </div>
-        </div>
+            <GitHubActivity starredRepos={starredRepos} pinnedRepos={pinnedRepos} />
+        </Stack>
     )
 }
 

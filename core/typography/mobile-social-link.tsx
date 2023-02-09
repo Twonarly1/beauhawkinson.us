@@ -1,4 +1,10 @@
-function MobileSocialLink({ icon: Icon, href, tooltip, onClick, ...props }: SocialLinkProps) {
+export function MobileSocialLink({
+    icon: Icon,
+    href,
+    tooltip,
+    onClick,
+    ...props
+}: SocialLinkProps) {
     return (
         <a
             onClick={() => onClick?.()}
@@ -8,11 +14,9 @@ function MobileSocialLink({ icon: Icon, href, tooltip, onClick, ...props }: Soci
             href={href}
             {...props}
         >
-            <Icon className="h-[38px] w-[38px] rounded-full p-2 hover:animate-wiggle hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
+            <Icon className="hover:animate-wiggle h-[38px] w-[38px] rounded-full p-2 hover:bg-pink-100 hover:text-black dark:hover:bg-pink-100" />
 
             <p className="mr-2">{tooltip}</p>
         </a>
     )
 }
-
-export default MobileSocialLink

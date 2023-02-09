@@ -1,5 +1,6 @@
+import { NEXT_PUBLIC_GRAPHQL_ENDPOINT } from "lib/env"
+
 const QUANTITY = 6
-const GRAPHQL_ENDPOINT = "https://api.github.com/graphql"
 
 export const fetchRepos = async (username: string, githubToken: string) => {
     const query = `
@@ -32,7 +33,7 @@ query {
   }
 }`
 
-    const res = await fetch(GRAPHQL_ENDPOINT, {
+    const res = await fetch(NEXT_PUBLIC_GRAPHQL_ENDPOINT, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

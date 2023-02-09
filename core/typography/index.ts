@@ -1,2 +1,3 @@
-export { default as Heading } from "./heading"
-export { default as MobileSocialLink } from "./mobile-social-link"
+export { Heading } from "./heading"
+export { MobileSocialLink } from "./mobile-social-link"
+export { Text } from "./text"
