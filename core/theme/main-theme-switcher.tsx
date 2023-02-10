@@ -38,13 +38,13 @@ export function MainviewThemeSwitcher() {
         <>
             <CoreTooltip content="Light">
                 <button onClick={renderLightTheme}>
-                    <Sun className="h-8 w-8 hover:scale-110" />
+                    <Sun className="h-6 w-6 hover:scale-110 sm:h-8 sm:w-8" />
                 </button>
             </CoreTooltip>
 
             <CoreTooltip content="Dark">
                 <button onClick={renderDarkTheme}>
-                    <Moon className="h-8 w-8 hover:scale-110" />
+                    <Moon className="h-6 w-6 hover:scale-110 sm:h-8 sm:w-8" />
                 </button>
             </CoreTooltip>
         </>

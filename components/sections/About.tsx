@@ -19,7 +19,7 @@ export function About() {
                 />
 
                 <Stack gap={8} alignItems="center">
-                    <Stack gap={2} alignItems="center">
+                    <Stack gap={2} alignItems="center" textAlign="center">
                         <Heading as="h1">Beau Hawkinson</Heading>
 
                         <Stack direction="horizontal" gap={2}>
@@ -47,13 +47,13 @@ export function About() {
                     <Stack direction="horizontal" gap={4}>
                         <CoreTooltip content="Twitter">
                             <a href="https://twitter.com/twonarly">
-                                <TwitterIcon className="h-8 w-8 hover:scale-110" />
+                                <TwitterIcon className="h-6 w-6 hover:scale-110 sm:h-8 sm:w-8" />
                             </a>
                         </CoreTooltip>
 
                         <CoreTooltip content="GitHub">
                             <a href="https://github.com/Twonarly1">
-                                <GitHubIcon className="h-8 w-8 text-[#333] hover:scale-110 dark:text-[#FFF]" />
+                                <GitHubIcon className="h-6 w-6 text-[#333] hover:scale-110 dark:text-[#FFF] sm:h-8 sm:w-8" />
                             </a>
                         </CoreTooltip>
 
@@ -65,13 +65,13 @@ export function About() {
 
                         <CoreTooltip content="Projects">
                             <Link href="/projects">
-                                <Code className="h-8 w-8 hover:scale-110" />
+                                <Code className="h-6 w-6 hover:scale-110 sm:h-8 sm:w-8" />
                             </Link>
                         </CoreTooltip>
 
                         <CoreTooltip content="Resume">
                             <Link href="/resume">
-                                <Info className="h-8 w-8 hover:scale-110" />
+                                <Info className="h-6 w-6 hover:scale-110 sm:h-8 sm:w-8" />
                             </Link>
                         </CoreTooltip>
 

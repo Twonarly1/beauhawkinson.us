@@ -16,17 +16,20 @@ export function PastProjects({ projects }: Props) {
                 <Heading as="h3">Select for more details</Heading>
             </Stack>
 
-            <div className="mx-auto flex flex-col gap-y-4 px-10 sm:px-0">
+            <div className="mx-auto flex flex-col gap-y-4 px-2 sm:px-10">
                 {projects.slice(0, 5).map((p, i: number) => {
                     return (
                         <Link
                             key={i}
                             href={`/project/${p.slug}`}
-                            className={`group relative z-10 cursor-pointer rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:hover:from-gray-600 dark:hover:to-slate-800 sm:px-10 ${
+                            className={`group relative z-10 cursor-pointer rounded-2xl p-3 hover:bg-gradient-to-r hover:from-gray-50 hover:to-pink-50/80 dark:hover:from-gray-600 dark:hover:to-slate-800 ${
                                 p.highlight && "border-2 border-pink-200"
                             }`}
                         >
-                            <Stack direction="horizontal" gap={8}>
+                            <Stack
+                                direction={{ base: "vertical", sm: "horizontal" }}
+                                gap={{ base: 2, sm: 8 }}
+                            >
                                 <Text size="xs" color={1000}>
                                     <p className="mt-1">{p.date}</p>
                                 </Text>

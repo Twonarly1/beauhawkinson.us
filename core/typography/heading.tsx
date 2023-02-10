@@ -20,7 +20,8 @@ export const Heading = forwardRef<HTMLHeadingElement, Props>(function Heading(
             className={classNames({
                 "text-md mt-1 cursor-default xs:text-xl": as === "h3",
                 "cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100": as === "h2",
-                "cursor-default text-6xl font-bold text-gray-900 dark:text-gray-100": as === "h1",
+                "cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-6xl":
+                    as === "h1",
             })}
             ref={ref}
             {...props}

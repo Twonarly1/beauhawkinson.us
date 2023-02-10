@@ -110,13 +110,13 @@ export function Achievements() {
                     <Heading as="h3">Things I have achieved</Heading>
                 </Stack>
 
-                <Section>
+                <Section size="lg">
                     {achievementData
                         .filter((a) => showMore || a.highlight)
                         .map((a, i) => (
                             <div
                                 key={i}
-                                className="my-8 flex flex-col items-center sm:my-8 sm:flex-row"
+                                className="my-16 flex flex-col items-center sm:my-8 sm:flex-row"
                             >
                                 <Image
                                     className="h-[96px] w-[96px] rounded"
@@ -126,7 +126,7 @@ export function Achievements() {
                                     width={96}
                                 />
 
-                                <div className="mx-8 mt-4 flex flex-1 flex-col space-y-2 sm:mt-0">
+                                <div className="mt-4 flex flex-1 flex-col space-y-2 text-center sm:mx-8 sm:mt-0 sm:text-left">
                                     <Text size="lg" weight="bold" color={400}>
                                         {a.title}
                                     </Text>
