@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 import type { ReactNode } from "react"
 
 import { ResponsiveProp, toResponsiveObject } from "core/responsive-utils"
@@ -32,7 +32,7 @@ export function Root({
 
     return (
         <div
-            className={classNames(className, {
+            className={clsx(className, {
                 "gap-1": gap?.base === 1,
                 "gap-2": gap?.base === 2,
                 "gap-4": gap?.base === 4,

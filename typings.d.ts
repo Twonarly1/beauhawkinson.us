@@ -1,5 +1,6 @@
 type Technology = {
     imageSrc: string
+    tooltip: string
 }[]
 
 type Project = {
@@ -60,6 +61,11 @@ interface Repo {
     }
 }
 
+interface StargazerCount {
+    id: string
+    stargazerCount: number
+}
+
 interface RepoResponseData {
     user: {
         pinnedItems: {
@@ -68,6 +74,7 @@ interface RepoResponseData {
         starredRepositories: {
             nodes: Repo[]
         }
+        repository: StargazerCount
     }
 }
 
@@ -77,15 +84,41 @@ type Headings = {
     other?: string
 }
 
-type SocialLinkProps = {
-    href: string
-    icon: (props: SVGProps<SVGSVGElement>) => JSX.Element
-    tooltip: string
-    onClick?: () => void | {}
+interface TimestampProps {
+    date: Date
+    endDate?: Date
+    className?: string
 }
 
-type Inputs = {
-    name: string
-    email: string
-    message: string
+type Company = {
+    endDate?: string
+    location: string
+    startDate: string
+    title: string
+    website: string
+    src: string
+    alt: string
+}
+
+type Post = {
+    id: number
+    created_at: string
+    body: string
+    username: string
+}
+
+type Vote = {
+    created_at: string
+    id: number
+    post_id: number
+    upvote: boolean
+    username: string
+}
+
+type Comments = {
+    created_at: string
+    id: number
+    post_id: number
+    text: string
+    username: string
 }

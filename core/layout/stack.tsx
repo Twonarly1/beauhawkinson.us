@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 
 import { ResponsiveProp, toResponsiveObject } from "core/responsive-utils"
 
@@ -21,7 +21,7 @@ export function Stack({
 
     return (
         <Root
-            className={classNames("flex", {
+            className={clsx("flex", {
                 "flex-col": direction.base === "vertical",
                 "sm:flex-col": direction.sm === "vertical",
                 "md:flex-col": direction.md === "vertical",

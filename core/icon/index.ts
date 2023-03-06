@@ -1,21 +1,16 @@
 import { FC } from "react"
 
-export { GitHubIcon } from "./github"
-export { LinkedInIcon } from "./linkedin"
-export { TwitterIcon } from "./twitter"
-
 export type Icon = FC<{ className?: string }>
 
 // All icons provided by https://phosphoricons.com/
+export { ArrowIcon } from "./arrow-icon"
 export { CaretDown } from "./caret-down"
+export { ChatIcon } from "./chat-icon"
 export { CircleNotch } from "./circle-notch"
-export { Code } from "./code"
-export { Confetti } from "./confetti"
-export { House } from "./house"
-export { Info } from "./info"
+export { GitHubIcon } from "./github-icon"
+export { GoogleIcon } from "./google-icon"
+export { HeartIcon } from "./heart-icon"
+export { LinkedInIcon } from "./linkedin-icon"
 export { List } from "./list"
-export { Moon } from "./moon"
-export { PaperPlaneTilt } from "./paper-plane-tilt"
-export { SmileyXEyes } from "./smiley-x-eyes"
-export { Sun } from "./sun"
+export { TwitterIcon } from "./twitter-icon"
 export { X } from "./x"

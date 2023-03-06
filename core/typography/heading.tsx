@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 import { ReactNode, forwardRef } from "react"
 
 type HeadingElement = "h1" | "h2" | "h3"
@@ -17,10 +17,10 @@ export const Heading = forwardRef<HTMLHeadingElement, Props>(function Heading(
 
     return (
         <Element
-            className={classNames({
-                "text-md mt-1 cursor-default xs:text-xl": as === "h3",
+            className={clsx({
+                "text-md mt-1 cursor-default xs:text-xl sm:text-center": as === "h3",
                 "cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100": as === "h2",
-                "cursor-default text-4xl font-bold text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-6xl":
+                "cursor-default text-3xl font-bold text-gray-900 dark:text-gray-100 sm:text-4xl lg:text-5xl":
                     as === "h1",
             })}
             ref={ref}

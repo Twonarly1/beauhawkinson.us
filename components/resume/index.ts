@@ -1,6 +1,4 @@
-import { CompanyPosition } from "./company-position"
 import { CompanyRoot } from "./company-root"
+export { Achievements } from "./Achievements"
 
-export const Company = Object.assign(CompanyRoot, {
-    Position: CompanyPosition,
-})
+export const Company = Object.assign(CompanyRoot)

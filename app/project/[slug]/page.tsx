@@ -1,20 +1,48 @@
 import Image from "next/image"
+import Link from "next/link"
 
-import { GitHubIcon } from "core/icon/github"
-
-import { fetchProjectBySlug, fetchProjectsData } from "~/lib"
-
-import { Stack, Text } from "~/core"
+import { Stack, CoreTooltip, Text } from "core"
+import { fetchProjectBySlug, fetchProjectsData } from "lib"
+import { GitHubIcon } from "core/icon"
 
 type Props = {
     params: Project
 }
 
+export async function generateStaticParams() {
+    const projects: Project[] = await fetchProjectsData()
+
+    return projects.map((project: Project) => ({
+        slug: project.slug,
+    }))
+}
+
 async function Work({ params }: Props) {
-    const projectData = await fetchProjectBySlug(params.slug)
+    const projectData = (await fetchProjectBySlug(params.slug)) as any
+    const projects: Project[] = await fetchProjectsData()
 
     return (
-        <div className="container relative mx-auto mt-24 max-w-3xl px-10 sm:px-0">
+        <div className="w-full">
+            <Stack direction="horizontal" justifyContent="between">
+                {projectData.id > 0 && (
+                    <Link
+                        className="flex w-fit items-start justify-start"
+                        href={`/project/${projects[projectData.id - 1].slug}`}
+                    >
+                        <p className="mt-2 mb-10">&larr; Prev</p>
+                    </Link>
+                )}
+
+                {projectData.id < 8 && (
+                    <Link
+                        className="flex w-fit items-end justify-end"
+                        href={`/project/${projects[projectData.id + 1].slug}`}
+                    >
+                        <p className="mt-2 mb-10">Next &rarr;</p>
+                    </Link>
+                )}
+            </Stack>
+
             <Stack gap={8}>
                 <Stack gap={2}>
                     <h1>
@@ -23,43 +51,45 @@ async function Work({ params }: Props) {
                         </Text>
                     </h1>
 
-                    <Text size="sm" color={1000}>
-                        {projectData?.date}
-                    </Text>
+                    <Text size="sm">{projectData?.date}</Text>
                 </Stack>
 
-                <Stack direction="horizontal" gap={4}>
+                <Stack direction="horizontal" gap={{ base: 4, sm: 8 }}>
                     {projectData?.technologies.map((tech: any, i: number) => (
-                        <Image
-                            key={i}
-                            loading="lazy"
-                            className="h-6 w-6"
-                            src={tech.imageSrc}
-                            alt="Portrait photo of me"
-                            quality={100}
-                            height={24}
-                            width={24}
-                        />
+                        <CoreTooltip key={i} content={tech.tooltip}>
+                            <Image
+                                loading="lazy"
+                                className="h-8 w-8"
+                                src={tech.imageSrc}
+                                alt="Portrait photo of me"
+                                quality={100}
+                                height={24}
+                                width={24}
+                            />
+                        </CoreTooltip>
                     ))}
                 </Stack>
 
                 <Stack gap={8}>
                     {projectData?.points.map((bullet: any, i: number) => (
-                        <Text color={1000} key={i}>
+                        <Text color={1000} size="sm" key={i}>
                             {bullet}
                         </Text>
                     ))}
                 </Stack>
 
-                <Stack direction="horizontal" justifyContent="between">
-                    <a href={projectData?.linkToBuild} className="rounded-lg">
-                        <GitHubIcon className="h-10 w-10 rounded-lg border bg-white p-2 focus:outline-none hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5 dark:hover:bg-gray-500" />
+                <Stack direction="horizontal" justifyContent="between" alignItems="center">
+                    <a
+                        href={projectData?.linkToBuild}
+                        className="flex items-center justify-between rounded-lg border border-neutral-200 p-4 text-neutral-800 no-underline transition-all hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900"
+                    >
+                        <GitHubIcon />
                     </a>
 
                     {projectData?.linkToWebsite && (
                         <a
+                            className="flex items-center justify-between rounded-lg border border-neutral-200 p-4 text-neutral-800 no-underline transition-all hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900"
                             href={projectData?.linkToWebsite}
-                            className="h-auto cursor-pointer items-center truncate rounded-lg border bg-white p-2 text-sm hover:bg-gray-50 dark:bg-primary-dark dark:hover:bg-white/5"
                         >
                             {projectData?.linkToWebsite}
                         </a>
@@ -73,7 +103,7 @@ async function Work({ params }: Props) {
                         className="mt-20 h-auto w-full rounded-3xl bg-black/5 object-cover p-8 backdrop-blur-md dark:bg-white/5"
                         src={p}
                         alt="Portrait photo of me"
-                        quality={100}
+                        quality={80}
                         height={400}
                         width={400}
                     />
@@ -84,11 +114,3 @@ async function Work({ params }: Props) {
 }
 
 export default Work
-
-export async function generateStaticParams() {
-    const projects: Project[] = await fetchProjectsData()
-
-    return projects.map((project: Project) => ({
-        slug: project.slug,
-    }))
-}

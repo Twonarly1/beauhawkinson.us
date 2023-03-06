@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 
 import { ResponsiveProp, toResponsiveObject } from "core/responsive-utils"
 
@@ -20,7 +20,7 @@ export function Grid({ children, columns: columnsProp, rows: rowsProp, ...props 
 
     return (
         <Root
-            className={classNames("grid", {
+            className={clsx("grid", {
                 "grid-flow-col": columns?.base === "auto",
                 "grid-cols-none": columns?.base === "none",
                 "grid-cols-1": columns?.base === 1,

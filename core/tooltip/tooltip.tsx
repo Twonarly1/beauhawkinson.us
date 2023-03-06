@@ -8,7 +8,7 @@ function CoreTooltip({ children, content }: { children: React.ReactNode; content
                 <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
 
                 <Tooltip.Portal>
-                    <Tooltip.Content className="z-20" side="bottom">
+                    <Tooltip.Content className="z-50 text-xs" side="bottom">
                         {content}
                     </Tooltip.Content>
                 </Tooltip.Portal>

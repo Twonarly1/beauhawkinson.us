@@ -15,19 +15,12 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "baseUrl": ".",
-        "paths": {
-            "~/styles": ["./styles"],
-            "~/core": ["./core"],
-            "~/core/icon": ["./core/icon"],
-            "~/*": ["./components/*"],
-            "~/lib": ["./lib"]
-        },
         "plugins": [
             {
                 "name": "next"
             }
         ]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/robots.txt"],
     "exclude": ["node_modules"]
 }

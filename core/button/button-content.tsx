@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 import { ReactNode } from "react"
 
 import { CircleNotch, Icon } from "core/icon"
@@ -22,7 +22,7 @@ export function ButtonContent({ children, iconLeft, iconRight, isLoading, size }
         <Stack alignItems="center" direction="horizontal" gap={2}>
             {IconLeft ? (
                 <IconLeft
-                    className={classNames({
+                    className={clsx({
                         "h-4 w-4": size === "sm",
                         "h-5 w-5": size === "md",
                         "animate-spin": isLoading,
@@ -34,7 +34,7 @@ export function ButtonContent({ children, iconLeft, iconRight, isLoading, size }
 
             {IconRight ? (
                 <IconRight
-                    className={classNames({
+                    className={clsx({
                         "h-4 w-4": size === "sm",
                         "h-5 w-5": size === "md",
                     })}

@@ -1,8 +1,8 @@
 import { NEXT_PUBLIC_GRAPHQL_ENDPOINT } from "lib/env"
 
-const QUANTITY = 6
+const QUANTITY = 10
 
-export const fetchRepos = async (username: string, githubToken: string) => {
+export const fetchRepos = async (username: string, githubToken: string, repoName: string) => {
     const query = `
 query {
   user (login: "${username}") {
@@ -30,6 +30,10 @@ query {
         }
       }
     }
+    repository(name: "${repoName}") {
+      id
+      stargazerCount
+    }
   }
 }`
 
@@ -44,7 +48,8 @@ query {
     const { data }: { data: RepoResponseData } = await res.json()
 
     return {
-        starredRepos: data.user.starredRepositories.nodes.reverse(),
         pinnedRepos: data.user.pinnedItems.nodes.reverse(),
+        starredRepos: data.user.starredRepositories.nodes.reverse(),
+        stargazerCount: data.user.repository,
     }
 }

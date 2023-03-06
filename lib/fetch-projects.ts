@@ -5,6 +5,56 @@ export const getProjects = cache((): Project[] => [
         id: 0,
         highlight: false,
         pastProject: true,
+        slug: "beau-hawkinson",
+        title: "✨ This website!!",
+        summary: "My personal website. Constantly updated and kept up with my preferred tech.",
+        date: "Feb 25, 2023",
+        images: [],
+        technologies: [
+            {
+                imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
+            },
+            {
+                imageSrc: "/skills/framer-motion.jpeg",
+                tooltip: "Framer",
+            },
+            {
+                imageSrc: "/skills/vercel.svg",
+                tooltip: "Vercel",
+            },
+            {
+                imageSrc: "/skills/supabase.svg",
+                tooltip: "Supabase",
+            },
+            {
+                imageSrc: "/skills/graphql.svg",
+                tooltip: "GraphQL",
+            },
+            {
+                imageSrc: "/skills/nextauth.png",
+                tooltip: "Next Auth",
+            },
+        ],
+        linkToBuild: "https://github.com/Twonarly1/beauhawkinson.us",
+        linkToWebsite: "https://beau-hawkinson.us",
+        points: [
+            "My personal website built with the technology listed above.",
+            "Constantly updated with the latest next.js technology as it is released.",
+        ],
+    },
+    {
+        id: 1,
+        highlight: false,
+        pastProject: true,
         slug: "north-star-mtb",
         title: "⛰️🚴‍♂️ North Star Mountain Biking ",
         summary: "Landing page for a start-up Indoor Mountain Biking business.",
@@ -13,18 +63,23 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
             {
                 imageSrc: "/skills/framer-motion.jpeg",
+                tooltip: "Framer",
             },
             {
                 imageSrc: "/skills/vercel.svg",
+                tooltip: "Vercel",
             },
         ],
         linkToBuild: "",
@@ -36,7 +91,7 @@ export const getProjects = cache((): Project[] => [
         ],
     },
     {
-        id: 1,
+        id: 2,
         highlight: false,
         pastProject: true,
         slug: "chisago-hardware",
@@ -52,21 +107,31 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
             {
                 imageSrc: "/skills/supabase.svg",
+                tooltip: "Supabase",
             },
             {
                 imageSrc: "/skills/vercel.svg",
+                tooltip: "Vercel",
             },
             {
                 imageSrc: "/skills/framer-motion.jpeg",
+                tooltip: "Framer",
+            },
+            {
+                imageSrc: "/skills/graphql.svg",
+                tooltip: "GraphQL",
             },
         ],
         linkToBuild: "",
@@ -80,7 +145,7 @@ export const getProjects = cache((): Project[] => [
     },
 
     {
-        id: 2,
+        id: 3,
         highlight: false,
         pastProject: false,
         slug: "meets",
@@ -91,24 +156,31 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/stepzen.png",
+                tooltip: "Stepzen",
             },
             {
                 imageSrc: "/skills/graphql.svg",
+                tooltip: "GraphQL",
             },
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/supabase.svg",
+                tooltip: "Supabase",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/postgresql.png",
+                tooltip: "Postgresql",
             },
         ],
         linkToBuild: "",
@@ -121,7 +193,7 @@ export const getProjects = cache((): Project[] => [
         ],
     },
     {
-        id: 3,
+        id: 4,
         highlight: false,
         pastProject: false,
         slug: "poh",
@@ -137,21 +209,27 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/stepzen.png",
+                tooltip: "Stepzen",
             },
             {
                 imageSrc: "/skills/graphql.svg",
+                tooltip: "GraphQL",
             },
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
             {
                 imageSrc: "/skills/supabase.svg",
+                tooltip: "Supabase",
             },
             {
                 imageSrc: "/skills/wagmi.png",
+                tooltip: "Wagmi",
             },
         ],
         linkToBuild: "https://github.com/Twonarly1",
@@ -165,7 +243,47 @@ export const getProjects = cache((): Project[] => [
         ],
     },
     {
-        id: 4,
+        id: 5,
+        highlight: false,
+        pastProject: false,
+        slug: "muse-dao",
+        title: "Muse Dao",
+        summary: "Official contributor for Muse Dao. Designed the farming page.",
+        date: "Jan 10, 2022",
+        images: [],
+        technologies: [
+            {
+                imageSrc: "/skills/vue.webp",
+                tooltip: "Vue",
+            },
+            {
+                imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
+            },
+            {
+                imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
+            },
+            {
+                imageSrc: "/skills/ethereum.png",
+                tooltip: "Ethereum",
+            },
+            {
+                imageSrc: "/skills/mm.webp",
+                tooltip: "MetaMask",
+            },
+        ],
+        linkToBuild: "",
+        linkToWebsite: "https://musedao.io/",
+        points: [
+            "Created the Farming page for the web3 farmers.",
+            "Added token information from CoinGecko API to Home page.",
+            "Multiple UI updates for usability. ",
+            "Continue updating the projects sections when necessary.",
+        ],
+    },
+    {
+        id: 6,
         highlight: false,
         pastProject: false,
         slug: "tailwind-shapes",
@@ -176,12 +294,15 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
         ],
         linkToBuild: "https://github.com/Twonarly1/tailwindcss-shapes",
@@ -194,7 +315,7 @@ export const getProjects = cache((): Project[] => [
         ],
     },
     {
-        id: 5,
+        id: 7,
         highlight: false,
         pastProject: false,
         slug: "ebay-marketplace",
@@ -211,34 +332,40 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/thirdweb.webp",
+                tooltip: "Thirdweb",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
             {
                 imageSrc: "/skills/mm.webp",
+                tooltip: "MetaMask",
             },
             {
                 imageSrc: "/skills/vercel.svg",
+                tooltip: "Vercel",
             },
         ],
         linkToBuild: "https://github.com/Twonarly1/ebay-clone",
         linkToWebsite: "https://ebay-clone-ten.vercel.app/",
         points: [
-            "ebay clone marketplace built on the Matic test network using Thirdweb contracts.",
+            "Ebay clone marketplace built on the Matic test network using Thirdweb contracts.",
             "Add items to your personal inventory.",
             "List items from your inventory to the marketplace.",
-            "submit offers and bids on listed marketplace items.",
+            "Submit offers and bids on listed marketplace items.",
         ],
     },
     {
-        id: 6,
+        id: 8,
         highlight: false,
         pastProject: false,
         slug: "twonarly-lottery",
@@ -249,21 +376,27 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/ethereum.png",
+                tooltip: "Ethereum",
             },
             {
                 imageSrc: "/skills/thirdweb.webp",
+                tooltip: "Thirdweb",
             },
             {
                 imageSrc: "/skills/sol.png",
+                tooltip: "Solidity",
             },
             {
                 imageSrc: "/skills/next.svg",
+                tooltip: "Next JS",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/ts.png",
+                tooltip: "Typescript",
             },
         ],
         linkToBuild: "https://github.com/Twonarly1/twonarly-lottery",
@@ -277,10 +410,10 @@ export const getProjects = cache((): Project[] => [
     },
 
     {
-        id: 7,
+        id: 9,
         highlight: false,
         pastProject: false,
-        slug: "winsomw-tenley",
+        slug: "winsome-tenley",
         title: "Winsome Tenley 🖼️",
         summary: "NFT minting website on the Matic test network. 2nd place winner. 🎉 🎊",
         date: "Mar 31, 2022",
@@ -288,18 +421,23 @@ export const getProjects = cache((): Project[] => [
         technologies: [
             {
                 imageSrc: "/skills/ethereum.png",
+                tooltip: "Ethereum",
             },
             {
                 imageSrc: "/skills/thirdweb.webp",
+                tooltip: "Thirdweb",
             },
             {
                 imageSrc: "/skills/sanity.webp",
+                tooltip: "Sanity",
             },
             {
                 imageSrc: "/skills/tailwindcss.svg",
+                tooltip: "Tailwind",
             },
             {
                 imageSrc: "/skills/js.webp",
+                tooltip: "Javascript",
             },
         ],
         linkToBuild: "https://github.com/Twonarly1/Winsome-Tenley",

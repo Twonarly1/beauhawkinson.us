@@ -1,4 +1,4 @@
-import classNames from "classnames"
+import clsx from "clsx"
 import { ComponentProps, ForwardedRef, forwardRef } from "react"
 
 import { ButtonContent } from "./button-content"
@@ -10,7 +10,7 @@ type IntrinsicAnchorProps = ComponentProps<"a">
 type IntrinsicButtonProps = ComponentProps<"button">
 
 type CommonProps = {
-    variant?: "link" | "outline" | "solid" | "showMore"
+    variant?: "link" | "showMore"
 } & ButtonContentProps
 
 type AnchorProps = {
@@ -43,14 +43,11 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(f
         props.as = "button"
     }
 
-    const className = classNames("rounded-full cursor-pointer transition-colors", {
+    const className = clsx("cursor-pointer transition-colors", {
         "text-sm": size === "sm",
         "py-2 px-6": size === "sm" && variant !== "link",
         "py-3 px-8": size === "md" && variant !== "link",
         "hover:underline": variant === "link",
-        "": variant === "outline",
-        "relative z-10 border border-transparent bg-slate-200 text-slate-800 before:absolute before:inset-0 before:-z-10 before:rounded-full dark:before:bg-white before:bg-pink-200 before:opacity-0 before:blur before:transition-opacity before:duration-300 hover:text-slate-900 hover:before:opacity-100":
-            variant === "solid",
         "shadow-xs mx-auto flex w-fit rounded border border-gray-300 px-2 py-1 text-gray-800 dark:text-zinc-100":
             variant === "showMore",
     })
@@ -82,7 +79,7 @@ export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(f
 
     return (
         <button
-            className={classNames(className, {
+            className={clsx(className, {
                 "opacity-75": isDisabled,
                 "animate-pulse": isLoading,
             })}
