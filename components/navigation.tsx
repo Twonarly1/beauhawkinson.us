@@ -83,9 +83,9 @@ export function Navigation() {
                 className="sticky top-0 z-20  hidden bg-[#fefefe] py-5 dark:bg-[#111010] sm:flex lg:w-[150px] lg:flex-shrink-0"
             >
                 <Stack direction={{ base: "horizontal", lg: "vertical" }}>
-                    {navItems[pathname] ? (
+                    {/* {navItems[pathname] ? (
                         <>
-                            {/* Desktop version, hidden on mobile, animates y axis */}
+                            Desktop version, hidden on mobile, animates y axis
                             <div className="hidden lg:block">
                                 <motion.div
                                     className="absolute z-[-1] h-[34px] rounded-md bg-neutral-100 dark:bg-neutral-800"
@@ -104,7 +104,7 @@ export function Navigation() {
                                 />
                             </div>
 
-                            {/* Mobile version, hidden on desktop, animates x axis */}
+                            Mobile version, hidden on desktop, animates x axis
                             <div className="hidden sm:block lg:hidden">
                                 <motion.div
                                     className="absolute z-[-1] h-[34px] rounded-md bg-neutral-100 dark:bg-neutral-800"
@@ -123,7 +123,7 @@ export function Navigation() {
                                 />
                             </div>
                         </>
-                    ) : null}
+                    ) : null} */}
 
                     {Object.entries(navItems).map(([path, { name }]: any) => {
                         const isActive = path === pathname
