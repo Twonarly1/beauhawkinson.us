@@ -34,12 +34,12 @@ const navItems: any = {
         y: 102,
         w: "68px",
     },
-    "/guestbook": {
-        name: "guestbook",
-        x: 280,
-        y: 136,
-        w: "100px",
-    },
+    // "/guestbook": {
+    //     name: "guestbook",
+    //     x: 280,
+    //     y: 136,
+    //     w: "100px",
+    // },
 }
 
 export function Navigation() {
