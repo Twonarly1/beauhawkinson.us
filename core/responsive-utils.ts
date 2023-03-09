@@ -1,6 +1,6 @@
 type Breakpoints = "base" | "sm" | "md" | "lg"
 
-type ResponsiveValue = number | string
+type ResponsiveValue = number | string | boolean
 
 export type ResponsiveProp<Prop extends ResponsiveValue> =
     | Prop
@@ -13,5 +13,7 @@ export function toResponsiveObject<T extends ResponsiveValue>(
 ): {
     [key in Breakpoints]?: T
 } {
-    return typeof prop === "number" || typeof prop === "string" ? { base: prop } : prop
+    return typeof prop === "number" || typeof prop === "string" || typeof prop === "boolean"
+        ? { base: prop }
+        : prop
 }
