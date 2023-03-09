@@ -107,7 +107,7 @@ export function Navigation() {
         <>
             <nav
                 id="nav"
-                className="sticky top-0 z-50 hidden h-[89px] items-center justify-between bg-[#fefefe] dark:bg-[#111010] sm:flex"
+                className="fixed top-0 z-50 hidden h-[89px] w-full items-center justify-between bg-[#fefefe] dark:bg-[#111010] sm:flex"
             >
                 <NavItems />
                 <ThemeChanger />
