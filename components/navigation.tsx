@@ -19,7 +19,7 @@ const navItems: NavProps = [
     { name: "projects", path: "/project" },
     { name: "resume", path: "/resume" },
     { name: "github", path: "/github" },
-    // { name: "guestbook", path: "/guestbook" },
+    { name: "guestbook", path: "/guestbook" },
 ]
 
 export function Navigation() {
