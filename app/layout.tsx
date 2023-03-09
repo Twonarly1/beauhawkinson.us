@@ -62,12 +62,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className={clsx(kaisei.variable)}>
-            <body className="mx-auto mb-10 flex w-full max-w-4xl flex-col bg-white px-6 text-neutral-800 antialiased dark:bg-[#111010] dark:text-neutral-200 lg:mt-32 lg:flex-row lg:px-0">
+            <body className="mx-4 mb-40 mt-0 flex max-w-4xl flex-col bg-white text-black antialiased dark:bg-[#111010] dark:text-white lg:mx-auto lg:mt-32 lg:flex-row">
                 <Providers>
                     <Navigation />
-                    <main className="mt-20 flex flex-1 lg:mt-6">{children}</main>
+                    <main className="mt-10 flex min-w-0 flex-auto flex-col px-2 md:px-0 lg:mt-0">
+                        {children}
+                        <AnalyticsWrapper />
+                    </main>
                 </Providers>
-                <AnalyticsWrapper />
             </body>
         </html>
     )
