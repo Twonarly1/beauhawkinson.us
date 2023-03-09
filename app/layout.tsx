@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className="mx-4 mb-40 mt-0 flex max-w-4xl flex-col bg-white text-black antialiased dark:bg-[#111010] dark:text-white lg:mx-auto lg:mt-32 lg:flex-row">
                 <Providers>
                     <Navigation />
-                    <main className="mt-10 flex min-w-0 flex-auto flex-col px-2 md:px-0 lg:mt-0">
+                    <main className="mt-20 flex min-w-0 flex-auto flex-col sm:mt-10 lg:mt-0">
                         {children}
                         <AnalyticsWrapper />
                     </main>

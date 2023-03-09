@@ -78,13 +78,13 @@ export function Navigation() {
     const currentTheme = theme === "system" ? systemTheme : theme
     return (
         <>
-            <aside className="-mx-4 hidden sm:flex lg:mx-0 lg:w-[150px] lg:flex-shrink-0 lg:px-0">
+            <aside className="-mx-4 hidden sm:flex lg:mx-0 lg:w-[150px] lg:min-w-[150px] lg:flex-shrink-0 lg:px-0">
                 <div className="lg:sticky lg:top-20">
                     <nav
                         className="fade relative flex scroll-pr-6 flex-row items-start overflow-hidden px-4 pb-0 lg:relative lg:flex-col lg:overflow-auto lg:px-0"
                         id="nav"
                     >
-                        <div className="mb-2 mt-8 flex flex-row space-x-0 pr-10 lg:mt-0 lg:flex-col">
+                        <div className="mb-2 mt-8 flex h-[34px] flex-row space-x-0 pr-10 lg:mt-0 lg:h-auto lg:flex-col">
                             {navItems[pathname] ? (
                                 <>
                                     {/* Desktop version, hidden on mobile, animates y axis */}
