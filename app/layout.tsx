@@ -62,10 +62,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" className={clsx(kaisei.variable)}>
-            <body className="mx-auto max-w-4xl bg-[#fefefe] px-4 text-black antialiased dark:bg-[#111010] dark:text-white">
+            <body className="mx-auto max-w-4xl bg-[#fefefe] text-black antialiased dark:bg-[#111010] dark:text-white">
                 <Providers>
                     <Navigation />
-                    <main className="my-32">
+                    <main className="my-32 mx-4 overflow-hidden">
                         {children}
                         <AnalyticsWrapper />
                     </main>

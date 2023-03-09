@@ -61,14 +61,26 @@ export function Navigation() {
         return (
             <Stack direction={{ base: "vertical", sm: "horizontal" }} alignItems="center">
                 <button
-                    className="py-[5px] px-[10px] text-start text-neutral-500 transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
+                    className={clsx(
+                        "py-[5px] px-[10px] transition-all hover:text-neutral-800 dark:hover:text-neutral-200",
+                        {
+                            "rounded bg-neutral-200 font-bold dark:bg-neutral-600":
+                                currentTheme === "light",
+                        },
+                    )}
                     onClick={renderLightTheme}
                 >
                     light
                 </button>
 
                 <button
-                    className="py-[5px] px-[10px] text-start text-neutral-500 transition-all hover:text-neutral-800 dark:hover:text-neutral-200"
+                    className={clsx(
+                        "py-[5px] px-[10px] transition-all hover:text-neutral-800 dark:hover:text-neutral-200",
+                        {
+                            "rounded bg-neutral-200 font-bold dark:bg-neutral-600":
+                                currentTheme === "dark",
+                        },
+                    )}
                     onClick={renderDarkTheme}
                 >
                     dark
@@ -88,10 +100,11 @@ export function Navigation() {
                             key={item.path}
                             href={item.path}
                             className={clsx(
-                                "z py-[5px] px-[10px] transition-all hover:text-neutral-800 dark:hover:text-neutral-200",
+                                "py-[5px] px-[10px] hover:text-neutral-800 dark:hover:text-neutral-200",
                                 {
                                     "text-neutral-500": !isActive,
-                                    "font-bold": isActive,
+                                    "rounded bg-neutral-200 font-bold dark:bg-neutral-600":
+                                        isActive,
                                 },
                             )}
                         >
@@ -107,7 +120,7 @@ export function Navigation() {
         <>
             <nav
                 id="nav"
-                className="fixed top-0 z-50 hidden h-[89px] w-full items-center justify-between bg-[#fefefe] dark:bg-[#111010] sm:flex"
+                className="fixed top-0 z-50 hidden h-[89px] w-full max-w-4xl justify-between bg-[#fefefe] px-4 dark:bg-[#111010] sm:flex"
             >
                 <NavItems />
                 <ThemeChanger />
