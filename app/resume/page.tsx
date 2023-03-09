@@ -1,6 +1,6 @@
 import { Button, Heading, Stack, Text } from "core"
-import { Achievements, Company } from "components"
 import { config } from "lib/config"
+import { Achievements, Company } from "./components"
 
 export const metadata = {
     title: "Resume",
