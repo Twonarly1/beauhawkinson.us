@@ -13,7 +13,7 @@
         "typecheck": "tsc -b"
     },
     "dependencies": {
-        "@apollo/client": "^3.7.9",
+        "@apollo/client": "^3.7.13",
         "@headlessui/react": "^1.6.0",
         "@next/font": "^13.1.5",
         "@radix-ui/react-tooltip": "^1.0.3",

@@ -1,10 +1,10 @@
 import Image from "next/image"
 
 import { Heading, Typewriter } from "core/typography"
-import { SkillsDialog, SkillsCarousel } from "components"
 import { Stack, Text } from "core"
 import { config } from "lib"
-import { ArrowIcon, GitHubIcon, LinkedInIcon, TwitterIcon } from "core/icon"
+import { ArrowIcon, GitHubHomeIcon, LinkedInIcon, TwitterIcon } from "core/icon"
+import { SkillsDialog, SkillsCarousel } from "./components/skills"
 
 async function HomePage() {
     return (
@@ -79,7 +79,7 @@ async function HomePage() {
                     className="flex w-full items-center justify-between rounded-lg border border-neutral-200 p-4 text-neutral-800 no-underline transition-all hover:bg-neutral-100 dark:border-neutral-800 dark:text-neutral-200 hover:dark:bg-neutral-900"
                 >
                     <div className="flex items-center">
-                        <GitHubIcon />
+                        <GitHubHomeIcon />
 
                         <div className="ml-3">GitHub</div>
                     </div>

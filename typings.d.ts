@@ -33,16 +33,6 @@ type Skill = {
     preferredStack: boolean
 }
 
-type Experience = {
-    imageSrc: string
-    company: string
-    title: string
-    dateStarted: string
-    dateEnded: string
-    technologies: string[]
-    points: string[]
-}
-
 type ResumeData = {
     company: string
     title: string
@@ -76,12 +66,6 @@ interface RepoResponseData {
         }
         repository: StargazerCount
     }
-}
-
-type Headings = {
-    title?: string
-    subtitle?: string
-    other?: string
 }
 
 interface TimestampProps {

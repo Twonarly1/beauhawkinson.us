@@ -5,7 +5,7 @@ import clsx from "clsx"
 
 import Providers from "./providers"
 import { AnalyticsWrapper } from "core"
-import { Navigation } from "components"
+import { Navigation } from "./components/navigation"
 
 const kaisei = localFont({
     src: "../public/fonts/kaisei-tokumin-latin-700-normal.woff2",
