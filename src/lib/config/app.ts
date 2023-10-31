@@ -1,0 +1,27 @@
+import avatar from "/public/avatar.jpeg"
+import { GITHUB_TOKEN } from "./env"
+
+const githubToken = `${GITHUB_TOKEN}`
+
+if (!githubToken) {
+    throw new Error("Missing environment variable GITHUB_TOKEN.")
+}
+
+const app = {
+    avatar: avatar,
+    name: "Beau Hawkinson",
+    birthday: "1994-04-07",
+    githubUsername: "Twonarly1",
+    repoName: "beauhawkinson.us",
+    shortName: "BH",
+    description: "Software Engineer",
+    twitter: "https://twitter.com/twonarly",
+    github: "https://github.com/Twonarly1",
+    linkedin: "https://www.linkedin.com/in/beau-hawkinson-6921bb84/",
+    resume: "https://read.cv/bhawkinson",
+    email: "mailto:beaujhawkinson@gmail.com",
+    domain: "beauhawkinson.us",
+    githubToken,
+}
+
+export default app
