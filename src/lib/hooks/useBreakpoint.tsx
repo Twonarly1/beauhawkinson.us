@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
-import breakpoints from "../data/breakpoints"
-import emToPx from "../util/emToPx"
+import { BREAKPOINTS } from "lib/data"
+import { emToPx } from "lib/util"
 
-import type { BreakpointToken } from "../data/breakpoints"
+import type { BreakpointToken } from "lib/data"
 
 interface WindowDimensions {
     width: typeof window.innerWidth
@@ -38,8 +38,11 @@ const useBreakpoint = ({ fallback = "base" }: Options = {}) => {
         handleResize()
 
         // create tuple mapping of semantic breakpoint keys with their values
-        const range = Object.entries(breakpoints)
-            .map(([key, breakpoint]) => [key, emToPx(breakpoint as `${number}em`)])
+        const range = Object.entries(BREAKPOINTS)
+            .map(([key, breakpoint]) => [
+                key,
+                emToPx(breakpoint as `${number}em`),
+            ])
             // reverse to set largest breakpoint at the start (top-down; decreasing order)
             .reverse()
 

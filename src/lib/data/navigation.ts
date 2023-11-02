@@ -1,22 +1,34 @@
-import { GitHub, Twitter, LinkedIn, Resume, Email, Rainbow } from "components/icons"
 import app from "lib/config/app"
+import {
+    AiFillGithub as GitHubIcon,
+    AiFillLinkedin as LinkedInIcon,
+    AiFillTwitterCircle as TwitterIcon,
+    AiFillProfile as ResumeIcon,
+} from "react-icons/ai"
 
 import type { Icon } from "components/icons"
 
-export type NavLink = {
+export type LinkItem = {
     name: string
-    icon: Icon
     href: string
     isExternal?: boolean
+    icon?: Icon
+    onClick?: () => void
 }
 
-const NAVIGATION: NavLink[] = [
-    { name: "GitHub", icon: GitHub, href: app.github, isExternal: true },
-    { name: "Twitter", icon: Twitter, href: app.twitter, isExternal: true },
-    { name: "LinkedIn", icon: LinkedIn, href: app.linkedin, isExternal: true },
-    { name: "Resume", icon: Resume, href: app.resume, isExternal: true },
-    // { name: "Email", icon: Email, href: app.email },
-    { name: "NFTs", icon: Rainbow, href: "/nfts/bhawkinson.eth" },
+export const SOCIAL_LINKS: LinkItem[] = [
+    { name: "GitHub", icon: GitHubIcon, href: app.github, isExternal: true },
+    { name: "X", icon: TwitterIcon, href: app.twitter, isExternal: true },
+    {
+        name: "LinkedIn",
+        icon: LinkedInIcon,
+        href: app.linkedin,
+        isExternal: true,
+    },
+    { name: "Resume", icon: ResumeIcon, href: app.resume, isExternal: true },
 ]
 
-export default NAVIGATION
+export const NAV_LINKS: LinkItem[] = [
+    { name: "Projects", href: "/projects" },
+    { name: "NFTs", href: "/nfts/bhawkinson.eth" },
+]

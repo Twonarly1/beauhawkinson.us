@@ -1,9 +1,7 @@
-import useBreakpoint from "./useBreakpoint";
-import { breakpoints as defaultBreakpoints } from "lib/data";
+import useBreakpoint from "./useBreakpoint"
+import { BREAKPOINTS } from "lib/data"
 
-import type { BreakpointToken } from "../data/breakpoints";
-
-// import { breakpoints as defaultBreakpoints } from "lib/panda";
+import type { BreakpointToken } from "lib/data"
 
 /**
  * Get the closest value to the current breakpoint. This logic is taken from Chakra UI's `getClosestValue` function.
@@ -13,41 +11,41 @@ import type { BreakpointToken } from "../data/breakpoints";
  * @returns The closest value to the current breakpoint.
  */
 const getClosestValue = <T,>(values: Record<string, T>, breakpoint: string) => {
-  const breakpoints = Object.keys(defaultBreakpoints);
+    const breakpoints = Object.keys(BREAKPOINTS)
 
-  let index = Object.keys(values).indexOf(breakpoint);
+    let index = Object.keys(values).indexOf(breakpoint)
 
-  if (index !== -1) return values[breakpoint];
+    if (index !== -1) return values[breakpoint]
 
-  let stopIndex = breakpoints.indexOf(breakpoint);
+    let stopIndex = breakpoints.indexOf(breakpoint)
 
-  while (stopIndex >= 0) {
-    const key = breakpoints[stopIndex];
+    while (stopIndex >= 0) {
+        const key = breakpoints[stopIndex]
 
-    if (values.hasOwnProperty(key)) {
-      index = stopIndex;
-      break;
+        if (values.hasOwnProperty(key)) {
+            index = stopIndex
+            break
+        }
+        stopIndex -= 1
     }
-    stopIndex -= 1;
-  }
 
-  if (index !== -1) {
-    const key = breakpoints[index];
-    return values[key];
-  }
+    if (index !== -1) {
+        const key = breakpoints[index]
+        return values[key]
+    }
 
-  return undefined;
-};
+    return undefined
+}
 
-export type Options<V> = Partial<Record<BreakpointToken, V>>;
+export type Options<V> = Partial<Record<BreakpointToken, V>>
 
 /**
  * Get conditional value based on theme breakpoints.
  */
 const useBreakpointValue = <V,>(values: Options<V>): V | undefined => {
-  const breakpoint = useBreakpoint();
+    const breakpoint = useBreakpoint()
 
-  return getClosestValue(values, breakpoint);
-};
+    return getClosestValue(values, breakpoint)
+}
 
-export default useBreakpointValue;
+export default useBreakpointValue

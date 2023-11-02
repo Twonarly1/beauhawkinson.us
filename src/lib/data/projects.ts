@@ -1,4 +1,3 @@
-import { Bicycle, Diamond, Eth, Mountains, Wrench } from "components/icons"
 import { cache } from "react"
 
 import type { Icon } from "components/icons"
@@ -14,7 +13,7 @@ export type Project = {
     hover_bg_color: string
     hover_text_color: string
     year: string
-    icon: Icon
+    icon?: Icon
     slug: string
     linkToBuild?: string
     linkToWebsite?: string
@@ -30,7 +29,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-[#DAC55F]",
         hover_text_color: "text-black",
         year: "2023",
-        icon: Mountains,
         slug: "freeride-mn",
         summary:
             "Freeride MN's goal is to be the premier hub for all thing MN MTB. You can find a list of MN trails, which uses google's API, and a custom made search bar that filters our list of trails. Each Trail Location has a list of trails within that location, and data can be found on each trails individual dynamic page. A list of upcoming events can be found on the Events page, with the ability to subscribe to the events. This calendar is using the full-calendar NPM package, and the events are stored and updated on our company database using Sanity studio. This allows administered users to add data to the events page and it will automatically update the webpage without having to push changes. There is also a page to post blog articles, a page to post questions to to the community, and other pages for general website information.",
@@ -82,7 +80,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-[#DAC55F]",
         hover_text_color: "text-black",
         year: "2023",
-        icon: Mountains,
         slug: "ar",
         summary: "",
         technologies: [
@@ -117,7 +114,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-[#4B5320]",
         hover_text_color: "text-white",
         year: "2023",
-        icon: Diamond,
         slug: "clay-wedding",
         summary: "",
         technologies: [
@@ -157,7 +153,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-purple-500",
         hover_text_color: "text-black",
         year: "2022",
-        icon: Eth,
         slug: "muse-dao",
         summary:
             "Created the Farming page for the web3 farmers. Added token information from CoinGecko API to Home page. Multiple UI updates for usability. Continue updating the projects sections when necessary.",
@@ -193,7 +188,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-red-500",
         hover_text_color: "text-white",
         year: "2022",
-        icon: Wrench,
         slug: "chisago-hardware",
         summary:
             "Full stack website build for a local hardware/convienence store and Just Ask Rental. Rental database built with Supabase backend. Popular products including Grilling Products & Dog Food Products. Gallery with company images, and an Info page for hours & directions.",
@@ -242,7 +236,6 @@ export const projects: Project[] = [
         hover_bg_color: "bg-orange-500",
         hover_text_color: "text-black",
         year: "2023",
-        icon: Bicycle,
         slug: "north-star-mtb",
         summary:
             "Front End website build for a start-up indoor Mountain Biking starting their pitch deck. Frontend built with next.js (13), tailwind CSS, framer motion & typescript. Type built contact form posting submissions to a Google Sheets spreadsheet.",
@@ -272,22 +265,6 @@ export const projects: Project[] = [
         linkToBuild: "",
         linkToWebsite: "https://north-star-mtn-biking.vercel.app/",
     },
-    // {
-    //   description: "test 6",
-    //   name: "some content here",
-    //   hover_bg_color: "bg-blue-500",
-    //   hover_text_color: "text-black",
-    //   year: "2023",
-    //   icon: Bicycle,
-    // },
-    // {
-    //   description: "test 7",
-    //   name: "some content here",
-    //   hover_bg_color: "bg-green-500",
-    //   hover_text_color: "text-black",
-    //   year: "2023",
-    //   icon: Bicycle,
-    // },
 ]
 
 export const getProjects = cache((): Project[] => [...projects])

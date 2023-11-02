@@ -13,10 +13,10 @@ import {
 import { clsx } from "clsx"
 
 import Button from "../button/button"
-import { X } from "components/icon"
 
 import type { DialogProps } from "@ark-ui/react"
 import type { ReactNode } from "react"
+import { FiX } from "react-icons/fi"
 
 type Variant = "default" | "trailSystem" | "blogNav"
 
@@ -31,7 +31,14 @@ interface Props extends DialogProps {
 /**
  * Core Drawer component.
  */
-const Drawer = ({ title, children, trigger, description, variant = "default", ...rest }: Props) => {
+const Drawer = ({
+    title,
+    children,
+    trigger,
+    description,
+    variant = "default",
+    ...rest
+}: Props) => {
     const baseContentClasses =
         "fixed left-0 top-0 z-50 h-full items-center justify-center overflow-hidden overflow-y-auto bg-white pb-4 dark:bg-zinc-900 sm:pb-10"
 
@@ -42,10 +49,14 @@ const Drawer = ({ title, children, trigger, description, variant = "default", ..
             "fixed left-0 top-0 h-full max-w-lg rounded-none border-r p-4 dark:border-r-zinc-800",
     }
 
-    const contentClassName = clsx(baseContentClasses, variantContentClasses[variant], {
-        "duration-500 animate-in slide-in-from-left": rest.open,
-        "duration-100 animate-out slide-out-to-left": !rest.open,
-    })
+    const contentClassName = clsx(
+        baseContentClasses,
+        variantContentClasses[variant],
+        {
+            "duration-500 animate-in slide-in-from-left": rest.open,
+            "duration-100 animate-out slide-out-to-left": !rest.open,
+        },
+    )
     return (
         <Dialog {...rest}>
             <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -54,20 +65,17 @@ const Drawer = ({ title, children, trigger, description, variant = "default", ..
                 <DialogContainer className="fixed inset-0 z-50 flex items-center justify-center">
                     <DialogContent className={contentClassName}>
                         {title && (
-                            <DialogTitle className="flex h-14 items-center justify-between border-b bg-white px-4 dark:border-zinc-800 dark:bg-[#111]">
+                            <DialogTitle className="flex h-14 items-center justify-between border-b bg-white px-8 dark:border-zinc-800 dark:bg-[#111]">
                                 {title}
-                                <DialogCloseTrigger
-                                    asChild
-                                    className="flex h-8 w-8 items-center justify-center rounded-full border p-1 transition hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-white/5"
-                                >
-                                    <Button variant="primary">
-                                        <X className="h-5 w-5" />
-                                    </Button>
+                                <DialogCloseTrigger>
+                                    <FiX className="h-5 w-5" />
                                 </DialogCloseTrigger>
                             </DialogTitle>
                         )}
 
-                        {description && <DialogDescription>{description}</DialogDescription>}
+                        {description && (
+                            <DialogDescription>{description}</DialogDescription>
+                        )}
 
                         <>{children}</>
                     </DialogContent>

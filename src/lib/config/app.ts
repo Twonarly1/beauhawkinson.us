@@ -1,11 +1,4 @@
-import avatar from "/public/avatar.jpeg"
-import { GITHUB_TOKEN } from "./env"
-
-const githubToken = `${GITHUB_TOKEN}`
-
-if (!githubToken) {
-    throw new Error("Missing environment variable GITHUB_TOKEN.")
-}
+import avatar from "/public/beau-hawkinson.jpg"
 
 const app = {
     avatar: avatar,
@@ -21,7 +14,6 @@ const app = {
     resume: "https://read.cv/bhawkinson",
     email: "mailto:beaujhawkinson@gmail.com",
     domain: "beauhawkinson.us",
-    githubToken,
 }
 
 export default app

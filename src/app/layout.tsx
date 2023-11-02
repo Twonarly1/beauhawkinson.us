@@ -3,51 +3,42 @@ import "./global.css"
 import Providers from "./providers"
 import { AnalyticsWrapper } from "components/core"
 import { Header } from "components/layout"
+import app from "lib/config/app"
 
-export const metadata = {
-    title: {
-        default: "Beau Hawkinson",
-        template: "%s | Beau Hawkinson",
-    },
-    description: "Developer, writer, and creator.",
+import type { Metadata } from "next"
+import type { ReactNode } from "react"
+
+export const metadata: Metadata = {
+    title: app.name,
+    description: app.description,
+    applicationName: app.shortName,
     openGraph: {
-        title: "Beau Hawkinson",
-        description: "Developer, writer, and creator.",
-        url: "https://beauhawkinson.us",
-        siteName: "Beau Hawkinson",
-        images: [
-            {
-                url: "https://beauhawkinson.us/two.png",
-                width: 1920,
-                height: 1080,
-            },
-        ],
+        title: app.name,
+        description: app.description,
+        url: app.domain,
+        siteName: app.name,
         locale: "en-US",
         type: "website",
     },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
-    },
-    icons: {
-        shortcut: "/favicon.ico",
-    },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+    children: ReactNode
+}
+
+const RootLayout = ({ children }: Props) => {
     return (
         <html lang="en">
-            <body className="mx-auto max-w-4xl bg-[#fefefe] text-black antialiased dark:bg-[#111010] dark:text-white">
+            <head>
+                <meta
+                    name="viewport"
+                    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"
+                />
+            </head>
+            <body className="bg-[#fefefe] px-4 dark:bg-[#111010]">
                 <Providers>
-                    <Header />
-                    <main className="my-32 mx-4 overflow-hidden">
+                    <main className="mx-auto w-full max-w-5xl">
+                        <Header />
                         {children}
                         <AnalyticsWrapper />
                     </main>
@@ -56,3 +47,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </html>
     )
 }
+
+export default RootLayout
