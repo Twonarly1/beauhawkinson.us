@@ -29,7 +29,7 @@ interface Props extends PopoverProps {
   mt?: number;
   w?: number;
   placement?: Placement;
-};
+}
 
 /**
  * Core Popover component.
@@ -49,7 +49,7 @@ const Popover = ({
         placement: placement,
       }}
     >
-      <PopoverTrigger asChild>{trigger}</PopoverTrigger>
+      <PopoverTrigger>{trigger}</PopoverTrigger>
       <PopoverPositioner className="z-50">
         <PopoverContent
           style={{ marginTop: `${mt}rem`, width: `${w}rem` }}
