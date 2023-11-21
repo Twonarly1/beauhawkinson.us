@@ -13,14 +13,14 @@ export type Project = {
   _id: string
   _raw: Local.RawDocumentData
   type: 'Project'
-  /** The title of the post */
   title: string
-  /** The date of the post */
-  date: IsoDateTimeString
+  updatedAt: string
   summary: string
+  image: string
   /** MDX file body */
   body: MDX
-  url: string
+  slug: string
+  structuredData: object
 }  
 
 /** Nested types */

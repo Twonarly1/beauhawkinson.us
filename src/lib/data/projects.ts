@@ -89,10 +89,6 @@ export const projects: Project[] = [
         tooltip: "Next JS",
       },
       {
-        imageSrc: "/skills/tailwindcss.svg",
-        tooltip: "Tailwind",
-      },
-      {
         imageSrc: "/skills/ts.png",
         tooltip: "Typescript",
       },
@@ -185,54 +181,7 @@ export const projects: Project[] = [
     linkToBuild: "",
     linkToWebsite: "https://musedao.io/",
   },
-  {
-    description: "A business website for Chisago Hardware & Just Ask Rental!",
-    name: "Chisago Hardware",
-    hover_bg_color: "bg-red-500",
-    hover_text_color: "text-white",
-    year: "2022",
-    slug: "chisago-hardware",
-    summary:
-      "Full stack website build for a local hardware/convienence store and Just Ask Rental. Rental database built with Supabase backend. Popular products including Grilling Products & Dog Food Products. Gallery with company images, and an Info page for hours & directions.",
-    technologies: [
-      {
-        imageSrc: "/skills/next.svg",
-        tooltip: "Next JS",
-      },
-      {
-        imageSrc: "/skills/tailwindcss.svg",
-        tooltip: "Tailwind",
-      },
-      {
-        imageSrc: "/skills/ts.png",
-        tooltip: "Typescript",
-      },
-      {
-        imageSrc: "/skills/supabase.svg",
-        tooltip: "Supabase",
-      },
-      {
-        imageSrc: "/skills/vercel.svg",
-        tooltip: "Vercel",
-      },
-      {
-        imageSrc: "/skills/framer-motion.jpeg",
-        tooltip: "Framer",
-      },
-      {
-        imageSrc: "/skills/graphql.svg",
-        tooltip: "GraphQL",
-      },
-    ],
-    images: [
-      "/projects/ch/1.png",
-      "/projects/ch/2.png",
-      "/projects/ch/3.png",
-      "/projects/ch/4.png",
-    ],
-    linkToBuild: "",
-    linkToWebsite: "https://www.chisagohardware.com/",
-  },
+
   {
     description:
       "Landing page for a start-up Indoor Mountain Biking business. ",

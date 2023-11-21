@@ -1,5 +1,5 @@
 "use client";
-import { Button, Popover } from "components/core";
+import { Button } from "components/core";
 import { useNetworkStore } from "components/store";
 import { networks } from "lib/data";
 import { useDisclosure } from "lib/hooks";
@@ -16,7 +16,7 @@ const NetworkMenu = () => {
   const selectedNetwork = useNetworkStore((state) => state.selectedNetwork);
   return (
     <div className="relative z-50">
-      <Popover
+      {/* <Popover
         open={isOpen}
         onClose={onClose}
         onOpen={onOpen}
@@ -39,14 +39,16 @@ const NetworkMenu = () => {
                 setSelectedNetwork(network);
                 onClose();
               }}
-              variant="dropdown"
+              variant="outline"
+              className="w-full gap-2"
             >
               <network.icon />
               {network.name}
             </Button>
           ))}
         </>
-      </Popover>
+      </Popover> */}
+      toDo
     </div>
   );
 };

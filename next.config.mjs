@@ -71,6 +71,7 @@ const nextConfig = {
       "rarible.mypinata.cloud",
       "storage.opensea.io",
       "openseauserdata.com",
+      "localhost",
     ],
     dangerouslyAllowSVG: true,
     // https://nextjs.org/docs/api-reference/next/image#remote-patterns

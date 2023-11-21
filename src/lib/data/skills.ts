@@ -8,7 +8,7 @@ const skillsData: Skill[] = [
   {
     imageSrc: "/skills/apollo.png",
     tooltip: "Apollo",
-    preferredStack: true,
+    preferredStack: false,
   },
   {
     imageSrc: "/skills/cad-cam.png",
@@ -33,7 +33,7 @@ const skillsData: Skill[] = [
   {
     imageSrc: "/skills/framer-motion.jpeg",
     tooltip: "Framer",
-    preferredStack: true,
+    preferredStack: false,
   },
   {
     imageSrc: "/skills/graph.webp",
@@ -43,7 +43,7 @@ const skillsData: Skill[] = [
   {
     imageSrc: "/skills/graphql.svg",
     tooltip: "GraphQL",
-    preferredStack: true,
+    preferredStack: false,
   },
   {
     imageSrc: "/skills/hardhat.svg",
@@ -153,6 +153,16 @@ const skillsData: Skill[] = [
   {
     imageSrc: "/skills/android.png",
     tooltip: "Android",
+    preferredStack: false,
+  },
+  {
+    imageSrc: "/skills/storybook.png",
+    tooltip: "Storybook",
+    preferredStack: false,
+  },
+  {
+    imageSrc: "/skills/panda.png",
+    tooltip: "Panda CSS",
     preferredStack: false,
   },
 ];

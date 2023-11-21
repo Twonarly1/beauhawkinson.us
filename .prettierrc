@@ -1,7 +1,8 @@
 {
-    "arrowParens": "always",
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": false,
-    "plugins": ["prettier-plugin-tailwindcss"]
+  "arrowParens": "always",
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["tv"]
 }

@@ -24,7 +24,7 @@ const twonarlyPlugin = plugin(
           layout: "auto 1fr auto",
         },
         boxShadow: {
-          neon: "0 0 5px theme('colors.pink.200'), 0 0 20px theme(`colors.pink.700`)",
+          neon: `0 0 5px theme(colors.pink[200]), 0 0 20px theme(colors.pink[700])`,
         },
         zIndex: {
           backdrop: "50",
@@ -34,8 +34,8 @@ const twonarlyPlugin = plugin(
         },
         keyframes: {
           dash: {
-            from: { "stroke-dashoffset": "2000" },
-            to: { "stroke-dashoffset": "0" },
+            from: { strokeDashoffset: "5000" },
+            to: { strokeDashoffset: "0" },
           },
 
           blink: {
@@ -49,7 +49,7 @@ const twonarlyPlugin = plugin(
           },
         },
         animation: {
-          dash: "dash 10s linear forwards infinite",
+          dash: "dash 8s linear forwards infinite",
           blink: "1s steps(2) infinite",
         },
         // fontFamily: {

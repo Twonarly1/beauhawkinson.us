@@ -4,6 +4,29 @@ import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+var computedFields = {
+  slug: {
+    type: "string",
+    resolve: (doc) => doc._raw.flattenedPath
+  },
+  structuredData: {
+    type: "object",
+    resolve: (doc) => ({
+      "@context": "https://schema.org",
+      "@type": "ProjectItem",
+      headline: doc.title,
+      datePublished: doc.updatedAt,
+      dateModified: doc.updatedAt,
+      description: doc.summary,
+      image: doc.image ? `https://beauhawkinson.us${doc.image}` : `https://beauhawkinson.us/og?title=${doc.title}`,
+      url: `https://beauhawkinson.us/projects/${doc._raw.flattenedPath}`,
+      author: {
+        "@type": "Person",
+        name: "Beau Hawkinson"
+      }
+    })
+  }
+};
 var Project = defineDocumentType(() => ({
   name: "Project",
   filePathPattern: `**/*.mdx`,
@@ -11,25 +34,22 @@ var Project = defineDocumentType(() => ({
   fields: {
     title: {
       type: "string",
-      description: "The title of the post",
       required: true
     },
-    date: {
-      type: "date",
-      description: "The date of the post",
+    updatedAt: {
+      type: "string",
       required: true
     },
     summary: {
       type: "string",
       required: true
+    },
+    image: {
+      type: "string",
+      required: true
     }
   },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (doc) => `/projects/${doc._raw.flattenedPath}`
-    }
-  }
+  computedFields
 }));
 var contentlayer_config_default = makeSource({
   contentDirPath: "./src/content",
@@ -69,4 +89,4 @@ var contentlayer_config_default = makeSource({
 export {
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-DGNPTESN.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-QJFIYHPF.mjs.map

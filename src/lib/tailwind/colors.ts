@@ -21,27 +21,28 @@ export interface Colors {
   white: string;
   primary: Record<colorKey, string>;
   neutral: DefaultColors["neutral"];
+  pink: DefaultColors["pink"];
 }
 
 const colors: Colors = {
   transparent: "transparent",
   black: "#000000",
   white: "#FFFFFF",
-  // Primary palette (built upon Finnegan's primary green).
   primary: {
-    50: "#f2fbf3",
-    100: "#e0f8e2",
-    200: "#c3efc8",
-    300: "#94e19e",
-    400: "#5eca6c",
-    500: "#39b44a",
-    600: "#299037",
-    700: "#23722f",
-    800: "#205b29",
-    900: "#1c4b24",
-    950: "#0a2910",
+    50: "#fff2fc",
+    100: "#ffe3fa",
+    200: "#ffc6f5",
+    300: "#ff99e8",
+    400: "#ff5dda",
+    500: "#ff21d4",
+    600: "#ff00dd",
+    700: "#cf00af",
+    800: "#a9008d",
+    900: "#890670",
+    950: "#5e004d",
   },
   neutral: tailwind_colors.neutral,
+  pink: tailwind_colors.pink,
 };
 
 export default colors;

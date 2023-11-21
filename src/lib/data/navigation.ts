@@ -15,24 +15,46 @@ export type LinkItem = {
   name: string;
   href: string;
   isExternal?: boolean;
+  imageSrc?: string;
   icon?: IconType;
   onClick?: () => void;
 };
 
 export const SOCIAL_LINKS: LinkItem[] = [
-  { name: "GitHub", icon: FaGithub, href: app.github, isExternal: true },
-  // { name: "X", icon: FaXTwitter, href: app.twitter, isExternal: true },
+  {
+    name: "GitHub",
+    icon: FaGithub,
+    imageSrc: "/beau-hawkinson.jpg",
+    href: app.github,
+    isExternal: true,
+  },
+  {
+    name: "X",
+    icon: FaXTwitter,
+    imageSrc: "/two-uni.jpg",
+    href: app.twitter,
+    isExternal: true,
+  },
   {
     name: "LinkedIn",
     icon: FaLinkedin,
+    imageSrc: "/beau-hawkinson.jpg",
+
     href: app.linkedin,
     isExternal: true,
   },
-  { name: "Resume", icon: ResumeIcon, href: app.resume, isExternal: true },
+  // {
+  //   name: "Resume",
+  //   icon: ResumeIcon,
+  //   imageSrc: "/beau-hawkinson.jpg",
+  //   href: app.resume,
+  //   isExternal: true,
+  // },
 ];
 
 export const NAV_LINKS: LinkItem[] = [
-  { name: "Home", icon: FaHome, href: "/" },
+  // { name: "Home", icon: FaHome, href: "/" },
   { name: "Projects", icon: FaCode, href: "/projects" },
-  { name: "Nfts", icon: FaRainbow, href: "/nfts/bhawkinson.eth" },
+  { name: "NFTs", icon: FaRainbow, href: "/nfts/bhawkinson.eth" },
+  { name: "Tech", icon: FaRainbow, href: "/tech" },
 ];

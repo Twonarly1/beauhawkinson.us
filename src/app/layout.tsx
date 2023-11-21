@@ -35,9 +35,9 @@ const RootLayout = ({ children }: Props) => {
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"
         />
       </head>
-      <body>
+      <body className="">
         <Providers>
-          <div className="grid-rows-layout grid min-h-screen p-2">
+          <div className="grid-rows-layout grid min-h-screen">
             <Header />
             <main className="mx-auto flex w-full max-w-4xl items-center justify-center">
               {children}

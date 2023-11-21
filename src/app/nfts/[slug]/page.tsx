@@ -4,6 +4,7 @@ import {
   useFetchUserPoaps,
   useFetchUserTokens,
   useFetchWalletData,
+  useIsMounted,
 } from "lib/hooks";
 import { truncateString } from "lib/util";
 import Image from "next/image";
@@ -15,6 +16,8 @@ type Props = {
 };
 
 const Nfts = ({ params }: Props) => {
+  const isMounted = useIsMounted();
+
   const selectedNetwork = useNetworkStore((state) => state.selectedNetwork);
 
   const { confirmedAddress, confirmedEnsName, ensAvatar } = useFetchWalletData(
@@ -28,6 +31,8 @@ const Nfts = ({ params }: Props) => {
 
   const { data: poaps, isLoading: poapsLoading } =
     useFetchUserPoaps(confirmedAddress);
+
+  if (!isMounted) return null;
 
   if (nftsLoading || poapsLoading) return null;
 
