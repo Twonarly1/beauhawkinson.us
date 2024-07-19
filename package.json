@@ -20,8 +20,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/node": "^18.0.3",
-    "@types/react": "19.0.0-rc.0",
-    "@types/react-dom": "19.0.0-rc.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "18.0.10",
     "autoprefixer": "^10.4.0",
     "clsx": "^2.1.0",
     "postcss": "^8.4.5",
