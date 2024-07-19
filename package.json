@@ -1,52 +1,31 @@
 {
-    "name": "beau-hawkinson",
-    "private": true,
-    "description": "my personal website",
-    "homepage": "https://beauhawkinson.us",
-    "scripts": {
-        "build": "next build",
-        "dev": "next dev",
-        "lint": "next lint",
-        "lint:fix": "eslint . --fix && prettier . --write",
-        "start": "next start",
-        "format": "prettier --write \"**/*.{js,ts,tsx,md}\"",
-        "typecheck": "tsc -b"
-    },
-    "dependencies": {
-        "@apollo/client": "^3.7.9",
-        "@headlessui/react": "^1.6.0",
-        "@next/font": "^13.1.5",
-        "@radix-ui/react-tooltip": "^1.0.3",
-        "@vercel/analytics": "^0.1.8",
-        "date-fns": "^2.29.3",
-        "framer-motion": "^9.0.0",
-        "graphql": "^16.6.0",
-        "next": "latest",
-        "next-auth": "^4.19.2",
-        "next-themes": "^0.2.1",
-        "react": "latest",
-        "react-dom": "latest",
-        "sharp": "^0.31.3"
-    },
-    "devDependencies": {
-        "@tailwindcss/typography": "^0.5.9",
-        "@types/node": "^18.0.3",
-        "@types/react": "^18.0.27",
-        "@types/react-dom": "18.0.10",
-        "@typescript-eslint/eslint-plugin": "^5.45.0",
-        "@typescript-eslint/parser": "^5.0.0",
-        "autoprefixer": "^10.4.0",
-        "clsx": "^1.2.1",
-        "dayjs": "^1.11.7",
-        "eslint": "8.26.0",
-        "eslint-config-next": "^13.1.1",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-unused-imports": "^2.0.0",
-        "postcss": "^8.4.5",
-        "prettier": "^2.5.1",
-        "prettier-plugin-tailwindcss": "^0.1.1",
-        "tailwindcss": "^3.0.7",
-        "typescript": "^4.7.4"
-    },
-    "packageManager": "yarn@3.4.1"
+  "name": "beau-hawkinson",
+  "private": true,
+  "description": "my personal website",
+  "homepage": "https://beauhawkinson.us",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint:biome": "biome lint src",
+    "format": "biome format --write src",
+    "check": "biome check src"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.0-alpha.17",
+    "next": "15.0.0-canary.73",
+    "react": "19.0.0-rc.0",
+    "react-dom": "19.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/node": "^18.0.3",
+    "@types/react": "19.0.0-rc.0",
+    "@types/react-dom": "19.0.0-rc.0",
+    "autoprefixer": "^10.4.0",
+    "clsx": "^2.1.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^4.0.0-alpha.17",
+    "typescript": "^5.4.3"
+  }
 }
