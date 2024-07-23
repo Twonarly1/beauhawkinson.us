@@ -55,7 +55,7 @@ interface Props {
 
 const RootLayout = ({ children }: Readonly<Props>) => (
   <html lang="en">
-    <body className="bg-[#f4f2ee]">
+    <body className="bg-background">
       <main>{children}</main>
     </body>
   </html>

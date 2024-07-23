@@ -1,17 +1,26 @@
-import { projects } from "lib/data";
+import { Header, Work, Tech } from "components";
+import { Tabs } from "components/ui";
 
-import { Header, Project } from "components";
+import type { TabRecord } from "components/ui";
 
 const HomePage = () => {
-  return (
-    <div className="mx-auto max-w-3xl p-4 pb-24 pt-6">
-      <Header />
+  const TABS: TabRecord[] = [
+    {
+      value: "work",
+      trigger: "Work",
+      content: <Work />,
+    },
+    {
+      value: "tech",
+      trigger: "Tech",
+      content: <Tech />,
+    },
+  ];
 
-      <ul className="mt-12 grid gap-6 divide-y divide-neutral-300">
-        {projects.map((project) => (
-          <Project key={project.name} project={project} />
-        ))}
-      </ul>
+  return (
+    <div className="scrollbar-hide mx-auto max-w-3xl p-4 pb-24 pt-6">
+      <Header />
+      <Tabs tabs={TABS} defaultValue="work" className="px-2" />
     </div>
   );
 };

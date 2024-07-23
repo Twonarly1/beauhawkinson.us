@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  /* off white */
+  --color-background: #f4f2ee;
+
+  /* pink */
+  --color-accent: #f9a8d4;
+
+  /* neutral-600 */
+  --color-fg-muted: #525252;
+}
