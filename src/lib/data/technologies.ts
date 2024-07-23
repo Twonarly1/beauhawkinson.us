@@ -46,7 +46,7 @@ const technologies: TechnologyProps[] = [
   },
   {
     name: "Drizzle",
-    description: "A headless TypeScript ORM",
+    description: "A headless TypeScript ORM.",
     url: "https://orm.drizzle.team/",
   },
   {
@@ -63,7 +63,7 @@ const technologies: TechnologyProps[] = [
   },
   {
     name: "GraphQL",
-    description: "A query language for your API",
+    description: "A query language for your API.",
     url: "https://graphql.org/",
   },
   {
@@ -74,7 +74,7 @@ const technologies: TechnologyProps[] = [
   },
   {
     name: "Rainbow Kit",
-    description: "The best way to connect a wallet",
+    description: "The best way to connect a wallet.",
     url: "https://www.rainbowkit.com/",
   },
   {
@@ -91,8 +91,31 @@ const technologies: TechnologyProps[] = [
   },
   {
     name: "NextAuth.js",
-    description: "Authentication for Next.js",
+    description: "Authentication for Next.js.",
     url: "https://next-auth.js.org/",
+  },
+  {
+    name: "Vercel",
+    description:
+      "Your complete platform for the web. Vercel provides the developer tools and cloud infrastructure to build, scale, and secure a faster, more personalized web.",
+    url: "https://vercel.com/",
+  },
+  {
+    name: "GitHub",
+    description:
+      "GitHub is where over 100 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, etc.",
+    url: "https://github.com/",
+  },
+  {
+    name: "Framer Motion",
+    description:
+      "Complete documentation of the Framer Motion animation library. A production-ready motion library for React.",
+    url: "https://github.com/",
+  },
+  {
+    name: "StepZen",
+    description: "Build, optimize and scale APIs quickly and easily",
+    url: "https://stepzen.com/",
   },
 ];
 

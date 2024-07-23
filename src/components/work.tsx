@@ -6,8 +6,8 @@ import type { ProjectProps } from "lib/data";
 
 const Work = () => {
   return (
-    <div className="mt-12 w-full">
-      <i className="text-fg-muted text-sm leading-5">
+    <div className="mt-20 w-full">
+      <i className="text-fg-muted text-[13px] leading-5">
         A non-comprehensive list of freelance and startup projects I have
         contributed to, showcasing my experience and expertise in various
         domains.

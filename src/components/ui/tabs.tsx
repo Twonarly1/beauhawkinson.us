@@ -53,7 +53,7 @@ const Tabs = ({
   const PrimitiveTabContent = createPrimitiveComponent("Content");
 
   return (
-    <PrimitiveTabs {...rest} className={cn("mt-12 w-full", className)}>
+    <PrimitiveTabs {...rest} className={cn("mt-20 w-full px-4", className)}>
       <div className="border-b border-neutral-300">
         <PrimitiveTabsList className="text-fg-muted -mb-[2px] flex gap-px">
           {tabs.map(({ value, trigger, disabled }) => (
@@ -72,7 +72,8 @@ const Tabs = ({
         <PrimitiveTabContent
           key={value}
           value={value}
-          className="mt-2"
+          tabIndex={-1}
+          className="mt-2 outline-none"
           {...contentProps}
         >
           {content}

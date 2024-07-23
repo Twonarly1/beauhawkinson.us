@@ -6,8 +6,8 @@ import { socials } from "lib/data";
 
 const Header = () => {
   return (
-    <nav className="flex w-full items-center justify-between rounded-lg py-4">
-      <div className="flex items-center gap-2">
+    <nav className="flex w-full items-center justify-between rounded-lg px-4">
+      <div className="flex items-center gap-3">
         <Image
           alt="Profile Picture"
           src="/avatar.png"

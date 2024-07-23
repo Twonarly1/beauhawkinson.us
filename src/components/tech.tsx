@@ -6,8 +6,8 @@ import type { TechnologyProps } from "lib/data";
 
 const Tech = () => {
   return (
-    <div className="mt-12 w-full">
-      <i className="text-fg-muted text-sm leading-5">
+    <div className="mt-20 w-full">
+      <i className="text-fg-muted text-[13px] leading-5">
         A curated list of preferred technologies and utilities I work with
         regularly. Please note that this is not an exhaustive list, as there are
         many more tools and technologies I am proficient in.

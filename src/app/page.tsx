@@ -18,9 +18,9 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="scrollbar-hide mx-auto max-w-3xl p-4 pb-24 pt-6">
+    <div className="mx-auto max-w-3xl p-4 pb-24 pt-6">
       <Header />
-      <Tabs tabs={TABS} defaultValue="work" className="px-2" />
+      <Tabs tabs={TABS} defaultValue="work" />
     </div>
   );
 };
