@@ -114,8 +114,19 @@ const technologies: TechnologyProps[] = [
   },
   {
     name: "StepZen",
-    description: "Build, optimize and scale APIs quickly and easily",
+    description: "Build, optimize and scale APIs quickly and easily.",
     url: "https://stepzen.com/",
+  },
+  {
+    name: "Serwist",
+    description: "A Swiss Army knife for service workers.",
+    url: "https://serwist.pages.dev/",
+  },
+  {
+    name: "Ark UI",
+    description:
+      "Ark UI is a headless library for building reusable, scalable Design Systems that works for a wide range of JS frameworks.",
+    url: "https://ark-ui.com/",
   },
 ];
 

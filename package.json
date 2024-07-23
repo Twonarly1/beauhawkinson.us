@@ -12,6 +12,7 @@
     "check": "biome check src"
   },
   "dependencies": {
+    "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@tailwindcss/postcss": "^4.0.0-alpha.17",
     "next": "15.0.0-canary.73",

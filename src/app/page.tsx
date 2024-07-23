@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
     <div className="mx-auto max-w-3xl p-4 pb-24 pt-6">
       <Header />
-      <Tabs tabs={TABS} defaultValue="work" />
+      <Tabs tabs={TABS} defaultValue="tech" />
     </div>
   );
 };

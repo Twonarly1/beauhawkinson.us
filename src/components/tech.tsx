@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 import { technologies } from "lib/data";
+import { Switch } from "components/ui";
 
 import type { TechnologyProps } from "lib/data";
 
 const Tech = () => {
+  const [showDescription, setShowDescription] = useState(false);
+
   return (
     <div className="mt-20 w-full">
       <i className="text-fg-muted text-[13px] leading-5">
@@ -13,7 +19,14 @@ const Tech = () => {
         many more tools and technologies I am proficient in.
       </i>
 
-      <ul className="mt-20 grid gap-6 divide-y divide-neutral-300">
+      <div className="mt-20 flex justify-end">
+        <Switch
+          checked={showDescription}
+          onCheckedChange={() => setShowDescription(!showDescription)}
+        />
+      </div>
+
+      <ul className="mt-2 grid gap-6 divide-y divide-neutral-300">
         {technologies.map(({ name, description, url }: TechnologyProps) => (
           <li key={name} className="group grid gap-4 pb-6">
             <Link
@@ -25,9 +38,11 @@ const Tech = () => {
               {name}
             </Link>
 
-            <code className="text-xs leading-5 text-black antialiased">
-              {description}
-            </code>
+            {showDescription && (
+              <code className="text-xs leading-5 text-black antialiased">
+                {description}
+              </code>
+            )}
           </li>
         ))}
       </ul>
