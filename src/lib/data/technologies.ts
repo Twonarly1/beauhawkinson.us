@@ -89,6 +89,11 @@ const technologies: TechnologyProps[] = [
       "A an open source Firebase alternative. Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, Storage, and Vector embeddings.",
     url: "https://supabase.com/",
   },
+  {
+    name: "NextAuth.js",
+    description: "Authentication for Next.js",
+    url: "https://next-auth.js.org/",
+  },
 ];
 
 export { technologies };
