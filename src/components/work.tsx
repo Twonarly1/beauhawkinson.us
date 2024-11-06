@@ -173,7 +173,7 @@ const Work = () => {
         })}
       </ul>
 
-      <b className="mt-10 mb-2 text-right">Parnets and clients &darr;</b>
+      <b className="mt-10 mb-2 text-right">Partners and clients &darr;</b>
 
       <div className="flex w-full gap-4 overflow-clip overflow-scroll pb-4">
         {images.map(({ id, src, alt, width, height }) => (
