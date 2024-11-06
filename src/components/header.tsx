@@ -6,8 +6,9 @@ import { socials } from "lib/data";
 
 const Header = () => {
   return (
-    <nav className="flex w-full items-center justify-between rounded-lg px-4">
-      <div className="flex items-center gap-3">
+    <nav className="grid gap-4 px-4">
+      <div className="flex w-full items-center justify-between">
+        <h1 className="text-lg font-semibold">{app.name}</h1>
         <Image
           alt="Profile Picture"
           src="/avatar.png"
@@ -15,19 +16,18 @@ const Header = () => {
           width={256}
           quality={100}
           draggable={false}
-          className="h-5 w-5 shrink-0 rounded-full object-cover"
+          className="h-5 w-5"
         />
-        <h1 className="text-lg font-semibold">{app.name}</h1>
       </div>
 
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-5">
         {socials.map(({ name, url, icon }) => (
           <li key={name}>
             <Link
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex shrink-0 scale-90 text-neutral-600 hover:scale-100 hover:text-black hover:opacity-75"
+              className="text-fg-muted flex shrink-0 opacity-75 hover:scale-100 hover:text-black hover:opacity-100"
             >
               <span className="[&>svg]:h-4 [&>svg]:w-4">{icon}</span>
             </Link>

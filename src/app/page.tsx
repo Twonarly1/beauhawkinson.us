@@ -1,4 +1,4 @@
-import { Header, Work, Tech } from "components";
+import { Header, Projects, Tech, Work } from "components";
 import { Tabs } from "components/ui";
 
 import type { TabRecord } from "components/ui";
@@ -11,6 +11,11 @@ const HomePage = () => {
       content: <Work />,
     },
     {
+      value: "projects",
+      trigger: "Projects",
+      content: <Projects />,
+    },
+    {
       value: "tech",
       trigger: "Tech",
       content: <Tech />,
@@ -20,7 +25,7 @@ const HomePage = () => {
   return (
     <div className="mx-auto max-w-3xl p-4 pb-24 pt-6">
       <Header />
-      <Tabs tabs={TABS} defaultValue="tech" />
+      <Tabs tabs={TABS} defaultValue="work" />
     </div>
   );
 };

@@ -16,14 +16,17 @@ const Tech = () => {
       <i className="text-fg-muted text-[13px] leading-5">
         A curated list of preferred technologies and utilities I work with
         regularly. Please note that this is not an exhaustive list, as there are
-        many more tools and technologies I am proficient in.
+        many more tools and technologies I have experience with.
       </i>
 
-      <div className="mt-20 flex justify-end">
+      <div className="mt-20 flex items-center justify-end">
         <Switch
           checked={showDescription}
           onCheckedChange={() => setShowDescription(!showDescription)}
         />
+        <span className="text-fg-muted ml-2 text-[13px] leading-5">
+          {showDescription ? "Hide" : "Show"} descriptions
+        </span>
       </div>
 
       <ul className="mt-2 grid gap-6 divide-y divide-neutral-300">

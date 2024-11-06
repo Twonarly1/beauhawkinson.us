@@ -15,16 +15,19 @@
     "@radix-ui/react-switch": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@tailwindcss/postcss": "^4.0.0-alpha.17",
-    "next": "15.0.0-canary.73",
+    "next": "^15.0.2",
     "react": "19.0.0-rc.0",
     "react-dom": "19.0.0-rc.0",
-    "tailwind-merge": "^2.4.0"
+    "react-timeago": "^7.2.0",
+    "tailwind-merge": "^2.4.0",
+    "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
     "@types/node": "^18.0.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/react-timeago": "^4.1.7",
     "autoprefixer": "^10.4.0",
     "clsx": "^2.1.0",
     "postcss": "^8.4.5",
